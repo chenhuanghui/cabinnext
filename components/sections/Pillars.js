@@ -1,5 +1,6 @@
 import PillarItemSell from '../modules/Pillars/PillarItemSell'
 import PillarItemMarket from '../modules/Pillars/PillarItemMarket'
+import PillarItemManage from '../modules/Pillars/PillarItemManage'
 // import PillarItemManage from '../modules/Pillars/PillarItemManage'
 
 const Pillars = props => (
@@ -13,6 +14,7 @@ need to start, run, and grow your&nbsp;business.</p>
             
             <PillarItemSell />
             <PillarItemMarket />
+            <PillarItemManage />
             {/* <PillarItemManage /> */}
             
         </div>
