@@ -1,6 +1,6 @@
-import PillarItemSell from './modules/PillarItemSell'
-import PillarItemMarket from './modules/PillarItemMarket'
-import PillarItemManage from './modules/PillarItemManage'
+import PillarItemSell from './modules/Pillars/PillarItemSell'
+import PillarItemMarket from './modules/Pillars/PillarItemMarket'
+import PillarItemManage from './modules/Pillars/PillarItemManage'
 
 const Pillars = props => (
     <section className="section homepage-pillars js-waypoint-track">

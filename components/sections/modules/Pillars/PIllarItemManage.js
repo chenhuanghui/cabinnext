@@ -1,6 +1,6 @@
 const PillarItemManage = props => (
-    <div id="Manage" class="pillars__wrapper gutter-bottom">
-        <div class="online-store-overview__features-ui-illustration pillars__image ui-illustration">
+    <div id="Manage" className="pillars__wrapper gutter-bottom">
+        <div className="online-store-overview__features-ui-illustration pillars__image ui-illustration">
             <span className="lazyload-image__placeholder">
                 <img src="https://cdn.shopify.com/assets2/home/market-large-213dc76dc5482456e02e34465bab786df62a6c07de2c9fcd4937a7b52813b56d.jpg"/>
             </span>    
