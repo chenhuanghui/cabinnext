@@ -6,6 +6,7 @@ import Copyrights from './sections/Copyrights'
 import Footer from './Footer'
 import BackgroundGreen from './sections/BacgroundGreen'
 import Support from './sections/Support'
+import SignUp from './sections/SignUp'
 
 const Layout = props => (
     <div className="layout">
@@ -40,6 +41,16 @@ const Layout = props => (
                     <BackgroundGreen />
                     <Pillars />
                     <Support />
+                    <SignUp />
+                    
+                    <div className="grid">
+                        <div className="grid__item back-to-top-link-wrapper">
+                            <a className="back-to-top-link link-scroll-to styled-link styled-link--skin-inherit" href="#PageContainer">
+                                Back to top
+                                {/* <svg class="icon styled-link__icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-arrow-right" /></svg> */}
+                            </a>
+                        </div>
+                    </div>
                 </main>
                 <Footer />
             </div>
