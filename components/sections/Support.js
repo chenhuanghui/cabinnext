@@ -1,4 +1,4 @@
-const Section3 = props => (
-    <p>this is Section3</p>
+const Support = props => (
+    <p>this is Support</p>
 );
-export default Section3;
+export default Support;

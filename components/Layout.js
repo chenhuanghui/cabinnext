@@ -5,7 +5,7 @@ import Pillars from './sections/Pillars'
 import Copyrights from './sections/Copyrights'
 import Footer from './Footer'
 import BackgroundGreen from './sections/BacgroundGreen'
-
+import Support from './sections/Support'
 
 const Layout = props => (
     <div className="layout">
@@ -39,6 +39,7 @@ const Layout = props => (
                     <Hero />
                     <BackgroundGreen />
                     <Pillars />
+                    <Support />
                 </main>
                 <Footer />
             </div>
