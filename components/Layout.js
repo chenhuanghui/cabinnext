@@ -15,7 +15,7 @@ const Layout = props => (
             <meta name="author" content="SemiColonWeb" />
             <link rel="stylesheet" media="all" href="https://cdn.shopify.com/assets2/masterbrand-12d9bf8602c9e16769a8ff8a1177e4238d9413d73d9dd7678796641e912282fa.css" />
             <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/home/index-72e8f7e85d965b49c9307d648b07104daf053fb6e3c5fafc4e3c20c0abd96957.css" />
-            <title>Articles | Canvas</title>
+            <title>CabinFood | easy to Start, Fast to grow</title>
         </Head>
 
         <body className="page--home">
