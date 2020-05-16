@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Header from './Header'
 import Hero from './sections/Hero'
-import Section1 from './sections/BacgroundGreen'
+import Pillars from './sections/Pillars'
 import Copyrights from './sections/Copyrights'
 import Footer from './Footer'
 import BackgroundGreen from './sections/BacgroundGreen'
@@ -38,6 +38,7 @@ const Layout = props => (
                 <main id="Main">
                     <Hero />
                     <BackgroundGreen />
+                    <Pillars />
                 </main>
                 <Footer />
             </div>
