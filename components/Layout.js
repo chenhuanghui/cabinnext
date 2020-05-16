@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Header from './Header'
 import Hero from './sections/Hero'
-import Section1 from './sections/Section1'
+import Section1 from './sections/BacgroundGreen'
 import Copyrights from './sections/Copyrights'
 import Footer from './Footer'
+import BackgroundGreen from './sections/BacgroundGreen'
 
 
 const Layout = props => (
@@ -36,7 +37,9 @@ const Layout = props => (
             <div id="PageContainer">
                 <main id="Main">
                     <Hero />
+                    <BackgroundGreen />
                 </main>
+                <Footer />
             </div>
 
 

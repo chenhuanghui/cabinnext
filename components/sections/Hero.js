@@ -23,8 +23,8 @@ const Hero = props => (
         </div>
       </div>
 
-    <div class="picture--cover homepage-hero__image">
-        <img class="image" sizes="100vw" srcset="https://cdn.shopify.com/assets2/home/hero-small-7f6e425db758ac1743c1b556c59648a024300816d7c5afb90bef84f9bb743d95.jpg 1x, https://cdn.shopify.com/assets2/home/hero-large-0d97d3dfd511051e564ccb3ceb07c9ccf7afbeeae38acdbd6c181317a8d31a05.jpg 2x" />
+    <div className="picture--cover homepage-hero__image">
+        <img className="image" sizes="100vw" srcset="https://cdn.shopify.com/assets2/home/hero-small-7f6e425db758ac1743c1b556c59648a024300816d7c5afb90bef84f9bb743d95.jpg 1x, https://cdn.shopify.com/assets2/home/hero-large-0d97d3dfd511051e564ccb3ceb07c9ccf7afbeeae38acdbd6c181317a8d31a05.jpg 2x" />
     </div>
   </div>  
 );
