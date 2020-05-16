@@ -5,7 +5,7 @@ const Header = props => (
                         <nav className="marketing-nav--skin-light marketing-nav marketing-nav--primary marketing-nav--solid" id="ShopifyMainNav">
                                 <div className="marketing-nav__logo ">
                                         <a href="/" className="marketing-nav__logo__shopify" >
-                                                SHOPIFY LOGO
+                                                CABINFOOD LOGO
                                         </a>
                                 </div>
 
