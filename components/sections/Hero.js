@@ -10,7 +10,7 @@ const Hero = props => (
                 <form className="js-signup-inline marketing-form--inline">
                     <div className="marketing-input-wrapper marketing-input-button-pair">
                         <div className="marketing-input-button-pair__field-wrapper">
-                            <label className="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" for="SignupEmail-9305">Email</label>
+                            <label className="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" >Email</label>
                             <input placeholder="Enter your email address" id="SignupEmail-9305" className="marketing-input-button-pair__input marketing-input marketing-input--floating" />
                             <button className="marketing-button marketing-form__button marketing-input-button-pair__button">Start free trial</button>
                         </div>
@@ -24,7 +24,7 @@ const Hero = props => (
       </div>
 
     <div className="picture--cover homepage-hero__image">
-        <img className="image" sizes="100vw" srcset="https://cdn.shopify.com/assets2/home/hero-small-7f6e425db758ac1743c1b556c59648a024300816d7c5afb90bef84f9bb743d95.jpg 1x, https://cdn.shopify.com/assets2/home/hero-large-0d97d3dfd511051e564ccb3ceb07c9ccf7afbeeae38acdbd6c181317a8d31a05.jpg 2x" />
+        <img className="image" sizes="100vw" srcSet="https://cdn.shopify.com/assets2/home/hero-small-7f6e425db758ac1743c1b556c59648a024300816d7c5afb90bef84f9bb743d95.jpg 1x, https://cdn.shopify.com/assets2/home/hero-large-0d97d3dfd511051e564ccb3ceb07c9ccf7afbeeae38acdbd6c181317a8d31a05.jpg 2x" />
     </div>
   </div>  
 );
