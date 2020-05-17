@@ -4,7 +4,6 @@ import React from 'react';
 import Header from './Header'
 import Hero from './sections/Hero'
 import Pillars from './sections/Pillars'
-import Copyrights from './sections/Copyrights'
 import Footer from './Footer'
 import BackgroundGreen from './sections/BackgroundGreen'
 import Support from './sections/Support'
