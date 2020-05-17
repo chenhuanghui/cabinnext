@@ -1,18 +1,18 @@
-const PillarItemMarket = props => (
+const PillarItem2 = props => (
     <div id="Market" className="pillars__wrapper gutter-bottom">
         <div className="block pillars__block">
             <h3 className="block__heading heading--2">
-                {props.dataItemMarket.pil_block_title2}
+                {props.dataItem2.pil_block2_title}
             </h3>
-            <p className="block__content">{props.dataItemMarket.pil_block_desc2}</p>
-            <a className="pillars__block-link styled-link" href= {props.dataItemMarket.pil_block_btn_href2}>
-                {props.dataItemMarket.pil_block_btn_title2}
+            <p className="block__content">{props.dataItem2.pil_block2_desc}</p>
+            <a className="pillars__block-link styled-link" href= {props.dataItem2.pil_block2_btn_href}>
+                {props.dataItem2.pil_block_btn_title2}
                 {/* <svg className="icon styled-link__icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-arrow-right" /></svg> */}
             </a>
         </div>
         <span className="image lazyload-image pillars__image pillars__image--market" >
             <span className="lazyload-image__placeholder">
-                <img src={props.dataItemMarket.img2_src}/>
+                <img src={props.dataItem2.pil_block2_img_src}/>
             </span>
         </span>
 
@@ -22,4 +22,4 @@ const PillarItemMarket = props => (
         `}</style>
     </div>
 );
-export default PillarItemMarket;    
+export default PillarItem2;    

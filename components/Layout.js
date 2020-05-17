@@ -42,14 +42,19 @@ export default class Layout extends React.Component {
 
         base('GreenBoard').find('recoCx9CKQocUmJos', function(err, record) {
             if (err) { console.error(err); return; }
+            record.fields.block1_img_src = record.fields[`block1_img_src`][0].url;
+            record.fields.block2_img_src = record.fields[`block2_img_src`][0].url;
+            record.fields.block3_img_src = record.fields[`block3_img_src`][0].url;
             currentComponent.setState({ dataGreen: record.fields })
         });
 
         base('Pillars').find('recp3KZyYxHHYMxsE', function(err, record) {
             if (err) { console.error(err); return; }
-            record.fields.img1_src = record.fields[`img1_src`][0].url;
-            record.fields.img2_src = record.fields[`img2_src`][0].url;
-            record.fields.img3_src = record.fields[`img3_src`][0].url;
+            console.log('pillar',record);
+            record.fields.pil_block1_img_src = record.fields[`pil_block1_img_src`][0].url;
+            record.fields.pil_block2_img_src = record.fields[`pil_block2_img_src`][0].url;
+            record.fields.pil_block3_img_src = record.fields[`pil_block3_img_src`][0].url;
+            record.fields.pil_block4_img_src = record.fields[`pil_block4_img_src`][0].url;
 
             currentComponent.setState({ dataPillar: record.fields })
         });

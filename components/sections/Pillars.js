@@ -1,7 +1,7 @@
-import PillarItemSell from '../modules/Pillars/PillarItemSell'
-import PillarItemMarket from '../modules/Pillars/PillarItemMarket'
-import PillarItemManage from '../modules/Pillars/PillarItemManage'
-// import PillarItemManage from '../modules/Pillars/PillarItemManage'
+import PillarItem1 from '../modules/Pillars/PillarItem1'
+import PillarItem2 from '../modules/Pillars/PillarItem2'
+import PillarItem3 from '../modules/Pillars/PillarItem3'
+import PillarItem4 from '../modules/Pillars/PillarItem4'
 
 const Pillars = props => (
     <section className="section homepage-pillars js-waypoint-track">
@@ -11,9 +11,10 @@ const Pillars = props => (
                 <p className="section-heading__subhead heading--2 text-major pillars__subhead">{props.dataPillar.desc}</p>
             </div>
             
-            <PillarItemSell dataItemSell={props.dataPillar}/>
-            <PillarItemMarket dataItemMarket={props.dataPillar} />
-            <PillarItemManage dataItemManage={props.dataPillar} />
+            <PillarItem1 dataItem1={props.dataPillar}/>
+            <PillarItem2 dataItem2={props.dataPillar} />
+            <PillarItem3 dataItem3={props.dataPillar} />
+            <PillarItem4 dataItem4={props.dataPillar} />
             {/* <PillarItemManage /> */}
             
         </div>
