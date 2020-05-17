@@ -20,7 +20,8 @@ export default class Layout extends React.Component {
             dataHero: [],
             dataGreen: [],
             dataPillar: [],
-            dataSupport: []
+            dataSupport: [],
+            dataSignUp: []
         }
       }
 
@@ -59,10 +60,15 @@ export default class Layout extends React.Component {
             record.fields.img_src = record.fields[`img_src`][0].url;
             currentComponent.setState({ dataSupport: record.fields })
         });
+
+        base('SignUp').find('recUU9TALWbOif6YA', function(err, record) {
+            if (err) { console.error(err); return; }
+            currentComponent.setState({ dataSignUp: record.fields })
+        });
     }
 
     render () {
-        const { announcementData, dataHero, dataGreen, dataPillar,dataSupport} = this.state;
+        const { announcementData, dataHero, dataGreen, dataPillar,dataSupport, dataSignUp} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -84,7 +90,7 @@ export default class Layout extends React.Component {
                             <BackgroundGreen dataGreen={dataGreen}/>
                             <Pillars dataPillar = {dataPillar}/>
                             <Support dataSupport = {dataSupport}/>
-                            <SignUp />
+                            <SignUp dataSignUp = {dataSignUp}/>
                             
                             <div className="grid">
                                 <div className="grid__item back-to-top-link-wrapper">
