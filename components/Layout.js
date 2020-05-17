@@ -16,7 +16,8 @@ export default class Layout extends React.Component {
         super(props);
     
         this.state = {
-          dataHero: []
+            announcementData: [],
+            dataHero: []
         }
       }
 
@@ -25,16 +26,20 @@ export default class Layout extends React.Component {
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
 
+        base('Announcement').find('rech8uFdriXPNBETt', function(err, record) {
+            if (err) { console.error(err); return; }
+            currentComponent.setState({ announcementData: record.fields })
+        });
+
         base('Hero').find('recnvRpQ3YSvEkiTl', function(err, record) {
             if (err) { console.error(err); return; }
             record.fields.img_src = record.fields[`img_src`][0].url;
-            // console.log('Retrieved', record.fields);
             currentComponent.setState({ dataHero: record.fields })
         });
     }
 
     render () {
-        const { dataHero} = this.state;
+        const { announcementData, dataHero} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -46,7 +51,7 @@ export default class Layout extends React.Component {
                 </Head>
 
                 <div className="page--home">
-                    <Announcement />
+                    <Announcement announcementData={announcementData}/>
 
                     {/* <!-- Header */}
                     <Header />
