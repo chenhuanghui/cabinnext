@@ -45,31 +45,31 @@ const Footer = props => (
                     </div>
                 </div>
 
-                <div class="grid__item grid__item--mobile-up-half grid__item--tablet-up-1">
-                    <h3 class="footer-heading heading--5">Support</h3>
+                <div className="grid__item grid__item--mobile-up-half grid__item--tablet-up-1">
+                    <h3 className="footer-heading heading--5">Support</h3>
 
-                    <div class="gutter-bottom--mobile">
-                        <a class="footer-link" href="https://help.shopify.com/en/questions">24/7 support</a>
-                        <a class="footer-link" href="https://help.shopify.com/en">Shopify Help Center</a>
-                        <a class="footer-link" href="https://community.shopify.com/c/Shopify-Community/ct-p/en">Forums</a>
-                        <a class="footer-link" href="https://shopify.dev">API documentation</a>
-                        <a class="footer-link" href="tools.html">Free tools</a>
-                        <a class="footer-link" href="https://burst.shopify.com">Free stock photos</a>
-                        <a class="footer-link" href="https://exchangemarketplace.com">Websites for sale</a>
-                        <a class="footer-link" href="https://hatchful.shopify.com">Hatchful</a>
+                    <div className="gutter-bottom--mobile">
+                        <a className="footer-link" href="https://help.shopify.com/en/questions">24/7 support</a>
+                        <a className="footer-link" href="https://help.shopify.com/en">Shopify Help Center</a>
+                        <a className="footer-link" href="https://community.shopify.com/c/Shopify-Community/ct-p/en">Forums</a>
+                        <a className="footer-link" href="https://shopify.dev">API documentation</a>
+                        <a className="footer-link" href="tools.html">Free tools</a>
+                        <a className="footer-link" href="https://burst.shopify.com">Free stock photos</a>
+                        <a className="footer-link" href="https://exchangemarketplace.com">Websites for sale</a>
+                        <a className="footer-link" href="https://hatchful.shopify.com">Hatchful</a>
                     </div>
                 </div>
 
-                <div class="grid__item grid__item--mobile-up-half grid__item--tablet-up-1">
-                    <h3 class="footer-heading heading--5">Shopify</h3>
+                <div className="grid__item grid__item--mobile-up-half grid__item--tablet-up-1">
+                    <h3 className="footer-heading heading--5">Shopify</h3>
 
-                    <div class="gutter-bottom--mobile">
-                        <a class="footer-link" href="contact.html">Contact</a>
-                        <a class="footer-link" href="partners.html">Partner program</a>
-                        <a class="footer-link" href="affiliates.html">Affiliate program</a>
-                        <a class="footer-link" href="https://developers.shopify.com">App developers</a>
-                        <a class="footer-link" href="https://investors.shopify.com">Investors</a>
-                        <a class="footer-link" href="blog/topics.html">Blog topics</a>
+                    <div className="gutter-bottom--mobile">
+                        <a className="footer-link" href="contact.html">Contact</a>
+                        <a className="footer-link" href="partners.html">Partner program</a>
+                        <a className="footer-link" href="affiliates.html">Affiliate program</a>
+                        <a className="footer-link" href="https://developers.shopify.com">App developers</a>
+                        <a className="footer-link" href="https://investors.shopify.com">Investors</a>
+                        <a className="footer-link" href="blog/topics.html">Blog topics</a>
                     </div>
                 </div>
 
@@ -81,22 +81,22 @@ const Footer = props => (
         <div className="footer-bottom">
             <div className="grid">
 
-                <div class="grid__item grid__item--tablet-up-2 footer-bottom__social text-center--mobile">
-                    <a class="footer-social__icon" target="_blank" href="https://www.facebook.com/cabinfood.vn">
-                        {/* <svg class="icon" aria-labelledby="icon-modules-social-facebook-55-title" role="img">
+                <div className="grid__item grid__item--tablet-up-2 footer-bottom__social text-center--mobile">
+                    <a className="footer-social__icon" target="_blank" href="https://www.facebook.com/cabinfood.vn">
+                        {/* <svg className="icon" aria-labelledby="icon-modules-social-facebook-55-title" role="img">
                             <title id="icon-modules-social-facebook-55-title">Facebook</title>
                             <use xlink:href="#modules-social-facebook" />
                         </svg> */}
                     </a>
                     
-                    <a class="footer-social__icon" target="_blank" rel="me nofollow noopener" data-ga-event="Social" data-ga-action="Youtube" data-ga-label="Footer" href="https://www.youtube.com/user/shopify">
-                        {/* <svg class="icon" aria-labelledby="icon-modules-social-youtube-57-title" role="img">
+                    <a className="footer-social__icon" target="_blank" rel="me nofollow noopener" data-ga-event="Social" data-ga-action="Youtube" data-ga-label="Footer" href="https://www.youtube.com/user/shopify">
+                        {/* <svg className="icon" aria-labelledby="icon-modules-social-youtube-57-title" role="img">
                             <title id="icon-modules-social-youtube-57-title">YouTube</title>
                             <use xlink:href="#modules-social-youtube" />
                         </svg> */}
                     </a>
-                    <a class="footer-social__icon" target="_blank" rel="me nofollow noopener" data-ga-event="Social" data-ga-action="Instagram" data-ga-label="Footer" href="https://www.instagram.com/shopify/">
-                        {/* <svg class="icon" aria-labelledby="icon-modules-social-instagram-58-title" role="img">
+                    <a className="footer-social__icon" target="_blank" rel="me nofollow noopener" data-ga-event="Social" data-ga-action="Instagram" data-ga-label="Footer" href="https://www.instagram.com/shopify/">
+                        {/* <svg className="icon" aria-labelledby="icon-modules-social-instagram-58-title" role="img">
                             <title id="icon-modules-social-instagram-58-title">Instagram</title>
                             <use xlink:href="#modules-social-instagram" />
                         </svg> */}

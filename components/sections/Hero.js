@@ -4,27 +4,26 @@ const Hero = props => (
       <div className="grid grid--equal-height grid--vertically-centered">
         <div className="grid__item grid__item--desktop-up-half homepage-hero__content">
             <div className="section-heading section-heading--mobile-up-align-left gutter-bottom--reset">
-                <h1 className="section-heading__heading heading--jumbo color-green-80 homepage-hero__heading gutter-bottom">Build an online business—no matter what business you’re&nbsp;in</h1>
+<h1 className="section-heading__heading heading--jumbo color-green-80 homepage-hero__heading gutter-bottom">{props.dataHero.hero_message}</h1>
             </div>
             <div className="homepage-hero__signup">
                 <form className="js-signup-inline marketing-form--inline">
                     <div className="marketing-input-wrapper marketing-input-button-pair">
                         <div className="marketing-input-button-pair__field-wrapper">
                             <label className="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" >Email</label>
-                            <input placeholder="Enter your email address" id="SignupEmail-9305" className="marketing-input-button-pair__input marketing-input marketing-input--floating" />
-                            <button className="marketing-button marketing-form__button marketing-input-button-pair__button">Start free trial</button>
+                            <input placeholder={props.dataHero.hint_input} id="SignupEmail-9305" className="marketing-input-button-pair__input marketing-input marketing-input--floating" />
+                            <button className="marketing-button marketing-form__button marketing-input-button-pair__button">{props.dataHero.btn_title}</button>
                         </div>
                         <span className="marketing-form__messages"></span>
                     </div>
                 </form>
-                <p className="marketing-form__fallback-cta text-center text-minor color-gray-80 text-left">Due to the impact of COVID-19, Shopify is offering an extended 90-day
-        free trial. By entering your email, you agree to receive marketing emails from Shopify.</p>
+                <p className="marketing-form__fallback-cta text-center text-minor color-gray-80 text-left">{props.dataHero.note}</p>
             </div>
         </div>
       </div>
 
     <div className="picture--cover homepage-hero__image">
-        <img className="image" sizes="100vw" srcSet="https://cdn.shopify.com/assets2/home/hero-small-7f6e425db758ac1743c1b556c59648a024300816d7c5afb90bef84f9bb743d95.jpg 1x, https://cdn.shopify.com/assets2/home/hero-large-0d97d3dfd511051e564ccb3ceb07c9ccf7afbeeae38acdbd6c181317a8d31a05.jpg 2x" />
+        <img className="image" sizes="100vw" srcSet={props.dataHero.img_src} />
     </div>
   </div>  
 );
