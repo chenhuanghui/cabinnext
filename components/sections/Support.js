@@ -4,17 +4,17 @@ const Support = props => (
             <div className="grid__item grid__item--tablet-up-two-thirds grid__item--desktop-up-half">
                 <div className="section--help__content">
                     <div className="section-heading section-heading--mobile-up-align-left">
-                        <h2 className="section-heading__heading heading--1 section--help__heading section-heading__heading--regular">Get the help you need, every step of the way</h2>
+<h2 className="section-heading__heading heading--1 section--help__heading section-heading__heading--regular">{props.dataSupport.title}</h2>
                     </div>
                     <div className="grid grid--equal-height">
 
                         <div className="grid__item grid__item--tablet-up-half">
                             <div className="block">
-                                <h3 className="block__heading heading--4">Shopify support</h3>
-                                <p className="block__content">Contact support 24/7, whether you’re troubleshooting issues or looking for business advice.</p>
+                                <h3 className="block__heading heading--4">{props.dataSupport.block1_title}</h3>
+                                <p className="block__content">{props.dataSupport.block1_desc}</p>
                                 <p className="block__cta">
                                     <a className="styled-link" href="contact.html">
-                                        Contact support
+                                        {props.dataSupport.block1_btn_title}
                                         {/* <svg className="icon styled-link__icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-arrow-right" /></svg> */}
                                     </a>
                                 </p>
@@ -23,11 +23,11 @@ const Support = props => (
 
                         <div className="grid__item grid__item--tablet-up-half">
                             <div className="block">
-                                <h3 className="block__heading heading--4">Shopify App Store</h3>
-                                <p className="block__content">Add features and functionality to your business with 3,200+ apps that integrate directly with Shopify.</p>
+                                <h3 className="block__heading heading--4">{props.dataSupport.block2_title}</h3>
+                                <p className="block__content">{props.dataSupport.block2_desc}</p>
                                 <p className="block__cta">
                                     <a className="styled-link" href="#">
-                                        Visit the Shopify App Store
+                                        {props.dataSupport.block2_btn_title}
                                         {/* <svg className="icon styled-link__icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-arrow-right" /></svg> */}
                                     </a>
                                 </p>
@@ -36,11 +36,11 @@ const Support = props => (
 
                         <div className="grid__item grid__item--tablet-up-half">
                             <div className="block section--help__last-block">
-                                <h3 className="block__heading heading--4">Shopify Experts Marketplace</h3>
-                                <p className="block__content">Hire a Shopify expert to help you with everything from store setup to SEO.</p>
+                                <h3 className="block__heading heading--4">{props.dataSupport.block3_title}</h3>
+                                <p className="block__content">{props.dataSupport.block3_desc}</p>
                                 <p className="block__cta">
                                     <a className="styled-link" href="#">
-                                        Explore the Shopify Experts Marketplace
+                                    {props.dataSupport.block3_btn_title}
                                         {/* <svg className="icon styled-link__icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-arrow-right" /></svg> */}
                                     </a>
                                 </p>
