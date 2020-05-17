@@ -56,6 +56,7 @@ export default class Layout extends React.Component {
 
         base('Support').find('recd7z7DUT1yxUIlO', function(err, record) {
             if (err) { console.error(err); return; }
+            record.fields.img_src = record.fields[`img_src`][0].url;
             currentComponent.setState({ dataSupport: record.fields })
         });
     }

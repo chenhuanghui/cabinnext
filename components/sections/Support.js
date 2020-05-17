@@ -50,7 +50,7 @@ const Support = props => (
                 </div>
             </div>
         </div>
-        <img className="picture picture--cover section--help__picture" src="https://cdn.shopify.com/assets2/home/help@desktop-2x-e6e757c00c83bd892a2504feaa929ed30662ef648bf0b13d900154cd924a902d.jpg"/>
+        <img className="picture picture--cover section--help__picture" src={props.dataSupport.img_src}/>
         
     </section>
 );
