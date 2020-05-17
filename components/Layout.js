@@ -17,7 +17,8 @@ export default class Layout extends React.Component {
     
         this.state = {
             announcementData: [],
-            dataHero: []
+            dataHero: [],
+            dataGreen: []
         }
       }
 
@@ -36,10 +37,15 @@ export default class Layout extends React.Component {
             record.fields.img_src = record.fields[`img_src`][0].url;
             currentComponent.setState({ dataHero: record.fields })
         });
+
+        base('GreenBoard').find('recoCx9CKQocUmJos', function(err, record) {
+            if (err) { console.error(err); return; }
+            currentComponent.setState({ dataGreen: record.fields })
+        });
     }
 
     render () {
-        const { announcementData, dataHero} = this.state;
+        const { announcementData, dataHero, dataGreen} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -58,7 +64,7 @@ export default class Layout extends React.Component {
                     <div id="PageContainer">
                         <main id="Main">
                             <Hero dataHero={dataHero}/>
-                            <BackgroundGreen />
+                            <BackgroundGreen dataGreen={dataGreen}/>
                             <Pillars />
                             <Support />
                             <SignUp />
