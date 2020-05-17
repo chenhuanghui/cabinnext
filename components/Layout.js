@@ -18,7 +18,8 @@ export default class Layout extends React.Component {
         this.state = {
             announcementData: [],
             dataHero: [],
-            dataGreen: []
+            dataGreen: [],
+            dataPillar: []
         }
       }
 
@@ -42,10 +43,19 @@ export default class Layout extends React.Component {
             if (err) { console.error(err); return; }
             currentComponent.setState({ dataGreen: record.fields })
         });
+
+        base('Pillars').find('recp3KZyYxHHYMxsE', function(err, record) {
+            if (err) { console.error(err); return; }
+            record.fields.img1_src = record.fields[`img1_src`][0].url;
+            record.fields.img2_src = record.fields[`img2_src`][0].url;
+            record.fields.img3_src = record.fields[`img3_src`][0].url;
+
+            currentComponent.setState({ dataPillar: record.fields })
+        });
     }
 
     render () {
-        const { announcementData, dataHero, dataGreen} = this.state;
+        const { announcementData, dataHero, dataGreen, dataPillar} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -65,7 +75,7 @@ export default class Layout extends React.Component {
                         <main id="Main">
                             <Hero dataHero={dataHero}/>
                             <BackgroundGreen dataGreen={dataGreen}/>
-                            <Pillars />
+                            <Pillars dataPillar = {dataPillar}/>
                             <Support />
                             <SignUp />
                             
