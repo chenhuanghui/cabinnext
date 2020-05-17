@@ -6,7 +6,7 @@ import Hero from './sections/Hero'
 import Pillars from './sections/Pillars'
 import Copyrights from './sections/Copyrights'
 import Footer from './Footer'
-import BackgroundGreen from './sections/BacgroundGreen'
+import BackgroundGreen from './sections/BackgroundGreen'
 import Support from './sections/Support'
 import SignUp from './sections/SignUp'
 import Announcement from './sections/Announcement';
