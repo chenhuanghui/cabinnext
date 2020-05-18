@@ -56,7 +56,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
 
         base('Pillars').find('recp3KZyYxHHYMxsE', function(err, record) {
             if (err) { console.error(err); return; }
-            console.log('pillar',record);
+            // console.log('pillar',record);
             record.fields.pil_block1_img_src = record.fields[`pil_block1_img_src`][0].url;
             record.fields.pil_block2_img_src = record.fields[`pil_block2_img_src`][0].url;
             record.fields.pil_block3_img_src = record.fields[`pil_block3_img_src`][0].url;

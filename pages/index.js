@@ -1,7 +1,7 @@
-import Layout from '../components/LayoutBundleDeliveryRight'
+import LayoutBundleDeliveryRight from '../components/LayoutBundleDeliveryRight'
 
 const Index = props => (
-    <Layout />
+    <LayoutBundleDeliveryRight />
 );
   
 export default Index;
