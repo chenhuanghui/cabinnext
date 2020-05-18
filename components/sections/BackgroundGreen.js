@@ -12,7 +12,7 @@ const BackgroundGreen = props => (
                                                         <div className="block example-merchant__block">
                                                                 <span className="image lazyload-image block__image">
                                                                         <span className="lazyload-image__placeholder">
-                                                                                <img data-sizes="100vw" data-srcset={props.dataGreen.block1_img_src}/>
+                                                                                <img sizes="100vw" srcSet={props.dataGreen.block1_img_src}/>
                                                                         </span>
                                                                 </span>
                                                                 <h3 className="block__heading heading--4 example-merchant__name"><a className="example-merchant__link" >{props.dataGreen.block1_line1}</a></h3>
@@ -23,7 +23,7 @@ const BackgroundGreen = props => (
                                                         <div className="block example-merchant__block">
                                                                 <span className="image lazyload-image block__image">
                                                                         <span className="lazyload-image__placeholder">
-                                                                                <img data-sizes="100vw" data-srcset={props.dataGreen.block2_img_src}/>
+                                                                                <img sizes="100vw" srcSet={props.dataGreen.block2_img_src}/>
                                                                         </span>
                                                                 </span>
                                                                 <h3 className="block__heading heading--4 example-merchant__name"><a className="example-merchant__link" >{props.dataGreen.block2_line1}</a></h3>
@@ -34,7 +34,7 @@ const BackgroundGreen = props => (
                                                         <div className="block example-merchant__block">
                                                                 <span className="image lazyload-image block__image">
                                                                         <span className="lazyload-image__placeholder">
-                                                                                <img data-sizes="100vw" data-srcset={props.dataGreen.block3_img_src}/>
+                                                                                <img sizes="100vw" srcSet={props.dataGreen.block3_img_src}/>
                                                                         </span>
                                                                 </span>
                                                                 <h3 className="block__heading heading--4 example-merchant__name"><a className="example-merchant__link" >{props.dataGreen.block3_line1}</a></h3>
