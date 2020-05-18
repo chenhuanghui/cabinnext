@@ -27,7 +27,7 @@ const BackgroundGreen = props => (
                                                                         </span>
                                                                 </span>
                                                                 <h3 className="block__heading heading--4 example-merchant__name"><a className="example-merchant__link" >{props.dataGreen.block2_line1}</a></h3>
-                                                                <p className="block__content example-merchant__vertical heading--5">{props.dataGreen.block2_line1}</p>
+                                                                <p className="block__content example-merchant__vertical heading--5">{props.dataGreen.block2_line2}</p>
                                                         </div>
                                                 </div>
                                                 <div className="example-merchant">
@@ -38,7 +38,7 @@ const BackgroundGreen = props => (
                                                                         </span>
                                                                 </span>
                                                                 <h3 className="block__heading heading--4 example-merchant__name"><a className="example-merchant__link" >{props.dataGreen.block3_line1}</a></h3>
-                                                                <p className="block__content example-merchant__vertical heading--5">{props.dataGreen.block3_line1}</p>
+                                                                <p className="block__content example-merchant__vertical heading--5">{props.dataGreen.block3_line2}</p>
                                                         </div>
                                                 </div>
                                         </div>

@@ -6,7 +6,7 @@ const PillarItem2 = props => (
             </h3>
             <p className="block__content">{props.dataItem2.pil_block2_desc}</p>
             <a className="pillars__block-link styled-link" href= {props.dataItem2.pil_block2_btn_href}>
-                {props.dataItem2.pil_block_btn_title2}
+                {props.dataItem2.pil_block2_btn_title2}
                 {/* <svg className="icon styled-link__icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-arrow-right" /></svg> */}
             </a>
         </div>
