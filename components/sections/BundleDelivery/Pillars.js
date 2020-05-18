@@ -1,7 +1,7 @@
-import PillarItem1 from '../modules/Pillars/PillarItem1'
-import PillarItem2 from '../modules/Pillars/PillarItem2'
-import PillarItem3 from '../modules/Pillars/PillarItem3'
-import PillarItem4 from '../modules/Pillars/PillarItem4'
+import PillarItem1 from '../../modules/Pillars/PillarItem1'
+import PillarItem2 from '../../modules/Pillars/PillarItem2'
+import PillarItem3 from '../../modules/Pillars/PillarItem3'
+import PillarItem4 from '../../modules/Pillars/PillarItem4'
 
 const Pillars = props => (
     <section className="section homepage-pillars js-waypoint-track">
