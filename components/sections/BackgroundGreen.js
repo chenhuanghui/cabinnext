@@ -53,30 +53,30 @@ const BackgroundGreen = props => (
                                                 <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-quarter">
                                                         <div className="block start-block">
                                                                 {/* <svg class="icon icon--size-small start-block__icon block__icon" aria-hidden="true" focusable="false"> <use xlink:href="#spot-drag-and-drop"></use> </svg> */}
-                                                                <h3 className="block__heading heading--4 color-white">{props.dataGreen.block_title1}</h3>
-                                                                <p className="block__content color-white">{props.dataGreen.block_desc1}</p>
+                                                                <h3 className="block__heading heading--4 color-white">{props.dataGreen.block1_title}</h3>
+                                                                <p className="block__content color-white">{props.dataGreen.block1_desc}</p>
                                                         </div>
                                                 </div>
 
                                                 <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-quarter">
                                                         <div className="block start-block">
                                                                 {/* <svg class="icon icon--size-small start-block__icon block__icon" aria-hidden="true" focusable="false"> <use xlink:href="#spot-online-store"></use> </svg> */}
-                                                                <h3 className="block__heading heading--4 color-white">{props.dataGreen.block_title2}</h3>
-                                                                <p className="block__content color-white">{props.dataGreen.block_desc2}</p>
+                                                                <h3 className="block__heading heading--4 color-white">{props.dataGreen.block2_title}</h3>
+                                                                <p className="block__content color-white">{props.dataGreen.block2_desc}</p>
                                                         </div>
                                                 </div>
                                                 <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-quarter">
                                                         <div className="block start-block">
                                                                 {/* <svg class="icon icon--size-small start-block__icon block__icon" aria-hidden="true" focusable="false"> <use xlink:href="#spot-inventory-synced"></use> </svg> */}
-                                                                <h3 className="block__heading heading--4 color-white">{props.dataGreen.block_title3}</h3>
-                                                                <p className="block__content color-white">{props.dataGreen.block_desc3}</p>
+                                                                <h3 className="block__heading heading--4 color-white">{props.dataGreen.block3_title}</h3>
+                                                                <p className="block__content color-white">{props.dataGreen.block3_desc}</p>
                                                         </div>
                                                 </div>
                                                 <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-quarter">
                                                         <div className="block start-block">
                                                                 {/* <svg class="icon icon--size-small start-block__icon block__icon" aria-hidden="true" focusable="false"> <use xlink:href="#spot-group"></use> </svg> */}
-                                                                <h3 className="block__heading heading--4 color-white">{props.dataGreen.block_title4}</h3>
-                                                                <p className="block__content color-white">{props.dataGreen.block_desc4}</p>
+                                                                <h3 className="block__heading heading--4 color-white">{props.dataGreen.block4_title}</h3>
+                                                                <p className="block__content color-white">{props.dataGreen.block4_desc}</p>
                                                         </div>
                                                 </div>
                                         </div>
