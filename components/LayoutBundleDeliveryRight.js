@@ -10,7 +10,7 @@ import Support from './sections/Support'
 import SignUp from './sections/SignUp'
 import Announcement from './sections/Announcement';
 
-export default class Layout extends React.Component {
+export default class LayoutBundleDeliveryRight extends React.Component {
     constructor(props){
         super(props);
     
