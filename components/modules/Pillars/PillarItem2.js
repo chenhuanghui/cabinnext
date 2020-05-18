@@ -1,5 +1,5 @@
 const PillarItem2 = props => (
-    <div id="Market" className="pillars__wrapper gutter-bottom">
+    <div id="Market Investment" className="pillars__wrapper gutter-bottom">
         <div className="block pillars__block">
             <h3 className="block__heading heading--2">
                 {props.dataItem2.pil_block2_title}

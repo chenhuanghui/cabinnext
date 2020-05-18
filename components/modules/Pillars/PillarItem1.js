@@ -1,5 +1,5 @@
 const PillarItem1 = props => (
-    <div id="Sell" className="pillars__wrapper">
+    <div id="Sell Location" className="pillars__wrapper">
         <div className="pillars__image">
             <div className="demo-video js-demo-video--loading pillars-animation pillars-animation__sell hide--mobile">
                 <div className="demo-video__video-container">

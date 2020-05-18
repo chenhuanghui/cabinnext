@@ -1,5 +1,5 @@
 const PillarItem3 = props => (
-    <div id="Manage" className="pillars__wrapper gutter-bottom">
+    <div id="Manage Operation" className="pillars__wrapper gutter-bottom">
         <div className="online-store-overview__features-ui-illustration pillars__image ui-illustration">
             <span className="lazyload-image__placeholder">
                 <img src={props.dataItem3.pil_block3_img_src}/>
