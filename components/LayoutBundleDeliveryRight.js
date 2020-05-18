@@ -2,13 +2,13 @@ import Head from 'next/head'
 import React from 'react';
 
 import Header from './Header'
+import Announcement from './sections/Announcement';
 import Hero from './sections/Hero'
 import Pillars from './sections/Pillars'
-import Footer from './Footer'
 import BackgroundGreen from './sections/BackgroundGreen'
 import Support from './sections/Support'
 import SignUp from './sections/SignUp'
-import Announcement from './sections/Announcement';
+import Footer from './Footer'
 
 export default class LayoutBundleDeliveryRight extends React.Component {
     constructor(props){
@@ -34,13 +34,13 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             currentComponent.setState({ announcementData: record.fields })
         });
 
-        base('Hero').find('recnvRpQ3YSvEkiTl', function(err, record) {
+        base('BundleDelivery_Hero').find('recnvRpQ3YSvEkiTl', function(err, record) {
             if (err) { console.error(err); return; }
             record.fields.img_src = record.fields[`img_src`][0].url;
             currentComponent.setState({ dataHero: record.fields })
         });
 
-        base('GreenBoard').find('recoCx9CKQocUmJos', function(err, record) {
+        base('BundleDelivery_GreenBoard').find('recoCx9CKQocUmJos', function(err, record) {
             if (err) { console.error(err); return; }
             record.fields.block1_img_src = record.fields[`block1_img_src`][0].url;
             record.fields.block2_img_src = record.fields[`block2_img_src`][0].url;
@@ -54,7 +54,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             currentComponent.setState({ dataGreen: record.fields })
         });
 
-        base('Pillars').find('recp3KZyYxHHYMxsE', function(err, record) {
+        base('BundleDelivery_Pillars').find('recp3KZyYxHHYMxsE', function(err, record) {
             if (err) { console.error(err); return; }
             // console.log('pillar',record);
             record.fields.pil_block1_img_src = record.fields[`pil_block1_img_src`][0].url;
@@ -65,13 +65,13 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             currentComponent.setState({ dataPillar: record.fields })
         });
 
-        base('Support').find('recd7z7DUT1yxUIlO', function(err, record) {
+        base('BundleDelivery_Support').find('recd7z7DUT1yxUIlO', function(err, record) {
             if (err) { console.error(err); return; }
             record.fields.img_src = record.fields[`img_src`][0].url;
             currentComponent.setState({ dataSupport: record.fields })
         });
 
-        base('SignUp').find('recUU9TALWbOif6YA', function(err, record) {
+        base('BundleDelivery_SignUp').find('recUU9TALWbOif6YA', function(err, record) {
             if (err) { console.error(err); return; }
             currentComponent.setState({ dataSignUp: record.fields })
         });
