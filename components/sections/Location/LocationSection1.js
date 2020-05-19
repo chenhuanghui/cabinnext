@@ -27,7 +27,7 @@ const LocationSection1 = props => (
                             <a className="pillar-nav__link link-scroll-to" data-ga-event="sell" data-ga-action="intro" data-ga-label="pos" href="sell.html#PointOfSale">
                                 <p className="text-major pillar-nav__item-name">{props.dataSection1.block2_title}</p>
 
-                                <p className="pillar-nav__item-description color-gray-80">{props.dataSection1.block1_desc}</p>
+                                <p className="pillar-nav__item-description color-gray-80">{props.dataSection1.block2_desc}</p>
 
                                 {/* <svg className="icon pillar-nav__link-icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-down" /></svg> */}
                             </a>

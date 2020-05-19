@@ -17,7 +17,9 @@ export default class LayoutBundleDeliveryRight extends React.Component {
     
         this.state = {
             announcementData: [],
-            dataSection1:[]
+            dataSection1:[],
+            dataSection2:[],
+            dataSection3:[]
         }
     }
     componentDidMount () {
@@ -33,14 +35,22 @@ export default class LayoutBundleDeliveryRight extends React.Component {
         base('Location_Section1').find('rec9iha00rsLc65Gc', function(err, record) {
             if (err) { console.error(err); return; }
             currentComponent.setState({ dataSection1: record.fields })
-            // console.log('Retrieved', record.id);
         });
 
+        base('Location_Section2').find('recCVHUbwyhs02viV', function(err, record) {
+            if (err) { console.error(err); return; }
+            currentComponent.setState({ dataSection2: record.fields })
+        });
+
+        base('Location_Section3').find('recqeqF7dXJnrZSRz', function(err, record) {
+            if (err) { console.error(err); return; }
+            currentComponent.setState({ dataSection3: record.fields })
+        });
     }
 
 
     render (){
-        const { announcementData, dataSection1} = this.state;
+        const { announcementData, dataSection1, dataSection2, dataSection3} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -59,8 +69,8 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                     <div id="PageContainer">
                         <main id="Main">
                             <LocationSection1 dataSection1={dataSection1}/>
-                            <LocationSection2 />
-                            <LocationSection3 />
+                            <LocationSection2 dataSection2={dataSection2}/>
+                            <LocationSection3 dataSection3={dataSection3}/>
                             <LocationSection4 />
                             {/* <LocationSection5 /> */}
                             {/* <LocationSection6 /> */}

@@ -4,9 +4,9 @@ const LocationSection3 = props => (
             <div className="grid__item pillar-section__content-container pillar-section__content-container--flipped pillar-section__content-container--pos">
                 <div className="pillar-section__content">
                     <div className="section-heading section-heading--mobile-up-align-left pillar-section__heading-container">
-                        <p className="section-heading__kicker heading--5 color-black text-left gutter-bottom">Point of sale</p>
-                        <h2 className="section-heading__heading heading--2 text-left gutter-bottom pillar-section__heading">Standout retail experiences</h2>
-                        <p className="section-heading__subhead text-major text-left color-ink-light gutter-bottom--reset">Elevate your in&#8209;person&nbsp;selling.</p>
+                        <p className="section-heading__kicker heading--5 color-black text-left gutter-bottom">{props.dataSection3.line1}</p>
+                        <h2 className="section-heading__heading heading--2 text-left gutter-bottom pillar-section__heading">{props.dataSection3.line2}</h2>
+                        <p className="section-heading__subhead text-major text-left color-ink-light gutter-bottom--reset">{props.dataSection3.line3}</p>
                     </div>
                     <div className="display--mobile pillar-section__cta--pos">
                         <a data-ga-event="sell" data-ga-action="pos" data-ga-label="learn" className="styled-link styled-link--skin-inherit" href="pos.html">
@@ -39,29 +39,29 @@ const LocationSection3 = props => (
 
                     <div className="pillar-section__detail">
                         <h3 className="heading--4">
-                            Better shopping experiences
+                            {props.dataSection3.block1_line1}
                         </h3>
 
                         <p className="gutter-bottom--reset color-ink">
-                            Offer customers personalized service, flexible shopping, and painless&nbsp;returns.
+                            {props.dataSection3.block1_line2}
                         </p>
                     </div>
                     <div className="pillar-section__detail">
                         <h3 className="heading--4">
-                            Easy-to-use hardware and software
+                            {props.dataSection3.block2_line1}
                         </h3>
 
                         <p className="gutter-bottom--reset color-ink">
-                            Simplify store set up and staff&nbsp;training.
+                            {props.dataSection3.block2_line2}
                         </p>
                     </div>
                     <div className="pillar-section__detail">
                         <h3 className="heading--4">
-                            Unified back office
+                            {props.dataSection3.block3_line1}
                         </h3>
 
                         <p className="gutter-bottom--reset color-ink">
-                            Use one tool to manage all your products, inventory, and customers—no matter how many places you sell&nbsp;from.
+                            {props.dataSection3.block3_line2}
                         </p>
                     </div>
 
