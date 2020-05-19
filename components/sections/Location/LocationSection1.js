@@ -3,50 +3,45 @@ const LocationSection1 = props => (
         <div className="grid">
             <div className="grid__item pillar-intro">
                 <div className="section-heading section-heading--tablet-up-align-left pillar-intro__heading-container">
-                    <h1 className="section-heading__heading heading--jumbo text-left color-green-80 pillar-intro__heading"><span className="pillar-intro__highlight">Sell &mdash;</span> everywhere</h1>
+                    <h1 className="section-heading__heading heading--jumbo text-left color-green-80 pillar-intro__heading">
+                        <span className="pillar-intro__highlight">{props.dataSection1.line1}</span> 
+                        {props.dataSection1.line2}
+                    </h1>
 
                     <p className="section-heading__subhead text-left color-gray-80 heading--3 pillar-intro__subhead">
-                        One platform that lets you sell wherever your customers are&mdash;online, in&#8209;person, and everywhere&nbsp;in&#8209;between.
+                        {props.dataSection1.line3}
                     </p>
                 </div>
                 <nav className="pillar-nav" role="navigation" aria-label="In-page navigation">
                     <ul className="pillar-nav__list">
                         <li className="pillar-nav__item">
                             <a className="pillar-nav__link link-scroll-to" data-ga-event="sell" data-ga-action="intro" data-ga-label="online-store" href="sell.html#OnlineStore">
-                                <p className="text-major pillar-nav__item-name">Online store</p>
+                                <p className="text-major pillar-nav__item-name">{props.dataSection1.block1_title}</p>
 
-                                <p className="pillar-nav__item-description color-gray-80">Sell online with an ecommerce&nbsp;website</p>
+                                <p className="pillar-nav__item-description color-gray-80">{props.dataSection1.block1_desc}</p>
 
                                 {/* <svg className="icon pillar-nav__link-icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-down" /></svg> */}
                             </a>
                         </li>
                         <li className="pillar-nav__item">
                             <a className="pillar-nav__link link-scroll-to" data-ga-event="sell" data-ga-action="intro" data-ga-label="pos" href="sell.html#PointOfSale">
-                                <p className="text-major pillar-nav__item-name">Point of sale</p>
+                                <p className="text-major pillar-nav__item-name">{props.dataSection1.block2_title}</p>
 
-                                <p className="pillar-nav__item-description color-gray-80">Sell in-person at retail locations, pop-ups, and&nbsp;more</p>
+                                <p className="pillar-nav__item-description color-gray-80">{props.dataSection1.block1_desc}</p>
 
                                 {/* <svg className="icon pillar-nav__link-icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-down" /></svg> */}
                             </a>
                         </li>
                         <li className="pillar-nav__item">
                             <a className="pillar-nav__link link-scroll-to" data-ga-event="sell" data-ga-action="intro" data-ga-label="buy-button" href="sell.html#BuyButton">
-                                <p className="text-major pillar-nav__item-name">Buy Button</p>
+                                <p className="text-major pillar-nav__item-name">{props.dataSection1.block3_title}</p>
 
-                                <p className="pillar-nav__item-description color-gray-80">Add ecommerce to any website or&nbsp;blog</p>
-
-                                {/* <svg className="icon pillar-nav__link-icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-down" /></svg> */}
-                            </a>
-                        </li>
-                        <li className="pillar-nav__item">
-                            <a className="pillar-nav__link link-scroll-to" data-ga-event="sell" data-ga-action="intro" data-ga-label="sales-channels" href="sell.html#SalesChannels">
-                                <p className="text-major pillar-nav__item-name">Sales channels</p>
-
-                                <p className="pillar-nav__item-description color-gray-80">Sell on social media, online marketplaces, and&nbsp;more</p>
+                                <p className="pillar-nav__item-description color-gray-80">{props.dataSection1.block3_desc}</p>
 
                                 {/* <svg className="icon pillar-nav__link-icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-down" /></svg> */}
                             </a>
                         </li>
+                        
                     </ul>
                 </nav>
 

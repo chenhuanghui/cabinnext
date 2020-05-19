@@ -16,7 +16,8 @@ export default class LayoutBundleDeliveryRight extends React.Component {
         super(props);
     
         this.state = {
-            announcementData: []
+            announcementData: [],
+            dataSection1:[]
         }
     }
     componentDidMount () {
@@ -28,11 +29,18 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             if (err) { console.error(err); return; }
             currentComponent.setState({ announcementData: record.fields })
         });
+
+        base('Location_Section1').find('rec9iha00rsLc65Gc', function(err, record) {
+            if (err) { console.error(err); return; }
+            currentComponent.setState({ dataSection1: record.fields })
+            // console.log('Retrieved', record.id);
+        });
+
     }
 
 
     render (){
-        const { announcementData} = this.state;
+        const { announcementData, dataSection1} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -50,12 +58,12 @@ export default class LayoutBundleDeliveryRight extends React.Component {
 
                     <div id="PageContainer">
                         <main id="Main">
-                            <LocationSection1 />
+                            <LocationSection1 dataSection1={dataSection1}/>
                             <LocationSection2 />
                             <LocationSection3 />
                             <LocationSection4 />
-                            <LocationSection5 />
-                            <LocationSection6 />
+                            {/* <LocationSection5 /> */}
+                            {/* <LocationSection6 /> */}
                             {/* <LocationSection7 /> */}
                         </main>
                         <Footer />
