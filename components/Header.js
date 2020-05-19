@@ -10,10 +10,9 @@ const Header = props => (
                                 </div>
 
                                 <ul className="marketing-nav__items display--expanded-nav">
-                                        <li><button type="button" className="popover__trigger marketing-nav__item marketing-nav__item--primary"> Start </button></li>
-                                        <li><button type="button" className="popover__trigger marketing-nav__item marketing-nav__item--primary"> Sell </button></li>
-                                        <li><button type="button" className="popover__trigger marketing-nav__item marketing-nav__item--primary"> Market </button></li>
-                                        <li><button type="button" className="popover__trigger marketing-nav__item marketing-nav__item--primary"> Manage </button></li>
+                                        <li><button type="button" className="popover__trigger marketing-nav__item marketing-nav__item--primary"> Bundle Delivery Right </button></li>
+                                        <li><button type="button" className="popover__trigger marketing-nav__item marketing-nav__item--primary"> About us </button></li>
+                                        <li><button type="button" className="popover__trigger marketing-nav__item marketing-nav__item--primary"> Store </button></li>
                                 </ul>
                                 <ul className="marketing-nav__items marketing-nav__items--primary-mobile hide--desktop">
                                         <li> <a className="marketing-nav__item marketing-nav__item--primary" href="https://www.shopify.com/login">Log in</a></li>
