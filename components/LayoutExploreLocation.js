@@ -3,9 +3,9 @@ import React from 'react';
 
 import Header from './Header'
 import Announcement from './sections/Announcement';
-import LocationHero from './sections/Location/LocationHero';
-import LocationOnlineStore from './sections/Location/LocationOnlineStore';
-import LocationPointOfSale from './sections/Location/LocationPointOfSale';
+import LocationSection1 from './sections/Location/LocationSection1';
+import LocationSection2 from './sections/Location/LocationSection2';
+import LocationSection3 from './sections/Location/LocationSection3';
 import Footer from './Footer'
 
 export default class LayoutBundleDeliveryRight extends React.Component { 
@@ -47,9 +47,9 @@ export default class LayoutBundleDeliveryRight extends React.Component {
 
                     <div id="PageContainer">
                         <main id="Main">
-                            <LocationHero />
-                            <LocationOnlineStore />
-                            <LocationPointOfSale />
+                            <LocationSection1 />
+                            <LocationSection2 />
+                            <LocationSection3 />
                         </main>
                         <Footer />
                     </div>

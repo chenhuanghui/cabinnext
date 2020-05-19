@@ -1,4 +1,4 @@
-const Pillars = props => (
+const LocationSection1 = props => (
     <section className="section section pillar-intro__wrapper color-black sell-pillar-intro__hero">
         <div className="grid">
             <div className="grid__item pillar-intro">
@@ -105,4 +105,4 @@ const Pillars = props => (
         </div>
     </section>
 );
-export default Pillars;
+export default LocationSection1;

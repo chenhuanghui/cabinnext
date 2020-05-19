@@ -1,4 +1,4 @@
-const PointOfSale = props => (
+const LocationSection3 = props => (
     <section className="section pillar-section__wrapper js-waypoint-track" id="PointOfSale" data-track-name="pos">
         <div className="grid">
             <div className="grid__item pillar-section__content-container pillar-section__content-container--flipped pillar-section__content-container--pos">
@@ -82,7 +82,6 @@ const PointOfSale = props => (
                         <p className="quote__quote gutter-bottom">“Retail is our biggest channel and has proven to be a great launchpad that has allowed us to grow awareness of our brand and build our online presence.”</p>
                         <cite className="quote__cite color-gray-70 gutter-bottom">Catherine | SoYoung</cite>
                     </blockquote>
-                    
                 </div>
             </div>
         </div>
@@ -102,4 +101,4 @@ const PointOfSale = props => (
         `}</style>
     </section>
 );
-export default PointOfSale;
+export default LocationSection3;
