@@ -10,7 +10,7 @@ const LocationSection2 = props => (
                     </div>
                     <div className="display--mobile pillar-section__cta--online-store">
                         <a data-ga-event="sell" data-ga-action="online-store" data-ga-label="learn" className="styled-link styled-link--skin-inherit" href="online.html">
-                            Learn about online store
+                            {props.dataSection2.btn_title}
                             {/* <svg className="icon styled-link__icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-arrow-right" /></svg> */}
                         </a>
                     </div>
@@ -56,7 +56,7 @@ const LocationSection2 = props => (
 
                     <div className="hide--mobile pillar-section__cta--online-store">
                         <a data-ga-event="sell" data-ga-action="online-store" data-ga-label="learn" className="styled-link styled-link--skin-inherit" href="online.html">
-                            Learn about online store
+                            {props.dataSection2.btn_title}
                             {/* <svg className="icon styled-link__icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-arrow-right" /></svg> */}
                         </a>
                     </div>
