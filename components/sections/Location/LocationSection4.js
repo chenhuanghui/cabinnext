@@ -4,9 +4,9 @@ const LocationSection4 = props => (
             <div className="grid__item pillar-section__content-container pillar-section__content-container--buy-button">
                 <div className="pillar-section__content">
                     <div className="section-heading section-heading--mobile-up-align-left pillar-section__heading-container">
-                        <p className="section-heading__kicker heading--5 color-black text-left gutter-bottom">Flexible Buy Button</p>
-                        <h2 className="section-heading__heading heading--2 text-left gutter-bottom pillar-section__heading">Ecommerce anywhere</h2>
-                        <p className="section-heading__subhead text-major text-left color-ink-light gutter-bottom--reset">Transform any existing website or blog into an online&nbsp;store.</p>
+                        <p className="section-heading__kicker heading--5 color-black text-left gutter-bottom">{props.dataSection4.line1}</p>
+                        <h2 className="section-heading__heading heading--2 text-left gutter-bottom pillar-section__heading">{props.dataSection4.line2}</h2>
+                        <p className="section-heading__subhead text-major text-left color-ink-light gutter-bottom--reset">{props.dataSection4.line3}</p>
                     </div>
                     <div className="display--mobile pillar-section__cta--buy-button">
                         <a data-ga-event="sell" data-ga-action="buy-button" data-ga-label="learn" className="styled-link styled-link--skin-inherit" href="buy-button.html">
@@ -21,29 +21,29 @@ const LocationSection4 = props => (
 
                     <div className="pillar-section__detail">
                         <h3 className="heading--4">
-                            Embedded products
+                            {props.dataSection4.block1_line1}
                         </h3>
 
                         <p className="gutter-bottom--reset color-ink">
-                            Put your products where you want them, including on Squarespace and&nbsp;WordPress.
+                            {props.dataSection4.block1_line2}
                         </p>
                     </div>
                     <div className="pillar-section__detail">
                         <h3 className="heading--4">
-                            Secure checkout
+                            {props.dataSection4.block2_line1}
                         </h3>
 
                         <p className="gutter-bottom--reset color-ink">
-                            Add a mobile friendly, secure checkout experience to your&nbsp;site.
+                            {props.dataSection4.block2_line2}
                         </p>
                     </div>
                     <div className="pillar-section__detail">
                         <h3 className="heading--4">
-                            Customizable button
+                            {props.dataSection4.block3_line1}
                         </h3>
 
                         <p className="gutter-bottom--reset color-ink">
-                            Create a custom shopping experience for an existing website or&nbsp;blog.
+                            {props.dataSection4.block3_line2}
                         </p>
                     </div>
 

@@ -19,7 +19,8 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             announcementData: [],
             dataSection1:[],
             dataSection2:[],
-            dataSection3:[]
+            dataSection3:[],
+            dataSection4:[]
         }
     }
     componentDidMount () {
@@ -46,11 +47,17 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             if (err) { console.error(err); return; }
             currentComponent.setState({ dataSection3: record.fields })
         });
+
+        base('Location_Section4').find('recAQ6i5wIBBCC6Oa', function(err, record) {
+            if (err) { console.error(err); return; }
+            currentComponent.setState({ dataSection4: record.fields })
+        });
+        
     }
 
 
     render (){
-        const { announcementData, dataSection1, dataSection2, dataSection3} = this.state;
+        const { announcementData, dataSection1, dataSection2, dataSection3, dataSection4} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -71,7 +78,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                             <LocationSection1 dataSection1={dataSection1}/>
                             <LocationSection2 dataSection2={dataSection2}/>
                             <LocationSection3 dataSection3={dataSection3}/>
-                            <LocationSection4 />
+                            <LocationSection4 dataSection4={dataSection4}/>
                             {/* <LocationSection5 /> */}
                             {/* <LocationSection6 /> */}
                             {/* <LocationSection7 /> */}
