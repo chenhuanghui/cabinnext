@@ -82,14 +82,7 @@ const PointOfSale = props => (
                         <p className="quote__quote gutter-bottom">“Retail is our biggest channel and has proven to be a great launchpad that has allowed us to grow awareness of our brand and build our online presence.”</p>
                         <cite className="quote__cite color-gray-70 gutter-bottom">Catherine | SoYoung</cite>
                     </blockquote>
-                    <span className="image lazyload-image quote__logo gutter-bottom--half">
-                        <span className="lazyload-image__placeholder">
-                            <img
-                                sizes="100vw"
-                                src="https://cdn.shopify.com/assets2/pillar/sell/logos/soyoung-large-6e9fdedfe77c3c380236bc253c04eec7b8c127a7c775e099011dfe88bc50b5f8.png"
-                            />
-                        </span>
-                    </span>
+                    
                 </div>
             </div>
         </div>
