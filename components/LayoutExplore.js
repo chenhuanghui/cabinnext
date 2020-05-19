@@ -3,6 +3,8 @@ import React from 'react';
 
 import Header from './Header'
 import Announcement from './sections/Announcement';
+import LocationHero from './sections/Location/LocationHero';
+import LocationOnlineStore from './sections/Location/LocationOnlineStore';
 import Footer from './Footer'
 
 export default class LayoutBundleDeliveryRight extends React.Component { 
@@ -34,6 +36,8 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                     <meta name="author" content="CabinFood" />
                     <link rel="stylesheet" media="all" href="https://cdn.shopify.com/assets2/masterbrand-12d9bf8602c9e16769a8ff8a1177e4238d9413d73d9dd7678796641e912282fa.css" />
                     <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/home/index-72e8f7e85d965b49c9307d648b07104daf053fb6e3c5fafc4e3c20c0abd96957.css" />
+                    <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/pillar/sell-914ee38ae73192ea7d1625dca6277b4c70d1f15f78074de4b2c354ce2371afbe.css" />
+                    
                     <title>CabinFood | easy to Start, Fast to grow</title>
                 </Head>
                 <div className="page--pillar-sell">
@@ -42,6 +46,8 @@ export default class LayoutBundleDeliveryRight extends React.Component {
 
                     <div id="PageContainer">
                         <main id="Main">
+                            <LocationHero />
+                            <LocationOnlineStore />
                         </main>
                         <Footer />
                     </div>
