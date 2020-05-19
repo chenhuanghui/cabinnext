@@ -1,4 +1,4 @@
-const Pillars = props => (
+const OnlineStore = props => (
     <section className="section pillar-section__wrapper js-waypoint-track" id="OnlineStore" data-track-name="online-store">
         <div className="grid">
             <div className="grid__item pillar-section__content-container pillar-section__content-container--online-store">
@@ -100,4 +100,4 @@ const Pillars = props => (
         `}</style>
     </section>
 );
-export default Pillars;
+export default OnlineStore;

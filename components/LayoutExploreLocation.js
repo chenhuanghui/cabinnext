@@ -5,6 +5,7 @@ import Header from './Header'
 import Announcement from './sections/Announcement';
 import LocationHero from './sections/Location/LocationHero';
 import LocationOnlineStore from './sections/Location/LocationOnlineStore';
+import LocationPointOfSale from './sections/Location/LocationPointOfSale';
 import Footer from './Footer'
 
 export default class LayoutBundleDeliveryRight extends React.Component { 
@@ -48,6 +49,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                         <main id="Main">
                             <LocationHero />
                             <LocationOnlineStore />
+                            <LocationPointOfSale />
                         </main>
                         <Footer />
                     </div>
