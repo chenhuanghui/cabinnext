@@ -6,6 +6,9 @@ import Announcement from './sections/Announcement';
 import LocationSection1 from './sections/Location/LocationSection1';
 import LocationSection2 from './sections/Location/LocationSection2';
 import LocationSection3 from './sections/Location/LocationSection3';
+import LocationSection4 from './sections/Location/LocationSection4';
+import LocationSection5 from './sections/Location/LocationSection5';
+import LocationSection6 from './sections/Location/LocationSection6';
 import Footer from './Footer'
 
 export default class LayoutBundleDeliveryRight extends React.Component { 
@@ -50,6 +53,10 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                             <LocationSection1 />
                             <LocationSection2 />
                             <LocationSection3 />
+                            <LocationSection4 />
+                            <LocationSection5 />
+                            <LocationSection6 />
+                            {/* <LocationSection7 /> */}
                         </main>
                         <Footer />
                     </div>
