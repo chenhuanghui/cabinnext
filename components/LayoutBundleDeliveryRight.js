@@ -3,11 +3,11 @@ import React from 'react';
 
 import Header from './Header'
 import Announcement from './sections/Announcement';
-import Hero from './sections/BundleDelivery/Hero'
-import Pillars from './sections/BundleDelivery/Pillars'
-import BackgroundGreen from './sections/BundleDelivery/BackgroundGreen'
-import Support from './sections/BundleDelivery/Support'
-import SignUp from './sections/BundleDelivery/SignUp'
+import Hero from './sections/Master/Hero'
+import Pillars from './sections/Master/Pillars'
+import BackgroundGreen from './sections/Master/BackgroundGreen'
+import Support from './sections/Master/Support'
+import SignUp from './sections/Master/SignUp'
 import Footer from './Footer'
 
 export default class LayoutBundleDeliveryRight extends React.Component {
