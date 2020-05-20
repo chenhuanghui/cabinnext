@@ -198,7 +198,7 @@ export default class Header extends React.Component {
                                                 <nav aria-label="Main Navigation">
                                                         <ul className="drawer__items drawer__items--primary" id="DrawerNavPrimaryAccordion">
                                                                 <li className="accordion-item">
-                                                                        <a href="#" className="drawer__item drawer__item--primary accordion-link">
+                                                                        <a href="/location" className="drawer__item drawer__item--primary accordion-link">
                                                                                 Phát triển điểm kinh doanh
                                                                                 <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
                                                                                         <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
