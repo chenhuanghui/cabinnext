@@ -1296,7 +1296,7 @@ main p > a:active {
 }
 .marketing-button:hover,
 .marketing-button:focus {
-    background-color: #004c3f;
+    background-color: #004C3F;
     color: #ffffff;
 }
 .marketing-button:active {
@@ -1409,9 +1409,9 @@ main p > a:active {
     color: #ffffff;
 }
 .marketing-button--secondary:active {
-    background-color: #004c3f;
+    background-color: #004C3F;
     color: #ffffff;
-    border-color: #004c3f;
+    border-color: #004C3F;
 }
 .marketing-button--secondary:hover {
     box-shadow: none;
@@ -1529,7 +1529,7 @@ main p > a:active {
     color: #008060;
 }
 .marketing-button--skin-reset:active {
-    color: #004c3f;
+    color: #004C3F;
 }
 .marketing-button--hover-invert {
     border-color: #008060;
@@ -4532,10 +4532,10 @@ body > .signup--hidden {
     color: #b07d12;
 }
 .background-yellow-70 {
-    background-color: #906509;
+    background-color: #004C3F;
 }
 .color-yellow-70 {
-    color: #906509;
+    color: #004C3F;
 }
 .background-yellow-80 {
     background-color: #593d02;
@@ -4598,10 +4598,10 @@ body > .signup--hidden {
     color: #008060;
 }
 .background-green-80 {
-    background-color: #004c3f;
+    background-color: #004C3F;
 }
 .color-green-80 {
-    color: #004c3f;
+    color: #004C3F;
 }
 .background-green-90 {
     background-color: #002e25;
@@ -4832,10 +4832,10 @@ body > .signup--hidden {
     color: #008060;
 }
 .background-forest {
-    background-color: #004c3f;
+    background-color: #004C3F;
 }
 .color-forest {
-    color: #004c3f;
+    color: #004C3F;
 }
 .background-teal {
     background-color: #90dfd6;
@@ -5233,16 +5233,16 @@ body > .signup--hidden {
 .marketing-button--skin-light-forest {
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
     background-color: #ffffff;
-    color: #004c3f;
+    color: #004C3F;
 }
 .marketing-button--skin-light-forest:hover,
 .marketing-button--skin-light-forest:focus {
     background-color: #f0f0f0;
-    color: #004c3f;
+    color: #004C3F;
 }
 .marketing-button--skin-light-forest:active {
     background-color: #e6e6e6;
-    color: #004c3f;
+    color: #004C3F;
 }
 .marketing-button--skin-light-forest:hover {
     box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.25);
@@ -5274,15 +5274,15 @@ body > .signup--hidden {
     box-shadow: 0 11px 30px 0 #e8e9eb;
 }
 .featured-testimonial__content {
-    background-color: #004c3f;
+    background-color: #004C3F;
 }
 .back-to-top-link {
-    color: #004c3f;
+    color: #004C3F;
 }
 .back-to-top-link:hover,
 .back-to-top-link:active,
 .back-to-top-link:focus {
-    color: #004c3f;
+    color: #004C3F;
 }
 .secondary-nav--skin-light {
     background-color: #effcfa;

@@ -17,28 +17,22 @@ const LocationSection1 = props => (
                         <li className="pillar-nav__item">
                             <a className="pillar-nav__link link-scroll-to" data-ga-event="sell" data-ga-action="intro" data-ga-label="online-store" href="sell.html#OnlineStore">
                                 <p className="text-major pillar-nav__item-name">{props.dataSection1.block1_title}</p>
-
                                 <p className="pillar-nav__item-description color-gray-80">{props.dataSection1.block1_desc}</p>
-
-                                {/* <svg className="icon pillar-nav__link-icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-down" /></svg> */}
+                                <svg className="icon pillar-nav__link-icon" xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" viewBox="0 0 10.289 6.563"><path d="M5.212 6.563L0 1.423 1.404 0l3.788 3.735L8.865.01l1.424 1.404" /></svg>
                             </a>
                         </li>
                         <li className="pillar-nav__item">
                             <a className="pillar-nav__link link-scroll-to" data-ga-event="sell" data-ga-action="intro" data-ga-label="pos" href="sell.html#PointOfSale">
                                 <p className="text-major pillar-nav__item-name">{props.dataSection1.block2_title}</p>
-
                                 <p className="pillar-nav__item-description color-gray-80">{props.dataSection1.block2_desc}</p>
-
-                                {/* <svg className="icon pillar-nav__link-icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-down" /></svg> */}
+                                <svg className="icon pillar-nav__link-icon" xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" viewBox="0 0 10.289 6.563"><path d="M5.212 6.563L0 1.423 1.404 0l3.788 3.735L8.865.01l1.424 1.404" /></svg>
                             </a>
                         </li>
                         <li className="pillar-nav__item">
                             <a className="pillar-nav__link link-scroll-to" data-ga-event="sell" data-ga-action="intro" data-ga-label="buy-button" href="sell.html#BuyButton">
                                 <p className="text-major pillar-nav__item-name">{props.dataSection1.block3_title}</p>
-
                                 <p className="pillar-nav__item-description color-gray-80">{props.dataSection1.block3_desc}</p>
-
-                                {/* <svg className="icon pillar-nav__link-icon" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-down" /></svg> */}
+                                <svg className="icon pillar-nav__link-icon" xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" viewBox="0 0 10.289 6.563"><path d="M5.212 6.563L0 1.423 1.404 0l3.788 3.735L8.865.01l1.424 1.404" /></svg>
                             </a>
                         </li>
                         
