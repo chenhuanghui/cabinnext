@@ -172,54 +172,54 @@ export default class Header extends React.Component {
                                                 </div>
 
                                                 <nav aria-label="Main Navigation">
-                                                        <ul class="drawer__items drawer__items--primary" id="DrawerNavPrimaryAccordion">
-                                                                <li class="accordion-item">
-                                                                        <a href="#" class="drawer__item drawer__item--primary accordion-link">
+                                                        <ul className="drawer__items drawer__items--primary" id="DrawerNavPrimaryAccordion">
+                                                                <li className="accordion-item">
+                                                                        <a href="#" className="drawer__item drawer__item--primary accordion-link">
                                                                                 Phát triển điểm kinh doanh
-                                                                                <svg class="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
+                                                                                <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
                                                                                         <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
                                                                                 </svg>
                                                                         </a>
                                                                 </li>
-                                                                <li class="accordion-item">
-                                                                        <a href="#" class="drawer__item drawer__item--primary accordion-link">
+                                                                <li className="accordion-item">
+                                                                        <a href="#" className="drawer__item drawer__item--primary accordion-link">
                                                                                 Đầu tư hiệu quả
-                                                                                <svg class="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
+                                                                                <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
                                                                                         <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
                                                                                 </svg>
                                                                         </a>
                                                                 </li>
-                                                                <li class="accordion-item">
-                                                                        <a href="#" class="drawer__item drawer__item--primary accordion-link">
+                                                                <li className="accordion-item">
+                                                                        <a href="#" className="drawer__item drawer__item--primary accordion-link">
                                                                                 Vận hành tối ưu
-                                                                                <svg class="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
+                                                                                <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
                                                                                         <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
                                                                                 </svg>
                                                                         </a>
                                                                 </li>
-                                                                <li class="accordion-item">
-                                                                        <a href="#" class="drawer__item drawer__item--primary accordion-link">
+                                                                <li className="accordion-item">
+                                                                        <a href="#" className="drawer__item drawer__item--primary accordion-link">
                                                                                 Xây dựng khách hàng
-                                                                                <svg class="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
+                                                                                <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
                                                                                         <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
                                                                                 </svg>
                                                                         </a>
                                                                 </li>
                                                         </ul>
 
-                                                        <ul class="drawer__items drawer__items--user" id="DrawerNavSecondaryAccordion">
-                                                                <li><a href="#" class="drawer__item">Khám phá điểm kinh doanh</a></li>
-                                                                <li><a href="#" class="drawer__item"> Blog</a></li>
-                                                                {/*<li class="accordion-item">
-                                                                        <button name="button" type="button" class="drawer__item accordion-link">
-                                                                        Learn<svg class="icon marketing-nav__arrow" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-down" /></svg>
+                                                        <ul className="drawer__items drawer__items--user" id="DrawerNavSecondaryAccordion">
+                                                                <li><a href="#" className="drawer__item">Khám phá điểm kinh doanh</a></li>
+                                                                <li><a href="#" className="drawer__item"> Blog</a></li>
+                                                                {/*<li className="accordion-item">
+                                                                        <button name="button" type="button" className="drawer__item accordion-link">
+                                                                        Learn<svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-down" /></svg>
                                                                         </button>
-                                                                        <div class="drawer__items-wrapper accordion-content">
-                                                                        <ul class="drawer__items drawer__items--nested">
+                                                                        <div className="drawer__items-wrapper accordion-content">
+                                                                        <ul className="drawer__items drawer__items--nested">
                                                                                 <li>
                                                                                 <a
                                                                                         href="https://help.shopify.com/"
-                                                                                        class="drawer__item"
+                                                                                        className="drawer__item"
                                                                                         data-ga-event="Main Nav"
                                                                                         data-ga-action="Help Center"
                                                                                         data-trekkie-event="Main Nav"
@@ -230,11 +230,11 @@ export default class Header extends React.Component {
                                                                                         Help Center
                                                                                 </a>
                                                                                 </li>
-                                                                                <li><a href="blog.html" class="drawer__item" data-ga-event="Main Nav" data-ga-action="Blog" data-trekkie-event="Main Nav" data-trekkie-action="Blog" data-trekkie-id="Main Nav Blog">Blog</a></li>
+                                                                                <li><a href="blog.html" className="drawer__item" data-ga-event="Main Nav" data-ga-action="Blog" data-trekkie-event="Main Nav" data-trekkie-action="Blog" data-trekkie-id="Main Nav Blog">Blog</a></li>
                                                                                 <li>
                                                                                 <a
                                                                                         href="https://www.shopifycompass.com"
-                                                                                        class="drawer__item"
+                                                                                        className="drawer__item"
                                                                                         data-ga-event="Main Nav"
                                                                                         data-ga-action="Compass"
                                                                                         data-trekkie-event="Main Nav"
@@ -248,7 +248,7 @@ export default class Header extends React.Component {
                                                                                 <li>
                                                                                 <a
                                                                                         href="blog/topics/guides.html"
-                                                                                        class="drawer__item"
+                                                                                        className="drawer__item"
                                                                                         data-ga-event="Main Nav"
                                                                                         data-ga-action="Guides"
                                                                                         data-trekkie-event="Main Nav"
@@ -261,7 +261,7 @@ export default class Header extends React.Component {
                                                                                 <li>
                                                                                 <a
                                                                                         href="https://community.shopify.com/c/Shopify-Community/ct-p/en"
-                                                                                        class="drawer__item"
+                                                                                        className="drawer__item"
                                                                                         data-ga-event="Main Nav"
                                                                                         data-ga-action="Forums"
                                                                                         data-trekkie-event="Main Nav"
@@ -273,19 +273,19 @@ export default class Header extends React.Component {
                                                                                 </a>
                                                                                 </li>
                                                                                 <li>
-                                                                                <a href="tools.html" class="drawer__item" data-ga-event="Main Nav" data-ga-action="Free tools" data-trekkie-event="Main Nav" data-trekkie-action="Free tools" data-trekkie-id="Main Nav Free tools">
+                                                                                <a href="tools.html" className="drawer__item" data-ga-event="Main Nav" data-ga-action="Free tools" data-trekkie-event="Main Nav" data-trekkie-action="Free tools" data-trekkie-id="Main Nav Free tools">
                                                                                         Free tools
                                                                                 </a>
                                                                                 </li>
                                                                                 <li>
-                                                                                <a href="podcasts.html" class="drawer__item" data-ga-event="Main Nav" data-ga-action="Podcasts" data-trekkie-event="Main Nav" data-trekkie-action="Podcasts" data-trekkie-id="Main Nav Podcasts">
+                                                                                <a href="podcasts.html" className="drawer__item" data-ga-event="Main Nav" data-ga-action="Podcasts" data-trekkie-event="Main Nav" data-trekkie-action="Podcasts" data-trekkie-id="Main Nav Podcasts">
                                                                                         Podcasts
                                                                                 </a>
                                                                                 </li>
                                                                                 <li>
                                                                                 <a
                                                                                         href="encyclopedia.html"
-                                                                                        class="drawer__item"
+                                                                                        className="drawer__item"
                                                                                         data-ga-event="Main Nav"
                                                                                         data-ga-action="Business encyclopedia"
                                                                                         data-trekkie-event="Main Nav"
@@ -299,14 +299,14 @@ export default class Header extends React.Component {
                                                                         </div>
                                                                 </li>
                                                                 <li>
-                                                                        <a href="https://www.shopify.com/login" class="drawer__item" data-ga-event="Main Nav" data-ga-action="Login" data-trekkie-event="Main Nav" data-trekkie-action="Login" data-trekkie-id="Main Nav Login">
+                                                                        <a href="https://www.shopify.com/login" className="drawer__item" data-ga-event="Main Nav" data-ga-action="Login" data-trekkie-event="Main Nav" data-trekkie-action="Login" data-trekkie-id="Main Nav Login">
                                                                         Log in
                                                                         </a>
                                                                 </li>
                                                                 <li>
-                                                                        <form class="button_to" method="post" action="https://accounts.shopify.com/store-signup/setup">
+                                                                        <form className="button_to" method="post" action="https://accounts.shopify.com/store-signup/setup">
                                                                         <input
-                                                                                class="js-open-signup drawer__item drawer__item--signup marketing-nav__button marketing-button marketing-button--small"
+                                                                                className="js-open-signup drawer__item drawer__item--signup marketing-nav__button marketing-button marketing-button--small"
                                                                                 data-ga-event="Main Nav"
                                                                                 data-ga-action="Get Started"
                                                                                 data-trekkie-event="Main Nav"
@@ -319,17 +319,17 @@ export default class Header extends React.Component {
                                                                 </li> */}
                                                         </ul>
 
-                                                        <ul class="drawer__items drawer__items--corporate">
-                                                                <li><a href="#" class="drawer__item">Về CabinFood</a></li>
-                                                                {/* <li><a href="about.html" class="drawer__item">About</a></li>
-                                                                <li><a href="careers.html" class="drawer__item">Careers</a></li>
-                                                                <li><a href="https://news.shopify.com" class="drawer__item">Press and Media</a></li>
+                                                        <ul className="drawer__items drawer__items--corporate">
+                                                                <li><a href="#" className="drawer__item">Về CabinFood</a></li>
+                                                                {/* <li><a href="about.html" className="drawer__item">About</a></li>
+                                                                <li><a href="careers.html" className="drawer__item">Careers</a></li>
+                                                                <li><a href="https://news.shopify.com" className="drawer__item">Press and Media</a></li>
                                                                 <li>
-                                                                        <a href="plus.html" class="drawer__item">
-                                                                        Shopify Plus <svg class="icon marketing-nav__external-indicator" aria-hidden="true" focusable="false"><use xlink:href="#modules-nav-external-indicator" /></svg>
+                                                                        <a href="plus.html" className="drawer__item">
+                                                                        Shopify Plus <svg className="icon marketing-nav__external-indicator" aria-hidden="true" focusable="false"><use xlink:href="#modules-nav-external-indicator" /></svg>
                                                                         </a>
                                                                 </li>
-                                                                <li><a href="sitemap.html" class="drawer__item">Sitemap</a></li> */}
+                                                                <li><a href="sitemap.html" className="drawer__item">Sitemap</a></li> */}
                                                         </ul>
                                                 </nav>
                                         </div>

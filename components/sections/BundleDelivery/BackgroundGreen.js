@@ -90,6 +90,7 @@ const BackgroundGreen = props => (
 
 
                 <style jsx>{`
+                        .section-heading__heading {font-weight:400}
                         .image.lazyload-image.block__image{max-width: 267px; max-height: 472px;}
                         .lazyload-image__placeholder{padding-bottom: 176.779%}
                         .example-merchants {grid-template-columns: repeat(3, 1fr); justify-items: center;}
