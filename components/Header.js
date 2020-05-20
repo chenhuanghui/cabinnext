@@ -45,52 +45,52 @@ export default class Header extends React.Component {
                                                                                 <div className="popover__content">
                                                                                         <ul className="popover__list">
                                                                                                 <li>
-                                                                                                        <a href="#" className="marketing-nav__item marketing-nav__item--separated marketing-nav__item--child">
+                                                                                                        <p className="marketing-nav__item marketing-nav__item--separated marketing-nav__item--child">
                                                                                                         Bundle Delivery Right
-                                                                                                        </a>
+                                                                                                        </p>
                                                                                                 </li>
                                                                                                 <li>
                                                                                                         <div className="popover-wrapper js-popover-flyout popover-wrapper--flyout" data-position="right" data-align="top">
-                                                                                                        <button className="popover__trigger marketing-nav__item marketing-nav__item--child"
-                                                                                                        >
-                                                                                                                Phát triển điểm kinh doanh
-                                                                                                                <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
-                                                                                                                        <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
-                                                                                                                </svg>
-                                                                                                        </button>
+                                                                                                                <a href="/location" className="popover__trigger marketing-nav__item marketing-nav__item--child">
+                                                                                                                        Phát triển điểm kinh doanh
+                                                                                                                        <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
+                                                                                                                                <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
+                                                                                                                        </svg>
+
+                                                                                                                </a>
                                                                                                         </div>
                                                                                                 </li>
                                                                                                 <li>
                                                                                                         <div className="popover-wrapper js-popover-flyout popover-wrapper--flyout" data-position="right" data-align="top">
-                                                                                                        <button className="popover__trigger marketing-nav__item marketing-nav__item--child"
-                                                                                                        >
-                                                                                                                Đầu tư hiệu quả cao
-                                                                                                                <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
-                                                                                                                        <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
-                                                                                                                </svg>
-                                                                                                        </button>
+                                                                                                                <a href="#" className="popover__trigger marketing-nav__item marketing-nav__item--child">
+                                                                                                                        Đầu tư hiệu quả
+                                                                                                                        <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
+                                                                                                                                <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
+                                                                                                                        </svg>
+
+                                                                                                                </a>
                                                                                                         </div>
                                                                                                 </li>
                                                                                                 <li>
                                                                                                         <div className="popover-wrapper js-popover-flyout popover-wrapper--flyout" data-position="right" data-align="top">
-                                                                                                        <button className="popover__trigger marketing-nav__item marketing-nav__item--child"
-                                                                                                        >
-                                                                                                                Vận hành tối ưu
-                                                                                                                <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
-                                                                                                                        <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
-                                                                                                                </svg>
-                                                                                                        </button>
+                                                                                                                <a href="#" className="popover__trigger marketing-nav__item marketing-nav__item--child">
+                                                                                                                        Vận hành tối ưu
+                                                                                                                        <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
+                                                                                                                                <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
+                                                                                                                        </svg>
+
+                                                                                                                </a>
                                                                                                         </div>
                                                                                                 </li>
                                                                                                 <li>
                                                                                                         <div className="popover-wrapper js-popover-flyout popover-wrapper--flyout" data-position="right" data-align="top">
-                                                                                                        <button className="popover__trigger marketing-nav__item marketing-nav__item--child"
-                                                                                                        >
-                                                                                                                Xây dựng khách hàng
-                                                                                                                <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
-                                                                                                                        <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
-                                                                                                                </svg>
-                                                                                                        </button>
+                                                                                                                <a href="#" className="popover__trigger marketing-nav__item marketing-nav__item--child">
+                                                                                                                        Xây dựng khách hàng
+                                                                                                                        <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
+                                                                                                                                <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
+                                                                                                                        </svg>
+
+                                                                                                                </a>
                                                                                                         </div>
                                                                                                 </li>
                                                                                         </ul>
