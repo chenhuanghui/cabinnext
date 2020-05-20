@@ -12,6 +12,7 @@ import LocationSection6 from './sections/Location/LocationSection6';
 import Footer from './Footer'
 
 export default class LayoutBundleDeliveryRight extends React.Component { 
+    
     constructor(props){
         super(props);
     
@@ -52,6 +53,8 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             if (err) { console.error(err); return; }
             currentComponent.setState({ dataSection4: record.fields })
         });
+
+
         
     }
 
@@ -67,7 +70,6 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                     <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/home/index-72e8f7e85d965b49c9307d648b07104daf053fb6e3c5fafc4e3c20c0abd96957.css" />
                     <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/pillar/sell-914ee38ae73192ea7d1625dca6277b4c70d1f15f78074de4b2c354ce2371afbe.css" />
                     <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/pillar/base-81be2467a53cebe8f831d8a89bc6e992e93d27cd83dd61f67fab85bbebc6cb41.css" />
-                    
                     
                     <title>CabinFood | easy to Start, Fast to grow</title>
                 </Head>

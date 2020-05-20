@@ -1,12 +1,24 @@
+const webpack = require('webpack')
+
 module.exports = {
-    webpack(config) {
-      config.module.rules.push({
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        loader: 'file-loader',
-        options: {
-          outputPath: 'images',
-        },
-      });
-      return config;
+    webpack: (config, { dev }) => {
+        config.plugins.push(
+            new webpack.ProvidePlugin({
+                '$': 'jquery',
+                'jQuery': 'jquery',
+                
+            })
+        )
+
+        config.module.rules.push({
+            test: /\.svg$/,
+            issuer: {
+              test: /\.(js|ts)x?$/,
+            },
+            use: ['@svgr/webpack'],
+        });
+
+        
+        return config
     }
-  };
+}
