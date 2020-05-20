@@ -98,14 +98,34 @@ export default class Header extends React.Component {
                                                                         </div>
                                                                 </div>
                                                         </li>
+                                                        {/* <li>
+                                                                <div className="popover-wrapper js-popover-dropdown popover-wrapper--dropdown" data-position="bottom" data-align="left" >
+                                                                        <button className="popover__trigger marketing-nav__item marketing-nav__item--primary"> 
+                                                                                Khám phá điểm kinh doanh
+                                                                                <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" viewBox="0 0 10.289 6.563">
+                                                                                        <path d="M5.212 6.563L0 1.423 1.404 0l3.788 3.735L8.865.01l1.424 1.404" />
+                                                                                </svg>
+                                                                        </button>
+                                                                </div>
+                                                        </li> */}
+                                                        <li>
+                                                                <div className="popover-wrapper js-popover-dropdown popover-wrapper--dropdown" data-position="bottom" data-align="left" >
+                                                                        <button className="popover__trigger marketing-nav__item marketing-nav__item--primary"> 
+                                                                                Về Cabin Food
+                                                                                <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" viewBox="0 0 10.289 6.563">
+                                                                                        <path d="M5.212 6.563L0 1.423 1.404 0l3.788 3.735L8.865.01l1.424 1.404" />
+                                                                                </svg>
+                                                                        </button>
+                                                                </div>
+                                                        </li>
                                                 </ul>
 
-                                                <ul className="marketing-nav__items marketing-nav__items--primary-mobile hide--desktop">
+                                                {/* <ul className="marketing-nav__items marketing-nav__items--primary-mobile hide--desktop">
                                                         <li> <a className="marketing-nav__item marketing-nav__item--primary" href="https://www.shopify.com/login">Log in</a></li>
-                                                </ul>
+                                                </ul> */}
                                                 <ul className="marketing-nav__items marketing-nav__user display--expanded-nav">
-                                                        <li><a href="pricing.html" className="marketing-nav__item marketing-nav__item--user"> Pricing </a></li>
-                                                        <li><a href="pricing.html" className="marketing-nav__item marketing-nav__item--user"> Learn </a></li>
+                                                        <li><a href="#" className="marketing-nav__item marketing-nav__item--user"> Discover </a></li>
+                                                        <li><a href="#" className="marketing-nav__item marketing-nav__item--user"> Blog </a></li>
                                                 </ul>
                                                 <button name="button" type="button" className="marketing-nav__hamburger hide--expanded-nav js-drawer-open-right" aria-controls="NavDrawer" aria-expanded="false">
                                                         <svg className="icon" aria-labelledby="icon-modules-mobile-hamburger-40-title" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -115,6 +135,7 @@ export default class Header extends React.Component {
                                                 </button>
                                         </nav>
                                 </div>
+                                {/* menu mobile */}
                                 <div id="NavDrawer" className="drawer drawer--right ">
                                         <div className="drawer__inner">
                                                 <div className="drawer__top">
@@ -149,6 +170,168 @@ export default class Header extends React.Component {
                                                                         </svg>
                                                                 </button>
                                                 </div>
+
+                                                <nav aria-label="Main Navigation">
+                                                        <ul class="drawer__items drawer__items--primary" id="DrawerNavPrimaryAccordion">
+                                                                <li class="accordion-item">
+                                                                        <a href="#" class="drawer__item drawer__item--primary accordion-link">
+                                                                                Phát triển điểm kinh doanh
+                                                                                <svg class="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
+                                                                                        <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
+                                                                                </svg>
+                                                                        </a>
+                                                                </li>
+                                                                <li class="accordion-item">
+                                                                        <a href="#" class="drawer__item drawer__item--primary accordion-link">
+                                                                                Đầu tư hiệu quả
+                                                                                <svg class="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
+                                                                                        <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
+                                                                                </svg>
+                                                                        </a>
+                                                                </li>
+                                                                <li class="accordion-item">
+                                                                        <a href="#" class="drawer__item drawer__item--primary accordion-link">
+                                                                                Vận hành tối ưu
+                                                                                <svg class="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
+                                                                                        <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
+                                                                                </svg>
+                                                                        </a>
+                                                                </li>
+                                                                <li class="accordion-item">
+                                                                        <a href="#" class="drawer__item drawer__item--primary accordion-link">
+                                                                                Xây dựng khách hàng
+                                                                                <svg class="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
+                                                                                        <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
+                                                                                </svg>
+                                                                        </a>
+                                                                </li>
+                                                        </ul>
+
+                                                        <ul class="drawer__items drawer__items--user" id="DrawerNavSecondaryAccordion">
+                                                                <li><a href="#" class="drawer__item">Khám phá điểm kinh doanh</a></li>
+                                                                <li><a href="#" class="drawer__item"> Blog</a></li>
+                                                                {/*<li class="accordion-item">
+                                                                        <button name="button" type="button" class="drawer__item accordion-link">
+                                                                        Learn<svg class="icon marketing-nav__arrow" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-down" /></svg>
+                                                                        </button>
+                                                                        <div class="drawer__items-wrapper accordion-content">
+                                                                        <ul class="drawer__items drawer__items--nested">
+                                                                                <li>
+                                                                                <a
+                                                                                        href="https://help.shopify.com/"
+                                                                                        class="drawer__item"
+                                                                                        data-ga-event="Main Nav"
+                                                                                        data-ga-action="Help Center"
+                                                                                        data-trekkie-event="Main Nav"
+                                                                                        data-trekkie-action="Help Center"
+                                                                                        data-trekkie-id="Main Nav Help Center"
+                                                                                        rel="nofollow"
+                                                                                >
+                                                                                        Help Center
+                                                                                </a>
+                                                                                </li>
+                                                                                <li><a href="blog.html" class="drawer__item" data-ga-event="Main Nav" data-ga-action="Blog" data-trekkie-event="Main Nav" data-trekkie-action="Blog" data-trekkie-id="Main Nav Blog">Blog</a></li>
+                                                                                <li>
+                                                                                <a
+                                                                                        href="https://www.shopifycompass.com"
+                                                                                        class="drawer__item"
+                                                                                        data-ga-event="Main Nav"
+                                                                                        data-ga-action="Compass"
+                                                                                        data-trekkie-event="Main Nav"
+                                                                                        data-trekkie-action="Compass"
+                                                                                        data-trekkie-id="Main Nav Compass"
+                                                                                        rel="nofollow"
+                                                                                >
+                                                                                        Compass
+                                                                                </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                <a
+                                                                                        href="blog/topics/guides.html"
+                                                                                        class="drawer__item"
+                                                                                        data-ga-event="Main Nav"
+                                                                                        data-ga-action="Guides"
+                                                                                        data-trekkie-event="Main Nav"
+                                                                                        data-trekkie-action="Guides"
+                                                                                        data-trekkie-id="Main Nav Guides"
+                                                                                >
+                                                                                        Guides
+                                                                                </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                <a
+                                                                                        href="https://community.shopify.com/c/Shopify-Community/ct-p/en"
+                                                                                        class="drawer__item"
+                                                                                        data-ga-event="Main Nav"
+                                                                                        data-ga-action="Forums"
+                                                                                        data-trekkie-event="Main Nav"
+                                                                                        data-trekkie-action="Forums"
+                                                                                        data-trekkie-id="Main Nav Forums"
+                                                                                        rel="nofollow"
+                                                                                >
+                                                                                        Forums
+                                                                                </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                <a href="tools.html" class="drawer__item" data-ga-event="Main Nav" data-ga-action="Free tools" data-trekkie-event="Main Nav" data-trekkie-action="Free tools" data-trekkie-id="Main Nav Free tools">
+                                                                                        Free tools
+                                                                                </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                <a href="podcasts.html" class="drawer__item" data-ga-event="Main Nav" data-ga-action="Podcasts" data-trekkie-event="Main Nav" data-trekkie-action="Podcasts" data-trekkie-id="Main Nav Podcasts">
+                                                                                        Podcasts
+                                                                                </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                <a
+                                                                                        href="encyclopedia.html"
+                                                                                        class="drawer__item"
+                                                                                        data-ga-event="Main Nav"
+                                                                                        data-ga-action="Business encyclopedia"
+                                                                                        data-trekkie-event="Main Nav"
+                                                                                        data-trekkie-action="Business encyclopedia"
+                                                                                        data-trekkie-id="Main Nav Business encyclopedia"
+                                                                                >
+                                                                                        Business encyclopedia
+                                                                                </a>
+                                                                                </li>
+                                                                        </ul>
+                                                                        </div>
+                                                                </li>
+                                                                <li>
+                                                                        <a href="https://www.shopify.com/login" class="drawer__item" data-ga-event="Main Nav" data-ga-action="Login" data-trekkie-event="Main Nav" data-trekkie-action="Login" data-trekkie-id="Main Nav Login">
+                                                                        Log in
+                                                                        </a>
+                                                                </li>
+                                                                <li>
+                                                                        <form class="button_to" method="post" action="https://accounts.shopify.com/store-signup/setup">
+                                                                        <input
+                                                                                class="js-open-signup drawer__item drawer__item--signup marketing-nav__button marketing-button marketing-button--small"
+                                                                                data-ga-event="Main Nav"
+                                                                                data-ga-action="Get Started"
+                                                                                data-trekkie-event="Main Nav"
+                                                                                data-trekkie-action="Get Started"
+                                                                                data-trekkie-id="Main Nav Get Started"
+                                                                                type="submit"
+                                                                                value="Start free trial"
+                                                                        />
+                                                                        </form>
+                                                                </li> */}
+                                                        </ul>
+
+                                                        <ul class="drawer__items drawer__items--corporate">
+                                                                <li><a href="#" class="drawer__item">Về CabinFood</a></li>
+                                                                {/* <li><a href="about.html" class="drawer__item">About</a></li>
+                                                                <li><a href="careers.html" class="drawer__item">Careers</a></li>
+                                                                <li><a href="https://news.shopify.com" class="drawer__item">Press and Media</a></li>
+                                                                <li>
+                                                                        <a href="plus.html" class="drawer__item">
+                                                                        Shopify Plus <svg class="icon marketing-nav__external-indicator" aria-hidden="true" focusable="false"><use xlink:href="#modules-nav-external-indicator" /></svg>
+                                                                        </a>
+                                                                </li>
+                                                                <li><a href="sitemap.html" class="drawer__item">Sitemap</a></li> */}
+                                                        </ul>
+                                                </nav>
                                         </div>
                                 </div>
 
@@ -164,124 +347,3 @@ export default class Header extends React.Component {
                 )
         }
 }
-
-
-// const Header = props => (
-//         <div id="SiteNavContainer" className="site-nav-container is-sticky">
-//                 <div className="marketing-nav-wrapper">
-//                         <nav className="marketing-nav--skin-light marketing-nav marketing-nav--primary marketing-nav--solid" id="ShopifyMainNav">
-//                                 <div className="marketing-nav__logo ">
-//                                         <a href="/" className="marketing-nav__logo__shopify" >
-//                                                 CABINFOOD LOGO
-//                                         </a>
-//                                 </div>
-
-//                                 {/* <ul className="marketing-nav__items display--expanded-nav">
-//                                         <li><button type="button" className="popover__trigger marketing-nav__item marketing-nav__item--primary"> Delivery Right </button></li>
-//                                         <li><button type="button" className="popover__trigger marketing-nav__item marketing-nav__item--primary"> About us </button></li>
-//                                         <li><button type="button" className="popover__trigger marketing-nav__item marketing-nav__item--primary"> Store </button></li>
-//                                 </ul> */}
-
-//                         <ul className="marketing-nav__items display--expanded-nav">
-//                         <li>
-//                             <div className="popover-wrapper js-popover-dropdown popover-wrapper--dropdown is-active" data-position="bottom" data-align="left">
-//                                 <button
-//                                     type="button"
-//                                     className="popover__trigger marketing-nav__item marketing-nav__item--primary"
-//                                     itemProp="name"
-//                                     data-ga-event="Main Nav"
-//                                     data-ga-action="Start Nav"
-//                                     data-trekkie-event="Main Nav"
-//                                     data-trekkie-action="Start Nav"
-//                                     data-trekkie-id="Main Nav Start Nav"
-//                                 >
-//                                     Start
-//                                     {/* <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-down" /></svg> */}
-//                                 </button>
-//                                 <div className="popover">
-//                                     <div className="popover__content">
-//                                         <ul className="popover__list">
-//                                             <li>
-//                                                 <a
-//                                                     href="start.html"
-//                                                     className="marketing-nav__item marketing-nav__item--separated marketing-nav__item--child"
-//                                                     itemProp="name"
-//                                                     data-ga-event="Main Nav"
-//                                                     data-ga-action="Start"
-//                                                     data-trekkie-event="Main Nav"
-//                                                     data-trekkie-action="Start"
-//                                                     data-trekkie-id="Main Nav Start"
-//                                                 >
-//                                                     Start your business
-//                                                 </a>
-//                                             </li>
-//                                             <li>
-//                                                 <div className="popover-wrapper js-popover-flyout popover-wrapper--flyout" data-position="right" data-align="top">
-//                                                     <button
-//                                                         type="button"
-//                                                         className="popover__trigger marketing-nav__item marketing-nav__item--child"
-//                                                         itemProp="name"
-//                                                         data-ga-event="Main Nav"
-//                                                         data-ga-action="Branding Nav"
-//                                                         data-trekkie-event="Main Nav"
-//                                                         data-trekkie-action="Branding Nav"
-//                                                         data-trekkie-id="Main Nav Branding Nav"
-//                                                     >
-//                                                         Branding
-//                                                         {/* <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-right" /></svg> */}
-//                                                     </button>
-//                                                 </div>
-//                                             </li>
-//                                             <li>
-//                                                 <div className="popover-wrapper js-popover-flyout popover-wrapper--flyout" data-position="right" data-align="top">
-//                                                     <button
-//                                                         type="button"
-//                                                         className="popover__trigger marketing-nav__item marketing-nav__item--child"
-//                                                         itemProp="name"
-//                                                         data-ga-event="Main Nav"
-//                                                         data-ga-action="Online presence Nav"
-//                                                         data-trekkie-event="Main Nav"
-//                                                         data-trekkie-action="Online presence Nav"
-//                                                         data-trekkie-id="Main Nav Online presence Nav"
-//                                                     >
-//                                                         Online presence
-//                                                         {/* <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-right" /></svg> */}
-//                                                     </button>
-//                                                 </div>
-//                                             </li>
-//                                             <li>
-//                                                 <div className="popover-wrapper js-popover-flyout popover-wrapper--flyout" data-position="right" data-align="top">
-//                                                     <button
-//                                                         type="button"
-//                                                         className="popover__trigger marketing-nav__item marketing-nav__item--child"
-//                                                         itemProp="name"
-//                                                         data-ga-event="Main Nav"
-//                                                         data-ga-action="Store set up Nav"
-//                                                         data-trekkie-event="Main Nav"
-//                                                         data-trekkie-action="Store set up Nav"
-//                                                         data-trekkie-id="Main Nav Store set up Nav"
-//                                                     >
-//                                                         Store set up
-//                                                         {/* <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false"><use xlink:href="#modules-caret-right" /></svg> */}
-//                                                     </button>
-//                                                 </div>
-//                                             </li>
-//                                         </ul>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                         </li>
-//                     </ul>
-
-//                                 <ul className="marketing-nav__items marketing-nav__items--primary-mobile hide--desktop">
-//                                         <li> <a className="marketing-nav__item marketing-nav__item--primary" href="https://www.shopify.com/login">Log in</a></li>
-//                                 </ul>
-//                                 <ul className="marketing-nav__items marketing-nav__user display--expanded-nav">
-//                                         <li><a href="pricing.html" className="marketing-nav__item marketing-nav__item--user"> Pricing </a></li>
-//                                         <li><a href="pricing.html" className="marketing-nav__item marketing-nav__item--user"> Learn </a></li>
-//                                 </ul>
-//                         </nav>
-//                 </div>
-//         </div>
-// );
-// export default Header;
