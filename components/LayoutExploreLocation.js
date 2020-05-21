@@ -71,7 +71,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                     <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/pillar/sell-914ee38ae73192ea7d1625dca6277b4c70d1f15f78074de4b2c354ce2371afbe.css" />
                     <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/pillar/base-81be2467a53cebe8f831d8a89bc6e992e93d27cd83dd61f67fab85bbebc6cb41.css" /> */}
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-
+                    <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" />
                     <title>CabinFood | easy to Start, Fast to grow</title>
                 </Head>
                 <div className="page--pillar-sell">
