@@ -167,7 +167,7 @@ export default class LayoutAbout extends React.Component {
                                     <div class="grid__item">
                                         <div class="section-heading signup-footer__heading gutter-bottom--reset">
                                             <h2 class="section-heading__heading heading--2 next-steps__sign-up-heading" data-ga-event="about" data-ga-action="footer" data-ga-label="signup">Try Shopify for free, and explore all the tools and services you need to start, run, and grow your&nbsp;business.</h2>
-                                            <form class="marketing-button-wrapper" action="https://accounts.shopify.com/store-signup/setup" accept-charset="UTF-8" method="post">
+                                            <form class="marketing-button-wrapper" action="https://accounts.shopify.com/store-signup/setup" acceptCharset="UTF-8" method="post">
                                                 <button class="marketing-button js-open-signup signup-footer__button">Start free trial</button>
                                             </form>
                                         </div>
@@ -175,6 +175,7 @@ export default class LayoutAbout extends React.Component {
                                 </div>
                             </section>
                         </main>
+                        <Footer />
                     </div>
                 </div>
                 <style jsx>{`

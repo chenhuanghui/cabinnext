@@ -55,11 +55,11 @@ export default class Header extends React.Component {
                                                                         <div className="popover">
                                                                                 <div className="popover__content">
                                                                                         <ul className="popover__list">
-                                                                                                <li>
+                                                                                                {/* <li>
                                                                                                         <p className="marketing-nav__item marketing-nav__item--separated marketing-nav__item--child">
                                                                                                         Bundle Delivery
                                                                                                         </p>
-                                                                                                </li>
+                                                                                                </li> */}
                                                                                                 <li>
                                                                                                         <div className="popover-wrapper js-popover-flyout popover-wrapper--flyout" data-position="right" data-align="top">
                                                                                                                 <a href="/location" className="popover__trigger marketing-nav__item marketing-nav__item--child">
@@ -147,6 +147,7 @@ export default class Header extends React.Component {
                                                         <li> <a className="marketing-nav__item marketing-nav__item--primary" href="https://www.shopify.com/login">Log in</a></li>
                                                 </ul> */}
                                                 <ul className="marketing-nav__items marketing-nav__user display--expanded-nav">
+                                                        <li><a href="/pricing" className="marketing-nav__item marketing-nav__item--user"> Pricing </a></li>
                                                         <li><a href="#" className="marketing-nav__item marketing-nav__item--user"> Our Story </a></li>
                                                         <li><a href="#" className="marketing-nav__item marketing-nav__item--user"> Blog </a></li>
                                                 </ul>

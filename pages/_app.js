@@ -3,7 +3,7 @@ import '../statics/masterbrand.css'
 import '../statics/base.css'
 import '../statics/index.css'
 import '../statics/sell.css'
-import '../statics/about.css'
+// import '../statics/about.css'
 // import '../statics/application.css'
 
 export default function App({ Component, pageProps }) {

@@ -10,6 +10,8 @@ import Support from './sections/Master/Support'
 import SignUp from './sections/Master/SignUp'
 import Footer from './Footer'
 
+// import '../statics/index.css'
+
 export default class LayoutBundleDeliveryRight extends React.Component {
     constructor(props){
         super(props);
