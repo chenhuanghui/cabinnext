@@ -24,6 +24,7 @@ const PricingSection1 = props => (
                         <tr className="phrase">
                             <th scope="row" id="f-monthly_price"> 
                                 <span className="heading--5 pricing-table__section-heading">Thiết lập</span>
+                                <p className="feature-label__description">Includes ecommerce website and blog.Includes ecommerce website and blog.Includes ecommerce website and blog.</p>
                             </th>
                             <td headers="p-0 f-monthly_price">
                                 <div className=" monthly-price"> 
