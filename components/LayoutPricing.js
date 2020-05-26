@@ -191,6 +191,7 @@ export default class LayoutPricing extends React.Component {
                         <Footer />
                     </div>
                 </div>
+                
             </div>
         )
     }
