@@ -9,7 +9,7 @@ const PricingSection1 = props => (
             </div>
             <div className="grid__item grid__item--mobile-up-align-center">
                 <div className="text-center gutter-bottom--mobile">
-                    <form className="marketing-button-wrapper" action="https://accounts.shopify.com/store-signup/setup" acceptCharset="UTF-8" method="post">
+                    <form className="marketing-button-wrapper" action="#" acceptCharset="UTF-8" method="post">
                         <button className="marketing-button js-open-signup" data-ga-event="Pricing" data-ga-action="Start your free trial" data-ga-label="Heading">Start your free trial</button>
                     </form>
                 </div>

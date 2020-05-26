@@ -11,6 +11,7 @@ export default class LayoutPricing extends React.Component {
         super(props);
     
         this.state = {
+            faq_group_sub:[],
             faq_group1:[],
             faq_group2:[],
             faq_group3:[],
@@ -28,14 +29,27 @@ export default class LayoutPricing extends React.Component {
         var dataFAQ4 = [];
         var dataFAQ5 = [];
         var dataFAQ6 = [];
-
+        var groupList = [];
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
+
+        base('FAQ_Group_Sub').select({
+            view: 'Grid view'
+        }).firstPage(function(err, records) {
+            if (err) { console.error(err); return; }
+            records.forEach(function(record) {
+                groupList.push(record.get('Name'));
+                // console.log('Retrieved', record.get('Name'));
+            });
+            currentComponent.setState({faq_group_sub:groupList})
+            console.log('Group List', groupList);
+        });
 
         base('FAQ').select({
             filterByFormula: `{Group} = "Group1"`
         }).eachPage(function page(records, fetchNextPage) {
             records.forEach(function(record) {
+                // console.log('data1',record.fields)
                 dataFAQ1.push(record.fields)
             });
             currentComponent.setState({faq_group1:dataFAQ1})
@@ -110,7 +124,7 @@ export default class LayoutPricing extends React.Component {
 
 
     render (){
-        const {faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6} = this.state;
+        const {faq_group_sub,faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -149,7 +163,7 @@ export default class LayoutPricing extends React.Component {
                                 </div>
                             </section>
 
-                            <PricingFAQSection faq_group1={faq_group1} faq_group2={faq_group2} faq_group3={faq_group3} faq_group4={faq_group4} faq_group5={faq_group5} faq_group6={faq_group6} />
+                            <PricingFAQSection faq_group_sub={faq_group_sub} faq_group1={faq_group1} faq_group2={faq_group2} faq_group3={faq_group3} faq_group4={faq_group4} faq_group5={faq_group5} faq_group6={faq_group6} />
                             
 
                             <section className="section footer-signup background-light">
