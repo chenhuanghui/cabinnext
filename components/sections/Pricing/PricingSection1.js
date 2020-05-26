@@ -116,12 +116,13 @@ const PricingSection1 = props => (
                                     <span className="pricing-table__feature-value pricing-table__feature-price monthly-price__price">
                                         <span className="price">
                                             <span aria-hidden="true">
-                                                <span className="price__number">10</span>
+                                                <sup>Từ </sup> 
+                                                <span className="price__number">2</span>
                                             </span>
                                         </span>
                                     </span> 
                                     <span className="monthly-price__currency text-minor" aria-hidden="true">.000.000 đ</span>
-                                    <span className="monthly-price__billing-period text-minor" aria-hidden="true">/Điểm Kinh Doanh</span>
+                                    {/* <span className="monthly-price__billing-period text-minor" aria-hidden="true"></span> */}
                                 </div>
                             </td>
                         </tr>
