@@ -3,9 +3,50 @@ import React from 'react';
 
 import Header from './Header'
 import Footer from './Footer'
+import PricingSection1 from './sections/Pricing/PricingSection1';
+import PricingFAQSection from './sections/Pricing/PricingFAQSection';
 
 export default class LayoutPricing extends React.Component { 
+    constructor(props){
+        super(props);
+    
+        this.state = {
+            faq_group1:[],
+            faq_group2:[],
+            faq_group3:[]
+        }
+    }
+
+    componentDidMount () {
+        let currentComponent = this;
+        var dataFAQ1 = [];
+        var dataFAQ2 = [];
+        var dataFAQ3 = [];
+        var faqData = [];
+
+        var Airtable = require('airtable');
+        var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
+
+        base('Pricing_FAQ').select({
+            filterByFormula: `{Group} = "Group1"`
+        }).eachPage(function page(records, fetchNextPage) {
+            records.forEach(function(record) {
+                // console.log('Retrieved', record.get('ID'));
+                console.dir(record);  // show full record JS object
+                dataFAQ1.push(record.fields)
+            });
+            currentComponent.setState({faq_group1:dataFAQ1})
+            fetchNextPage();
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        })
+
+       
+    }
+
+
     render (){
+        const {faq_group1} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -28,274 +69,43 @@ export default class LayoutPricing extends React.Component {
                     <Header />
                     <div id="PageContainer">
                         <main id="Main">
-                            <section class="section">
-                                <div class="grid">
-                                    <div class="grid__item">
-                                        <div class="section-heading">
-                                            <h1 class="section-heading__heading heading--1">Set up your store, pick&nbsp;a&nbsp;plan&nbsp;later</h1>
-                                            <p class="section-heading__subhead heading--2">Try Shopify free for 90 days, no credit card&nbsp;required</p>
-                                        </div>
-                                    </div>
-                                    <div class="grid__item grid__item--mobile-up-align-center">
-                                        <div class="text-center gutter-bottom--mobile">
-                                            <form class="marketing-button-wrapper" action="https://accounts.shopify.com/store-signup/setup" accept-charset="UTF-8" method="post">
-                                                <button class="marketing-button js-open-signup" data-ga-event="Pricing" data-ga-action="Start your free trial" data-ga-label="Heading">Start your free trial</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid">
-                                    <div class="grid__item grid__item--desktop-up-two-thirds grid__item--mobile-up-align-center">
-                                        {/* <div class="display--mobile plan-tabs__wrapper">
-                                            <ul class="plan-tabs">
-                                                <li><button name="button" type="button" class="plan-tabs__tab" data-target-index="0" data-ga-event="Pricing Table - Mobile Tabs" data-ga-action="Tab click" data-plan-name="Basic Shopify" aria-controls="PricingTable" aria-pressed="false">Basic Shopify</button></li>
-                                                <li><button name="button" type="button" class="plan-tabs__tab" data-target-index="1" data-ga-event="Pricing Table - Mobile Tabs" data-ga-action="Tab click" data-plan-name="Shopify" aria-controls="PricingTable" aria-pressed="false">Shopify</button></li>
-                                                <li><button name="button" type="button" class="plan-tabs__tab" data-target-index="2" data-ga-event="Pricing Table - Mobile Tabs" data-ga-action="Tab click" data-plan-name="Advanced Shopify" aria-controls="PricingTable" aria-pressed="false">Advanced Shopify</button></li>
-                                            </ul>
-                                        </div> */}
+                            
+                            <PricingSection1 />
 
-                                        <table class="marketing-table pricing-table" id="PricingTable">
-                                            {/* <caption class="visuallyhidden">Pricing and feature information for all Shopify plans</caption> */}
-                                            <thead>
-                                                <tr>
-                                                    <th class="pricing-table__table-head" scope="col" id="p-0"> 
-                                                        <p class="heading--4">Plan feature</p>
-                                                        <p>All the basics for starting a&nbsp;new business</p>
-                                                        {/* <span class="visuallyhidden">Plan feature</span> */}
-                                                    </th>
-                                                    <th class="pricing-table__table-head" scope="col" id="p-1">
-                                                        <p class="heading--4">Basic Shopify</p>
-                                                        <p>All the basics for starting a&nbsp;new business</p>
-                                                    </th>
-                                                    <th class="pricing-table__table-head" scope="col" id="p-2">
-                                                        <p class="heading--4">Shopify</p>
-                                                        <p>Everything you need for a growing business</p>
-                                                    </th>
-                                                    <th class="pricing-table__table-head" scope="col" id="p-3">
-                                                        <p class="heading--4">Advanced Shopify</p>
-                                                        <p>Advanced features for scaling your business</p>
-                                                    </th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody class="pricing-table__table-body">
-                                                <tr>
-                                                    <th scope="row" id="f-monthly_price"> <div class="pricing-table__feature-name">Monthly price</div></th>
-                                                    
-                                                    <td headers="p-0 f-monthly_price">
-                                                        <div class=" monthly-price"> 
-                                                            <span class="monthly-price__currency text-minor" aria-hidden="true">USD</span>
-                                                            <span class="pricing-table__feature-value pricing-table__feature-price monthly-price__price">
-                                                                <span class="price"><span class="visuallyhidden">$29</span>
-                                                                    <span aria-hidden="true">
-                                                                        <sup>$</sup>
-                                                                        <span class="price__number">29</span>
-                                                                    </span>
-                                                                </span>
-                                                            </span> 
-                                                            <span class="monthly-price__accessibility-text visuallyhidden">per month</span>
-                                                            <span class="monthly-price__billing-period text-minor" aria-hidden="true">/mo</span>
-                                                        </div>
-                                                    </td>
-                                                    
-                                                    <td headers="p-1 f-monthly_price">
-                                                        <div class=" monthly-price"> 
-                                                            <span class="monthly-price__currency text-minor" aria-hidden="true">USD</span>
-                                                            <span class="pricing-table__feature-value pricing-table__feature-price monthly-price__price">
-                                                                <span class="price">
-                                                                    <span class="visuallyhidden">$79</span>
-                                                                    <span aria-hidden="true"><sup>$</sup>
-                                                                        <span class="price__number">79</span>
-                                                                    </span>
-                                                                </span>
-                                                            </span> 
-                                                            <span class="monthly-price__accessibility-text visuallyhidden">per month</span>
-                                                            <span class="monthly-price__billing-period text-minor" aria-hidden="true">/mo</span>
-                                                        </div>
-                                                    </td>
-                                                    
-                                                    <td headers="p-2 f-monthly_price">
-                                                        <div class=" monthly-price"> 
-                                                            <span class="monthly-price__currency text-minor" aria-hidden="true">USD</span>
-                                                            <span class="pricing-table__feature-value pricing-table__feature-price monthly-price__price">
-                                                                <span class="price">
-                                                                    <span class="visuallyhidden">$299</span>
-                                                                    <span aria-hidden="true"><sup>$</sup>
-                                                                        <span class="price__number">299</span>
-                                                                    </span>
-                                                                </span>
-                                                            </span> 
-                                                            
-                                                            <span class="monthly-price__accessibility-text visuallyhidden">per month</span>
-                                                            <span class="monthly-price__billing-period text-minor" aria-hidden="true">/mo</span>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <th scope="col" colspan="4"> 
-                                                        <span class="heading--5 pricing-table__section-heading">Features</span>
-                                                    </th>
-                                                </tr>
-
-                                                <tr>
-                                                    <th scope="row" id="f-website">
-                                                        <div class="pricing-table__feature-name">
-                                                        <dl class="feature-label"><dt class="feature-label__text">Online Store</dt>
-                                                            <dd class="feature-label__description">Includes ecommerce website and blog.</dd>
-                                                        </dl>
-                                                        </div>
-                                                    </th>
-                                                    <td headers="p-0 f-website"> <span class="pricing-table__feature-value">
-                                                        <span class="visuallyhidden">Yes</span>
-                                                        <svg class="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40">
-                                                            <path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" />
-                                                        </svg>
-                                                        </span>
-                                                    </td>
-                                                    <td headers="p-1 f-website"> <span class="pricing-table__feature-value">
-                                                        <span class="visuallyhidden">Yes</span>
-                                                        -
-                                                        </span>
-                                                    </td>
-                                                    <td headers="p-2 f-website"> <span class="pricing-table__feature-value">
-                                                        <span class="visuallyhidden">Yes</span>
-                                                        <svg class="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40">
-                                                            <path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" />
-                                                        </svg>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="grid">
-                                    <div class="grid__item grid__item--tablet-up-two-thirds grid__item--tablet-up-offset-1">
-                                        <p class="pricing-disclaimer">Shopify collects sales taxes in states where it is required by law. Stated prices do not include these taxes.</p>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section class="section background-light color-ink section--tight">
-                                <div class="grid">
-                                    <div class="grid__item">
-                                        <div class="section-heading gutter-bottom--reset">
-                                            <h2 class="section-heading__heading heading--1 gutter-bottom">Set up your store, pick&nbsp;a&nbsp;plan&nbsp;later</h2>
-                                            <form class="marketing-button-wrapper" action="#" accept-charset="UTF-8" method="post">
-                                                <button class="marketing-button marketing-button--skin-lowlight js-open-signup" data-ga-event="Pricing" data-ga-action="Start your free trial" data-ga-label="After Table">Start your free trial</button>
+                            <section className="section background-light color-ink section--tight">
+                                <div className="grid">
+                                    <div className="grid__item">
+                                        <div className="section-heading gutter-bottom--reset">
+                                            <h2 className="section-heading__heading heading--1 gutter-bottom">Set up your store, pick&nbsp;a&nbsp;plan&nbsp;later</h2>
+                                            <form className="marketing-button-wrapper" action="#" acceptCharset="UTF-8" method="post">
+                                                <button className="marketing-button marketing-button--skin-lowlight js-open-signup" data-ga-event="Pricing" data-ga-action="Start your free trial" data-ga-label="After Table">Start your free trial</button>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                             </section>
 
-                            <section class="section">
-                                <div class="grid">
-                                    <div id="Faq" class="pricing-faq">
-                                        <div class="section-heading visuallyhidden">
-                                            <h2 class="section-heading__heading heading--1">Frequently Asked Questions</h2>
-                                        </div>
-                                        <div class="grid__item grid__item--tablet-up-half grid__item--desktop-up-third grid__item--desktop-up-offset-2">
-                                            <div class="accordion">
-                                                <div class="section-heading section-heading--tablet-up-align-left">
-                                                    <h3 type="button" class="heading--2 pricing-faq__heading accordion-link" data-state="0">General questions</h3>
-                                                </div>
-                                                <div class="accordion-content">
-                                                    <div class="block">
-                                                        <h3 class="block__heading heading--4">Is there a setup fee?</h3>
-                                                        <p class="block__content">No. There are no setup fees on any of our plans.</p>
-                                                    </div>
-                                                    <div class="block">
-                                                        <h3 class="block__heading heading--4">Do I need to enter my payment details to sign up?</h3>
-                                                        <p class="block__content">No. You can sign up and use Shopify for 90 days without entering your payment details. At the end of your trial, or when you decide to launch your store, you will need to pick a plan and enter your payment details.</p>
-                                                    </div>
-                                                    <div class="block">
-                                                        <h3 class="block__heading heading--4">Can I cancel my account at any time?</h3>
-                                                        <p class="block__content">Yes. If you ever decide that Shopify isn’t the best ecommerce platform for your business, simply cancel your account.</p>
-                                                    </div>
-                                                    <div class="block">
-                                                        <h3 class="block__heading heading--4">How long are your contracts?</h3>
-                                                        <p class="block__content">All Shopify plans are month to month unless you sign up for an annual or biennial plan.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="grid__item grid__item--tablet-up-half grid__item--desktop-up-third">
-                                            <div class="accordion">
-                                                <div class="section-heading section-heading--tablet-up-align-left">
-                                                    <h3 type="button" class="heading--2 pricing-faq__heading accordion-link" data-state="1">Online questions</h3>
-                                                </div>
-                                                <div class="accordion-content">
-                                                    <div class="block">
-                                                        <h3 class="block__heading heading--4">Can I use my own domain name?</h3>
-                                                        <p class="block__content">Yes. You can purchase a domain name within Shopify, or use an existing one that you own. We also provide a free myshopify.com domain name to all stores on sign up.</p>
-                                                    </div>
-                                                    <div class="block">
-                                                        <h3 class="block__heading heading--4">What are your bandwidth fees?</h3>
-                                                        <p class="block__content">There are none. All Shopify plans include unlimited bandwidth for free.</p>
-                                                    </div>
-                                                    <div class="block">
-                                                        <h3 class="block__heading heading--4">Do I need a web host?</h3>
-                                                        <p>Shopify includes secure, unlimited ecommerce hosting on all plans except Shopify Lite. You can also use the <a href="buy-button.html">Buy Button</a> to add ecommerce to any existing website.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="accordion">
-                                                <div class="section-heading section-heading--tablet-up-align-left">
-                                                    <h3 type="button" class="heading--2 pricing-faq__heading accordion-link" data-state="2">POS questions</h3>
-                                                </div>
-                                                <div class="accordion-content">
-                                                    <div class="block">
-                                                        <p class="block__content">
-                                                            <div class="long-form-content ">
-                                                                <h4>What does Shopify POS do?</h4>
-                                                                <p>Shopify POS is an application for iOS and Android devices that you can use for transactions in a physical store or pop-up setting. Find products, process orders, take payment, swipe credit cards, produce receipts, and control it all from your iPad or mobile device. All the background management of your store is done from your Shopify admin, which you can access using any browser.</p>
-                                                            </div>
-                                                        </p>
-                                                    </div>
-                                                    <div class="block">
-                                                        <p class="block__content">
-                                                            <div class="long-form-content ">
-                                                                <h4>Can I merge my Shopify online store with Shopify POS?</h4>
-                                                                <p>Yes. Your Shopify online store automatically synchronizes with Shopify POS, and you manage your entire business from one dashboard. Product or inventory updates that you make in your Shopify admin will instantly take effect in Shopify POS.</p>
-                                                            </div>
-                                                        </p>
-                                                    </div>
-                                                    <div class="block">
-                                                        <p class="block__content">
-                                                            <div class="long-form-content ">
-                                                                <h4>Can I use Shopify POS if I have multiple cash registers in use at the same time?</h4>
-                                                                <p>Yes. You can install Shopify POS on multiple devices, and you won’t be charged any extra. Store activity on all devices is synchronized with your Shopify admin.</p>
-                                                            </div>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                            <PricingFAQSection faq_group1={faq_group1}/>
+                            
 
-                            <section class="section footer-signup background-light">
-                                <div class="grid">
-                                    <div class="grid__item grid__item--desktop-up-half">
-                                        <div class="section-heading gutter-bottom--reset text-center--tablet-down">
-                                            <h2 class="section-heading__heading heading--2">Start your 90-day <span class="color-primary">free trial</span> today!</h2>
+                            <section className="section footer-signup background-light">
+                                <div className="grid">
+                                    <div className="grid__item grid__item--desktop-up-half">
+                                        <div className="section-heading gutter-bottom--reset text-center--tablet-down">
+                                            <h2 className="section-heading__heading heading--2">Start your 90-day <span className="color-primary">free trial</span> today!</h2>
                                         </div>
                                     </div>
-                                    <div class="grid__item grid__item--desktop-up-5 grid__item--desktop-up-offset-1">
-                                        <form class="js-signup-inline marketing-form--inline" novalidate="novalidate" action="https://accounts.shopify.com/store-signup/setup" accept-charset="UTF-8" method="post">
-                                            <div class="marketing-input-wrapper marketing-input-button-pair">
-                                                <div class="marketing-input-button-pair__field-wrapper">
-                                                    <label class="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" for="SignupEmail-2ae4">Email</label>
-                                                    <input placeholder="Enter your email address" id="SignupEmail-2ae4" class="marketing-input-button-pair__input marketing-input marketing-input--floating" type="email" name="signup[email]" />
-                                                    <button class="marketing-button marketing-form__button marketing-input-button-pair__button" name="button" data-ga-event="Email capture signup" data-ga-action="CTA button click" aria-haspopup="dialog" type="submit">Start free trial</button>
-                                                </div><span class="marketing-form__messages"></span>
+                                    <div className="grid__item grid__item--desktop-up-5 grid__item--desktop-up-offset-1">
+                                        <form className="js-signup-inline marketing-form--inline" noValidate="noValidate" action="https://accounts.shopify.com/store-signup/setup" acceptCharset="UTF-8" method="post">
+                                            <div className="marketing-input-wrapper marketing-input-button-pair">
+                                                <div className="marketing-input-button-pair__field-wrapper">
+                                                    <label className="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" htmlFor="SignupEmail-2ae4">Email</label>
+                                                    <input placeholder="Enter your email address" id="SignupEmail-2ae4" className="marketing-input-button-pair__input marketing-input marketing-input--floating" type="email" name="signup[email]" />
+                                                    <button className="marketing-button marketing-form__button marketing-input-button-pair__button" name="button" data-ga-event="Email capture signup" data-ga-action="CTA button click" aria-haspopup="dialog" type="submit">Start free trial</button>
+                                                </div><span className="marketing-form__messages"></span>
                                             </div>
                                         </form>
-                                        <p class="marketing-form__fallback-cta text-center">Try Shopify free for 90 days, no credit card&nbsp;required. By entering your email, you agree to receive marketing emails&nbsp;from&nbsp;Shopify.</p>
+                                        <p className="marketing-form__fallback-cta text-center">Try Shopify free for 90 days, no credit card&nbsp;required. By entering your email, you agree to receive marketing emails&nbsp;from&nbsp;Shopify.</p>
                                     </div>
                                 </div>
                             </section>
