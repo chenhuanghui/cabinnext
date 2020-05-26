@@ -104,7 +104,7 @@ const PricingSection1 = props => (
                         {/* Pharse 03  */}
                         <tr className="phrase">
                             <th scope="row" id="f-monthly_price"> 
-                                <span className="heading--5 pricing-table__section-heading">Thiết lập</span>
+                                <span className="heading--5 pricing-table__section-heading">Tăng trưởng</span>
                                 <p className="feature-label__description">Includes ecommerce website and blog.Includes ecommerce website and blog.Includes ecommerce website and blog.</p>
                             </th>
                             <td headers="p-0 f-monthly_price">
@@ -112,13 +112,12 @@ const PricingSection1 = props => (
                                     <span className="pricing-table__feature-value pricing-table__feature-price monthly-price__price">
                                         <span className="price">
                                             <span aria-hidden="true">
-                                                <sup>Từ </sup> 
-                                                <span className="price__number">2</span>
+                                                {/* <sup>Từ </sup>  */}
+                                                {/* <span className="price__number">2</span> */}
                                             </span>
                                         </span>
                                     </span> 
-                                    <span className="monthly-price__currency text-minor" aria-hidden="true">.000.000 đ</span>
-                                    {/* <span className="monthly-price__billing-period text-minor" aria-hidden="true"></span> */}
+                                    {/* <span className="monthly-price__currency text-minor" aria-hidden="true">.000.000 đ</span> */}
                                 </div>
                             </td>
                         </tr>
