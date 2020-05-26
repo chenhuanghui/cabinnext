@@ -26,7 +26,7 @@ const PricingSection1 = props => (
                                 <span className="visuallyhidden">Plan feature</span>
                             </th>
                             <th className="pricing-table__table-head" scope="col" id="p-1">
-                                <p className="heading--4">Thiết lập</p>
+                                <p className="heading--4">Setup</p>
                                 <p>Tất cả những thứ cơ bản cần cho việc bắt đầu một điểm kinh doanh, thanh toán từng lần cho mỗi điểm kinh doanh mới</p>
                             </th>
                             <th className="pricing-table__table-head" scope="col" id="p-2">
@@ -34,7 +34,7 @@ const PricingSection1 = props => (
                                 <p> Mọi thứ bạn cần để có được một điểm kinh doanh ổn định</p>
                             </th>
                             <th className="pricing-table__table-head" scope="col" id="p-3">
-                                <p className="heading--4">Phát triển</p>
+                                <p className="heading--4">Growth</p>
                                 <p>Những tính năng và giải pháp nâng cáo giúp bạn mở rộng phát triển thương hiệu tối ưu và bền vững</p>
                             </th>
                         </tr>
