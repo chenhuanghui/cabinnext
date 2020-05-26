@@ -13,7 +13,10 @@ export default class LayoutPricing extends React.Component {
         this.state = {
             faq_group1:[],
             faq_group2:[],
-            faq_group3:[]
+            faq_group3:[],
+            faq_group4:[],
+            faq_group5:[],
+            faq_group6:[]
         }
     }
 
@@ -22,20 +25,81 @@ export default class LayoutPricing extends React.Component {
         var dataFAQ1 = [];
         var dataFAQ2 = [];
         var dataFAQ3 = [];
-        var faqData = [];
+        var dataFAQ4 = [];
+        var dataFAQ5 = [];
+        var dataFAQ6 = [];
 
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
 
-        base('Pricing_FAQ').select({
+        base('FAQ').select({
             filterByFormula: `{Group} = "Group1"`
         }).eachPage(function page(records, fetchNextPage) {
             records.forEach(function(record) {
-                // console.log('Retrieved', record.get('ID'));
-                console.dir(record);  // show full record JS object
                 dataFAQ1.push(record.fields)
             });
             currentComponent.setState({faq_group1:dataFAQ1})
+            fetchNextPage();
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        })
+        
+        
+        base('FAQ').select({
+            filterByFormula: `{Group} = "Group2"`
+        }).eachPage(function page(records, fetchNextPage) {
+            records.forEach(function(record) {
+                dataFAQ2.push(record.fields)
+            });
+            currentComponent.setState({faq_group2:dataFAQ2})
+            fetchNextPage();
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        })
+
+        base('FAQ').select({
+            filterByFormula: `{Group} = "Group3"`
+        }).eachPage(function page(records, fetchNextPage) {
+            records.forEach(function(record) {
+                dataFAQ3.push(record.fields)
+            });
+            currentComponent.setState({faq_group3:dataFAQ3})
+            fetchNextPage();
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        })
+
+        base('FAQ').select({
+            filterByFormula: `{Group} = "Group4"`
+        }).eachPage(function page(records, fetchNextPage) {
+            records.forEach(function(record) {
+                dataFAQ4.push(record.fields)
+            });
+            currentComponent.setState({faq_group4:dataFAQ4})
+            fetchNextPage();
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        })
+
+        base('FAQ').select({
+            filterByFormula: `{Group} = "Group5"`
+        }).eachPage(function page(records, fetchNextPage) {
+            records.forEach(function(record) {
+                dataFAQ5.push(record.fields)
+            });
+            currentComponent.setState({faq_group5:dataFAQ5})
+            fetchNextPage();
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        })
+
+        base('FAQ').select({
+            filterByFormula: `{Group} = "Group6"`
+        }).eachPage(function page(records, fetchNextPage) {
+            records.forEach(function(record) {
+                dataFAQ6.push(record.fields)
+            });
+            currentComponent.setState({faq_group6:dataFAQ6})
             fetchNextPage();
         }, function done(err) {
             if (err) { console.error(err); return; }
@@ -46,7 +110,7 @@ export default class LayoutPricing extends React.Component {
 
 
     render (){
-        const {faq_group1} = this.state;
+        const {faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -85,7 +149,7 @@ export default class LayoutPricing extends React.Component {
                                 </div>
                             </section>
 
-                            <PricingFAQSection faq_group1={faq_group1}/>
+                            <PricingFAQSection faq_group1={faq_group1} faq_group2={faq_group2} faq_group3={faq_group3} faq_group4={faq_group4} faq_group5={faq_group5} faq_group6={faq_group6} />
                             
 
                             <section className="section footer-signup background-light">
