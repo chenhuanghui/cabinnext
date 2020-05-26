@@ -49,11 +49,9 @@ const PricingSection1 = props => (
                                     </dl>
                                     </div>
                                 </th>
-                                <td headers="p-0 f-website"> <span className="pricing-table__feature-value">
-                                    {/* {if (p.value.length >1) else } */}
-                                    <svg className="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40">
-                                        <path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" />
-                                    </svg>
+                                <td headers="p-0 f-website"> 
+                                    <span className="pricing-table__feature-value">
+                                    { (p.value == 1 ) ? <svg className="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40"><path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" /></svg> : p.value}
                                     </span>
                                 </td>
 
@@ -94,11 +92,9 @@ const PricingSection1 = props => (
                                     </dl>
                                     </div>
                                 </th>
-                                <td headers="p-0 f-website"> <span className="pricing-table__feature-value">
-                                    {/* {if (p.value.length >1) else } */}
-                                    <svg className="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40">
-                                        <path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" />
-                                    </svg>
+                                <td headers="p-0 f-website"> 
+                                    <span className="pricing-table__feature-value">
+                                        { (p.value == 1 ) ? <svg className="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40"><path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" /></svg> : p.value}
                                     </span>
                                 </td>
 
@@ -136,11 +132,9 @@ const PricingSection1 = props => (
                                     </dl>
                                     </div>
                                 </th>
-                                <td headers="p-0 f-website"> <span className="pricing-table__feature-value">
-                                    {/* {if (p.value.length >1) else } */}
-                                    <svg className="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40">
-                                        <path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" />
-                                    </svg>
+                                <td headers="p-0 f-website"> 
+                                    <span className="pricing-table__feature-value">
+                                    { (p.value == 1 ) ? <svg className="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40"><path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" /></svg> : p.value}
                                     </span>
                                 </td>
 
