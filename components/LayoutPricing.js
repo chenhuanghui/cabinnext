@@ -17,7 +17,10 @@ export default class LayoutPricing extends React.Component {
             faq_group3:[],
             faq_group4:[],
             faq_group5:[],
-            faq_group6:[]
+            faq_group6:[],
+            pricing_group1:[],
+            pricing_group2:[],
+            pricing_group3:[]
         }
     }
 
@@ -30,6 +33,9 @@ export default class LayoutPricing extends React.Component {
         var dataFAQ5 = [];
         var dataFAQ6 = [];
         var groupList = [];
+        var dataPricing1 = [];
+        var dataPricing2 = [];
+        var dataPricing3 = [];
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
 
@@ -39,10 +45,8 @@ export default class LayoutPricing extends React.Component {
             if (err) { console.error(err); return; }
             records.forEach(function(record) {
                 groupList.push(record.get('Name'));
-                // console.log('Retrieved', record.get('Name'));
             });
             currentComponent.setState({faq_group_sub:groupList})
-            console.log('Group List', groupList);
         });
 
         base('FAQ').select({
@@ -118,26 +122,52 @@ export default class LayoutPricing extends React.Component {
         }, function done(err) {
             if (err) { console.error(err); return; }
         })
+        
+        // Get pricing data content
+        base('Pricing').select({
+            filterByFormula: `{pharse} = "Pharse1"`
+        }).firstPage(function(err, records) {
+            if (err) { console.error(err); return; }
+            records.forEach(function(record) {
+                dataPricing1.push(record.fields)
+                console.log(record.fields);
+            });
+            
+            currentComponent.setState({pricing_group1:dataPricing1})
+        });
+
+        base('Pricing').select({
+            filterByFormula: `{pharse} = "Pharse2"`
+        }).firstPage(function(err, records) {
+            if (err) { console.error(err); return; }
+            records.forEach(function(record) {
+                dataPricing2.push(record.fields)
+            });
+            currentComponent.setState({pricing_group2:dataPricing2})
+        });
+
+        base('Pricing').select({
+            filterByFormula: `{pharse} = "Pharse3"`
+        }).firstPage(function(err, records) {
+            if (err) { console.error(err); return; }
+            records.forEach(function(record) {
+                dataPricing3.push(record.fields)
+            });
+            currentComponent.setState({pricing_group3:dataPricing3})
+        });
 
        
     }
 
 
     render (){
-        const {faq_group_sub,faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6} = this.state;
+        const {faq_group_sub,faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6,pricing_group1,pricing_group2,pricing_group3} = this.state;
         return (
             <div className="layout">
                 <Head>
                     <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
                     <meta name="author" content="CabinFood" />
-                    {/* <link rel="stylesheet" media="all" href="https://cdn.shopify.com/assets2/masterbrand-12d9bf8602c9e16769a8ff8a1177e4238d9413d73d9dd7678796641e912282fa.css" /> */}
-                    {/* <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/home/index-72e8f7e85d965b49c9307d648b07104daf053fb6e3c5fafc4e3c20c0abd96957.css" />
-                    <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/pillar/sell-914ee38ae73192ea7d1625dca6277b4c70d1f15f78074de4b2c354ce2371afbe.css" />
-                    <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/pillar/base-81be2467a53cebe8f831d8a89bc6e992e93d27cd83dd61f67fab85bbebc6cb41.css" /> */}
                     <link rel="stylesheet" media="all" href="https://cdn.shopify.com/assets2/application-27f5b60dd99d8c77a63c4444ff9042dd5a7b2225582732a1340304589ae1d1c6.css" />
-
-                    {/* <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/about-148ade53861c2431e1638a6e3827d608f462957db1f0b42e1c2244588106143a.css" /> */}
-                    {/* <link rel="stylesheet" media="screen" href="https://press-cdn.prezly.com/style/8871.css?u=1590095820&d=ltr&v=1020bcf936adf8430b37.css" /> */}
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/pricing-c63b77096eed047504d39929449c4622477172f40f4d4fa60be55c5b0ca82c56.css" />
                     <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" />
@@ -148,7 +178,7 @@ export default class LayoutPricing extends React.Component {
                     <div id="PageContainer">
                         <main id="Main">
                             
-                            <PricingSection1 />
+                            <PricingSection1 pricing_group1={pricing_group1} pricing_group2={pricing_group2} pricing_group3={pricing_group3}/>
 
                             <section className="section background-light color-ink section--tight">
                                 <div className="grid">

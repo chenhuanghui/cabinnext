@@ -40,26 +40,27 @@ const PricingSection1 = props => (
                                 </div>
                             </td>
                         </tr>
+                        {props.pricing_group1.map((p) => (
+                            <tr>
+                                <th scope="row" id="f-website">
+                                    <div className="pricing-table__feature-name">
+                                        <dl className="feature-label"><dt className="feature-label__text">{p.obj}</dt>
+                                        <dd className="feature-label__description">{p.desc}</dd>
+                                    </dl>
+                                    </div>
+                                </th>
+                                <td headers="p-0 f-website"> <span className="pricing-table__feature-value">
+                                    {/* {if (p.value.length >1) else } */}
+                                    <svg className="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40">
+                                        <path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" />
+                                    </svg>
+                                    </span>
+                                </td>
 
-                        <tr>
-                            <th scope="row" id="f-website">
-                                <div className="pricing-table__feature-name">
-                                <dl className="feature-label"><dt className="feature-label__text">Online Store</dt>
-                                    <dd className="feature-label__description">Includes ecommerce website and blog.</dd>
-                                </dl>
-                                </div>
-                            </th>
-                            <td headers="p-0 f-website"> <span className="pricing-table__feature-value">
-                                <span className="visuallyhidden">Yes</span>
-                                <svg className="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40">
-                                    <path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" />
-                                </svg>
-                                </span>
-                            </td>
-
-                        </tr>
+                            </tr>
+                        ))}
+                        
                        
-
                         {/* Feature 02  */}
 
                         <tr className="phrase">
@@ -84,22 +85,25 @@ const PricingSection1 = props => (
                             </td>
                         </tr>
 
-                        <tr>
-                            <th scope="row" id="f-website">
-                                <div className="pricing-table__feature-name">
-                                <dl className="feature-label"><dt className="feature-label__text">Online Store</dt>
-                                    <dd className="feature-label__description">Includes ecommerce website and blog.</dd>
-                                </dl>
-                                </div>
-                            </th>
-                            <td headers="p-0 f-website"> <span className="pricing-table__feature-value">
-                                <span className="visuallyhidden">Yes</span>
-                                <svg className="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40">
-                                    <path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" />
-                                </svg>
-                                </span>
-                            </td>
-                        </tr>
+                        {props.pricing_group2.map((p) => (
+                            <tr>
+                                <th scope="row" id="f-website">
+                                    <div className="pricing-table__feature-name">
+                                        <dl className="feature-label"><dt className="feature-label__text">{p.obj}</dt>
+                                        <dd className="feature-label__description">{p.desc}</dd>
+                                    </dl>
+                                    </div>
+                                </th>
+                                <td headers="p-0 f-website"> <span className="pricing-table__feature-value">
+                                    {/* {if (p.value.length >1) else } */}
+                                    <svg className="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40">
+                                        <path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" />
+                                    </svg>
+                                    </span>
+                                </td>
+
+                            </tr>
+                        ))}
 
                         {/* Pharse 03  */}
                         <tr className="phrase">
@@ -122,23 +126,25 @@ const PricingSection1 = props => (
                             </td>
                         </tr>
 
-                        <tr>
-                            <th scope="row" id="f-website">
-                                <div className="pricing-table__feature-name">
-                                <dl className="feature-label"><dt className="feature-label__text">Online Store</dt>
-                                    <dd className="feature-label__description">Includes ecommerce website and blog.</dd>
-                                </dl>
-                                </div>
-                            </th>
-                            <td headers="p-0 f-website"> <span className="pricing-table__feature-value">
-                                <span className="visuallyhidden">Yes</span>
-                                <svg className="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40">
-                                    <path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" />
-                                </svg>
-                                </span>
-                            </td>
+                        {props.pricing_group3.map((p) => (
+                            <tr>
+                                <th scope="row" id="f-website">
+                                    <div className="pricing-table__feature-name">
+                                        <dl className="feature-label"><dt className="feature-label__text">{p.obj}</dt>
+                                        <dd className="feature-label__description">{p.desc}</dd>
+                                    </dl>
+                                    </div>
+                                </th>
+                                <td headers="p-0 f-website"> <span className="pricing-table__feature-value">
+                                    {/* {if (p.value.length >1) else } */}
+                                    <svg className="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40">
+                                        <path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" />
+                                    </svg>
+                                    </span>
+                                </td>
 
-                        </tr>
+                            </tr>
+                        ))}
                         
                         
                     </tbody>
