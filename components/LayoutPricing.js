@@ -20,7 +20,8 @@ export default class LayoutPricing extends React.Component {
             faq_group6:[],
             pricing_group1:[],
             pricing_group2:[],
-            pricing_group3:[]
+            pricing_group3:[],
+            pricing_content:[]
         }
     }
 
@@ -36,6 +37,8 @@ export default class LayoutPricing extends React.Component {
         var dataPricing1 = [];
         var dataPricing2 = [];
         var dataPricing3 = [];
+        var dataPricingContent = [];
+
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
 
@@ -124,7 +127,7 @@ export default class LayoutPricing extends React.Component {
         })
         
         // Get pricing data content
-        base('Pricing').select({
+        base('Pricing_List').select({
             filterByFormula: `{pharse} = "Pharse1"`
         }).firstPage(function(err, records) {
             if (err) { console.error(err); return; }
@@ -136,7 +139,7 @@ export default class LayoutPricing extends React.Component {
             currentComponent.setState({pricing_group1:dataPricing1})
         });
 
-        base('Pricing').select({
+        base('Pricing_List').select({
             filterByFormula: `{pharse} = "Pharse2"`
         }).firstPage(function(err, records) {
             if (err) { console.error(err); return; }
@@ -146,7 +149,7 @@ export default class LayoutPricing extends React.Component {
             currentComponent.setState({pricing_group2:dataPricing2})
         });
 
-        base('Pricing').select({
+        base('Pricing_List').select({
             filterByFormula: `{pharse} = "Pharse3"`
         }).firstPage(function(err, records) {
             if (err) { console.error(err); return; }
@@ -156,12 +159,17 @@ export default class LayoutPricing extends React.Component {
             currentComponent.setState({pricing_group3:dataPricing3})
         });
 
+        base('Pricing_Page').find('recMykkn2JNCU92aS', function(err, record) {
+            if (err) { console.error(err); return; }
+            console.log('Retrieved', record.id);
+            currentComponent.setState({pricing_content:record.fields})
+        });
        
     }
 
 
     render (){
-        const {faq_group_sub,faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6,pricing_group1,pricing_group2,pricing_group3} = this.state;
+        const {faq_group_sub,faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6,pricing_group1,pricing_group2,pricing_group3,pricing_content} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -177,16 +185,37 @@ export default class LayoutPricing extends React.Component {
                     <Header />
                     <div id="PageContainer">
                         <main id="Main">
-                            
-                            <PricingSection1 pricing_group1={pricing_group1} pricing_group2={pricing_group2} pricing_group3={pricing_group3}/>
 
+                            <section className="section">
+                                <div className="grid">
+                                    <div className="grid__item">
+                                        <div className="section-heading">
+                                            <h1 className="section-heading__heading heading--1">{pricing_content.line1}</h1>
+                                            <p className="section-heading__subhead heading--2">{pricing_content.line2}</p>
+                                        </div>
+                                    </div>
+                                    <div className="grid__item grid__item--mobile-up-align-center">
+                                        <div className="text-center gutter-bottom--mobile">
+                                            <form className="marketing-button-wrapper" action={pricing_content.btn1_href} acceptCharset="UTF-8" method="post">
+                                                <button className="marketing-button js-open-signup" data-ga-event="Pricing" data-ga-action="Start your free trial" data-ga-label="Heading">{pricing_content.btn1_title}</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <PricingSection1 pricing_group1={pricing_group1} pricing_group2={pricing_group2} pricing_group3={pricing_group3}/>
+                                <div className="grid">
+                                    <div className="grid__item grid__item--tablet-up-two-thirds grid__item--tablet-up-offset-1">
+                                        <p className="pricing-disclaimer">{pricing_content.disclaimer}</p>
+                                    </div>
+                                </div>
+                            </section>
                             <section className="section background-light color-ink section--tight">
                                 <div className="grid">
                                     <div className="grid__item">
                                         <div className="section-heading gutter-bottom--reset">
-                                            <h2 className="section-heading__heading heading--1 gutter-bottom">Set up your store, pick&nbsp;a&nbsp;plan&nbsp;later</h2>
-                                            <form className="marketing-button-wrapper" action="#" acceptCharset="UTF-8" method="post">
-                                                <button className="marketing-button marketing-button--skin-lowlight js-open-signup" data-ga-event="Pricing" data-ga-action="Start your free trial" data-ga-label="After Table">Start your free trial</button>
+                                            <h2 className="section-heading__heading heading--1 gutter-bottom">{pricing_content.call_action1}</h2>
+                                            <form className="marketing-button-wrapper" action={pricing_content.btn2_href} acceptCharset="UTF-8" method="post">
+                                                <button className="marketing-button marketing-button--skin-lowlight js-open-signup" data-ga-event="Pricing" data-ga-action="Start your free trial" data-ga-label="After Table">{pricing_content.btn2_title}</button>
                                             </form>
                                         </div>
                                     </div>
@@ -200,20 +229,20 @@ export default class LayoutPricing extends React.Component {
                                 <div className="grid">
                                     <div className="grid__item grid__item--desktop-up-half">
                                         <div className="section-heading gutter-bottom--reset text-center--tablet-down">
-                                            <h2 className="section-heading__heading heading--2">Start your 90-day <span className="color-primary">free trial</span> today!</h2>
+                                            <h2 className="section-heading__heading heading--2">{pricing_content.call_action2}</h2>
                                         </div>
                                     </div>
                                     <div className="grid__item grid__item--desktop-up-5 grid__item--desktop-up-offset-1">
-                                        <form className="js-signup-inline marketing-form--inline" noValidate="noValidate" action="https://accounts.shopify.com/store-signup/setup" acceptCharset="UTF-8" method="post">
+                                        <form className="js-signup-inline marketing-form--inline" noValidate="noValidate" action={pricing_content.btn3_href} acceptCharset="UTF-8" method="post">
                                             <div className="marketing-input-wrapper marketing-input-button-pair">
                                                 <div className="marketing-input-button-pair__field-wrapper">
                                                     <label className="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" htmlFor="SignupEmail-2ae4">Email</label>
                                                     <input placeholder="Enter your email address" id="SignupEmail-2ae4" className="marketing-input-button-pair__input marketing-input marketing-input--floating" type="email" name="signup[email]" />
-                                                    <button className="marketing-button marketing-form__button marketing-input-button-pair__button" name="button" data-ga-event="Email capture signup" data-ga-action="CTA button click" aria-haspopup="dialog" type="submit">Start free trial</button>
+                                                    <button className="marketing-button marketing-form__button marketing-input-button-pair__button" name="button" data-ga-event="Email capture signup" data-ga-action="CTA button click" aria-haspopup="dialog" type="submit">{pricing_content.btn3_title}</button>
                                                 </div><span className="marketing-form__messages"></span>
                                             </div>
                                         </form>
-                                        <p className="marketing-form__fallback-cta text-center">Try Shopify free for 90 days, no credit card&nbsp;required. By entering your email, you agree to receive marketing emails&nbsp;from&nbsp;Shopify.</p>
+                                        <p className="marketing-form__fallback-cta text-center">{pricing_content.call_action2_detail}</p>
                                     </div>
                                 </div>
                             </section>

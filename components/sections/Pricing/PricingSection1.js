@@ -1,20 +1,20 @@
 const PricingSection1 = props => (
-    <section className="section">
-        <div className="grid">
-            <div className="grid__item">
-                <div className="section-heading">
-                    <h1 className="section-heading__heading heading--1">Set up your store, pick&nbsp;a&nbsp;plan&nbsp;later</h1>
-                    <p className="section-heading__subhead heading--2">Try Shopify free for 90 days, no credit card&nbsp;required</p>
-                </div>
-            </div>
-            <div className="grid__item grid__item--mobile-up-align-center">
-                <div className="text-center gutter-bottom--mobile">
-                    <form className="marketing-button-wrapper" action="#" acceptCharset="UTF-8" method="post">
-                        <button className="marketing-button js-open-signup" data-ga-event="Pricing" data-ga-action="Start your free trial" data-ga-label="Heading">Start your free trial</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+    // <section className="section">
+    //     <div className="grid">
+    //         <div className="grid__item">
+    //             <div className="section-heading">
+    //                 <h1 className="section-heading__heading heading--1">Set up your store, pick&nbsp;a&nbsp;plan&nbsp;later</h1>
+    //                 <p className="section-heading__subhead heading--2">Try Shopify free for 90 days, no credit card&nbsp;required</p>
+    //             </div>
+    //         </div>
+    //         <div className="grid__item grid__item--mobile-up-align-center">
+    //             <div className="text-center gutter-bottom--mobile">
+    //                 <form className="marketing-button-wrapper" action="#" acceptCharset="UTF-8" method="post">
+    //                     <button className="marketing-button js-open-signup" data-ga-event="Pricing" data-ga-action="Start your free trial" data-ga-label="Heading">Start your free trial</button>
+    //                 </form>
+    //             </div>
+    //         </div>
+    //     </div>
         <div className="grid">
             <div className="grid__item grid__item--desktop-up-two-thirds grid__item--mobile-up-align-center">
                 <table className="marketing-table pricing-table" id="PricingTable">
@@ -146,16 +146,18 @@ const PricingSection1 = props => (
 
                 
             </div>
-        </div>
-        <div className="grid">
-            <div className="grid__item grid__item--tablet-up-two-thirds grid__item--tablet-up-offset-1">
-                <p className="pricing-disclaimer">Shopify collects sales taxes in states where it is required by law. Stated prices do not include these taxes.</p>
-            </div>
-        </div>
-        <style jsx>{`
+            <style jsx>{`
                 tr.phrase{background-color: #f4f6f8;}
-        `}</style>
-    </section>
+            `}</style>  
+        </div>
+        // <div className="grid">
+        //     <div className="grid__item grid__item--tablet-up-two-thirds grid__item--tablet-up-offset-1">
+        //         <p className="pricing-disclaimer">Shopify collects sales taxes in states where it is required by law. Stated prices do not include these taxes.</p>
+        //     </div>
+        // </div>
+        
+
+    // </section>
 );
 
 export default PricingSection1;
