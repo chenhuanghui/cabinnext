@@ -4,6 +4,13 @@ import React from 'react';
 import Header from './Header'
 import Announcement from './sections/Announcement';
 import SetupSection1 from './sections/Setup/Section1';
+import SetupSection2 from './sections/Setup/Section2';
+import SetupSection3 from './sections/Setup/Section3';
+import SetupSection4 from './sections/Setup/Section4';
+import SetupSection5 from './sections/Setup/Section5';
+import SetupSection6 from './sections/Setup/Section6';
+import SetupSection7 from './sections/Setup/Section7';
+import SignUp from './sections/Master/SignUp'
 import Footer from './Footer'
 
 export default class LayoutSetupStore extends React.Component { 
@@ -11,7 +18,8 @@ export default class LayoutSetupStore extends React.Component {
         super(props);
     
         this.state = {
-            announcementData: []
+            announcementData: [],
+            dataSignUp: []
         }
       }
 
@@ -24,10 +32,15 @@ export default class LayoutSetupStore extends React.Component {
             if (err) { console.error(err); return; }
             currentComponent.setState({ announcementData: record.fields })
         });
+        
+        base('BundleDelivery_SignUp').find('recUU9TALWbOif6YA', function(err, record) {
+            if (err) { console.error(err); return; }
+            currentComponent.setState({ dataSignUp: record.fields })
+        });
     }
 
     render (){
-        const { announcementData} = this.state;
+        const { announcementData,dataSignUp} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -47,7 +60,13 @@ export default class LayoutSetupStore extends React.Component {
                     <div id="PageContainer">
                         <main id="Main">
                             <SetupSection1 />
-                            
+                            <SetupSection2 />
+                            <SetupSection3 />
+                            <SetupSection4 />
+                            <SetupSection5 />
+                            <SetupSection6 />
+                            <SetupSection7 />
+                            <SignUp dataSignUp={dataSignUp}/>
                             <div className="grid">
                                 <div className="grid__item back-to-top-link-wrapper">
                                     <a className="back-to-top-link link-scroll-to styled-link styled-link--skin-inherit" href="#PageContainer">
