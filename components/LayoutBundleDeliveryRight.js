@@ -86,16 +86,6 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                 <Head>
                     <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
                     <meta name="author" content="CabinFood" />
-                    {/* <link rel="stylesheet" media="all" href="https://cdn.shopify.com/assets2/masterbrand-12d9bf8602c9e16769a8ff8a1177e4238d9413d73d9dd7678796641e912282fa.css" /> */}
-                    {/* <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/home/index-72e8f7e85d965b49c9307d648b07104daf053fb6e3c5fafc4e3c20c0abd96957.css" /> */}
-                    {/* <script src="https://cdn.shopify.com/static/javascripts/vendor/bugsnag.v6.3.2.min.js"></script> */}
-                    {/* <script src="https://cdn.shopify.com/assets2/bundles/baseline/runtime-76ad241475870fafe1acc0bf5a22700961b62a11bdcc38855aa630e7f8a341dc.js"></script> */}
-                    {/* <script src="https://cdn.shopify.com/assets2/bundles/baseline/vendor-549fb800ff272e241255f89ffbf991842503de4aa02a4b09abb2b957c6a9d91d.js"></script> */}
-                    {/* <script src="https://cdn.shopify.com/assets2/bundles/baseline/manifests/pillar/sell-ba2e933c1d28947ce10bc52d3e7b2680587d4130bcb13b803368fa57eba85621.js"></script> */}
-                    {/* <script src="https://cdn.shopify.com/speedcurve-lux/js/lux.js?id=64441087"></script> */}
-                    {/* <script src="https://cdn.shopify.com/s/javascripts/tricorder/trekkie.brochure.min.js?v=2019.08.08"></script> */}
-                    {/* <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> */}
-                    
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" />
                     <title>CabinFood | easy to Start, Fast to grow</title>
@@ -129,7 +119,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                     </div>
                 </div>
                 <style jsx>{`
-                    
+                    .marketing-nav.marketing-nav--solid {background-color: #fbf7ed !important;}
                 `}</style>
             </div>
         )
