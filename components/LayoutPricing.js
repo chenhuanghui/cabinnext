@@ -24,7 +24,12 @@ export default class LayoutPricing extends React.Component {
             pricing_content:[]
         }
     }
-
+    sortByKey(array, key) {
+        return array.sort(function(a, b) {
+            var x = a[key]; var y = b[key];
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        });
+    }    
     componentDidMount () {
         let currentComponent = this;
         var dataFAQ1 = [];
@@ -132,14 +137,15 @@ export default class LayoutPricing extends React.Component {
         }).firstPage(function(err, records) {
             if (err) { console.error(err); return; }
             records.forEach(function(record) {
+                record.fields.id = record.id;
                 dataPricing1.push(record.fields)
-                console.log(record.fields);
+                // console.log(record.fields);
             });
-            
-            dataPricing1.sort(function (a, b) {
-                return a.sortID.localeCompare(b.sortID);
-            })
-
+            // sort by sortID
+            // dataPricing1.sort(function (a, b) {
+            //     return a.sortID.localeCompare(b.sortID);
+            // })
+            dataPricing1 = currentComponent.sortByKey(dataPricing1,"sortID");
             currentComponent.setState({pricing_group1:dataPricing1})
         });
 
@@ -148,8 +154,10 @@ export default class LayoutPricing extends React.Component {
         }).firstPage(function(err, records) {
             if (err) { console.error(err); return; }
             records.forEach(function(record) {
+                record.fields.id = record.id;
                 dataPricing2.push(record.fields)
             });
+            dataPricing2 = currentComponent.sortByKey(dataPricing2,"sortID");
             currentComponent.setState({pricing_group2:dataPricing2})
         });
 
@@ -158,14 +166,16 @@ export default class LayoutPricing extends React.Component {
         }).firstPage(function(err, records) {
             if (err) { console.error(err); return; }
             records.forEach(function(record) {
+                record.fields.id = record.id;
                 dataPricing3.push(record.fields)
             });
+            dataPricing3 = currentComponent.sortByKey(dataPricing3,"sortID");
             currentComponent.setState({pricing_group3:dataPricing3})
         });
 
         base('Pricing_Page').find('recMykkn2JNCU92aS', function(err, record) {
             if (err) { console.error(err); return; }
-            console.log('Retrieved', record.id);
+            // console.log('Retrieved', record.id);
             currentComponent.setState({pricing_content:record.fields})
         });
        

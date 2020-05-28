@@ -41,7 +41,8 @@ const PricingSection1 = props => (
                             </td>
                         </tr>
                         {props.pricing_group1.map((p) => (
-                            <tr>
+                            
+                            <tr className={p.id} key={p.id}> 
                                 <th scope="row" id="f-website">
                                     <div className="pricing-table__feature-name">
                                         <dl className="feature-label"><dt className="feature-label__text">{p.obj}</dt>
