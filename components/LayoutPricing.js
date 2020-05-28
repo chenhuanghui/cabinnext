@@ -136,6 +136,10 @@ export default class LayoutPricing extends React.Component {
                 console.log(record.fields);
             });
             
+            dataPricing1.sort(function (a, b) {
+                return a.sortID.localeCompare(b.sortID);
+            })
+
             currentComponent.setState({pricing_group1:dataPricing1})
         });
 
@@ -166,7 +170,7 @@ export default class LayoutPricing extends React.Component {
         });
        
     }
-
+    
 
     render (){
         const {faq_group_sub,faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6,pricing_group1,pricing_group2,pricing_group3,pricing_content} = this.state;
