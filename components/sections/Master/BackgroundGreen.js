@@ -11,7 +11,7 @@ const BackgroundGreen = props => (
                                                                 <p className="section-heading__subhead color-white">{props.dataGreen.desc}</p>
                                                         </div>              
                                                         <div className="grid__item grid__item--wide-up-3 example-merchants__more">
-                                                                <a className="color-white link link--secondary" data-event-page="homepage" data-event-category="link" data-event-action="click-link-examples-page" data-event-label="explore-more-examples" href="/examples">
+                                                                <a className="color-white link link--secondary" href="/categories">
                                                                         Explore more examples
                                                                         <svg aria-hidden="true" viewBox="0 0 48 16" className="link__arrow" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg"><g className="link__arrow-inner"><line x1="0" y1="8" x2="46" y2="8"></line><polyline points="39.5 1, 46.5 8, 39.5 15"></polyline></g></svg
                                                                 ></a>
@@ -82,45 +82,6 @@ const BackgroundGreen = props => (
                                                 </div>
                                                 
                                         </div>
-
-
-
-
-                                        {/* <div className="example-merchants">
-                                                <div className="example-merchant">
-                                                        <div className="block example-merchant__block">
-                                                                <span className="image lazyload-image block__image">
-                                                                        <span className="lazyload-image__placeholder">
-                                                                                <img sizes="100vw" srcSet={props.dataGreen.block1_img_src}/>
-                                                                        </span>
-                                                                </span>
-                                                                <h3 className="block__heading heading--4 example-merchant__name"><a className="example-merchant__link" >{props.dataGreen.block1_line1}</a></h3>
-                                                                <p className="block__content example-merchant__vertical heading--5">{props.dataGreen.block1_line2}</p>
-                                                        </div>
-                                                </div>
-                                                <div className="example-merchant">
-                                                        <div className="block example-merchant__block">
-                                                                <span className="image lazyload-image block__image">
-                                                                        <span className="lazyload-image__placeholder">
-                                                                                <img sizes="100vw" srcSet={props.dataGreen.block2_img_src}/>
-                                                                        </span>
-                                                                </span>
-                                                                <h3 className="block__heading heading--4 example-merchant__name"><a className="example-merchant__link" >{props.dataGreen.block2_line1}</a></h3>
-                                                                <p className="block__content example-merchant__vertical heading--5">{props.dataGreen.block2_line2}</p>
-                                                        </div>
-                                                </div>
-                                                <div className="example-merchant">
-                                                        <div className="block example-merchant__block">
-                                                                <span className="image lazyload-image block__image">
-                                                                        <span className="lazyload-image__placeholder">
-                                                                                <img sizes="100vw" srcSet={props.dataGreen.block3_img_src}/>
-                                                                        </span>
-                                                                </span>
-                                                                <h3 className="block__heading heading--4 example-merchant__name"><a className="example-merchant__link" >{props.dataGreen.block3_line1}</a></h3>
-                                                                <p className="block__content example-merchant__vertical heading--5">{props.dataGreen.block3_line2}</p>
-                                                        </div>
-                                                </div>
-                                        </div> */}
                                 </section>
 
                                 <section className="section section--tight">
