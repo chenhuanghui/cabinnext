@@ -56,7 +56,7 @@ const GrowthSection4 =props => (
                     </div>
                     <div className="pillar-resource pillar-resource--audience">
                         <svg className="icon pillar-resource__icon pillar-resource__icon--audience" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-                            <g fill-rule="evenodd">
+                            <g fillRule="evenodd">
                                 <path d="M22 11c0 6.065-4.935 11-11 11S0 17.065 0 11 4.935 0 11 0s11 4.935 11 11zM1.82 11c0 5.062 4.117 9.18 9.18 9.18 5.062 0 9.18-4.118 9.18-9.18 0-5.062-4.118-9.18-9.18-9.18-5.063 0-9.18 4.118-9.18 9.18z" />
                                 <path d="M13.954 11.592l-3.518 2.638c-.648.486-1.173.22-1.173-.572v-5.89c0-.803.52-1.062 1.173-.573l3.518 2.638c.647.486.652 1.27 0 1.76z" />
                             </g>

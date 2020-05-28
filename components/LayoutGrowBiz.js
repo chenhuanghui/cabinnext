@@ -21,7 +21,7 @@ export default class LayoutRunBiz extends React.Component {
             announcementData: [],
             dataSignUp: []
         }
-      }
+    }
 
     componentDidMount () {
         let currentComponent = this;
