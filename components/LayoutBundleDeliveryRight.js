@@ -44,9 +44,9 @@ export default class LayoutBundleDeliveryRight extends React.Component {
 
         base('BundleDelivery_GreenBoard').find('recoCx9CKQocUmJos', function(err, record) {
             if (err) { console.error(err); return; }
-            record.fields.block1_img_src = record.fields[`block1_img_src`][0].url;
-            record.fields.block2_img_src = record.fields[`block2_img_src`][0].url;
-            record.fields.block3_img_src = record.fields[`block3_img_src`][0].url;
+            // record.fields.block1_img_src = record.fields[`block1_img_src`][0].url;
+            // record.fields.block2_img_src = record.fields[`block2_img_src`][0].url;
+            // record.fields.block3_img_src = record.fields[`block3_img_src`][0].url;
 
             record.fields.block1_icon = record.fields[`block1_icon`][0].url;
             record.fields.block2_icon = record.fields[`block2_icon`][0].url;

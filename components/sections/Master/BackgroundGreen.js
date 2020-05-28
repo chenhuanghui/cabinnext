@@ -181,6 +181,7 @@ const BackgroundGreen = props => (
                         block__content.example-merchant__vertical.heading--5 {
                                 font-weight:400
                         }
+                        .example-merchants__more {text-align:right}
                 `}</style>
         </section>
 );
