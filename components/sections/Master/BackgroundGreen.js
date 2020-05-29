@@ -12,7 +12,7 @@ const BackgroundGreen = props => (
                                                         </div>              
                                                         <div className="grid__item grid__item--wide-up-3 example-merchants__more">
                                                                 <a className="color-white link link--secondary" href="/categories">
-                                                                        Explore more examples
+                                                                        {props.dataGreen.explore}
                                                                         <svg aria-hidden="true" viewBox="0 0 48 16" className="link__arrow" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg"><g className="link__arrow-inner"><line x1="0" y1="8" x2="46" y2="8"></line><polyline points="39.5 1, 46.5 8, 39.5 15"></polyline></g></svg
                                                                 ></a>
                                                         </div>

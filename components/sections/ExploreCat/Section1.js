@@ -25,7 +25,6 @@ const ExploreCatSection1 =props => (
                                 <p className="block__content heading--5">{p.name}</p>
                             </div>            
                         ))}
-                                                                       
                     </div>
                 </section>
             </div>
