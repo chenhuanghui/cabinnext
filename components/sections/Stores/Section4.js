@@ -10,118 +10,23 @@ const StoresSection4 =props => (
                 <div className="grid__item">
                     <section className="section section--tight">
                         <div className="example-merchants">
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
+                            {props.dataHCMStore.map((p) => (
+                                <div className="block example-merchant__block">
+                                    <span className="image block__image">
+                                        <img src={p.image} />
+                                    </span>
+                                    <div className="block_detail">
+                                        <p className="header_block heading--5">{p.name}</p>
+                                        <p className="desc_block">
+                                            {p.desc}
+                                        </p>
+                                        
+                                        <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
+                                        
+                                       
+                                    </div>    
+                                </div>
+                            ))}
                         </div>
                     </section>
                 </div>
@@ -135,118 +40,23 @@ const StoresSection4 =props => (
                 <div className="grid__item">
                     <section className="section section--tight">
                         <div className="example-merchants">
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
-                            <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/compass/uploads/ecommerce-email-marketing-101.jpg?width=550" />
-                                </span>
-                                <div className="block_detail">
-                                    <p className="header_block heading--5">Food &amp; Drink</p>
-                                    <p className="desc_block">
-                                        As you grow your email list and build your audience, you give your business an owned channel to reach your customers and nurture a relationship with
-                                        them. Whether it’s a newsletter announcing a new product or a thank-you email after a purchase, email marketing is the most cost-effective communication
-                                        and marketing channel for your business.
-                                    </p>
-                                    <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
-                                </div>    
-                            </div>
+                            {props.dataHNStore.map((p) => (
+                                <div className="block example-merchant__block">
+                                    <span className="image block__image">
+                                        <img src={p.image} />
+                                    </span>
+                                    <div className="block_detail">
+                                        <p className="header_block heading--5">{p.name}</p>
+                                        <p className="desc_block">
+                                            {p.desc}
+                                        </p>
+                                        
+                                        <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
+                                        
+                                       
+                                    </div>    
+                                </div>
+                            ))}
                         </div>
                     </section>
                 </div>

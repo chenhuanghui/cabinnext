@@ -13,22 +13,55 @@ export default class LayoutPricing extends React.Component {
         super(props);
     
         this.state = {
-
+            dataHCMStore:[],
+            dataHNStore:[]
         }
     }
     
     componentDidMount () {
         let currentComponent = this;
+        
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
 
-       
-       
+        var storeHCMList = [];
+        base('Store_List').select({
+            filterByFormula: `{location} = "HCM"`
+        }).eachPage(function page(records, fetchNextPage) {
+            // This function (`page`) will get called for each page of records.
+        
+            records.forEach(function(record) {
+                record.fields.image = record.fields.image[0].url;
+                storeHCMList.push(record.fields);
+            });
+            currentComponent.setState({dataHCMStore:storeHCMList})
+            fetchNextPage();
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        });
+
+        var storeHNList = [];
+        base('Store_List').select({
+            filterByFormula: `{location} = "HN"`
+        }).eachPage(function page(records, fetchNextPage) {
+            // This function (`page`) will get called for each page of records.
+        
+            records.forEach(function(record) {
+                record.fields.image = record.fields.image[0].url;
+                console.log(record.fields.image);
+                storeHNList.push(record.fields);
+            });
+            currentComponent.setState({dataHNStore:storeHNList})
+            fetchNextPage();
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        });
+        
     }
     
 
     render (){
-        const {} = this.state;
+        const {dataHNStore, dataHCMStore} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -57,7 +90,7 @@ export default class LayoutPricing extends React.Component {
                             <StoresSection1 />
                             <StoresSection2 />
                             <StoresSection3 />
-                            <StoresSection4 />
+                            <StoresSection4 dataHCMStore={dataHCMStore} dataHNStore={dataHNStore}/>
                             
                         </main>
                         <Footer />
