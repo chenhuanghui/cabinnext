@@ -20,7 +20,21 @@ const BackgroundGreen = props => (
                                         </div>
 
                                         <div className="example-merchants">
-                                                <div className="example-merchant">
+                                                {props.dataCategories.map((p) => (
+                                                        <div className="example-merchant">
+                                                                <div className="block example-merchant__block">
+                                                                        <span className="image lazyload-image block__image">
+                                                                                <span className="lazyload-image__placeholder">
+                                                                                        <img src={p.image} />
+                                                                                </span>
+                                                                        </span>
+                                                                        <a className="example-merchant__link" data-event-page="homepage" data-event-category="link" data-event-action="click-link-examples-category" data-event-label="food-and-drink-templates" href="/examples?category=food-and-drink-templates">
+                                                                                <p className="block__content example-merchant__vertical heading--5">{p.name}</p>
+                                                                        </a>
+                                                                </div>            
+                                                        </div>
+                                                ))}
+                                                {/* <div className="example-merchant">
                                                         <div className="block example-merchant__block">
                                                                 <span className="image lazyload-image block__image">
                                                                         <span className="lazyload-image__placeholder">
@@ -79,7 +93,7 @@ const BackgroundGreen = props => (
                                                                         <p className="block__content example-merchant__vertical heading--5">Food &amp; Drink</p>
                                                                 </a>
                                                         </div>            
-                                                </div>
+                                                </div> */}
                                                 
                                         </div>
                                 </section>

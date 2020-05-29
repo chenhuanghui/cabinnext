@@ -20,6 +20,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             announcementData: [],
             dataHero: [],
             dataGreen: [],
+            dataCategories:[],
             dataPillar: [],
             dataSupport: [],
             dataSignUp: []
@@ -28,6 +29,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
 
     componentDidMount () {
         let currentComponent = this;
+        var catList = [];
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
 
@@ -56,6 +58,19 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             currentComponent.setState({ dataGreen: record.fields })
         });
 
+        base('Categories_FB').select({
+            view: 'Grid view'
+        }).firstPage(function(err, records) {
+            if (err) { console.error(err); return; }
+            records.forEach(function(record) {
+                record.fields.image = record.fields[`image`][0].url;
+                console.log(record);
+                catList.push(record.fields);
+            });
+            // console.log(catList);
+            currentComponent.setState({ dataCategories: catList })
+        });
+
         base('BundleDelivery_Pillars').find('recp3KZyYxHHYMxsE', function(err, record) {
             if (err) { console.error(err); return; }
             // console.log('pillar',record);
@@ -80,7 +95,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
     }
 
     render () {
-        const { announcementData, dataHero, dataGreen, dataPillar,dataSupport, dataSignUp} = this.state;
+        const { announcementData, dataHero, dataGreen, dataCategories, dataPillar,dataSupport, dataSignUp} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -99,7 +114,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                     <div id="PageContainer">
                         <main id="Main">
                             <Hero dataHero={dataHero}/>
-                            <BackgroundGreen dataGreen={dataGreen}/>
+                            <BackgroundGreen dataGreen={dataGreen} dataCategories={dataCategories}/>
                             <Pillars dataPillar = {dataPillar}/>
                             <Support dataSupport = {dataSupport}/>
                             <SignUp dataSignUp = {dataSignUp}/>
