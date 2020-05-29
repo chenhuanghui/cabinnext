@@ -13,7 +13,7 @@ const StoreDetailSection1 =props => (
                     <a className="marketing-button gutter-bottom" data-ga-event="pos-hardware" data-ga-action="hero" data-ga-label="request-info" href="https://www.shopify.com/pos/request-info">
                     Request information
                     </a>
-                    <div className="color-white">Already have a Shopify store? <a className="color-white body-link" data-ga-event="pos-hardware" data-ga-action="hero" data-ga-label="login" href="https://www.shopify.com/admin/settings/channels?highlight=pos&utm_content=pos-hardware-hero-login-pos&utm_source=pos-hardware">Log in to set up Shopify POS</a>
+                    <div className="color-white">Already have a Cabin Food store? <a className="color-white body-link" data-ga-event="pos-hardware" data-ga-action="hero" data-ga-label="login" href="https://www.shopify.com/admin/settings/channels?highlight=pos&utm_content=pos-hardware-hero-login-pos&utm_source=pos-hardware">Log in to set up Cabin Food POS</a>
                     </div>
                 </div>
                 <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-7 pos-hero__image-container"> 
@@ -55,7 +55,7 @@ const StoreDetailSection1 =props => (
                                 </svg>
 
                                 <h3 className="block__heading heading--4 color-white">Low credit card rates</h3>
-                                <p className="block__content color-white">Save with competitive credit card rates from Shopify Payments.</p>
+                                <p className="block__content color-white">Save with competitive credit card rates from Cabin Food Payments.</p>
                             </div>
                         </div>
                         <div className="grid__item grid__item--desktop-up-quarter">

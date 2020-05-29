@@ -8,12 +8,13 @@ const StoreDetailSection1 =props => (
                 </div>
                 <div className="grid__item grid__item--tablet-up-third grid__item--desktop-up-half gutter-bottom">
                     <ul className="pos-hardware__checklist">
-                        <li className="pos-payments__value-prop">1-year warranty on Shopify POS hardware</li>
+                        <li className="pos-payments__value-prop">1-year warranty on Cabin FoodPOS hardware</li>
                         <li className="pos-payments__value-prop">24/7 support</li>
                         <li className="pos-payments__value-prop">Free shipping and returns</li>
                     </ul>
                 </div>
             </div>
+            
             <div className="grid grid--equal-height pos-devices">
                 <div className="grid__item grid__item--tablet-up-quarter text-left">
                     <div className="pos-devices__container">
@@ -120,7 +121,7 @@ const StoreDetailSection1 =props => (
                 <div className="grid__item grid__item--tablet-up-half pos-payments__content">
                     <div className="section-heading narrative__heading text-left">
                         <h2 className="section-heading__heading heading--1 heading--2">Payments made to make money&nbsp;move</h2>
-                        <p className="section-heading__subhead heading--2 text-major color-grey-70">Get the benefits of <a data-ga-event="pos-hardware" data-ga-action="payments" data-ga-label="shopify-payments" href="https://www.shopify.com/payments">Shopify Payments</a> with every plan. Simply turn it on in your Shopify admin to activate—no sign up or setup fee required.</p>
+                        <p className="section-heading__subhead heading--2 text-major color-grey-70">Get the benefits of <a data-ga-event="pos-hardware" data-ga-action="payments" data-ga-label="shopify-payments" href="https://www.shopify.com/payments">Cabin FoodPayments</a> with every plan. Simply turn it on in your Cabin Foodadmin to activate—no sign up or setup fee required.</p>
                     </div>
                     <ul>
                         <li className="pos-payments__value-prop">Pay one low rate for all cards, starting from 2.4% + 0¢</li>
