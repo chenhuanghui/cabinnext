@@ -57,14 +57,18 @@ export default class LayoutBundleDeliveryRight extends React.Component {
 
             currentComponent.setState({ dataGreen: record.fields })
         });
-
+        var count = 0;
         base('Categories_FB').select({
             view: 'Grid view'
         }).firstPage(function(err, records) {
             if (err) { console.error(err); return; }
             records.forEach(function(record) {
+                
+                if (count==5) return; // lay 5 item
+
                 record.fields.image = record.fields[`image`][0].url;
                 console.log(record);
+                count++;
                 catList.push(record.fields);
             });
             // console.log(catList);
