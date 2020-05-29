@@ -14,12 +14,14 @@ export default class LayoutRunBiz extends React.Component {
     
         this.state = {
             announcementData: [],
-            dataSignUp: []
+            dataSignUp: [],
+            dataCategories:[]
         }
       }
 
     componentDidMount () {
         let currentComponent = this;
+
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
 
@@ -32,10 +34,24 @@ export default class LayoutRunBiz extends React.Component {
             if (err) { console.error(err); return; }
             currentComponent.setState({ dataSignUp: record.fields })
         });
+        
+        var catList = [];
+        base('Categories_FB').select({
+            view: 'Grid view'
+        }).firstPage(function(err, records) {
+            if (err) { console.error(err); return; }
+            records.forEach(function(record) {
+                record.fields.image = record.fields[`image`][0].url;
+                console.log(record);
+                catList.push(record.fields);
+            });
+            // console.log(catList);
+            currentComponent.setState({ dataCategories: catList })
+        });
     }
 
     render (){
-        const { announcementData,dataSignUp} = this.state;
+        const { announcementData,dataSignUp,dataCategories} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -56,7 +72,7 @@ export default class LayoutRunBiz extends React.Component {
                     <div id="PageContainer">
                         <main id="Main">
                             
-                            <ExploreCatSection1 />
+                            <ExploreCatSection1 dataCategories={dataCategories}/>
 
                             <SignUp dataSignUp={dataSignUp}/>
                             <div className="grid">

@@ -17,97 +17,15 @@ const ExploreCatSection1 =props => (
             <div className="grid__item">
                 <section className="section section--tight">
                     <div className="example-merchants">
-                        
-                        <div className="block example-merchant__block">
+                        {props.dataCategories.map((p) => (
+                            <div className="block example-merchant__block">
                                 <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
+                                    <img src={p.image} />
                                 </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>            
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>            
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>            
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>            
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>            
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>            
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>            
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>            
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>            
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>            
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>            
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>             
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>            
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div> 
-                        <div className="block example-merchant__block">
-                                <span className="image block__image">
-                                    <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                </span>
-                                <p className="block__content heading--5">Food &amp; Drink</p>
-                        </div>                                                            
+                                <p className="block__content heading--5">{p.name}</p>
+                            </div>            
+                        ))}
+                                                                       
                     </div>
                 </section>
             </div>
