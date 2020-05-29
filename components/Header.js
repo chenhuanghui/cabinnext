@@ -221,7 +221,7 @@ export default class Header extends React.Component {
 
                                                         <ul className="drawer__items drawer__items--user" id="DrawerNavSecondaryAccordion">
                                                                 <li><a href="/pricing" className="drawer__item">Bảng giá</a></li>
-                                                                <li><a href="/#" className="drawer__item">Điểm kinh doanh</a></li>
+                                                                <li><a href="/stores" className="drawer__item">Stores</a></li>
                                                                 <li><a href="#" className="drawer__item"> Blog</a></li>
                                                         </ul>
 
