@@ -34,67 +34,6 @@ const BackgroundGreen = props => (
                                                                 </div>            
                                                         </div>
                                                 ))}
-                                                {/* <div className="example-merchant">
-                                                        <div className="block example-merchant__block">
-                                                                <span className="image lazyload-image block__image">
-                                                                        <span className="lazyload-image__placeholder">
-                                                                                <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                                                        </span>
-                                                                </span>
-                                                                <a className="example-merchant__link" data-event-page="homepage" data-event-category="link" data-event-action="click-link-examples-category" data-event-label="food-and-drink-templates" href="/examples?category=food-and-drink-templates">
-                                                                        <p className="block__content example-merchant__vertical heading--5">Food &amp; Drink</p>
-                                                                </a>
-                                                        </div>            
-                                                </div>
-                                                <div className="example-merchant">
-                                                        <div className="block example-merchant__block">
-                                                                <span className="image lazyload-image block__image">
-                                                                        <span className="lazyload-image__placeholder">
-                                                                                <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                                                        </span>
-                                                                </span>
-                                                                <a className="example-merchant__link" data-event-page="homepage" data-event-category="link" data-event-action="click-link-examples-category" data-event-label="food-and-drink-templates" href="/examples?category=food-and-drink-templates">
-                                                                        <p className="block__content example-merchant__vertical heading--5">Food &amp; Drink</p>
-                                                                </a>
-                                                        </div>            
-                                                </div>
-                                                <div className="example-merchant">
-                                                        <div className="block example-merchant__block">
-                                                                <span className="image lazyload-image block__image">
-                                                                        <span className="lazyload-image__placeholder">
-                                                                                <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                                                        </span>
-                                                                </span>
-                                                                <a className="example-merchant__link" data-event-page="homepage" data-event-category="link" data-event-action="click-link-examples-category" data-event-label="food-and-drink-templates" href="/examples?category=food-and-drink-templates">
-                                                                        <p className="block__content example-merchant__vertical heading--5">Food &amp; Drink</p>
-                                                                </a>
-                                                        </div>            
-                                                </div>
-                                                <div className="example-merchant">
-                                                        <div className="block example-merchant__block">
-                                                                <span className="image lazyload-image block__image">
-                                                                        <span className="lazyload-image__placeholder">
-                                                                                <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                                                        </span>
-                                                                </span>
-                                                                <a className="example-merchant__link" data-event-page="homepage" data-event-category="link" data-event-action="click-link-examples-category" data-event-label="food-and-drink-templates" href="/examples?category=food-and-drink-templates">
-                                                                        <p className="block__content example-merchant__vertical heading--5">Food &amp; Drink</p>
-                                                                </a>
-                                                        </div>            
-                                                </div>
-                                                <div className="example-merchant">
-                                                        <div className="block example-merchant__block">
-                                                                <span className="image lazyload-image block__image">
-                                                                        <span className="lazyload-image__placeholder">
-                                                                                <img src="https://cdn.shopify.com/assets2/merchants/alfred/home-example-large-63880922a88a295fbbda178e6c4a42aa8b6c1e41fd9ed503cc7beaabf79c476d.jpg" />
-                                                                        </span>
-                                                                </span>
-                                                                <a className="example-merchant__link" data-event-page="homepage" data-event-category="link" data-event-action="click-link-examples-category" data-event-label="food-and-drink-templates" href="/examples?category=food-and-drink-templates">
-                                                                        <p className="block__content example-merchant__vertical heading--5">Food &amp; Drink</p>
-                                                                </a>
-                                                        </div>            
-                                                </div> */}
-                                                
                                         </div>
                                 </section>
 
@@ -157,6 +96,7 @@ const BackgroundGreen = props => (
                                 font-weight:400
                         }
                         .example-merchants__more {text-align:right}
+                        .block__heading {font-weight: bold !important;}
                 `}</style>
         </section>
 );

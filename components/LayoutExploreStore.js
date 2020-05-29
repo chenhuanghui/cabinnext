@@ -8,7 +8,7 @@ import StoresSection2 from './sections/Stores/Section2';
 import StoresSection3 from './sections/Stores/Section3';
 import StoresSection4 from './sections/Stores/Section4';
 
-export default class LayoutPricing extends React.Component { 
+export default class LayoutExploreStores extends React.Component { 
     constructor(props){
         super(props);
     
