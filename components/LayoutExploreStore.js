@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import React from 'react';
 
-import Header from './sections/Stores/Header'
-import Footer from './sections/Stores/Footer'
+import Header from './Header'
+import Footer from './Footer'
 import StoresSection1 from './sections/Stores/Section1';
 import StoresSection2 from './sections/Stores/Section2';
 import StoresSection3 from './sections/Stores/Section3';
@@ -75,7 +75,7 @@ export default class LayoutExploreStores extends React.Component {
                     <link rel="stylesheet" type="text/css" href="https://cdn.shopify.com/shopifycloud/start-web/assets/baseline/Article~CourseBrowse~CourseDetail~Event~Events~Feedback~Home~Learning~LessonDetail~LiveStream~Progre~f5ee6bf8-d808c1892549ebf07e9238c09b3d98ef7b9ebcbc247e2e53d554ca8b0d601386.css" crossorigin="anonymous"/>
                     <link rel="stylesheet" type="text/css" href="https://cdn.shopify.com/shopifycloud/start-web/assets/baseline/Article~CourseBrowse~CourseDetail~Event~Events~Feedback~Home~Learning~LessonDetail~LiveStream~Progre~1a00785f-996c8ef04d12c5d058e500a187f4d6518bd01f5327b95c5107be0492b8e6cc5d.css" crossorigin="anonymous"/>
                     <link rel="stylesheet" type="text/css" href="https://cdn.shopify.com/shopifycloud/start-web/assets/baseline/Home-478028fb0e135edf236bb814a7581aacb877413c4fb13be61cf9a742aa2e18c0.css" crossorigin="anonymous" />
-                    <link rel="stylesheet" type="text/css" href="https://cdn.shopify.com/shopifycloud/start-web/assets/baseline/vendors~main-9884d212cd3f23e82f058ad1dbb99522b1727e187cadaecb67620e3f0966329a.css" integrity="sha256-mITSEs0/I+gvBYrR27mVIrFyfhh8ra7LZ2IOPwlmMpo=" crossorigin="anonymous"/>
+                    {/* <link rel="stylesheet" type="text/css" href="https://cdn.shopify.com/shopifycloud/start-web/assets/baseline/vendors~main-9884d212cd3f23e82f058ad1dbb99522b1727e187cadaecb67620e3f0966329a.css" integrity="sha256-mITSEs0/I+gvBYrR27mVIrFyfhh8ra7LZ2IOPwlmMpo=" crossorigin="anonymous"/> */}
                     <link rel="stylesheet" type="text/css" href="https://cdn.shopify.com/shopifycloud/start-web/assets/baseline/main-13b619d52f7196460352b3f8212d9142f84154b7e7af831918f334be36ed9b9b.css" integrity="sha256-E7YZ1S9xlkYDUrP4IS2RQvhBVLfnr4MZGPM0vjbtm5s=" crossorigin="anonymous" />
                     {/* Layout CSS end */}
 

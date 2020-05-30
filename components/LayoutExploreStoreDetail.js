@@ -8,6 +8,8 @@ import StoresDetailSection2 from './sections/ExploreStore/Section2';
 import StoresDetailSection3 from './sections/ExploreStore/Section3';
 import StoresDetailSection4 from './sections/ExploreStore/Section4';
 import StoresDetailSection5 from './sections/ExploreStore/Section5';
+import StoresDetailSection6 from './sections/ExploreStore/Section6';
+import StoresDetailSection7 from './sections/ExploreStore/Section7';
 
 export default class LayoutExploreStoreDetail extends React.Component { 
     constructor(props){
@@ -53,7 +55,8 @@ export default class LayoutExploreStoreDetail extends React.Component {
                          <StoresDetailSection2 />   
                          <StoresDetailSection3 />  
                          <StoresDetailSection5 />  
-                         
+                         <StoresDetailSection6 />
+                         <StoresDetailSection7 />
                             
                         </main>
                         <Footer />
