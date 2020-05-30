@@ -2,7 +2,7 @@ const StoreDetailSection1 =props => (
     <div className="colored-section">
         <section className="section section--tight">
             <div className="grid grid--vertically-centered pos-hero">
-                <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-5 pos-hero__content-container">
+                {/* <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-5 pos-hero__content-container">
                     <div className="section-heading text-left gutter-bottom">
                         <h1 className="section-heading__kicker heading--5 color-yellow-30">POS Hardware</h1>
                         <h2 className="section-heading__heading heading--1 pos-next-hero__heading color-white">
@@ -22,7 +22,45 @@ const StoreDetailSection1 =props => (
                             <img src="https://cdn.shopify.com/assets2/merchants/kotn/pos-next-hardware-hero-large-85fa5564cf2b681fd8dd92b12c432eec5646618ed2da3ffb543e0cc78fad2df0.jpg"/>
                         </span>
                     </span>
+                </div> */}
+
+                <div className="grid__item grid__item--tablet-up-half pos-next-popup-sales__hero-grid-item">
+                        <div className="section-heading text-left gutter-bottom">
+                            <h1 className="section-heading__kicker heading--5 color-yellow-30">Pop-up Sales</h1>
+                            <h1 className="section-heading__heading heading--jumbo pos-next-hero__heading color-white">Ready to go, wherever&nbsp;you&nbsp;go</h1>
+                            <p className="section-heading__subhead heading--2 color-white text-major">Sell at pop-ups, markets, fairs, and more. Shopify’s all-in-one platform lets you go from online to offline without skipping&nbsp;a&nbsp;beat.</p>
+                        </div>
+                        <form className="js-signup-inline marketing-form--inline" novalidate="novalidate" action="https://accounts.shopify.com/store-signup/setup" accept-charset="UTF-8" method="post" __bizdiag="-495723452" __biza="W___">
+                            <div className="marketing-input-wrapper marketing-input-button-pair">
+                                <div className="marketing-input-button-pair__field-wrapper">
+                                    <label className="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" for="SignupEmail-d05b">Email</label>
+                                    <input placeholder="Enter your email address" id="SignupEmail-d05b" className="marketing-input-button-pair__input marketing-input marketing-input--floating" type="email" name="signup[email]"/>
+                                    <button className="marketing-button marketing-form__button marketing-input-button-pair__button" name="button" data-ga-event="pos-request-info" data-ga-action="hero" data-ga-label="email_signup" aria-haspopup="dialog" type="submit">Start free trial</button>
+                                </div>
+                                <span className="marketing-form__messages"></span>
+                            </div>
+                        </form>
+                        <p className="marketing-form__fallback-cta text-center text-minor color-white text-left gutter-bottom">Try Shopify free for 90 days, no credit card&nbsp;required. By entering your email, you agree to receive marketing emails&nbsp;from&nbsp;Shopify.</p>
+
+                        <div className="color-white">
+                            Already have a Shopify store? 
+                            <a className="color-white body-link" data-ga-event="pos-pop-up-sales" data-ga-action="hero" data-ga-label="login" href="/admin/settings/channels?highlight=pos&amp;utm_content=pos-pop-up-sales-hero-login-pos&amp;utm_source=pos-pop-up-sales">Log in to set up Shopify POS</a>
+                        </div>
+                </div>    
+                
+                <div className="grid__item grid__item--tablet-up-half  pos-hero__image-container"> 
+                    <img src="https://cdn.shopify.com/assets2/pos/pop-up-sales-new/hero-image-large-4534d0324b3d15992910cc60587d6385f5eaa0dfdc94345bfb0960c2efcf0f8f.jpg"/>
+                    {/* <span className="image lazyload-image">
+                        <span className="lazyload-image__placeholder">
+                            
+                            
+                        </span>
+                    </span> */}
                 </div>
+
+
+
+
             </div>
 
             <div className="grid grid--vertically-centered pos-next-hardware__hero-features">
@@ -73,7 +111,8 @@ const StoreDetailSection1 =props => (
         </section>
         <style jsx>{`
             .pos-next-hero__heading {font-size: 4.375em; font-weight: 500;}
-            .image.lazyload-image{max-width: 804px; max-height: 525px;}
+            // .image.lazyload-image{max-width: 804px; max-height: 525px;}
+            .image.lazyload-image{max-width: 636px; max-height: 728px;}
             .lazyload-image__placeholder{padding-bottom: 65.2985%}
             .pos-next-hardware__hero-features {margin-top: 96px;}
         `}</style>
