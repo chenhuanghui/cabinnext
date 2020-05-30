@@ -21,7 +21,7 @@ const StoresSection4 =props => (
                                             {p.desc}
                                         </p>
                                         
-                                        <p className=" _is-ready"><a href="#">Sẵn sàng phục vụ</a></p>
+                                        <p className=" _is-ready"><a href="/store-31">Sẵn sàng phục vụ</a></p>
                                         
                                        
                                     </div>    
