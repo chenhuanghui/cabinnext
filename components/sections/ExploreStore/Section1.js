@@ -2,32 +2,10 @@ const StoreDetailSection1 =props => (
     <div className="colored-section">
         <section className="section section--tight">
             <div className="grid grid--vertically-centered pos-hero">
-                {/* <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-5 pos-hero__content-container">
-                    <div className="section-heading text-left gutter-bottom">
-                        <h1 className="section-heading__kicker heading--5 color-yellow-30">POS Hardware</h1>
-                        <h2 className="section-heading__heading heading--1 pos-next-hero__heading color-white">
-                            Break free <br/>
-                            from <br/>
-                            the counter</h2>
-                    </div> 
-                    <a className="marketing-button gutter-bottom" data-ga-event="pos-hardware" data-ga-action="hero" data-ga-label="request-info" href="https://www.shopify.com/pos/request-info">
-                    Request information
-                    </a>
-                    <div className="color-white">Already have a Cabin Food store? <a className="color-white body-link" data-ga-event="pos-hardware" data-ga-action="hero" data-ga-label="login" href="https://www.shopify.com/admin/settings/channels?highlight=pos&utm_content=pos-hardware-hero-login-pos&utm_source=pos-hardware">Log in to set up Cabin Food POS</a>
-                    </div>
-                </div>
-                <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-7 pos-hero__image-container"> 
-                    <span className="image lazyload-image">
-                        <span className="lazyload-image__placeholder">
-                            <img src="https://cdn.shopify.com/assets2/merchants/kotn/pos-next-hardware-hero-large-85fa5564cf2b681fd8dd92b12c432eec5646618ed2da3ffb543e0cc78fad2df0.jpg"/>
-                        </span>
-                    </span>
-                </div> */}
-
                 <div className="grid__item grid__item--tablet-up-half pos-next-popup-sales__hero-grid-item">
                         <div className="section-heading text-left gutter-bottom">
                             <h1 className="section-heading__kicker heading--5 color-yellow-30">Pop-up Sales</h1>
-                            <h1 className="section-heading__heading heading--jumbo pos-next-hero__heading color-white">Ready to go, wherever&nbsp;you&nbsp;go</h1>
+                            <h1 className="section-heading__heading heading--jumbo pos-next-hero__heading color-white">Ready to go, wherever you go</h1>
                             <p className="section-heading__subhead heading--2 color-white text-major">Sell at pop-ups, markets, fairs, and more. Shopify’s all-in-one platform lets you go from online to offline without skipping&nbsp;a&nbsp;beat.</p>
                         </div>
                         <form className="js-signup-inline marketing-form--inline" novalidate="novalidate" action="https://accounts.shopify.com/store-signup/setup" accept-charset="UTF-8" method="post" __bizdiag="-495723452" __biza="W___">
@@ -50,17 +28,7 @@ const StoreDetailSection1 =props => (
                 
                 <div className="grid__item grid__item--tablet-up-half  pos-hero__image-container"> 
                     <img src="https://cdn.shopify.com/assets2/pos/pop-up-sales-new/hero-image-large-4534d0324b3d15992910cc60587d6385f5eaa0dfdc94345bfb0960c2efcf0f8f.jpg"/>
-                    {/* <span className="image lazyload-image">
-                        <span className="lazyload-image__placeholder">
-                            
-                            
-                        </span>
-                    </span> */}
                 </div>
-
-
-
-
             </div>
 
             <div className="grid grid--vertically-centered pos-next-hardware__hero-features">
