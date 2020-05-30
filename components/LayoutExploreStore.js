@@ -89,7 +89,7 @@ export default class LayoutExploreStores extends React.Component {
                         <main id="Main">
                             <StoresSection1 />
                             <StoresSection2 />
-                            <StoresSection3 />
+                            {/* <StoresSection3 /> */}
                             <StoresSection4 dataHCMStore={dataHCMStore} dataHNStore={dataHNStore}/>
                             
                         </main>
