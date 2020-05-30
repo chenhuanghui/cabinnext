@@ -5,6 +5,7 @@ import Header from './Header'
 import Footer from './Footer'
 import StoresDetailSection1 from './sections/ExploreStore/Section1';
 import StoresDetailSection2 from './sections/ExploreStore/Section2';
+import StoresDetailSection4 from './sections/ExploreStore/Section4';
 
 export default class LayoutExploreStoreDetail extends React.Component { 
     constructor(props){
@@ -46,7 +47,9 @@ export default class LayoutExploreStoreDetail extends React.Component {
                     <div id="PageContainer">
                         <main id="Main">
                          <StoresDetailSection1 />   
+                         <StoresDetailSection4 />   
                          <StoresDetailSection2 />   
+                         
                             
                         </main>
                         <Footer />
