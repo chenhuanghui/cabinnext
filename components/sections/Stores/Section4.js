@@ -29,9 +29,38 @@ const StoresSection4 =props => (
                             </div>
                         ))}
                     </div>
-                </section>
+                </section> 
+            </div>
+
+            <div className="grid__item location_list">
+                <div className="section-heading section-heading--tablet-up-align-left">
+                    <h2 className="section-heading__heading heading--2">Cabin Food tại Hà Nội</h2>
+                    <p className="section-heading__subhead heading--4">
+                        Set up your store in minutes and bring your brand to life Set up your store in minutes and bring your brand to life Set up your store in minutes and bring your brand to life Set up your store in minutes and bring your brand to life
+                    </p>
+                </div>
                 
-                
+                <section className="section location__group_item">
+                    <div className="example-merchants block">
+                        {props.dataHNStore.map((p) => (
+                            <div className=" example-merchant__block">
+                                <a href="/store-31">
+                                    <span className="image block__image">
+                                        <img src={p.image} />
+                                    </span>
+                                    <div className="block_detail">
+                                        <p className="header_store_name heading--5">{p.name}</p>
+                                        <p className="header_addr heading--5">{p.addr}</p>
+                                        <p className="desc_block">
+                                            {p.desc}
+                                        </p>
+                                        <p className=" _is-ready">Sẵn sàng phục vụ</p>
+                                    </div>    
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                </section> 
             </div>
         </div>
         <style jsx>{`
