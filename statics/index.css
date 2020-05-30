@@ -1673,7 +1673,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
 }
 @media screen and (min-width: 67.5em){
     .pillars__subhead{
-        font-size:1.25em;
+        font-size:1.1em;
         width:55%
     }
 }
