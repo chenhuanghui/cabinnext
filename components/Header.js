@@ -127,7 +127,7 @@ export default class Header extends React.Component {
                                                         </li>
                                                         <li>
                                                                 <div className="popover-wrapper js-popover-dropdown popover-wrapper--dropdown" data-position="bottom" data-align="left" >
-                                                                        <a className="popover__trigger marketing-nav__item marketing-nav__item--primary" href="/stores">  Store</a>
+                                                                        <a className="popover__trigger marketing-nav__item marketing-nav__item--primary" href="/stores"> Điểm kinh doanh</a>
                                                                 </div>
                                                         </li>
                                                 </ul>
@@ -137,7 +137,7 @@ export default class Header extends React.Component {
                                                 </ul> */}
                                                 <ul className="marketing-nav__items marketing-nav__user display--expanded-nav">
                                                         <li><a href="/pricing" className="marketing-nav__item marketing-nav__item--user"> Bảng giá </a></li>
-                                                        <li><a href="/about" className="marketing-nav__item marketing-nav__item--user"> CabinFood </a></li>
+                                                        <li><a href="/about" className="marketing-nav__item marketing-nav__item--user">Về CabinFood </a></li>
                                                         <li><a href="#" className="marketing-nav__item marketing-nav__item--user"> Tin tức </a></li>
                                                 </ul>
                                                 <button name="button" type="button" className="marketing-nav__hamburger hide--expanded-nav js-drawer-open-right" aria-controls="NavDrawer" aria-expanded="false">
@@ -221,12 +221,12 @@ export default class Header extends React.Component {
 
                                                         <ul className="drawer__items drawer__items--user" id="DrawerNavSecondaryAccordion">
                                                                 <li><a href="/pricing" className="drawer__item">Bảng giá</a></li>
-                                                                <li><a href="/stores" className="drawer__item">Stores</a></li>
-                                                                <li><a href="#" className="drawer__item"> Blog</a></li>
+                                                                <li><a href="/stores" className="drawer__item">Điểm kinh doanh</a></li>
+                                                                <li><a href="#" className="drawer__item"> Tin tức</a></li>
                                                         </ul>
 
                                                         <ul className="drawer__items drawer__items--corporate">
-                                                                <li><a href="/about" className="drawer__item">Our Story</a></li>
+                                                                <li><a href="/about" className="drawer__item">Về CabinFood</a></li>
                                                                 <li>
                                                                         <form className="button_to" method="post" action="#">
                                                                                 <input className="js-open-signup drawer__item drawer__item--signup marketing-nav__button marketing-button marketing-button--small" defaultValue="Đăng ký tư vấn"/>
