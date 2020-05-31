@@ -1,4 +1,4 @@
-import LayoutExploreStoreDetail from '../components/LayoutExploreStoreDetail'
+import LayoutExploreStoreDetail from '../../components/LayoutExploreStoreDetail'
 
 const ExploreStoreDetail = props => (
     <LayoutExploreStoreDetail />

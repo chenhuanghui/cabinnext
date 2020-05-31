@@ -21,6 +21,7 @@ export default class LayoutPricing extends React.Component {
             pricing_group1:[],
             pricing_group2:[],
             pricing_group3:[],
+            pricing_sub_group:[],
             pricing_content:[]
         }
     }
@@ -42,6 +43,7 @@ export default class LayoutPricing extends React.Component {
         var dataPricing1 = [];
         var dataPricing2 = [];
         var dataPricing3 = [];
+        var dataSubGroupPricing = [];
         var dataPricingContent = [];
 
         var Airtable = require('airtable');
@@ -141,11 +143,9 @@ export default class LayoutPricing extends React.Component {
                 dataPricing1.push(record.fields)
                 // console.log(record.fields);
             });
-            // sort by sortID
-            // dataPricing1.sort(function (a, b) {
-            //     return a.sortID.localeCompare(b.sortID);
-            // })
+            
             dataPricing1 = currentComponent.sortByKey(dataPricing1,"sortID");
+            console.dir(dataPricing1);
             currentComponent.setState({pricing_group1:dataPricing1})
         });
 
@@ -172,6 +172,7 @@ export default class LayoutPricing extends React.Component {
             dataPricing3 = currentComponent.sortByKey(dataPricing3,"sortID");
             currentComponent.setState({pricing_group3:dataPricing3})
         });
+
 
         base('Pricing_Page').find('recMykkn2JNCU92aS', function(err, record) {
             if (err) { console.error(err); return; }

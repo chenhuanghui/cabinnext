@@ -13,7 +13,7 @@ const StoresSection4 =props => (
                     <div className="example-merchants block">
                         {props.dataHCMStore.map((p) => (
                             <div className=" example-merchant__block">
-                                <a href="/store-31">
+                                <a href="/stores/31">
                                     <span className="image block__image">
                                         <img src={p.image} />
                                     </span>
@@ -44,7 +44,7 @@ const StoresSection4 =props => (
                     <div className="example-merchants block">
                         {props.dataHNStore.map((p) => (
                             <div className=" example-merchant__block">
-                                <a href="/store-31">
+                                <a href="/stores/31">
                                     <span className="image block__image">
                                         <img src={p.image} />
                                     </span>

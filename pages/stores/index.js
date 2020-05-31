@@ -1,4 +1,4 @@
-import LayoutExploreStore from '../components/LayoutExploreStore'
+import LayoutExploreStore from '../../components/LayoutExploreStore'
 
 const ExploreStore = props => (
     <LayoutExploreStore />

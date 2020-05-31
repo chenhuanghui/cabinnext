@@ -2,12 +2,12 @@ const ExploreCatSection1 =props => (
     
     <section className="section">
         <div className="gird">
-            <div class="grid__item grid__item--desktop-up-10 grid__item--wide-up-8 grid__item--desktop-up-align-center">
-                <section class="section section--tight section--padding-bottom-only">
-                    <div class="section-heading">
-                        <h1 class="section-heading__kicker heading--5">Online store examples</h1>
-                        <h2 class="section-heading__heading heading--1">Find the way forward for your business</h2>
-                        <p class="section-heading__subhead heading--2 heading--3">From shoe stores to snack shops, browse Shopify store examples and get inspired to get online.</p>
+            <div className="grid__item grid__item--desktop-up-10 grid__item--wide-up-8 grid__item--desktop-up-align-center">
+                <section className="section section--tight section--padding-bottom-only">
+                    <div className="section-heading">
+                        <h1 className="section-heading__kicker heading--5">Online store examples</h1>
+                        <h2 className="section-heading__heading heading--1">Find the way forward for your business</h2>
+                        <p className="section-heading__subhead heading--2 heading--3">From shoe stores to snack shops, browse Shopify store examples and get inspired to get online.</p>
                     </div>
                 </section>
             </div>
