@@ -8,7 +8,7 @@ const StoreDetailSection1 =props => (
                             <h1 className="section-heading__heading heading--jumbo pos-next-hero__heading color-white">Ready to go, wherever you go</h1>
                             <p className="section-heading__subhead heading--2 color-white text-major">Sell at pop-ups, markets, fairs, and more. Shopify’s all-in-one platform lets you go from online to offline without skipping&nbsp;a&nbsp;beat.</p>
                         </div>
-                        <form className="js-signup-inline marketing-form--inline" novalidate="novalidate" action="https://accounts.shopify.com/store-signup/setup" accept-charset="UTF-8" method="post" __bizdiag="-495723452" __biza="W___">
+                        <form className="js-signup-inline marketing-form--inline" novalidate="novalidate" action="#" accept-charset="UTF-8" method="post" __bizdiag="-495723452" __biza="W___">
                             <div className="marketing-input-wrapper marketing-input-button-pair">
                                 <div className="marketing-input-button-pair__field-wrapper">
                                     <label className="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" for="SignupEmail-d05b">Email</label>

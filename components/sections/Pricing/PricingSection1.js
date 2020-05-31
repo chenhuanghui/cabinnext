@@ -163,10 +163,12 @@ const PricingSection1 = props => (
         
         <style jsx>{`
             .pharse, .pharse:hover{background-color: #008060;}
+            .pharse th, .pharse td{ border:none !important;}
             .pharse:hover th, .pharse:hover td {background-color: #008060 !important;}
             .pharse p, .pharse span {color:white;}
             .pharse .heading--5 {font-weight: bold; line-height:30px;}
             .pharse .feature-label__description {font-size: 0.8em;}
+            
         `}</style>  
     </div>
 );

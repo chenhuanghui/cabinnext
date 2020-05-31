@@ -68,14 +68,14 @@ const StoreDetailSection4 = props => (
         <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-half pos-next-popup-sales__pos-pocket-image display--mobile">
             <span className="image lazyload-image">
                 <span className="lazyload-image__placeholder">
-                    <img data-sizes="100vw" data-srcset="https://cdn.shopify.com/assets2/pos/pop-up-sales-new/pos-pocket-small-d64a44e6f370ace99d2098e2dedef693c1910f688dd2c0a3b98d728c67848904.jpg 1x, https://cdn.shopify.com/assets2/pos/pop-up-sales-new/pos-pocket-large-b100cb1cdec760314f02cee9ee03060b6e964b78e962028c37a1cd2bf169f570.jpg 2x" alt="A merchant pulling Shopify's Tap &amp; Chip phone case and Card Reader from their pocket." className="lazyload"/>
+                    <img src="https://cdn.shopify.com/assets2/pos/pop-up-sales-new/pos-pocket-large-b100cb1cdec760314f02cee9ee03060b6e964b78e962028c37a1cd2bf169f570.jpg"/>
                 </span>
             </span>
-            <span className="image lazyload-image pos-next-popup-sales__pos-pocket-ui-illustration">
+            {/* <span className="image lazyload-image pos-next-popup-sales__pos-pocket-ui-illustration">
                 <span className="lazyload-image__placeholder">
-                    <img data-sizes="100vw" data-srcset="https://cdn.shopify.com/assets2/pos/pop-up-sales-new/pos-orders-small-c8a7e9d1896a25aab968bae2abeb286e37571f0eca625d90436a65c839ee2489.png 1x, https://cdn.shopify.com/assets2/pos/pop-up-sales-new/pos-orders-large-009a5252e009a98f9667fe0c645dbff2dc21c36cb914ff34cb313e53c4007fdf.png 2x" alt="A detail view of the Order History feature in Shopify POS showing recent orders from a New York pop-up." className="lazyload"/>
+                <img src="https://cdn.shopify.com/assets2/pos/pop-up-sales-new/pos-pocket-large-b100cb1cdec760314f02cee9ee03060b6e964b78e962028c37a1cd2bf169f570.jpg"/>
                 </span>
-            </span>
+            </span> */}
         </div>
         <style jsx>{`
             .lazyload-image{max-width: 800px; max-height: 800px;}

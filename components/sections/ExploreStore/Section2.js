@@ -1,4 +1,4 @@
-const StoreDetailSection1 =props => (
+const StoreDetailSection2 =props => (
     <section className="section background-yellow-0">
             <div className="grid gutter-bottom">
                 <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-half gutter-bottom">
@@ -153,4 +153,4 @@ const StoreDetailSection1 =props => (
         </section>
         
 );
-export default StoreDetailSection1;
+export default StoreDetailSection2;
