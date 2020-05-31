@@ -23,7 +23,7 @@ const Hero = props => (
       </div>
 
     <div className="picture--cover homepage-hero__image">
-        <img className="image" sizes="100vw" srcSet={props.dataHero.img_src} />
+        <img className="image" src={props.dataHero.img_src} />
     </div>
   </div>  
 );
