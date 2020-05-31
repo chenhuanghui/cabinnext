@@ -18,6 +18,13 @@ export default class LayoutExploreStores extends React.Component {
         }
     }
     
+    sortByKey(array, key) {
+        return array.sort(function(a, b) {
+            var x = a[key]; var y = b[key];
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        });
+    }    
+
     componentDidMount () {
         let currentComponent = this;
         
@@ -34,6 +41,7 @@ export default class LayoutExploreStores extends React.Component {
                 record.fields.image = record.fields.image[0].url;
                 storeHCMList.push(record.fields);
             });
+            storeHCMList = currentComponent.sortByKey(storeHCMList,"sortID");
             currentComponent.setState({dataHCMStore:storeHCMList})
             fetchNextPage();
         }, function done(err) {
@@ -51,6 +59,7 @@ export default class LayoutExploreStores extends React.Component {
                 console.log(record.fields.image);
                 storeHNList.push(record.fields);
             });
+            storeHNList = currentComponent.sortByKey(storeHNList,"sortID");
             currentComponent.setState({dataHNStore:storeHNList})
             fetchNextPage();
         }, function done(err) {
