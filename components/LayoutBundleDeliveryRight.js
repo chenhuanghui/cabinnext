@@ -50,10 +50,10 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             // record.fields.block2_img_src = record.fields[`block2_img_src`][0].url;
             // record.fields.block3_img_src = record.fields[`block3_img_src`][0].url;
 
-            record.fields.block1_icon = record.fields[`block1_icon`][0].url;
-            record.fields.block2_icon = record.fields[`block2_icon`][0].url;
-            record.fields.block3_icon = record.fields[`block3_icon`][0].url;
-            record.fields.block4_icon = record.fields[`block4_icon`][0].url;
+            // record.fields.block1_icon = record.fields[`block1_icon`][0].url;
+            // record.fields.block2_icon = record.fields[`block2_icon`][0].url;
+            // record.fields.block3_icon = record.fields[`block3_icon`][0].url;
+            // record.fields.block4_icon = record.fields[`block4_icon`][0].url;
 
             currentComponent.setState({ dataGreen: record.fields })
         });
