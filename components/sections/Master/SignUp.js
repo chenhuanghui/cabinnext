@@ -19,7 +19,7 @@ const SignUp = props => (
                                 <span className="marketing-form__messages"></span>
                             </div>
                         </form>
-                        {/* <p className="marketing-form__fallback-cta text-center text-minor color-gray-80 text-left">{props.dataForm.note}</p> */}
+                        <p className="marketing-form__fallback-cta text-center text-minor color-gray-80 text-left">{props.dataForm.note}</p>
                     </div>
                     
                 </div>
