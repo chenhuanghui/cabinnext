@@ -4,38 +4,27 @@ const Footer = props => (
             <div className="grid">
                 <div className="grid__item">
                     <nav className="footer-nav">
-                        <a href="#">About</a>
-                        <a href="#">Careers</a>
-                        <a href="#">Press and Media</a>
-                        <a href="#">Shopify Plus</a>
-                        <a href="#">Sitemap</a>
+                        <a href="#">Về Cabin Food</a>
+                        <a href="#">Điểm kinh doanh</a>
+                        <a href="#">Món ăn thức uống phù hợp</a>
+                        <a href="#">Bảng giá</a>
+
                     </nav>
                 </div>
 
 
-                <div className="grid__item grid__item--mobile-up-half grid__item--tablet-up-3">
-                    <h3 className="footer-heading heading--5">Online store</h3>
+                {/* <div className="grid__item grid__item--mobile-up-half grid__item--tablet-up-3">
+                    <h3 className="footer-heading heading--5">Giải pháp</h3>
 
                     <div className="gutter-bottom--mobile footer__column-list">
-                        <a className="footer-link" href="#">Sell online</a>
-                        <a className="footer-link" href="#">Features</a>
-                        <a className="footer-link" href="#">Examples</a>
-                        <a className="footer-link" href="#">Website editor</a>
-                        <a className="footer-link" href="#">Online retail</a>
-                        <a className="footer-link" href="#">Ecommerce website</a>
-                        <a className="footer-link" href="#">Domain names</a>
-                        <a className="footer-link" href="#">Themes</a>
-                        <a className="footer-link" href="#">Shopping cart</a>
-                        <a className="footer-link" href="#">Ecommerce hosting</a>
-                        <a className="footer-link" href="#">Mobile commerce</a>
-                        <a className="footer-link" href="#">Ecommerce software</a>
-                        <a className="footer-link" href="#">Online store builder</a>
-                        <a className="footer-link" href="#">Oberlo</a>
-                        <a className="footer-link" href="#">Dropshipping Business</a>
+                        <a className="footer-link" href="#">Bắt đầu dễ dàng</a>
+                        <a className="footer-link" href="#">Vận hành tinh gọn</a>
+                        <a className="footer-link" href="#">Mở rộng thị trường</a>
+                        <a className="footer-link" href="#">Quản lý tối ưu</a>
                     </div>
-                </div>
+                </div> */}
 
-                <div className="grid__item grid__item--mobile-up-half grid__item--tablet-up-1">
+                {/* <div className="grid__item grid__item--mobile-up-half grid__item--tablet-up-1">
                     <h3 className="footer-heading heading--5">Point of sale</h3>
 
                     <div className="gutter-bottom--mobile">
@@ -43,9 +32,9 @@ const Footer = props => (
                         <a className="footer-link" href="#">Features</a>
                         <a className="footer-link" href="#">Hardware</a>
                     </div>
-                </div>
+                </div> */}
 
-                <div className="grid__item grid__item--mobile-up-half grid__item--tablet-up-1">
+                {/* <div className="grid__item grid__item--mobile-up-half grid__item--tablet-up-1">
                     <h3 className="footer-heading heading--5">Support</h3>
 
                     <div className="gutter-bottom--mobile">
@@ -58,9 +47,9 @@ const Footer = props => (
                         <a className="footer-link" href="https://exchangemarketplace.com">Websites for sale</a>
                         <a className="footer-link" href="https://hatchful.shopify.com">Hatchful</a>
                     </div>
-                </div>
+                </div> */}
 
-                <div className="grid__item grid__item--mobile-up-half grid__item--tablet-up-1">
+                {/* <div className="grid__item grid__item--mobile-up-half grid__item--tablet-up-1">
                     <h3 className="footer-heading heading--5">Shopify</h3>
 
                     <div className="gutter-bottom--mobile">
@@ -71,7 +60,7 @@ const Footer = props => (
                         <a className="footer-link" href="https://investors.shopify.com">Investors</a>
                         <a className="footer-link" href="blog/topics.html">Blog topics</a>
                     </div>
-                </div>
+                </div> */}
 
 
             </div>
@@ -106,11 +95,16 @@ const Footer = props => (
 
 
                 <div className="grid__item grid__item--tablet-up-4 footer-bottom__links text-center--mobile text-right--tablet-up">
-                    <a href="#l">Terms of Service</a>
-                    <a href="#">Privacy Policy</a>
+                    <a href="#l">Điều khoản dịch vụ</a>
+                    <a href="#">Chính sách bảo mật</a>
                 </div>
             </div>
         </div>
+        <style jsx>{`
+            .footer-nav {margin-bottom:0px !important;}
+            .footer-top {padding-bottom: 0px !important;}
+            .footer-bottom {border: none !important;}
+        `}</style>
     </footer>
 );
 export default Footer;
