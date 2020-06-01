@@ -14,7 +14,7 @@ const Hero = props => (
                             <input placeholder={props.dataForm.btn_hint} id="SignupEmail-9305" className="marketing-input-button-pair__input marketing-input marketing-input--floating" />
                             <button className="marketing-button marketing-form__button marketing-input-button-pair__button">{props.dataForm.btn_title}</button>
                         </div>
-                        <span className="marketing-form__messages"></span>
+                        <span className="marketing-form__messages">{props.dataForm.note}</span>
                     </div>
                 </form>
                 <p className="marketing-form__fallback-cta text-center text-minor color-gray-80 text-left">{props.dataForm.note}</p>
