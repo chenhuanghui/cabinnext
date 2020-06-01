@@ -12,7 +12,7 @@ const SignUp = props => (
                         <form className="js-signup-inline marketing-form--inline">
                             <div className="marketing-input-wrapper marketing-input-button-pair">
                                 <div className="marketing-input-button-pair__field-wrapper">
-                                    {/* <label className="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" >Email</label> */}
+                                    <label className="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" >Email</label>
                                     <input placeholder= {props.dataForm.btn_hint} id="SignupFooter-input" className="marketing-input-button-pair__input marketing-input marketing-input--floating" />
                                     <button id="SignupFooter-btn" className="marketing-button marketing-form__button marketing-input-button-pair__button">{props.dataForm.btn_title}</button>
                                 </div>
