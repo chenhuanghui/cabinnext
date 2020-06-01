@@ -91,6 +91,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
         // get form information
         base('Form_List').find('recUlH3EWGAdbTsPY', function(err, record) {
             if (err) { console.error(err); return; }
+            console.log('dataForm', record.fields)
             currentComponent.setState({ dataForm: record.fields })
         });
     }
