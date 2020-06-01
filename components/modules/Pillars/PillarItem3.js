@@ -6,7 +6,6 @@ const PillarItem3 = props => (
             </span>    
         </div>
 
-
         <div className="block pillars__block pillars__block--manage">
             <h3 className="block__heading heading--2">
                 {props.dataItem3.pil_block3_title}

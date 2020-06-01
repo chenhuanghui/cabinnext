@@ -13,7 +13,7 @@ const Support = props => (
                                 <h3 className="block__heading heading--4">{props.dataSupport.block1_title}</h3>
                                 <p className="block__content">{props.dataSupport.block1_desc}</p>
                                 <p className="block__cta">
-                                    <a className="styled-link" href="contact.html">
+                                    <a className="styled-link" href={props.dataSupport.block1_btn_href}>
                                         {props.dataSupport.block1_btn_title}
                                         <svg className="icon styled-link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                             <path
@@ -30,7 +30,7 @@ const Support = props => (
                                 <h3 className="block__heading heading--4">{props.dataSupport.block2_title}</h3>
                                 <p className="block__content">{props.dataSupport.block2_desc}</p>
                                 <p className="block__cta">
-                                    <a className="styled-link" href="#">
+                                    <a className="styled-link" href={props.dataSupport.block2_btn_href}>
                                         {props.dataSupport.block2_btn_title}
                                         <svg className="icon styled-link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                             <path
@@ -47,7 +47,7 @@ const Support = props => (
                                 <h3 className="block__heading heading--4">{props.dataSupport.block3_title}</h3>
                                 <p className="block__content">{props.dataSupport.block3_desc}</p>
                                 <p className="block__cta">
-                                    <a className="styled-link" href="#">
+                                    <a className="styled-link" href={props.dataSupport.block3_btn_href}>
                                     {props.dataSupport.block3_btn_title}
                                         <svg className="icon styled-link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                             <path
