@@ -62,7 +62,10 @@ const Support = props => (
                 </div>
             </div>
         </div>
-        <img className="picture picture--cover section--help__picture" src={props.dataSupport.img_src}/>
+        <div className="picture--cover homepage-hero__image">
+            <img className="image" src={props.dataSupport.img_src} />
+        </div>
+        {/* <img className="picture picture--cover section--help__picture" src={props.dataSupport.img_src}/> */}
         <style jsx>{`
             .picture.picture--cover.section--help__picture{object-position: right center;}
         `} </style>
