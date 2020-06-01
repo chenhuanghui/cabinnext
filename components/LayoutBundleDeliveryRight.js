@@ -23,7 +23,8 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             dataCategories:[],
             dataPillar: [],
             dataSupport: [],
-            dataSignUp: []
+            dataSignUp: [],
+            dataForm: []
         }
       }
 
@@ -46,15 +47,6 @@ export default class LayoutBundleDeliveryRight extends React.Component {
 
         base('BundleDelivery_GreenBoard').find('recoCx9CKQocUmJos', function(err, record) {
             if (err) { console.error(err); return; }
-            // record.fields.block1_img_src = record.fields[`block1_img_src`][0].url;
-            // record.fields.block2_img_src = record.fields[`block2_img_src`][0].url;
-            // record.fields.block3_img_src = record.fields[`block3_img_src`][0].url;
-
-            // record.fields.block1_icon = record.fields[`block1_icon`][0].url;
-            // record.fields.block2_icon = record.fields[`block2_icon`][0].url;
-            // record.fields.block3_icon = record.fields[`block3_icon`][0].url;
-            // record.fields.block4_icon = record.fields[`block4_icon`][0].url;
-
             currentComponent.setState({ dataGreen: record.fields })
         });
 
@@ -95,10 +87,16 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             if (err) { console.error(err); return; }
             currentComponent.setState({ dataSignUp: record.fields })
         });
+
+        // get form information
+        base('Form_List').find('recUlH3EWGAdbTsPY', function(err, record) {
+            if (err) { console.error(err); return; }
+            currentComponent.setState({ dataForm: record.fields })
+        });
     }
 
     render () {
-        const { announcementData, dataHero, dataGreen, dataCategories, dataPillar,dataSupport, dataSignUp} = this.state;
+        const { announcementData, dataHero, dataGreen, dataCategories, dataPillar,dataSupport, dataSignUp, dataForm} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -116,11 +114,11 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                     <Header />
                     <div id="PageContainer">
                         <main id="Main">
-                            <Hero dataHero={dataHero}/>
+                            <Hero dataHero={dataHero} dataForm={dataForm}/>
                             <BackgroundGreen dataGreen={dataGreen} dataCategories={dataCategories}/>
                             <Pillars dataPillar = {dataPillar}/>
                             <Support dataSupport = {dataSupport}/>
-                            <SignUp dataSignUp = {dataSignUp}/>
+                            <SignUp dataSignUp = {dataSignUp} dataForm={dataForm}/>
                             
                             <div className="grid">
                                 <div className="grid__item back-to-top-link-wrapper">

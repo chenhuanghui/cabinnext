@@ -11,13 +11,13 @@ const Hero = props => (
                     <div className="marketing-input-wrapper marketing-input-button-pair">
                         <div className="marketing-input-button-pair__field-wrapper">
                             <label className="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" >Email</label>
-                            <input placeholder={props.dataHero.hint_input} id="SignupEmail-9305" className="marketing-input-button-pair__input marketing-input marketing-input--floating" />
-                            <button className="marketing-button marketing-form__button marketing-input-button-pair__button">{props.dataHero.btn_title}</button>
+                            <input placeholder={props.dataForm.btn_hint} id="SignupEmail-9305" className="marketing-input-button-pair__input marketing-input marketing-input--floating" />
+                            <button className="marketing-button marketing-form__button marketing-input-button-pair__button">{props.dataForm.btn_title}</button>
                         </div>
                         <span className="marketing-form__messages"></span>
                     </div>
                 </form>
-                <p className="marketing-form__fallback-cta text-center text-minor color-gray-80 text-left">{props.dataHero.note}</p>
+                <p className="marketing-form__fallback-cta text-center text-minor color-gray-80 text-left">{props.dataForm.note}</p>
             </div>
         </div>
       </div>
