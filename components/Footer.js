@@ -4,10 +4,10 @@ const Footer = props => (
             <div className="grid">
                 <div className="grid__item">
                     <nav className="footer-nav">
-                        <a href="#">Về Cabin Food</a>
-                        <a href="#">Điểm kinh doanh</a>
-                        <a href="#">Món ăn thức uống phù hợp</a>
-                        <a href="#">Bảng giá</a>
+                        <a href="/about">Về Cabin Food</a>
+                        <a href="/stores">Điểm kinh doanh</a>
+                        <a href="/categories">Món ăn thức uống phù hợp</a>
+                        <a href="/pricing">Bảng giá</a>
 
                     </nav>
                 </div>
