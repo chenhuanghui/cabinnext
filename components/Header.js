@@ -78,7 +78,7 @@ export default class Header extends React.Component {
                                                                                                 </li> */}
                                                                                                 <li>
                                                                                                         <div className="popover-wrapper js-popover-flyout popover-wrapper--flyout" data-position="right" data-align="top">
-                                                                                                                <a href="/find" className="popover__trigger marketing-nav__item marketing-nav__item--child">
+                                                                                                                <a href="/start" className="popover__trigger marketing-nav__item marketing-nav__item--child">
                                                                                                                         Bắt đầu dễ dàng
                                                                                                                         <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
                                                                                                                                 <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
@@ -89,7 +89,7 @@ export default class Header extends React.Component {
                                                                                                 </li>
                                                                                                 <li>
                                                                                                         <div className="popover-wrapper js-popover-flyout popover-wrapper--flyout" data-position="right" data-align="top">
-                                                                                                                <a href="/setup" className="popover__trigger marketing-nav__item marketing-nav__item--child">
+                                                                                                                <a href="/run" className="popover__trigger marketing-nav__item marketing-nav__item--child">
                                                                                                                         Vận hành tinh gọn
                                                                                                                         <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
                                                                                                                                 <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
@@ -100,7 +100,7 @@ export default class Header extends React.Component {
                                                                                                 </li>
                                                                                                 <li>
                                                                                                         <div className="popover-wrapper js-popover-flyout popover-wrapper--flyout" data-position="right" data-align="top">
-                                                                                                                <a href="/run" className="popover__trigger marketing-nav__item marketing-nav__item--child">
+                                                                                                                <a href="/expand" className="popover__trigger marketing-nav__item marketing-nav__item--child">
                                                                                                                         Mở rộng thị trường
                                                                                                                         <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
                                                                                                                                 <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
@@ -111,7 +111,7 @@ export default class Header extends React.Component {
                                                                                                 </li>
                                                                                                 <li>
                                                                                                         <div className="popover-wrapper js-popover-flyout popover-wrapper--flyout" data-position="right" data-align="top">
-                                                                                                                <a href="/growth" className="popover__trigger marketing-nav__item marketing-nav__item--child">
+                                                                                                                <a href="/manage" className="popover__trigger marketing-nav__item marketing-nav__item--child">
                                                                                                                         Quản lý tối ưu
                                                                                                                         <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
                                                                                                                                 <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
@@ -186,7 +186,7 @@ export default class Header extends React.Component {
                                                 <nav aria-label="Main Navigation">
                                                         <ul className="drawer__items drawer__items--primary" id="DrawerNavPrimaryAccordion">
                                                                 <li className="accordion-item">
-                                                                        <a href="/find" className="drawer__item drawer__item--primary accordion-link">
+                                                                        <a href="/start" className="drawer__item drawer__item--primary accordion-link">
                                                                                 Dễ dàng bắt đầu
                                                                                 <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
                                                                                         <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
@@ -194,7 +194,7 @@ export default class Header extends React.Component {
                                                                         </a>
                                                                 </li>
                                                                 <li className="accordion-item">
-                                                                        <a href="/setup" className="drawer__item drawer__item--primary accordion-link">
+                                                                        <a href="/run" className="drawer__item drawer__item--primary accordion-link">
                                                                                 Vận hành tinh gọn
                                                                                 <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
                                                                                         <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
@@ -202,7 +202,7 @@ export default class Header extends React.Component {
                                                                         </a>
                                                                 </li>
                                                                 <li className="accordion-item">
-                                                                        <a href="/run" className="drawer__item drawer__item--primary accordion-link">
+                                                                        <a href="/expand" className="drawer__item drawer__item--primary accordion-link">
                                                                                 Mở rộng thị trường
                                                                                 <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
                                                                                         <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />
@@ -210,7 +210,7 @@ export default class Header extends React.Component {
                                                                         </a>
                                                                 </li>
                                                                 <li className="accordion-item">
-                                                                        <a href="/growth" className="drawer__item drawer__item--primary accordion-link">
+                                                                        <a href="/manage" className="drawer__item drawer__item--primary accordion-link">
                                                                                 Quản lý tối ưu
                                                                                 <svg className="icon marketing-nav__arrow" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3">
                                                                                         <path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4" />

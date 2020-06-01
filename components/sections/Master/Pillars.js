@@ -18,7 +18,9 @@ const Pillars = props => (
             {/* <PillarItemManage /> */}
             
         </div>
-
+<style jsx>{`
+    .pillars__subhead {width: 85% !important;}
+`}</style>
         
     </section>
 );

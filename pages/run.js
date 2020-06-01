@@ -1,7 +1,7 @@
-import LayoutRunBiz from '../components/LayoutRunBiz'
+import LayoutSetupStore from '../components/LayoutSetupStore'
 
-const RunBiz = props => (
-    <LayoutRunBiz />
+const SetupStore = props => (
+    <LayoutSetupStore />
 );
   
-export default RunBiz;
+export default SetupStore;
