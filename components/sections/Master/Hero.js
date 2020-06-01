@@ -4,7 +4,7 @@ const Hero = props => (
       <div className="grid grid--equal-height grid--vertically-centered">
         <div className="grid__item grid__item--desktop-up-half homepage-hero__content">
             <div className="section-heading section-heading--mobile-up-align-left gutter-bottom--reset">
-<h1 className="section-heading__heading heading--jumbo color-green-80 homepage-hero__heading gutter-bottom">{props.dataHero.hero_message}</h1>
+                <h1 className="section-heading__heading heading--jumbo color-green-80 homepage-hero__heading gutter-bottom">{props.dataHero.hero_message}</h1>
             </div>
             <div className="homepage-hero__signup">
                 <form className="js-signup-inline marketing-form--inline">
