@@ -22,7 +22,8 @@ export default class LayoutPricing extends React.Component {
             pricing_group2:[],
             pricing_group3:[],
             pricing_sub_group:[],
-            pricing_content:[]
+            pricing_content:[],
+            dataForm:[]
         }
     }
     sortByKey(array, key) {
@@ -180,11 +181,17 @@ export default class LayoutPricing extends React.Component {
             currentComponent.setState({pricing_content:record.fields})
         });
        
+        // get form information 
+        base('Form_List').find('recQyI18pobN7gMkC', function(err, record) {
+            if (err) { console.error(err); return; }
+            console.log('dataForm', record.fields)
+            currentComponent.setState({ dataForm: record.fields })
+        });
     }
     
 
     render (){
-        const {faq_group_sub,faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6,pricing_group1,pricing_group2,pricing_group3,pricing_content} = this.state;
+        const {faq_group_sub,faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6,pricing_group1,pricing_group2,pricing_group3,pricing_content,dataForm} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -244,20 +251,20 @@ export default class LayoutPricing extends React.Component {
                                 <div className="grid">
                                     <div className="grid__item grid__item--desktop-up-half">
                                         <div className="section-heading gutter-bottom--reset text-center--tablet-down">
-                                            <h2 className="section-heading__heading heading--2">{pricing_content.call_action2}</h2>
+                                            <h2 className="section-heading__heading heading--2">{dataForm.hero_message}</h2>
                                         </div>
                                     </div>
                                     <div className="grid__item grid__item--desktop-up-5 grid__item--desktop-up-offset-1">
-                                        <form className="js-signup-inline marketing-form--inline" noValidate="noValidate" action={pricing_content.btn3_href} acceptCharset="UTF-8" method="post">
+                                        <form className="js-signup-inline marketing-form--inline" noValidate="noValidate" action={dataForm.btn_href} acceptCharset="UTF-8" method="post">
                                             <div className="marketing-input-wrapper marketing-input-button-pair">
                                                 <div className="marketing-input-button-pair__field-wrapper">
                                                     <label className="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" htmlFor="SignupEmail-2ae4">Email</label>
-                                                    <input placeholder="Enter your email address" id="SignupEmail-2ae4" className="marketing-input-button-pair__input marketing-input marketing-input--floating" type="email" name="signup[email]" />
-                                                    <button className="marketing-button marketing-form__button marketing-input-button-pair__button" name="button" data-ga-event="Email capture signup" data-ga-action="CTA button click" aria-haspopup="dialog" type="submit">{pricing_content.btn3_title}</button>
+                                                    <input placeholder={dataForm.btn_hint} id="SignupEmail-2ae4" className="marketing-input-button-pair__input marketing-input marketing-input--floating" type="email" name="signup[email]" />
+                                                    <button className="marketing-button marketing-form__button marketing-input-button-pair__button" name="button" data-ga-event="Email capture signup" data-ga-action="CTA button click" aria-haspopup="dialog" type="submit">{dataForm.btn_title}</button>
                                                 </div><span className="marketing-form__messages"></span>
                                             </div>
                                         </form>
-                                        <p className="marketing-form__fallback-cta text-center">{pricing_content.call_action2_detail}</p>
+                                        <p className="marketing-form__fallback-cta text-center">{dataForm.note}</p>
                                     </div>
                                 </div>
                             </section>
