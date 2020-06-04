@@ -103,7 +103,7 @@ export default class LayoutAbout extends React.Component {
                                         <div className="about__content">
                                             <div className="section-heading gutter-bottom--reset">
                                                 <p className="section-heading__kicker heading--5 color-black text-left gutter-bottom--half">{dataPageAbout.section4_line1}</p>
-                                                <h2 className="section-heading__heading text-left gutter-bottom--half">{dataPageAbout.section4_line2}t</h2>
+                                                <h2 className="section-heading__heading text-left gutter-bottom--half">{dataPageAbout.section4_line2}</h2>
                                                 <p className="section-heading__subhead text-major text-left color-ink-light gutter-bottom--reset">{dataPageAbout.section4_line3}</p>
                                             </div>
                                         </div>
