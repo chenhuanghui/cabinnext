@@ -2,10 +2,10 @@ import Head from 'next/head'
 import React from 'react';
 
 import Header from './Header'
-import Footer from './Footer'
+import ModalForm from './sections/Modal/Form';
 import PricingSection1 from './sections/Pricing/PricingSection1';
 import PricingFAQSection from './sections/Pricing/PricingFAQSection';
-import ModalForm from './sections/Modal/Form';
+import Footer from './Footer'
 
 export default class LayoutPricing extends React.Component { 
     constructor(props){

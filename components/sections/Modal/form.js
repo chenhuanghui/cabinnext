@@ -17,7 +17,7 @@ export default class Header extends React.Component {
 
     render() {
         return(
-            <div className="modal-container modal-container--lowlight signup-modal" id="ModalContainer" aria-hidden="false" tabindex="-1">
+            <div className="modal-container modal-container--lowlight signup-modal" id="ModalContainer" aria-hidden="false" tabIndex="-1">
                 <div className="modal__header">
                     <div className="modal__controls">
                         <button type="button" className="modal__close" id="CloseModal"> 
@@ -27,7 +27,7 @@ export default class Header extends React.Component {
                         </button>
                     </div>
                 </div>
-                <div className="modal" role="dialog" tabindex="-1" aria-labelledby="ModalTitle" aria-modal="true">
+                <div className="modal" role="dialog" tabIndex="-1" aria-labelledby="ModalTitle" aria-modal="true">
                     <div className="signup-modal__content">
                         <h2 className="modal__heading" id="ModalTitle">Start your free 14-day trial of CabinFood</h2>
                         <div className="signup-form-wrapper signup--hidden ">
