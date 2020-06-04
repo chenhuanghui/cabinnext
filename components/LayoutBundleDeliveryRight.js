@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import React from 'react';
-import $ from 'jquery';
+// import $ from 'jquery';
 import Header from './Header'
 import ModalForm from './sections/Modal/Form';
 import Announcement from './sections/Announcement';

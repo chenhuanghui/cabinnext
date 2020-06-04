@@ -5,6 +5,7 @@ import Header from './Header'
 import Footer from './Footer'
 import PricingSection1 from './sections/Pricing/PricingSection1';
 import PricingFAQSection from './sections/Pricing/PricingFAQSection';
+import ModalForm from './sections/Modal/Form';
 
 export default class LayoutPricing extends React.Component { 
     constructor(props){
@@ -205,6 +206,7 @@ export default class LayoutPricing extends React.Component {
                     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
                 </Head>
                 <div className="">
+                    <ModalForm />
                     <Header />
                     <div id="PageContainer">
                         <main id="Main">
@@ -219,9 +221,9 @@ export default class LayoutPricing extends React.Component {
                                     </div>
                                     <div className="grid__item grid__item--mobile-up-align-center">
                                         <div className="text-center gutter-bottom--mobile">
-                                            <form className="marketing-button-wrapper" action={pricing_content.btn1_href} acceptCharset="UTF-8" method="post">
+                                            <div className="marketing-button-wrapper" action={pricing_content.btn1_href} acceptCharset="UTF-8" method="post">
                                                 <button className="marketing-button js-open-signup" data-ga-event="Pricing" data-ga-action="Start your free trial" data-ga-label="Heading">{pricing_content.btn1_title}</button>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -239,9 +241,9 @@ export default class LayoutPricing extends React.Component {
                                     <div className="grid__item">
                                         <div className="section-heading gutter-bottom--reset">
                                             <h2 className="section-heading__heading heading--1 gutter-bottom">{pricing_content.call_action1}</h2>
-                                            <form className="marketing-button-wrapper" action={pricing_content.btn2_href} acceptCharset="UTF-8" method="post">
-                                                <button className="marketing-button marketing-button--skin-lowlight js-open-signup" data-ga-event="Pricing" data-ga-action="Start your free trial" data-ga-label="After Table">{pricing_content.btn2_title}</button>
-                                            </form>
+                                            <div className="marketing-button-wrapper" action={pricing_content.btn2_href}>
+                                                <button className="marketing-button marketing-button--skin-lowlight js-open-signup" >{pricing_content.btn2_title}</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -258,16 +260,17 @@ export default class LayoutPricing extends React.Component {
                                         </div>
                                     </div>
                                     <div className="grid__item grid__item--desktop-up-5 grid__item--desktop-up-offset-1">
-                                        <form className="js-signup-inline marketing-form--inline" noValidate="noValidate" action={dataForm.btn_href} acceptCharset="UTF-8" method="post">
+                                        <div className="js-signup-inline marketing-form--inline">
                                             <div className="marketing-input-wrapper marketing-input-button-pair">
                                                 <div className="marketing-input-button-pair__field-wrapper">
                                                     <label className="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" htmlFor="SignupEmail-2ae4">Email</label>
                                                     <input placeholder={dataForm.btn_hint} id="SignupEmail-2ae4" className="marketing-input-button-pair__input marketing-input marketing-input--floating" type="email" name="signup[email]" />
                                                     <button className="marketing-button marketing-form__button marketing-input-button-pair__button" name="button" data-ga-event="Email capture signup" data-ga-action="CTA button click" aria-haspopup="dialog" type="submit">{dataForm.btn_title}</button>
-                                                </div><span className="marketing-form__messages"></span>
+                                                </div>
+                                                <span className="marketing-form__messages">{dataForm.note}</span>
                                             </div>
-                                        </form>
-                                        <p className="marketing-form__fallback-cta text-center">{dataForm.note}</p>
+                                        </div>
+                                        {/* <p className="marketing-form__fallback-cta text-center">{dataForm.note}</p> */}
                                     </div>
                                 </div>
                             </section>
