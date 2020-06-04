@@ -15,18 +15,20 @@ export default class Header extends React.Component {
                                 $(this).addClass('is-active');
                         }     
                 });
+                
                 // click outside of menu close menu
                 $('html').click(function(event) {
-                        
                         if(!$(event.target).closest(".js-popover-dropdown").length){
                                 $('.js-popover-dropdown').removeClass('is-active');
                                 console.log('hide menu');
                         }
                 });
+
                 // open sidebar
                 $('.js-drawer-open-right').click(function(){
                         $('#NavDrawer').addClass('js-drawer-open');
                 });
+                
                 // close sidebar
                 $('.js-drawer-close').click(function(){
                         $('#NavDrawer').removeClass('js-drawer-open');

@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import React from 'react';
-
+import $ from 'jquery';
 import Header from './Header'
+import ModalForm from './sections/Modal/Form';
 import Announcement from './sections/Announcement';
 import Hero from './sections/Master/Hero'
 import Pillars from './sections/Master/Pillars'
@@ -94,6 +95,18 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             console.log('dataForm', record.fields)
             currentComponent.setState({ dataForm: record.fields })
         });
+
+        // modal action
+        $(`.marketing-button`).click(function(){
+            console.log('btn open modal click');
+            $(`body`).addClass(`js-modal-open`);
+            $(`.modal-container`).addClass(`js-is-active`);
+        })
+        $(`#CloseModal`).click(function(){
+            console.log('btn close modal click');
+            $(`body`).removeClass(`js-modal-open`);
+            $(`.modal-container`).removeClass(`js-is-active`);
+        })
     }
 
     render () {
@@ -110,6 +123,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                 </Head>
 
                 <div className="page--home">
+                    <ModalForm />
                     <Announcement announcementData={announcementData}/>
 
                     {/* <!-- Header */}
