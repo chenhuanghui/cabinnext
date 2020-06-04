@@ -68,7 +68,7 @@ export default class LayoutAbout extends React.Component {
                                     <div className="grid__item grid__item--tablet-up-half about__content-image-store"> 
                                         <img data-sizes="100vw" src={dataPageAbout.section2_img}/>
                                     </div>
-                                    <div className="grid__item grid__item--tablet-up-half">
+                                    <div className="grid__item grid__item--tablet-up-half our-story">
                                         <div className="about__content">
                                             <div className="section-heading gutter-bottom--reset">
                                                 <p className="section-heading__kicker heading--5 color-black text-left gutter-bottom--half">{dataPageAbout.section2_line1}</p>
@@ -137,6 +137,12 @@ export default class LayoutAbout extends React.Component {
 
                         .image.lazyload-image.about-hero__image-spill{max-width: 837px; max-height: 564px;}
                         .image.lazyload-image.about-hero__image-spill .lazyload-image__placeholder {padding-bottom: 67.3835%}
+
+                        .our-story {order: 2;padding-right: 10%;}
+                        .our-story .section-heading__subhead {font-size: 1em;}
+                        .about-hero .section-heading__subhead {font-size: 1.25em;}
+                        .about-hero{background-color: #f3fcf4}
+                        .section-heading__heading {font-weight: 800}
                 `}</style>
             </div>
         )
