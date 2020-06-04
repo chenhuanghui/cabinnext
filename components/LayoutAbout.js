@@ -50,7 +50,7 @@ export default class LayoutAbout extends React.Component {
                                 <div className="grid about-hero__grid">
                                     <div className="grid__item grid__item--tablet-up-half about-hero__content">
                                         <div className="section-heading gutter-bottom--reset">
-        <p className="section-heading__kicker heading--5 text-left--tablet-up text-center--mobile color-black">{dataPageAbout.section1_line1}</p>
+                                            <p className="section-heading__kicker heading--5 text-left--tablet-up text-center--mobile color-black">{dataPageAbout.section1_line1}</p>
                                             <h1 className="section-heading__heading heading--1 text-left--tablet-up text-center--mobile about-hero__heading">{dataPageAbout.section1_line2}</h1>
                                             <p className="section-heading__subhead heading--2 heading--3 text-left--tablet-up text-center--mobile">{dataPageAbout.section1_line3}</p>
                                         </div>
@@ -139,7 +139,7 @@ export default class LayoutAbout extends React.Component {
                         .image.lazyload-image.about-hero__image-spill .lazyload-image__placeholder {padding-bottom: 67.3835%}
 
                         .our-story {order: 2;padding-right: 10%;}
-                        .our-story .section-heading__subhead {font-size: 1em;}
+                        .our-story .section-heading__subhead, .about__content-people .section-heading__subhead {font-size: 1em;}
                         .about-hero .section-heading__subhead {font-size: 1.25em;}
                         .about-hero{background-color: #f3fcf4}
                         .section-heading__heading {font-weight: 800}
