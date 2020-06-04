@@ -221,8 +221,8 @@ export default class LayoutPricing extends React.Component {
                                     </div>
                                     <div className="grid__item grid__item--mobile-up-align-center">
                                         <div className="text-center gutter-bottom--mobile">
-                                            <div className="marketing-button-wrapper" action={pricing_content.btn1_href} acceptCharset="UTF-8" method="post">
-                                                <button className="marketing-button js-open-signup" data-ga-event="Pricing" data-ga-action="Start your free trial" data-ga-label="Heading">{pricing_content.btn1_title}</button>
+                                            <div className="marketing-button-wrapper">
+                                                <button className="marketing-button js-open-signup">{pricing_content.btn1_title}</button>
                                             </div>
                                         </div>
                                     </div>
@@ -241,7 +241,7 @@ export default class LayoutPricing extends React.Component {
                                     <div className="grid__item">
                                         <div className="section-heading gutter-bottom--reset">
                                             <h2 className="section-heading__heading heading--1 gutter-bottom">{pricing_content.call_action1}</h2>
-                                            <div className="marketing-button-wrapper" action={pricing_content.btn2_href}>
+                                            <div className="marketing-button-wrapper">
                                                 <button className="marketing-button marketing-button--skin-lowlight js-open-signup" >{pricing_content.btn2_title}</button>
                                             </div>
                                         </div>
