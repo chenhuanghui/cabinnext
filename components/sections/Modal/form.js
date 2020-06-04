@@ -2,7 +2,17 @@ import $ from 'jquery';
 
 export default class Header extends React.Component {
     componentDidMount() {
-        // js-is-active
+        // modal action
+        $(`.marketing-button`).click(function(){
+            console.log('btn open modal click');
+            $(`body`).addClass(`js-modal-open`);
+            $(`.modal-container`).addClass(`js-is-active`);
+        })
+        $(`#CloseModal`).click(function(){
+            console.log('btn close modal click');
+            $(`body`).removeClass(`js-modal-open`);
+            $(`.modal-container`).removeClass(`js-is-active`);
+        })
     }
 
     render() {
