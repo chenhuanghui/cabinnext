@@ -177,7 +177,7 @@ export default class LayoutPricing extends React.Component {
 
         base('Pricing_Page').find('recMykkn2JNCU92aS', function(err, record) {
             if (err) { console.error(err); return; }
-            // console.log('Retrieved', record.id);
+            console.log('pricing', record);
             currentComponent.setState({pricing_content:record.fields})
         });
        
@@ -225,7 +225,9 @@ export default class LayoutPricing extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <PricingSection1 pricing_group1={pricing_group1} pricing_group2={pricing_group2} pricing_group3={pricing_group3}/>
+                                
+                                <PricingSection1 pricing_group1={pricing_group1} pricing_group2={pricing_group2} pricing_group3={pricing_group3} pricing_content={pricing_content}/>
+                                
                                 <div className="grid">
                                     <div className="grid__item grid__item--tablet-up-two-thirds grid__item--tablet-up-offset-1">
                                         <p className="pricing-disclaimer">{pricing_content.disclaimer}</p>

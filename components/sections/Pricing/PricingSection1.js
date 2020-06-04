@@ -7,8 +7,8 @@ const PricingSection1 = props => (
                     {/* Pharse 01  */}
                     <tr className="pharse">
                         <th scope="row" id="f-monthly_price"> 
-                            <span className="heading--5 pricing-table__section-heading">BẮT ĐẦU DỄ DÀNG</span>
-                            <p className="feature-label__description">Includes ecommerce website and blog.Includes ecommerce website and blog.Includes ecommerce website and blog.</p>
+                            <span className="heading--5 pricing-table__section-heading">{props.pricing_content.group1}</span>
+                            <p className="feature-label__description">{props.pricing_content.group1_desc}</p>
                         </th>
                         <td headers="p-0 f-monthly_price">
                             <div className=" monthly-price"> 
@@ -57,8 +57,8 @@ const PricingSection1 = props => (
 
                     <tr className="pharse">
                         <th scope="row" id="f-monthly_price"> 
-                            <span className="heading--5 pricing-table__section-heading">VẬN HÀNH TINH GỌN</span>
-                            <p className="feature-label__description">Includes ecommerce website and blog.Includes ecommerce website and blog.Includes ecommerce website and blog.</p>
+                            <span className="heading--5 pricing-table__section-heading">{props.pricing_content.group2}</span>
+                            <p className="feature-label__description">{props.pricing_content.group2_desc}</p>
                         </th>
                         <td headers="p-0 f-monthly_price">
                             <div className=" monthly-price"> 
@@ -108,8 +108,8 @@ const PricingSection1 = props => (
                     {/* Pharse 03  */}
                     <tr className="pharse">
                         <th scope="row" id="f-monthly_price"> 
-                            <span className="heading--5 pricing-table__section-heading">QUẢN LÝ TỐI ƯU</span>
-                            <p className="feature-label__description">Includes ecommerce website and blog.Includes ecommerce website and blog.Includes ecommerce website and blog.</p>
+                            <span className="heading--5 pricing-table__section-heading">{props.pricing_content.group3}</span>
+                            <p className="feature-label__description">{props.pricing_content.group3_desc}</p>
                         </th>
                         <td headers="p-0 f-monthly_price">
                             <div className=" monthly-price"> 
