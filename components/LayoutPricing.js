@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React from 'react';
 
 import Header from './Header'
-import ModalForm from './sections/Modal/Form';
+import ModalForm from './sections/Modal/FormModal';
 import PricingSection1 from './sections/Pricing/PricingSection1';
 import PricingFAQSection from './sections/Pricing/PricingFAQSection';
 import Footer from './Footer'

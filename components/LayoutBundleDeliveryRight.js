@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React from 'react';
 
 import Header from './Header'
-import ModalForm from './sections/Modal/Form';
+import ModalForm from './sections/Modal/FormModal';
 import Announcement from './sections/Announcement';
 import Hero from './sections/Master/Hero'
 import Pillars from './sections/Master/Pillars'
