@@ -1,4 +1,4 @@
-import Head from 'next/head'
+
 const Hero = props => (
   <div className="section section--padding-top-only homepage-hero" id="Hero">
       <div className="grid grid--equal-height grid--vertically-centered">

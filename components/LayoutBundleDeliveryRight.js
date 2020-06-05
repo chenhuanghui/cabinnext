@@ -108,20 +108,6 @@ export default class LayoutBundleDeliveryRight extends React.Component {
         }, function done(err) {
             if (err) { console.error(err); return; }
         });
-        
-
-
-        // // modal action
-        // $(`.marketing-button`).click(function(){
-        //     console.log('btn open modal click');
-        //     $(`body`).addClass(`js-modal-open`);
-        //     $(`.modal-container`).addClass(`js-is-active`);
-        // })
-        // $(`#CloseModal`).click(function(){
-        //     console.log('btn close modal click');
-        //     $(`body`).removeClass(`js-modal-open`);
-        //     $(`.modal-container`).removeClass(`js-is-active`);
-        // })
     }
 
     render () {
@@ -149,8 +135,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                             <BackgroundGreen dataGreen={dataGreen} dataCategories={dataCategories}/>
                             <Pillars dataPillar = {dataPillar}/>
                             <Support dataSupport = {dataSupport}/>
-                            <SignUp dataSignUp = {dataSignUp} dataForm={dataForm}/>
-                            
+                            <SignUp dataSignUp = {dataSignUp}/>
                             <div className="grid">
                                 <div className="grid__item back-to-top-link-wrapper">
                                     <a className="back-to-top-link link-scroll-to styled-link styled-link--skin-inherit" href="#PageContainer">
