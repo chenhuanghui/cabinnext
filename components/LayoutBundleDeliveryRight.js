@@ -121,6 +121,8 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                     <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" />
                     <title>CabinFood | easy to Start, Fast to grow</title>
                     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
+                    
+                    
                 </Head>
 
                 <div className="page--home">

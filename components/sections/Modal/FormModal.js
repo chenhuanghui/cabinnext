@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import HubspotForm from 'react-hubspot-form'
 
 export default class Header extends React.Component {
     componentDidMount() {
@@ -50,10 +51,11 @@ export default class Header extends React.Component {
     render() {
         return(
             <div className="modal-container modal-container--lowlight signup-modal" id="ModalContainer" aria-hidden="false" tabIndex="-1">
+                
                 <div className="modal__header">
                     <div className="modal__controls">
                         <button type="button" className="modal__close" id="CloseModal"> 
-                            <span className="icon icon-modules-close-white" id="CloseIcon">
+                            <span className="icon icon-modules-close-black" id="CloseIcon">
                                 <span className="visuallyhidden">Close</span>
                             </span>
                         </button>
@@ -61,9 +63,9 @@ export default class Header extends React.Component {
                 </div>
                 <div className="modal" role="dialog" tabIndex="-1" aria-labelledby="ModalTitle" aria-modal="true">
                     <div className="signup-modal__content">
-                        <h2 className="modal__heading" id="ModalTitle">Start your free 14-day trial of CabinFood</h2>
+                        {/* <h2 className="modal__heading" id="ModalTitle">Start your free 14-day trial of CabinFood</h2> */}
                         <div className="signup-form-wrapper signup--hidden ">
-                            <div className="marketing-form signup-form stateful-form">
+                            {/* <div className="marketing-form signup-form stateful-form">
                                 <div className="stateful-field name ">
                                     <div >
                                         <label className="marketing-input-wrapper">
@@ -135,13 +137,24 @@ export default class Header extends React.Component {
                                 <div className="">
                                     <button className="marketing-button marketing-form__button" id="btn_create_lead">Create your store</button>
                                 </div>
-                            </div>
+                            </div> */}
+                            <HubspotForm
+                            portalId='7453021'
+                            formId='94f4a76d-25ed-4003-bf3d-4cf18c015fd9'
+                            onSubmit={() => console.log('Submit!')}
+                            onReady={(form) => console.log('Form ready!')}
+                            loading={<div>Loading...</div>}
+                            />
                         </div>
                     </div>
+                    
                 </div>
+                
+                
             <style jsx>{`
                 // .js-is-active {overflow-y: hidden;}
-                #0_signup_msg {height: 140px !important}
+                // #0_signup_msg {height: 140px !important}
+                #ModalContainer {background-color: var(--sub-color-1);}
             `}</style>
             </div>
         )
