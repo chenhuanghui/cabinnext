@@ -1637,7 +1637,7 @@ main p > a:active {
 }
 .marketing-form__fallback-cta {
     margin-top: 16px;
-    color: #42474c;
+    color: var(--dark-color-3);
 }
 .marketing-input-wrapper {
     position: relative;
@@ -1791,7 +1791,7 @@ main p > a:active {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 0.8125em;
-    color: #42474c;
+    color: var(--dark-color-3);
 }
 .marketing-form--lowlight .marketing-label:not(.marketing-label--in-field),
 .background-lowlight .marketing-label:not(.marketing-label--in-field) {
@@ -2545,7 +2545,7 @@ img[data-srcset].lazyloaded {
     /* font-family: ShopifySans, Helvetica, Arial, sans-serif; */
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    color: #42474c;
+    color: var(--dark-color-3);
     font-size: 1em;
     display: block;
     transition: all 150ms;
@@ -2843,7 +2843,7 @@ body:not(.page--has-secondary-nav) .site-nav-container.is-sticky {
     border-bottom-color: #d2d5d9;
 }
 .marketing-nav--skin-light .marketing-nav__item {
-    color: #42474c;
+    color: var(--dark-color-3);
 }
 .marketing-nav--skin-light .marketing-nav__item:hover,
 .marketing-nav--skin-light .marketing-nav__item:focus {
@@ -3040,7 +3040,7 @@ body:not(.page--has-secondary-nav) .site-nav-container.is-sticky {
     font-weight: 500;
 }
 .marketing-nav--skin-light .marketing-nav__item--primary {
-    color: #42474c;
+    color: var(--dark-color-3);
 }
 .marketing-nav--skin-light .marketing-nav__item--primary:hover,
 .marketing-nav--skin-light .marketing-nav__item--primary:focus {
@@ -3083,7 +3083,7 @@ body:not(.page--has-secondary-nav) .site-nav-container.is-sticky {
     font-weight: 500;
 }
 .marketing-nav--skin-light .marketing-nav__item--user {
-    color: #42474c;
+    color: var(--dark-color-3);
 }
 .marketing-nav--skin-light .marketing-nav__item--user:hover,
 .marketing-nav--skin-light .marketing-nav__item--user:focus {
@@ -3147,7 +3147,7 @@ body:not(.page--has-secondary-nav) .site-nav-container.is-sticky {
     font-weight: 700;
 }
 .marketing-nav--skin-light .marketing-nav__item--child {
-    color: #42474c;
+    color: var(--dark-color-3);
 }
 .marketing-nav--skin-light .marketing-nav__item--child:hover,
 .marketing-nav--skin-light .marketing-nav__item--child:focus {
@@ -3692,7 +3692,7 @@ body:not(.page--has-secondary-nav) .site-nav-container.is-sticky {
     width: 100%;
 }
 .footer-country-select__country a {
-    color: #42474c;
+    color: var(--dark-color-3);
     font-weight: 700;
     line-height: 1;
     padding: 11.25px 24px 11.25px 21px;
@@ -3925,7 +3925,7 @@ body:not(.page--has-secondary-nav) .site-nav-container.is-sticky {
     border-left-color: currentColor;
 }
 .drawer__items--corporate .drawer__item {
-    color: #42474c;
+    color: var(--dark-color-3);
     font-weight: 500;
 }
 .drawer__items--corporate .drawer__item:hover,
@@ -4059,7 +4059,7 @@ body > .signup--hidden {
     margin-left: -9px;
     margin-top: -9px;
     border-radius: 50%;
-    border: 3px solid #42474c;
+    border: 3px solid var(--dark-color-3);
     border-top-color: transparent;
     -webkit-animation: spin 1s infinite linear;
     animation: spin 1s infinite linear;
@@ -4718,10 +4718,10 @@ body > .signup--hidden {
     color: var(--dark-color-2);
 }
 .background-gray-80 {
-    background-color: #42474c;
+    background-color: var(--dark-color-3);
 }
 .color-gray-80 {
-    color: #42474c;
+    color: var(--dark-color-3);
 }
 .background-gray-90 {
     background-color: var(--dark-color-1);
@@ -4929,7 +4929,7 @@ body > .signup--hidden {
 }
 .secondary-nav--skin-light .secondary-nav__identifier {
     border-right: 1px solid #828a91;
-    color: #42474c;
+    color: var(--dark-color-3);
 }
 .secondary-nav--skin-dark .secondary-nav__identifier {
     border-right: 1px solid #fafafa;
@@ -4991,7 +4991,7 @@ body > .signup--hidden {
     transition: color 100ms ease-in-out;
 }
 .secondary-nav--skin-light .secondary-nav__page-link > a {
-    color: #42474c;
+    color: var(--dark-color-3);
 }
 .secondary-nav--skin-light .secondary-nav__page-link > a:hover {
     color: var(--dark-color-1);
@@ -5302,5 +5302,6 @@ body > .signup--hidden {
     --dark-color: #002e25;
     --dark-color-1: #212326;
     --dark-color-2: #6b7177;
+    --dark-color-3: #42474c;
     
 }
