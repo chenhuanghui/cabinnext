@@ -9,7 +9,8 @@ export default class LayoutAbout extends React.Component {
         super(props);
     
         this.state = {
-            dataPageAbout: []
+            dataPageAbout: [],
+            dataForm:[]
         }
     }
     componentDidMount () {
@@ -26,9 +27,17 @@ export default class LayoutAbout extends React.Component {
             currentComponent.setState({ dataPageAbout: record.fields })
             console.log('Retrieved', record.fields);
         });
+
+
+        // get form information
+        base('Form_List').find('recNtJ2W5S59slQSb', function(err, record) {
+            if (err) { console.error(err); return; }
+            console.log('dataForm', record.fields)
+            currentComponent.setState({ dataForm: record.fields })
+        });
     }
     render (){
-        const { dataPageAbout} = this.state;
+        const {dataPageAbout, dataForm} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -116,10 +125,10 @@ export default class LayoutAbout extends React.Component {
                                 <div className="grid">
                                     <div className="grid__item">
                                         <div className="section-heading signup-footer__heading gutter-bottom--reset">
-                                            <h2 className="section-heading__heading heading--2 next-steps__sign-up-heading" data-ga-event="about" data-ga-action="footer" data-ga-label="signup">Try Shopify for free, and explore all the tools and services you need to start, run, and grow your&nbsp;business.</h2>
-                                            <form className="marketing-button-wrapper" action="https://accounts.shopify.com/store-signup/setup" acceptCharset="UTF-8" method="post">
-                                                <button className="marketing-button js-open-signup signup-footer__button">Start free trial</button>
-                                            </form>
+                                            <h2 className="section-heading__heading heading--2 next-steps__sign-up-heading">{dataForm.hero_message}</h2>
+                                                <div className="marketing-button-wrapper" action={dataForm.btn_href}>
+                                                <button className="marketing-button js-open-signup signup-footer__button">{dataForm.btn_title}</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
