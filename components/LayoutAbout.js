@@ -35,6 +35,19 @@ export default class LayoutAbout extends React.Component {
             console.log('dataForm', record.fields)
             currentComponent.setState({ dataForm: record.fields })
         });
+
+        // setup layout for page
+        base('Color_Table').select({
+            view: "Grid view"
+        }).eachPage(function page(records, fetchNextPage) {records.forEach(function(record) {
+                // console.log('Retrieved', record.get('Name'));
+                $(`body`).css(record.get('Name'),record.get('value'));
+            });
+            fetchNextPage();
+        
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        });
     }
     render (){
         const {dataPageAbout, dataForm} = this.state;
@@ -150,7 +163,8 @@ export default class LayoutAbout extends React.Component {
                         .our-story {order: 2;padding-right: 10%;}
                         .our-story .section-heading__subhead, .about__content-people .section-heading__subhead {font-size: 1em;}
                         .about-hero .section-heading__subhead {font-size: 1.25em;}
-                        .about-hero{background-color: #f3fcf4}
+                        .about-hero{background-color: var(--lighter-color2)}
+                        
                         .section-heading__heading {font-weight: 800}
                 `}</style>
             </div>
