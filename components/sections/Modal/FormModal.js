@@ -2,6 +2,10 @@ import $ from 'jquery';
 
 export default class Header extends React.Component {
     componentDidMount() {
+        // init airtable variable
+        var Airtable = require('airtable');
+        var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appQtpfUoOs9WdGUD');
+        
         // modal action
         $(`.marketing-button`).click(function(){
             console.log('btn open modal click');
@@ -13,7 +17,35 @@ export default class Header extends React.Component {
             $(`body`).removeClass(`js-modal-open`);
             $(`.modal-container`).removeClass(`js-is-active`);
         })
+        $(`#btn_create_lead`).click(function(){
+            // create data in Lead Table
+            console.log('create lead start');
+            base('Lead').create([
+            {
+                "fields": {
+                    "Name":$(`#0_signup_name`).val(),
+                    "Email":$(`#0_signup_email`).val(),
+                    "Tel":$(`#0_signup_tel`).val(),
+                    "Brand":$(`#0_signup_brand`).val(),
+                    "Message":$(`#0_signup_msg`).val()
+                }
+            }
+            ], function(err, records) {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+                records.forEach(function (record) {
+                    // console.log(record.getId());
+                    $(`body`).removeClass(`js-modal-open`);
+                    $(`.modal-container`).removeClass(`js-is-active`);
+                    $(`.js-signup-inline.marketing-form--inline`).css(`display`,`none`);
+                });
+            });
+            console.log('create lead done');
+        })
     }
+    
 
     render() {
         return(
@@ -31,12 +63,12 @@ export default class Header extends React.Component {
                     <div className="signup-modal__content">
                         <h2 className="modal__heading" id="ModalTitle">Start your free 14-day trial of CabinFood</h2>
                         <div className="signup-form-wrapper signup--hidden ">
-                            <form className="marketing-form signup-form stateful-form">
-                                <div className="stateful-field email ">
+                            <div className="marketing-form signup-form stateful-form">
+                                <div className="stateful-field name ">
                                     <div >
                                         <label className="marketing-input-wrapper">
-                                            <span className="marketing-label marketing-label--in-field marketing-label--floating">Email address</span>
-                                            <input placeholder="Email address" className="marketing-input marketing-input--floating" id="0_signup_email"/>
+                                            <span className="marketing-label marketing-label--in-field marketing-label--floating">Tên của bạn</span>
+                                            <input placeholder="Tên của bạn" className="marketing-input marketing-input--floating" id="0_signup_name"/>
                                             <span className="marketing-form__messages">
                                                 <span className="suggest hide" ></span>
                                                 <span className="error hide"></span>
@@ -48,8 +80,8 @@ export default class Header extends React.Component {
                                 <div className="stateful-field email ">
                                     <div >
                                         <label className="marketing-input-wrapper">
-                                            <span className="marketing-label marketing-label--in-field marketing-label--floating">Name</span>
-                                            <input placeholder="Your name" className="marketing-input marketing-input--floating" id="0_signup_email"/>
+                                            <span className="marketing-label marketing-label--in-field marketing-label--floating">Email</span>
+                                            <input placeholder="Nhập địa chỉ Email" className="marketing-input marketing-input--floating" id="0_signup_email"/>
                                             <span className="marketing-form__messages">
                                                 <span className="suggest hide" ></span>
                                                 <span className="error hide"></span>
@@ -58,11 +90,39 @@ export default class Header extends React.Component {
                                     </div>
                                 </div>
 
-                                <div className="stateful-field email ">
+                                
+
+                                <div className="stateful-field tel ">
                                     <div >
                                         <label className="marketing-input-wrapper">
-                                            <span className="marketing-label marketing-label--in-field marketing-label--floating">Store</span>
-                                            <input placeholder="Store name" className="marketing-input marketing-input--floating" id="0_signup_email"/>
+                                            <span className="marketing-label marketing-label--in-field marketing-label--floating">Số điện thoại</span>
+                                            <input placeholder="Nhập số điện thoại" className="marketing-input marketing-input--floating" id="0_signup_tel"/>
+                                            <span className="marketing-form__messages">
+                                                <span className="suggest hide" ></span>
+                                                <span className="error hide"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div className="stateful-field brand ">
+                                    <div >
+                                        <label className="marketing-input-wrapper">
+                                            <span className="marketing-label marketing-label--in-field marketing-label--floating">Tên cửa hàng</span>
+                                            <input placeholder="Tên cửa hàng" className="marketing-input marketing-input--floating" id="0_signup_brand"/>
+                                            <span className="marketing-form__messages">
+                                                <span className="suggest hide" ></span>
+                                                <span className="error hide"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div className="stateful-field msg ">
+                                    <div >
+                                        <label className="marketing-input-wrapper">
+                                            <span className="marketing-label marketing-label--in-field marketing-label--floating">Lời nhắn</span>
+                                            <textarea placeholder="Lời nhắn của bạn" className="marketing-input marketing-input--floating" id="0_signup_msg"/>
                                             <span className="marketing-form__messages">
                                                 <span className="suggest hide" ></span>
                                                 <span className="error hide"></span>
@@ -73,14 +133,15 @@ export default class Header extends React.Component {
                                 
                                 
                                 <div className="">
-                                    <button className="marketing-button marketing-form__button ">Create your store</button>
+                                    <button className="marketing-button marketing-form__button" id="btn_create_lead">Create your store</button>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             <style jsx>{`
                 // .js-is-active {overflow-y: hidden;}
+                #0_signup_msg {height: 140px !important}
             `}</style>
             </div>
         )
