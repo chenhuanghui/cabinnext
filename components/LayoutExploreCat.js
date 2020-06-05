@@ -48,6 +48,18 @@ export default class LayoutRunBiz extends React.Component {
             // console.log(catList);
             currentComponent.setState({ dataCategories: catList })
         });
+        // load color variable
+        base('Color_Table').select({
+            view: "Grid view"
+        }).eachPage(function page(records, fetchNextPage) {records.forEach(function(record) {
+                // console.log('Retrieved', record.get('Name'));
+                $(`body`).css(record.get('Name'),record.get('value'));
+            });
+            fetchNextPage();
+        
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        });
     }
 
     render (){
