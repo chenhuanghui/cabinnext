@@ -4,7 +4,7 @@
     line-height:1.3;
     padding-bottom:2px;
     border-bottom:2px solid transparent;
-    color:#008060;
+    color:var(--light-color);
     position:relative;
     max-width:calc(100% - 1.7em);
     text-decoration:none;
@@ -13,7 +13,7 @@
 .styled-link:hover,.styled-link:focus,a:hover .styled-link,a:focus .styled-link{
     text-decoration:none;
     border-bottom-color:currentColor;
-    color:#008060
+    color:var(--light-color)
 }
 .styled-link__icon{
     fill:currentColor;
@@ -325,7 +325,7 @@
     line-height:1.3;
     padding-bottom:2px;
     border-bottom:2px solid transparent;
-    color:#008060;
+    color:var(--light-color);
     position:relative;
     max-width:calc(100% - 1.7em);
     text-decoration:none;
@@ -334,7 +334,7 @@
 .styled-link:hover,.styled-link:focus,a:hover .styled-link,a:focus .styled-link{
     text-decoration:none;
     border-bottom-color:currentColor;
-    color:#008060
+    color:var(--light-color)
 }
 .styled-link__icon{
     fill:currentColor;
@@ -395,7 +395,7 @@
     fill:#ffcb67
 }
 .quote__decorator--color-green{
-    fill:#004c3f
+    fill:var(--main-color)
 }
 .quote__quote{
     font-size:1.25em;
@@ -413,15 +413,15 @@
 .marketing-button--skin-light-forest{
     box-shadow:0 5px 15px 0 rgba(0,0,0,0.15);
     background-color:#ffffff;
-    color:#004c3f
+    color:var(--main-color)
 }
 .marketing-button--skin-light-forest:hover,.marketing-button--skin-light-forest:focus{
     background-color:#f0f0f0;
-    color:#004c3f
+    color:var(--main-color)
 }
 .marketing-button--skin-light-forest:active{
     background-color:#e6e6e6;
-    color:#004c3f
+    color:var(--main-color)
 }
 .marketing-button--skin-light-forest:hover{
     box-shadow:0 5px 25px 0 rgba(0,0,0,0.25)
@@ -438,11 +438,11 @@
     font-weight:400
 }
 .in-page-menu--vertical .sticky-menu-link.js-is-active{
-    border-color:#008060
+    border-color:var(--light-color)
 }
 .in-page-menu--horizontal a.js-is-active{
-    color:#008060;
-    border-color:#008060
+    color:var(--light-color);
+    border-color:var(--light-color)
 }
 .ui-card{
     box-shadow:0 5px 20px 0 #f0f1f2
@@ -451,13 +451,13 @@
     box-shadow:0 11px 30px 0 #e8e9eb
 }
 .featured-testimonial__content{
-    background-color:#004c3f
+    background-color:var(--main-color)
 }
 .back-to-top-link{
-    color:#004c3f
+    color:var(--main-color)
 }
 .back-to-top-link:hover,.back-to-top-link:active,.back-to-top-link:focus{
-    color:#004c3f
+    color:var(--main-color)
 }
 .secondary-nav--skin-light{
     background-color:#effcfa;
@@ -1641,7 +1641,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     }
 }
 .start-block__icon{
-    fill:#c1f0d0;
+    fill:var(--lighter-color);
     width:2.25em;
     height:2.25em
 }
@@ -1737,7 +1737,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
 }
 .pillars__block .highlight{
     display:block;
-    color:#004c3f
+    color:var(--main-color)
 }
 @media screen and (min-width: 67.5em){
     .pillars__block--sell,.pillars__block--manage{
@@ -1943,13 +1943,14 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     box-shadow:0 10px 10px -10px rgba(33,35,38,0.1)
 }
 .marketing-nav{
-    background-color:#fbf7ed
+    background-color:var(--sub-color-1)
 }
 .covid-19-announcement-banner .announcement{
-    background:#004c3f
+    /* background:var(--main-color); */
+    background: var(--main-color);
 }
 .covid-19-announcement-banner .body-link{
-    color:#dff7e5
+    color:#dff7e5;
 }
 .picture--cover{
     display:block;
@@ -1964,7 +1965,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
 }
 .homepage-hero{
     position:relative;
-    background-color:#fbf7ed;
+    background-color:var(--sub-color-1);
     overflow:hidden
 }
 @media screen and (min-width: 67.5em){
@@ -2123,9 +2124,17 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
 }
 .back-to-top-link{
     font-size:1.125em;
-    color:#008060
+    color:var(--light-color)
 }
 .back-to-top-link:hover,.back-to-top-link:active,.back-to-top-link:focus{
-    color:#004c3f
+    color:var(--main-color)
 }
  
+/* modify color */
+:root {
+    --main-color:#004c3f;
+    --light-color: #008060;
+    --lighter-color: #c1f0d0;
+    --sub-color-1:#fbf7ed;
+    --dark-color: #002e25;
+}

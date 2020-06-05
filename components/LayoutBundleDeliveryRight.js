@@ -96,6 +96,21 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             currentComponent.setState({ dataForm: record.fields })
         });
 
+        // setup layout for page
+        base('Color_Table').select({
+            view: "Grid view"
+        }).eachPage(function page(records, fetchNextPage) {records.forEach(function(record) {
+                // console.log('Retrieved', record.get('Name'));
+                $(`body`).css(record.get('Name'),record.get('value'));
+            });
+            fetchNextPage();
+        
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        });
+        
+
+
         // // modal action
         // $(`.marketing-button`).click(function(){
         //     console.log('btn open modal click');
