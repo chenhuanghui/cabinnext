@@ -3,6 +3,7 @@ import React from 'react';
 
 import Header from './Header'
 import Footer from './Footer'
+import ModalForm from './sections/Modal/FormModal';
 
 export default class LayoutAbout extends React.Component { 
     constructor(props){
@@ -64,6 +65,7 @@ export default class LayoutAbout extends React.Component {
                     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
                 </Head>
                 <div className="page--home-about">
+                    <ModalForm />
                     <Header />
                     
                     <div id="PageContainer">
