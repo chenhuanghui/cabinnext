@@ -178,7 +178,7 @@
 }
 .ui-illustration__browser{
     width:100%;
-    background-color:#ffffff;
+    background-color:var(--supper-light-color);
     overflow:hidden
 }
 .ui-illustration__browser-bar{
@@ -412,7 +412,7 @@
 }
 .marketing-button--skin-light-forest{
     box-shadow:0 5px 15px 0 rgba(0,0,0,0.15);
-    background-color:#ffffff;
+    background-color:var(--supper-light-color);
     color:var(--main-color)
 }
 .marketing-button--skin-light-forest:hover,.marketing-button--skin-light-forest:focus{
@@ -754,7 +754,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     margin-bottom:0
 }
 .pillar-feature__link{
-    color:#212326;
+    color:var(--dark-color-1);
     text-decoration:underline;
     -webkit-text-decoration-line:underline;
     text-decoration-line:underline;
@@ -822,13 +822,13 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     display:inline-flex;
     align-items:center;
     margin-top:16px;
-    color:#212326;
-    border-color:#212326;
+    color:var(--dark-color-1);
+    border-color:var(--dark-color-1);
     border-width:1px
 }
 .pillar-testimonial__video:hover,.pillar-testimonial__video:focus{
-    background-color:#212326;
-    color:#ffffff
+    background-color:var(--dark-color-1);
+    color:var(--supper-light-color)
 }
 .pillar-testimonial__video-play{
     width:16px;
@@ -949,7 +949,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
 }
 .ui-illustration__card{
     border-radius:4px;
-    background-color:#ffffff
+    background-color:var(--supper-light-color)
 }
 .ui-illustration__card--shadow{
     box-shadow:0 4px 50px 0 #e8e9eb;
@@ -989,8 +989,8 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     left:-20px;
     width:100%;
     height:calc(100% + 17px);
-    border-bottom:3px solid #ffffff;
-    border-right:3px solid #ffffff
+    border-bottom:3px solid var(--supper-light-color);
+    border-right:3px solid var(--supper-light-color)
 }
 .ui-illustration-admin-add-to-cart__row>td{
     padding-top:0.4em;
@@ -1105,14 +1105,14 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     padding:30px 15px 28%;
     margin-left:5px;
     width:calc(100% - 6px);
-    background-color:#ffffff;
+    background-color:var(--supper-light-color);
     border-radius:20px
 }
 .ui-illustration-admin-container__mobile-hero{
     position:relative
 }
 .ui-illustration-admin-container__hero{
-    color:#212326;
+    color:var(--dark-color-1);
     padding:45px 84px 40px 15px;
     font-size:20px
 }
@@ -1167,7 +1167,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     width:12%
 }
 .ui-illustration-admin-container__merchant-name{
-    color:#212326;
+    color:var(--dark-color-1);
     font-weight:700;
     line-height:1em;
     font-size:14px
@@ -1229,7 +1229,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     font-size:14px
 }
 .ui-illustration-admin-list__label--payouts{
-    color:#212326;
+    color:var(--dark-color-1);
     background-color:#e8e9eb;
     padding:4px 16px;
     border-radius:26px
@@ -1238,7 +1238,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     background-color:#b9f0e9
 }
 .ui-illustration-admin-list__label--secure-transactions{
-    color:#212326
+    color:var(--dark-color-1)
 }
 .ui-illustration-admin-list__status{
     margin-left:13px;
@@ -1368,7 +1368,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     right:-10px;
     width:32%;
     bottom:-42%;
-    background-color:#ffffff;
+    background-color:var(--supper-light-color);
     padding:1%
 }
 .ui-illustration-admin-orders__row>td{
@@ -1480,7 +1480,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     margin-top:0.2em
 }
 .ui-illustration-admin-section-heading{
-    color:#212326;
+    color:var(--dark-color-1);
     width:100%;
     font-size:12px;
     margin-bottom:auto;
@@ -1515,7 +1515,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     flex-shrink:0
 }
 .ui-illustration-admin-summary__total{
-    color:#212326;
+    color:var(--dark-color-1);
     font-weight:bold;
     font-size:32px;
     line-height:1
@@ -1602,7 +1602,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
 }
 .example-merchant__vertical{
     order:1;
-    color:#ffffff;
+    color:var(--supper-light-color);
     font-weight:600
 }
 .example-merchant__vertical:last-child{
@@ -1618,7 +1618,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     }
 }
 .example-merchant__link{
-    color:#ffffff;
+    color:var(--supper-light-color);
     text-decoration:underline;
     -webkit-text-decoration-line:underline;
     text-decoration-line:underline;
@@ -1816,7 +1816,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
 }
 .card-collection__card{
     width:100%;
-    background-color:#ffffff
+    background-color:var(--supper-light-color)
 }
 @media screen and (max-width: 46.8125em){
     .card-collection__card--half{
@@ -1939,7 +1939,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     transition:all 300ms ease-in-out
 }
 .marketing-nav.marketing-nav--solid{
-    background-color:#ffffff;
+    background-color:var(--supper-light-color);
     box-shadow:0 10px 10px -10px rgba(33,35,38,0.1)
 }
 .marketing-nav{
@@ -2024,7 +2024,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     align-items:center
 }
 .homepage-hero-video__icon{
-    border:2px solid #ffffff;
+    border:2px solid var(--supper-light-color);
     padding:8px;
     border-radius:2px;
     width:30px;
@@ -2032,7 +2032,7 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     margin-right:10px
 }
 .homepage-hero-video__text{
-    color:#ffffff;
+    color:var(--supper-light-color);
     font-weight:700
 }
 @media screen and (max-width: 46.8125em){
@@ -2133,8 +2133,13 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
 /* modify color */
 :root {
     --main-color:#004c3f;
+    --sub-color-1:#fbf7ed;
+
+    --supper-light-color: #ffffff;
     --light-color: #008060;
     --lighter-color: #c1f0d0;
-    --sub-color-1:#fbf7ed;
+    --lighter-color-1: #f3fcf4;
+    
     --dark-color: #002e25;
+    --dark-color-1: #212326;
 }

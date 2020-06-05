@@ -163,7 +163,7 @@ export default class LayoutAbout extends React.Component {
                         .our-story {order: 2;padding-right: 10%;}
                         .our-story .section-heading__subhead, .about__content-people .section-heading__subhead {font-size: 1em;}
                         .about-hero .section-heading__subhead {font-size: 1.25em;}
-                        .about-hero{background-color: var(--lighter-color2)}
+                        .about-hero{background-color: var(--lighter-color-1)}
                         
                         .section-heading__heading {font-weight: 800}
                 `}</style>
