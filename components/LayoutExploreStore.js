@@ -14,7 +14,8 @@ export default class LayoutExploreStores extends React.Component {
     
         this.state = {
             dataHCMStore:[],
-            dataHNStore:[]
+            dataHNStore:[],
+            dataExploreStoreList:[]
         }
     }
     
@@ -65,12 +66,30 @@ export default class LayoutExploreStores extends React.Component {
         }, function done(err) {
             if (err) { console.error(err); return; }
         });
+
+        // load data page
+        base('Explore_Store_List').find('recVEvGkcO1yZjJMH', function(err, record) {
+            if (err) { console.error(err); return; }
+            console.log('data page explore stores list', record);
+            currentComponent.setState({dataExploreStoreList:record.fields})
+        });
+
+        // load color variable
+        base('Color_Table').select({
+            view: "Grid view"
+        }).eachPage(function page(records, fetchNextPage) {records.forEach(function(record) {
+                // console.log('Retrieved', record.get('Name'));
+                $(`body`).css(record.get('Name'),record.get('value'));
+            });
+            fetchNextPage();
+        
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        });
         
     }
-    
-
     render (){
-        const {dataHNStore, dataHCMStore} = this.state;
+        const {dataHNStore, dataHCMStore,dataExploreStoreList} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -91,13 +110,14 @@ export default class LayoutExploreStores extends React.Component {
 
                     <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" />
                     <title>CabinFood | easy to Start, Fast to grow</title>
+                    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
                 </Head>
                 <div className="">
                     <Header />
                     <div id="PageContainer">
                         <main id="Main">
-                            <StoresSection1 />
-                            <StoresSection2 />
+                            <StoresSection1 dataExploreStoreList={dataExploreStoreList}/>
+                            <StoresSection2 dataExploreStoreList={dataExploreStoreList}/>
                             {/* <StoresSection3 /> */}
                             <StoresSection4 dataHCMStore={dataHCMStore} dataHNStore={dataHNStore}/>
                             
