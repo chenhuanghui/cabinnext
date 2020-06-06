@@ -1171,8 +1171,8 @@
 }
 @media (max-width: 37.5em) {
     ._2w12M {
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 }
 ._1osS7 {
@@ -1283,11 +1283,12 @@
         bottom: 0;
         transform: rotate(90deg);
         transform-origin: bottom right;
+        max-width: none !important;
     }
 }
 ._3cHUR {
     margin: 3.4rem auto 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
     /* line-height: 2.8rem; */
     text-align: center;
 }
