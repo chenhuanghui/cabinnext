@@ -7,7 +7,7 @@ import StepModule from './modules/Step/StepModule';
 import Footer from './Footer'
 
 import StoresSection1 from './sections/Stores/Section1';
-// import StoresSection2 from './sections/Stores/Section2';
+import StoresSection2 from './sections/Stores/Section2';
 import StoresSection4 from './sections/Stores/Section4';
 
 export default class LayoutExploreStores extends React.Component { 
@@ -74,6 +74,9 @@ export default class LayoutExploreStores extends React.Component {
         base('Explore_Store_List').find('recVEvGkcO1yZjJMH', function(err, record) {
             if (err) { console.error(err); return; }
             record.fields.img = record.fields.img[0].url;
+            record.fields.section3_img1 = record.fields.section3_img1[0].url;
+            record.fields.section3_img2 = record.fields.section3_img2[0].url;
+
             console.log('data page explore stores list', record.fields);
             currentComponent.setState({dataExploreStoreList:record.fields});
         });
@@ -110,6 +113,7 @@ export default class LayoutExploreStores extends React.Component {
                         <main id="Main">
                             <StoresSection1 dataExploreStoreList={dataExploreStoreList}/>
                             <StepModule/>
+                            {/* <StoresSection2 dataExploreStoreList={dataExploreStoreList}/> */}
                             <StoresSection4 dataHCMStore={dataHCMStore} dataHNStore={dataHNStore} dataExploreStoreList={dataExploreStoreList}/>
                             
                         </main>
