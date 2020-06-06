@@ -3,10 +3,6 @@ import HubspotForm from 'react-hubspot-form'
 
 export default class Header extends React.Component {
     componentDidMount() {
-        // init airtable variable
-        var Airtable = require('airtable');
-        var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appQtpfUoOs9WdGUD');
-        
         // modal action
         $(`.marketing-button`).click(function(){
             console.log('btn open modal click');
@@ -18,33 +14,33 @@ export default class Header extends React.Component {
             $(`body`).removeClass(`js-modal-open`);
             $(`.modal-container`).removeClass(`js-is-active`);
         })
-        $(`#btn_create_lead`).click(function(){
-            // create data in Lead Table
-            console.log('create lead start');
-            base('Lead').create([
-            {
-                "fields": {
-                    "Name":$(`#0_signup_name`).val(),
-                    "Email":$(`#0_signup_email`).val(),
-                    "Tel":$(`#0_signup_tel`).val(),
-                    "Brand":$(`#0_signup_brand`).val(),
-                    "Message":$(`#0_signup_msg`).val()
-                }
-            }
-            ], function(err, records) {
-                if (err) {
-                    console.error(err);
-                    return;
-                }
-                records.forEach(function (record) {
-                    // console.log(record.getId());
-                    $(`body`).removeClass(`js-modal-open`);
-                    $(`.modal-container`).removeClass(`js-is-active`);
-                    $(`.js-signup-inline.marketing-form--inline`).css(`display`,`none`);
-                });
-            });
-            console.log('create lead done');
-        })
+        // $(`#btn_create_lead`).click(function(){
+        //     // create data in Lead Table
+        //     console.log('create lead start');
+        //     base('Lead').create([
+        //     {
+        //         "fields": {
+        //             "Name":$(`#0_signup_name`).val(),
+        //             "Email":$(`#0_signup_email`).val(),
+        //             "Tel":$(`#0_signup_tel`).val(),
+        //             "Brand":$(`#0_signup_brand`).val(),
+        //             "Message":$(`#0_signup_msg`).val()
+        //         }
+        //     }
+        //     ], function(err, records) {
+        //         if (err) {
+        //             console.error(err);
+        //             return;
+        //         }
+        //         records.forEach(function (record) {
+        //             // console.log(record.getId());
+        //             $(`body`).removeClass(`js-modal-open`);
+        //             $(`.modal-container`).removeClass(`js-is-active`);
+        //             $(`.js-signup-inline.marketing-form--inline`).css(`display`,`none`);
+        //         });
+        //     });
+        //     console.log('create lead done');
+        // })
     }
     
 
@@ -65,6 +61,13 @@ export default class Header extends React.Component {
                     <div className="signup-modal__content">
                         {/* <h2 className="modal__heading" id="ModalTitle">Start your free 14-day trial of CabinFood</h2> */}
                         <div className="signup-form-wrapper signup--hidden ">
+                            <HubspotForm
+                                portalId='7453021'
+                                formId='94f4a76d-25ed-4003-bf3d-4cf18c015fd9'
+                                onSubmit={() => console.log('Submit!')}
+                                onReady={(form) => console.log('Form ready!')}
+                                loading={<div>Loading...</div>}
+                            />
                             {/* <div className="marketing-form signup-form stateful-form">
                                 <div className="stateful-field name ">
                                     <div >
@@ -138,13 +141,6 @@ export default class Header extends React.Component {
                                     <button className="marketing-button marketing-form__button" id="btn_create_lead">Create your store</button>
                                 </div>
                             </div> */}
-                            <HubspotForm
-                            portalId='7453021'
-                            formId='94f4a76d-25ed-4003-bf3d-4cf18c015fd9'
-                            onSubmit={() => console.log('Submit!')}
-                            onReady={(form) => console.log('Form ready!')}
-                            loading={<div>Loading...</div>}
-                            />
                         </div>
                     </div>
                     

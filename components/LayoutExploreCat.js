@@ -2,6 +2,7 @@ import Head from 'next/head'
 import React from 'react';
 
 import Header from './Header'
+import ModalForm from './sections/Modal/FormModal';
 import Announcement from './sections/Announcement';
 import ExploreCatSection1 from './sections/ExploreCat/Section1';
 
@@ -35,19 +36,7 @@ export default class LayoutRunBiz extends React.Component {
             currentComponent.setState({ dataSignUp: record.fields })
         });
         
-        var catList = [];
-        base('Categories_FB').select({
-            view: 'Grid view'
-        }).firstPage(function(err, records) {
-            if (err) { console.error(err); return; }
-            records.forEach(function(record) {
-                record.fields.image = record.fields[`image`][0].url;
-                console.log(record);
-                catList.push(record.fields);
-            });
-            // console.log(catList);
-            currentComponent.setState({ dataCategories: catList })
-        });
+        
         // load color variable
         base('Color_Table').select({
             view: "Grid view"
@@ -78,6 +67,7 @@ export default class LayoutRunBiz extends React.Component {
                 </Head>
 
                 <div className="page--home">
+                    <ModalForm />
                     <Announcement announcementData={announcementData}/>
 
                     {/* <!-- Header */}
@@ -85,7 +75,7 @@ export default class LayoutRunBiz extends React.Component {
                     <div id="PageContainer">
                         <main id="Main">
                             
-                            <ExploreCatSection1 dataCategories={dataCategories}/>
+                            <ExploreCatSection1 />
 
                             <SignUp dataSignUp={dataSignUp}/>
                             <div className="grid">
