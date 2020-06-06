@@ -8,6 +8,11 @@ const Announcement = props => (
                 </div>
             </section>
         </div>
+    <style jsx>{`
+        .covid-19-announcement-banner .body-link {
+            color: var(--lighter-color);
+        }
+    `}</style>
     </div>
 );
 export default Announcement;
