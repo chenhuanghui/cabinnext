@@ -1271,6 +1271,7 @@
     }
     ._2b5gw img {
         right: 0;
+        max-width: none !important;
     }
 }
 @media (max-width: 37.5em) {

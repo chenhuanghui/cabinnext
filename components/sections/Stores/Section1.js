@@ -38,7 +38,7 @@ export default class Header extends React.Component {
                         </div>
                         <p className="">{this.props.dataExploreStoreList.line2}</p>
                         <div className="homepage-hero__signup">
-                            <form className="js-signup-inline marketing-form--inline">
+                            <div className="js-signup-inline marketing-form--inline">
                                 <div className="marketing-input-wrapper marketing-input-button-pair">
                                     <div className="marketing-input-button-pair__field-wrapper">
                                         <label className="marketing-label marketing-label--in-field marketing-label--floating marketing-input-button-pair__label" >Email</label>
@@ -47,14 +47,14 @@ export default class Header extends React.Component {
                                     </div>
                                     <span className="marketing-form__messages"></span>
                                 </div>
-                            </form>
+                            </div>
                             <p className="marketing-form__fallback-cta text-center text-minor color-gray-80 text-left">{dataForm.note}</p>
                         </div>
                     </div>
                 </div>
 
                 <div className="picture--cover homepage-hero__image">
-                    <img className="image"src="https://cdn.shopify.com/shopifycloud/start-web/assets/f0a87af1970ca7f2709496bef16b326b.jpg" />
+                    <img className="image"src={this.props.dataExploreStoreList.img} />
                 </div>
                 
             </div>  

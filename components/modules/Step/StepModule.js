@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 export default class Header extends React.Component {
     constructor(props){
         super(props);
@@ -14,15 +12,15 @@ export default class Header extends React.Component {
         // init airtable variable
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
-        
+
         base('Step_List').find('recGoNwKrEvQwwD2a', function(err, record) {
             if (err) { console.error(err); return; }
             console.log('Step Store List', record.fields);
             currentComponent.setState({dataStep:record.fields})
         });
+        
     }
     
-
     render() {
         const {dataStep} = this.state;
         return(
