@@ -1162,26 +1162,27 @@
 }
 .A0_Wj {
     padding: 4rem 0;
-    background: #faf9f8;
+    /* background: #faf9f8; */
 }
 @media (max-width: 62em) {
     .A0_Wj {
-        padding: 6.4rem 0;
+        padding: 100px 0px 30px 0px;
     }
 }
 @media (max-width: 37.5em) {
     ._2w12M {
-        padding-left: 4rem;
-        padding-right: 4rem;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
 ._1osS7 {
     white-space: pre-wrap;
 }
 ._1osS7 h4 {
-    color: var(--light-color);
+    color: var(--dark-color-1);
     line-height: 2.4rem;
     margin-bottom: 3.5rem;
+    font-weight: 600;
 }
 @media (max-width: 48em) {
     ._1osS7 h4 {

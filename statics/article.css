@@ -81,7 +81,7 @@
     box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15);
 }
 .xCnWT {
-    max-width: 120rem;
+    max-width: 1760px !important;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -94,8 +94,8 @@
 }
 @media (min-width: 37.5em) {
     .xCnWT {
-        padding-left: 8rem;
-        padding-right: 8rem;
+        padding-left: 80px;
+        padding-right: 80px;
     }
     .xCnWT._3U9kc {
         padding-left: 0;

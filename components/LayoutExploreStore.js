@@ -4,11 +4,13 @@ import React from 'react';
 import Header from './Header'
 import ModalForm from './sections/Modal/FormModal';
 import StepModule from './modules/Step/StepModule';
+import StoreListModule from './modules/Store/StoreListModule';
 import Footer from './Footer'
 
 import StoresSection1 from './sections/Stores/Section1';
 import StoresSection2 from './sections/Stores/Section2';
 import StoresSection4 from './sections/Stores/Section4';
+import StoreSection3 from './sections/Stores/Section3';
 
 export default class LayoutExploreStores extends React.Component { 
     constructor(props){
@@ -114,8 +116,10 @@ export default class LayoutExploreStores extends React.Component {
                             <StoresSection1 dataExploreStoreList={dataExploreStoreList}/>
                             <StepModule/>
                             {/* <StoresSection2 dataExploreStoreList={dataExploreStoreList}/> */}
-                            <StoresSection4 dataHCMStore={dataHCMStore} dataHNStore={dataHNStore} dataExploreStoreList={dataExploreStoreList}/>
-                            
+                            {/* <StoreSection3 dataHCMStore={dataHCMStore} dataHNStore={dataHNStore} dataExploreStoreList={dataExploreStoreList}/> */}
+                            {/* <StoresSection4 dataHCMStore={dataHCMStore} dataHNStore={dataHNStore} dataExploreStoreList={dataExploreStoreList}/> */}
+                            <StoreListModule title={dataExploreStoreList.block1_line1} desc={dataExploreStoreList.block1_line2} dataStore={dataHCMStore}/>
+                            <StoreListModule title={dataExploreStoreList.block2_line1} desc={dataExploreStoreList.block2_line2} dataStore={dataHNStore}/>
                         </main>
                         <Footer />
                     </div>

@@ -4,7 +4,7 @@ import '../statics/base.css'
 import '../statics/index.css'
 import '../statics/sell.css'
 import '../statics/home.css'
-// import '../statics/home2.css'
+import '../statics/store-list.css'
 import '../statics/vendor_main.css'
 import '../statics/article.css'
 
