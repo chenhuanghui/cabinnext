@@ -674,7 +674,7 @@
     margin-bottom: 6.4rem;
 }
 ._2YMma h2 {
-    color: #008060;
+    color: var(--light-color);
 }
 @media (min-width: 62em) {
     ._2YMma h2 {
@@ -1139,7 +1139,7 @@
     }
 }
 .TGPP5 {
-    color: #008060;
+    color: var(--light-color);
     font-size: 1.6rem;
     line-height: 2rem;
     font-weight: 600;
@@ -1179,7 +1179,7 @@
     white-space: pre-wrap;
 }
 ._1osS7 h4 {
-    color: #008060;
+    color: var(--light-color);
     line-height: 2.4rem;
     margin-bottom: 3.5rem;
 }

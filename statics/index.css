@@ -1557,6 +1557,9 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     align-items:start;
     justify-items:start
 }
+.example-merchants.stores-list {
+    grid-template-columns:repeat(1, 1fr);
+}
 @media screen and (max-width: 46.8125em){
     .example-merchants .example-merchant:nth-child(n+5){
         display:none
@@ -1569,6 +1572,12 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     .example-merchants .example-merchant:nth-child(n+5){
         display:none
     }
+    .example-merchants.stores-list{
+        grid-template-columns:repeat(4, 1fr)
+    }
+    .example-merchants.stores-list .example-merchant:nth-child(n+5){
+        display:none
+    }
 }
 @media screen and (min-width: 750px) and (max-width: 850px){
     .example-merchants{
@@ -1577,9 +1586,18 @@ a:hover .pillar-nav__link-icon,a:active .pillar-nav__link-icon{
     .example-merchants .example-merchant:nth-child(n+4){
         display:none
     }
+    .example-merchants.stores-list{
+        grid-template-columns:repeat(3, 1fr)
+    }
+    .example-merchants.stores-list .example-merchant:nth-child(n+4){
+        display:none
+    }
 }
 @media screen and (min-width: 67.5em){
     .example-merchants{
+        grid-template-columns:repeat(5, 1fr)
+    }
+    .example-merchants.stores-list{
         grid-template-columns:repeat(5, 1fr)
     }
 }

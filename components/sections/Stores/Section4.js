@@ -10,7 +10,7 @@ const StoresSection4 =props => (
                 </div>
                 
                 <section className="section location__group_item">
-                    <div className="example-merchants block">
+                    <div className="example-merchants stores-list block">
                         {props.dataHCMStore.map((p) => (
                             <div className=" example-merchant__block">
                                 <a href="/stores/31">
@@ -41,7 +41,7 @@ const StoresSection4 =props => (
                 </div>
                 
                 <section className="section location__group_item">
-                    <div className="example-merchants block">
+                    <div className="example-merchants stores-list block">
                         {props.dataHNStore.map((p) => (
                             <div className=" example-merchant__block">
                                 <a href="/stores/31">
@@ -97,6 +97,7 @@ const StoresSection4 =props => (
             ._is-ready {color: #008060 !important; font-weight:bold; padding: 10px 10px 20px 0px; text-align: right; font-size:11px}            
             ._is-ready a{text-decoration:none; text-transform: uppercase;}
             ._is-ready a:hover{text-decoration:underline}
+            // .example-merchants.store-lists { grid-template-columns: repeat(2, 1fr);}
         `}</style>
     </section>
 );
