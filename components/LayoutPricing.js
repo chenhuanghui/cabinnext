@@ -297,7 +297,11 @@ export default class LayoutPricing extends React.Component {
                         <Footer />
                     </div>
                 </div>
-                
+            <style jsx>{`
+                .section-heading__heading.heading--1 {font-size: 2rem !important;}
+                .section-heading__subhead.heading--2 {font-size: 1.5rem !important;}
+
+            `}</style>
             </div>
         )
     }
