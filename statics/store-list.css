@@ -89,6 +89,7 @@
     padding-right: 8px !important;
     padding-top: 8px !important;
     max-width: none !important;
+    margin-bottom: 15px;
 }
 @media (min-width: 744px){
     ._1xizdrk {
@@ -327,4 +328,10 @@
     height: 0.7em; 
     width: 0.7em; 
     fill: currentcolor;
+}
+li.concept {
+    font-weight: bold;
+    border-top: black 1px solid;
+    padding-top: 12px;
+    margin-top: 10px;
 }

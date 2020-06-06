@@ -42,7 +42,7 @@ export default class StoreSection3 extends React.Component {
                                             <div className="_1xizdrk">
                                                 <div>
                                                     <div className="_1xl0u0x" role="presentation">
-                                                        <a target="_blank" href="#" className="_6lth7f">
+                                                        <a target="_blank" href={p.href} className="_6lth7f">
                                                             <div className="_6i8igo">
                                                                 <div className="_e296pg">
                                                                     <div className="_hxt6u1e">
@@ -70,7 +70,7 @@ export default class StoreSection3 extends React.Component {
                                                                         </span>)
                                                                     </li>
                                                                     <li className="_g86r3e"><span>Bàn giao:</span> {p.release_date}</li>
-                                                                    
+                                                                    <li className="_g86r3e concept"><span>{p.concept}</span></li>
                                                                 </ul>
                                                             </div>
                                                         </a>
@@ -85,7 +85,7 @@ export default class StoreSection3 extends React.Component {
                                             <div className="_1xizdrk">
                                                 <div>
                                                     <div className="_1xl0u0x" role="presentation">
-                                                        <a target="_blank" href="#" className="_6lth7f">
+                                                        <a target="_blank" href={p.href} className="_6lth7f">
                                                             <div className="_6i8igo">
                                                                 <div className="_e296pg">
                                                                     <div className="_hxt6u1e">
@@ -113,7 +113,7 @@ export default class StoreSection3 extends React.Component {
                                                                         </span>)
                                                                     </li>
                                                                     <li className="_g86r3e"><span>Bàn giao:</span> {p.release_date}</li>
-                                                                    
+                                                                    <li className="_g86r3e concept"><span>{p.concept}</span></li>
                                                                 </ul>
                                                             </div>
                                                         </a>
