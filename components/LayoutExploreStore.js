@@ -45,6 +45,7 @@ export default class LayoutExploreStores extends React.Component {
                 storeHCMList.push(record.fields);
             });
             storeHCMList = currentComponent.sortByKey(storeHCMList,"sortID");
+            console.log('hcm',storeHCMList);
             currentComponent.setState({dataHCMStore:storeHCMList})
             fetchNextPage();
         }, function done(err) {
@@ -109,7 +110,7 @@ export default class LayoutExploreStores extends React.Component {
                         <main id="Main">
                             <StoresSection1 dataExploreStoreList={dataExploreStoreList}/>
                             <StepModule/>
-                            <StoresSection4 dataHCMStore={dataHCMStore} dataHNStore={dataHNStore}/>
+                            <StoresSection4 dataHCMStore={dataHCMStore} dataHNStore={dataHNStore} dataExploreStoreList={dataExploreStoreList}/>
                             
                         </main>
                         <Footer />
