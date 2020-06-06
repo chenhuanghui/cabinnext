@@ -68,7 +68,7 @@ export default class LayoutPricing extends React.Component {
                 // console.log('data1',record.fields)
                 dataFAQ1.push(record.fields)
             });
-            faq_group1 = currentComponent.sortByKey(faq_group1,"sortID");
+            dataFAQ1 = currentComponent.sortByKey(dataFAQ1,"sortID");
             currentComponent.setState({faq_group1:dataFAQ1})
             fetchNextPage();
         }, function done(err) {
@@ -82,7 +82,7 @@ export default class LayoutPricing extends React.Component {
             records.forEach(function(record) {
                 dataFAQ2.push(record.fields)
             });
-            faq_group2 = currentComponent.sortByKey(faq_group2,"sortID");
+            dataFAQ2 = currentComponent.sortByKey(dataFAQ2,"sortID");
             currentComponent.setState({faq_group2:dataFAQ2})
             fetchNextPage();
         }, function done(err) {
@@ -95,7 +95,7 @@ export default class LayoutPricing extends React.Component {
             records.forEach(function(record) {
                 dataFAQ3.push(record.fields)
             });
-            faq_group3 = currentComponent.sortByKey(faq_group3,"sortID");
+            dataFAQ3 = currentComponent.sortByKey(dataFAQ3,"sortID");
             currentComponent.setState({faq_group3:dataFAQ3})
             fetchNextPage();
         }, function done(err) {
@@ -108,7 +108,7 @@ export default class LayoutPricing extends React.Component {
             records.forEach(function(record) {
                 dataFAQ4.push(record.fields)
             });
-            faq_group4 = currentComponent.sortByKey(faq_group4,"sortID");
+            dataFAQ4 = currentComponent.sortByKey(dataFAQ4,"sortID");
             currentComponent.setState({faq_group4:dataFAQ4})
             fetchNextPage();
         }, function done(err) {
@@ -121,7 +121,7 @@ export default class LayoutPricing extends React.Component {
             records.forEach(function(record) {
                 dataFAQ5.push(record.fields)
             });
-            faq_group5 = currentComponent.sortByKey(faq_group5,"sortID");
+            dataFAQ5 = currentComponent.sortByKey(dataFAQ5,"sortID");
             currentComponent.setState({faq_group5:dataFAQ5})
             fetchNextPage();
         }, function done(err) {
@@ -134,7 +134,7 @@ export default class LayoutPricing extends React.Component {
             records.forEach(function(record) {
                 dataFAQ6.push(record.fields)
             });
-            faq_group6 = currentComponent.sortByKey(faq_group6,"sortID");
+            dataFAQ6 = currentComponent.sortByKey(dataFAQ6,"sortID");
             currentComponent.setState({faq_group6:dataFAQ6})
             fetchNextPage();
         }, function done(err) {
