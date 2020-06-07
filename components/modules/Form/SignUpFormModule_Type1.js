@@ -47,6 +47,7 @@ export default class SignUpFormModule extends React.Component {
                     .footer__signup {margin-top: 50px; padding: 0px 30px;}
                     #SignupFooter-input {width: 65%}
                     #SignupFooter-btn {width: 35%}
+                    .signup-footer{background-color: var(--supper-light-color) !important;}
                 `}</style>
             </section>
         )

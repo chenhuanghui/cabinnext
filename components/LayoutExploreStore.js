@@ -125,6 +125,7 @@ export default class LayoutExploreStores extends React.Component {
                 </div>
         <style jsx>{`
             // ._2b5gw img {max-width: none;}
+            
         `}</style>
             </div>
         )

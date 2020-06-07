@@ -53,7 +53,7 @@ export default class Header extends React.Component {
                     </div>
                 </div>
 
-                <div className="picture--cover homepage-hero__image">
+                <div className="picture--cover homepage-hero__image section--help__picture">
                     <img className="image"src={this.props.dataExploreStoreList.img} />
                 </div>
                 
