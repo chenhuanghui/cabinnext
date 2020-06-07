@@ -166,7 +166,7 @@ const PricingSection1 = props => (
             .pharse:hover th, .pharse:hover td {background-color: var(--main-color) !important;}
             .pharse p, .pharse span {color:white;}
             .pharse .heading--5 {font-weight: bold; line-height:30px;}
-            .feature-label__text {font-weight: 600;}
+            .feature-label__text {font-weight: 600; color: #15365D;}
         `}</style>  
     </div>
 );
