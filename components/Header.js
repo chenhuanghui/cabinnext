@@ -62,7 +62,7 @@ export default class Header extends React.Component {
                                                 </div>
 
                                                 <ul className="marketing-nav__items display--expanded-nav">
-                                                        <li>
+                                                        {/* <li>
                                                                 <div className="popover-wrapper js-popover-dropdown popover-wrapper--dropdown" data-position="bottom" data-align="left" >
                                                                         <button className="popover__trigger marketing-nav__item marketing-nav__item--primary"> 
                                                                         Giải pháp 
@@ -73,11 +73,6 @@ export default class Header extends React.Component {
                                                                         <div className="popover">
                                                                                 <div className="popover__content">
                                                                                         <ul className="popover__list">
-                                                                                                {/* <li>
-                                                                                                        <p className="marketing-nav__item marketing-nav__item--separated marketing-nav__item--child">
-                                                                                                        Bundle Delivery
-                                                                                                        </p>
-                                                                                                </li> */}
                                                                                                 <li>
                                                                                                         <div className="popover-wrapper js-popover-flyout popover-wrapper--flyout" data-position="right" data-align="top">
                                                                                                                 <a href="/start" className="popover__trigger marketing-nav__item marketing-nav__item--child">
@@ -126,12 +121,12 @@ export default class Header extends React.Component {
                                                                                 </div>
                                                                         </div>
                                                                 </div>
-                                                        </li>
-                                                        <li>
+                                                        </li> */}
+                                                        {/* <li>
                                                                 <div className="popover-wrapper js-popover-dropdown popover-wrapper--dropdown" data-position="bottom" data-align="left" >
                                                                         <a className="popover__trigger marketing-nav__item marketing-nav__item--primary" href="/stores"> Điểm kinh doanh</a>
                                                                 </div>
-                                                        </li>
+                                                        </li> */}
                                                 </ul>
 
                                                 {/* <ul className="marketing-nav__items marketing-nav__items--primary-mobile hide--desktop">
@@ -139,8 +134,9 @@ export default class Header extends React.Component {
                                                 </ul> */}
                                                 <ul className="marketing-nav__items marketing-nav__user display--expanded-nav">
                                                         <li><a href="/pricing" className="marketing-nav__item marketing-nav__item--user"> Bảng giá </a></li>
+                                                        <li><a href="/pricing" className="marketing-nav__item marketing-nav__item--user"> Bảng giá </a></li>
                                                         <li><a href="/about" className="marketing-nav__item marketing-nav__item--user">Về CabinFood </a></li>
-                                                        <li><a href="#" className="marketing-nav__item marketing-nav__item--user"> Tin tức </a></li>
+                                                        {/* <li><a href="#" className="marketing-nav__item marketing-nav__item--user"> Tin tức </a></li> */}
                                                 </ul>
                                                 <button name="button" type="button" className="marketing-nav__hamburger hide--expanded-nav js-drawer-open-right" aria-controls="NavDrawer" aria-expanded="false">
                                                         <svg className="icon" aria-labelledby="icon-modules-mobile-hamburger-40-title" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -155,7 +151,7 @@ export default class Header extends React.Component {
                                         <div className="drawer__inner">
                                                 <div className="drawer__top">
                                                         <div className="marketing-nav__logo">
-                                                                <a href="index.html" className="marketing-nav__logo__shopify">
+                                                                <a href="/" className="marketing-nav__logo__shopify">
                                                                         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 458.14 69.82">
                                                                                 <path d="M113.86,41.29a15.13,15.13,0,0,0-2.72-.62,19.44,19.44,0,0,0-2.56-.16,8.93,8.93,0,0,0-7.29,3.11q-2.57,3.09-2.56,9.23,0,5.35,2.79,8.38a9,9,0,0,0,6.83,3,15.61,15.61,0,0,0,5.28-1A22.68,22.68,0,0,0,119,60.45l3.57,5.27a34.65,34.65,0,0,1-4.43,3,20.93,20.93,0,0,1-4.57,1.94,19.37,19.37,0,0,1-5.43.7,21.06,21.06,0,0,1-9.74-2.13A14.89,14.89,0,0,1,92,63a21,21,0,0,1-2.25-10.12A22.4,22.4,0,0,1,92,42.3a14.89,14.89,0,0,1,6.44-6.44,21.62,21.62,0,0,1,10.08-2.18,31.26,31.26,0,0,1,6,.59,37.74,37.74,0,0,1,5.93,1.66l1.94,10-7.45,1.63Z" transform="translate(-8.09 -17.47)" fill="#15365d"/>
                                                                                 <path d="M154,68.36a22.56,22.56,0,0,1-11.1,3q-7.22,0-11-2.76t-3.76-8.18q-.07-10.79,14.2-10.78H151c0-3.16-.65-5.47-1.94-7A6.41,6.41,0,0,0,144,40.51a21.5,21.5,0,0,0-3.25.23,20.7,20.7,0,0,0-2.95.7l-.7,3.8-7.29-1L131.23,36a42.14,42.14,0,0,1,6.33-1.67,38.35,38.35,0,0,1,6.71-.58q7.6,0,11.6,4t4,11.75V62.39l6.52,2.09L164,71.78Zm-11.41-13a5.61,5.61,0,0,0-4.07,1.32,4.82,4.82,0,0,0-1.36,3.64q0,4.43,6.05,4.42A14.41,14.41,0,0,0,151,62.54V55.48Z" transform="translate(-8.09 -17.47)" fill="#15365d"/>
@@ -186,7 +182,7 @@ export default class Header extends React.Component {
                                                 </div>
 
                                                 <nav aria-label="Main Navigation">
-                                                        <ul className="drawer__items drawer__items--primary" id="DrawerNavPrimaryAccordion">
+                                                        {/* <ul className="drawer__items drawer__items--primary" id="DrawerNavPrimaryAccordion">
                                                                 <li className="accordion-item">
                                                                         <a href="/start" className="drawer__item drawer__item--primary accordion-link">
                                                                                 Dễ dàng bắt đầu
@@ -219,21 +215,22 @@ export default class Header extends React.Component {
                                                                                 </svg>
                                                                         </a>
                                                                 </li>
-                                                        </ul>
+                                                        </ul> */}
 
                                                         <ul className="drawer__items drawer__items--user" id="DrawerNavSecondaryAccordion">
-                                                                <li><a href="/pricing" className="drawer__item">Bảng giá</a></li>
                                                                 <li><a href="/stores" className="drawer__item">Điểm kinh doanh</a></li>
-                                                                <li><a href="#" className="drawer__item"> Tin tức</a></li>
+                                                                <li><a href="/pricing" className="drawer__item">Bảng giá</a></li>
+                                                                
+                                                                {/* <li><a href="#" className="drawer__item"> Tin tức</a></li> */}
                                                         </ul>
 
                                                         <ul className="drawer__items drawer__items--corporate">
                                                                 <li><a href="/about" className="drawer__item">Về CabinFood</a></li>
-                                                                <li>
-                                                                        <form className="button_to" method="post" action="#">
+                                                                {/* <li>
+                                                                        <div className="button_to" method="post" action="#">
                                                                                 <input className="js-open-signup drawer__item drawer__item--signup marketing-nav__button marketing-button marketing-button--small" defaultValue="Đăng ký tư vấn"/>
-                                                                        </form>
-                                                                </li>
+                                                                        </div>
+                                                                </li> */}
                                                         </ul>
                                                 </nav>
                                         </div>
