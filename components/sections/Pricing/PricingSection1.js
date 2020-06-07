@@ -15,7 +15,7 @@ const PricingSection1 = props => (
                                 <span className="pricing-table__feature-value pricing-table__feature-price monthly-price__price">
                                     <span className="price">
                                         <span aria-hidden="true">
-                                            <span className="price__number">10</span>
+                                            <span className="price__number">{props.pricing_content.group1_price}</span>
                                         </span>
                                     </span>
                                 </span> 
@@ -66,7 +66,7 @@ const PricingSection1 = props => (
                                     <span className="price">
                                         <span aria-hidden="true">
                                             <sup>Từ </sup> 
-                                            <span className="price__number">8</span>
+                                            <span className="price__number">{props.pricing_content.group2_price}</span>
                                             
                                         </span>
                                     </span>
