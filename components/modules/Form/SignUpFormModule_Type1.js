@@ -1,6 +1,4 @@
-import $ from 'jquery';
-
-export default class SignUp extends React.Component {
+export default class SignUpFormModule extends React.Component {
     constructor(props){
         super(props);
     
@@ -11,8 +9,10 @@ export default class SignUp extends React.Component {
     componentDidMount() {
         let currentComponent = this;
         var Airtable = require('airtable');
+        
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
-        base('Form_List').find('recUlH3EWGAdbTsPY', function(err, record) {
+        console.log('formid=',this.props.formID);
+        base('Form_List').find(this.props.formID, function(err, record) {
             if (err) { console.error(err); return; }
             console.log('dataForm2', record.fields)
             currentComponent.setState({ dataForm: record.fields })
@@ -26,11 +26,8 @@ export default class SignUp extends React.Component {
                 <div className="grid">
                     <div className="grid__item">
                         <div className="section-heading signup-footer__heading gutter-bottom--reset">
-                            <h2 className="section-heading__heading heading--2">{this.props.dataSignUp.title}</h2>
-                            <p className="section-heading__subhead heading--3 heading--4">{this.props.dataSignUp.desc}</p>
-                            {/* <form className="marketing-button-wrapper" action={props.dataSignUp.btn_href}>
-                                <button className="marketing-button js-open-signup signup-footer__button" >{props.dataSignUp.btn_title}</button>
-                            </form> */}
+                            <h2 className="section-heading__heading heading--2">{dataForm.hero_message}</h2>
+                            <p className="section-heading__subhead heading--3 heading--4">{dataForm.desc}</p>
                             <div className="footer__signup">
                                 <div className="js-signup-inline marketing-form--inline">
                                     <div className="marketing-input-wrapper marketing-input-button-pair">
@@ -42,7 +39,6 @@ export default class SignUp extends React.Component {
                                         <span className="marketing-form__messages">{dataForm.note}</span>
                                     </div>
                                 </div>
-                                {/* <p className="marketing-form__fallback-cta text-center text-minor color-gray-80 text-left">{dataForm.note}</p> */}
                             </div>
                         </div>
                     </div>

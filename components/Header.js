@@ -133,7 +133,7 @@ export default class Header extends React.Component {
                                                         <li> <a className="marketing-nav__item marketing-nav__item--primary" href="https://www.shopify.com/login">Log in</a></li>
                                                 </ul> */}
                                                 <ul className="marketing-nav__items marketing-nav__user display--expanded-nav">
-                                                        <li><a href="/pricing" className="marketing-nav__item marketing-nav__item--user"> Bảng giá </a></li>
+                                                        <li><a href="/stores" className="marketing-nav__item marketing-nav__item--user"> Điểm kinh doanh </a></li>
                                                         <li><a href="/pricing" className="marketing-nav__item marketing-nav__item--user"> Bảng giá </a></li>
                                                         <li><a href="/about" className="marketing-nav__item marketing-nav__item--user">Về CabinFood </a></li>
                                                         {/* <li><a href="#" className="marketing-nav__item marketing-nav__item--user"> Tin tức </a></li> */}

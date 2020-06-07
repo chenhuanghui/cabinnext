@@ -10,7 +10,7 @@ import BackgroundGreen from './sections/Master/BackgroundGreen'
 import Support from './sections/Master/Support'
 import SignUp from './sections/Master/SignUp'
 import Footer from './Footer'
-
+import SignUpFormModule from './modules/Form/SignUpFormModule_Type1';
 // import '../statics/index.css'
 
 export default class LayoutBundleDeliveryRight extends React.Component {
@@ -137,7 +137,8 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                             <BackgroundGreen dataGreen={dataGreen} dataCategories={dataCategories}/>
                             <Pillars dataPillar = {dataPillar}/>
                             <Support dataSupport = {dataSupport}/>
-                            <SignUp dataSignUp = {dataSignUp}/>
+                            {/* <SignUp dataSignUp = {dataSignUp}/> */}
+                            <SignUpFormModule formID={`recpPldytt9jtAwyJ`}/>
                             <div className="grid">
                                 <div className="grid__item back-to-top-link-wrapper">
                                     <a className="back-to-top-link link-scroll-to styled-link styled-link--skin-inherit" href="#PageContainer">
