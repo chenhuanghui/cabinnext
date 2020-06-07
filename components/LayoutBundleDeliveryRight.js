@@ -10,7 +10,7 @@ import BackgroundGreen from './sections/Master/BackgroundGreen'
 import Support from './sections/Master/Support'
 import SignUp from './sections/Master/SignUp'
 import Footer from './Footer'
-import SignUpFormModule from './modules/Form/SignUpFormModule_Type1';
+import SignUpFormModuleType1 from './modules/Form/SignUpFormModule_Type1';
 // import '../statics/index.css'
 
 export default class LayoutBundleDeliveryRight extends React.Component {
@@ -119,10 +119,8 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                     <meta name="author" content="CabinFood" />
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" />
-                    <title>CabinFood | easy to Start, Fast to grow</title>
+                    <title>All-in-One Delivery Platform For F&B</title>
                     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
-                    
-                    
                 </Head>
 
                 <div className="page--home">
@@ -138,7 +136,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                             <Pillars dataPillar = {dataPillar}/>
                             <Support dataSupport = {dataSupport}/>
                             {/* <SignUp dataSignUp = {dataSignUp}/> */}
-                            <SignUpFormModule formID={`recpPldytt9jtAwyJ`}/>
+                            <SignUpFormModuleType1 formID={`recpPldytt9jtAwyJ`}/>
                             <div className="grid">
                                 <div className="grid__item back-to-top-link-wrapper">
                                     <a className="back-to-top-link link-scroll-to styled-link styled-link--skin-inherit" href="#PageContainer">

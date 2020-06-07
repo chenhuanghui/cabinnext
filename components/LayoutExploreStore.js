@@ -5,7 +5,7 @@ import Header from './Header'
 import ModalForm from './sections/Modal/FormModal';
 import StepModule from './modules/Step/StepModule';
 import StoreListModule from './modules/Store/StoreListModule';
-import SignUpFormModule from './modules/Form/SignUpFormModule_Type1';
+import SignUpFormModuleType1 from './modules/Form/SignUpFormModule_Type1';
 import Footer from './Footer'
 
 import StoresSection1 from './sections/Stores/Section1';
@@ -118,7 +118,7 @@ export default class LayoutExploreStores extends React.Component {
                             <StepModule/>
                             <StoreListModule title={dataExploreStoreList.block1_line1} desc={dataExploreStoreList.block1_line2} dataStore={dataHCMStore}/>
                             <StoreListModule title={dataExploreStoreList.block2_line1} desc={dataExploreStoreList.block2_line2} dataStore={dataHNStore}/>
-                            <SignUpFormModule formID={`recpPldytt9jtAwyJ`}/>
+                            <SignUpFormModuleType1 formID={`recpPldytt9jtAwyJ`}/>
                         </main>
                         <Footer />
                     </div>
