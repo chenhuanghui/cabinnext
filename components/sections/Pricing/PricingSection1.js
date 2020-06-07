@@ -153,6 +153,55 @@ const PricingSection1 = props => (
                                 </td>
                             </tr>
                     })}
+
+                    {/* Pharse 04  */}
+                    <tr className="pharse">
+                        <th scope="row" id="f-monthly_price"> 
+                            <span className="heading--5 pricing-table__section-heading">{props.pricing_content.group4}</span>
+                            <p className="feature-label__description">{props.pricing_content.group4_desc}</p>
+                        </th>
+                        <td headers="p-0 f-monthly_price">
+                            <div className=" monthly-price"> 
+                                <span className="pricing-table__feature-value pricing-table__feature-price monthly-price__price">
+                                    <span className="price">
+                                        <span aria-hidden="true">
+                                            {/* <sup>Từ </sup>  */}
+                                            {/* <span className="price__number">2</span> */}
+                                        </span>
+                                    </span>
+                                </span> 
+                                {/* <span className="monthly-price__currency text-minor" aria-hidden="true">.000.000 đ</span> */}
+                            </div>
+                        </td>
+                    </tr>
+
+                    {props.pricing_group4.map((p) => {
+                        return p.type==`sub_group` 
+                        ?  
+                            <tr>
+                                <th scope="col" colSpan="2">
+                                    <span className="heading--5 pricing-table__section-heading">{p.obj}</span>
+                                </th>
+                            </tr>
+                        : 
+                            <tr className={p.id} key={p.id}> 
+                                <th scope="row" id="f-website">
+                                    <div className="pricing-table__feature-name">
+                                        <dl className="feature-label"><dt className="feature-label__text">{p.obj}</dt>
+                                        <dd className="feature-label__description">{p.desc}</dd>
+                                    </dl>
+                                    </div>
+                                </th>
+                                <td headers="p-0 f-website"> 
+                                    <span className="pricing-table__feature-value">
+                                    { (p.value == 1 ) 
+                                    ? <svg className="icon icon--fill-primary icon--in-plan" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.7 40"><path d="M16.7 30l-7.4-7.9c-.8-.8-.6-2 .4-2.6 1-.6 2.4-.5 3.1.3l3.7 4 11.3-13c.7-.8 2.1-1 3.1-.4s1.2 1.8.5 2.6L16.7 30z" /></svg> 
+                                    : p.value
+                                    }
+                                    </span>
+                                </td>
+                            </tr>
+                    })}
                     
                     
                 </tbody>

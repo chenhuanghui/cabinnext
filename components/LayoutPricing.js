@@ -22,6 +22,7 @@ export default class LayoutPricing extends React.Component {
             pricing_group1:[],
             pricing_group2:[],
             pricing_group3:[],
+            pricing_group4:[],
             pricing_sub_group:[],
             pricing_content:[],
             dataForm:[]
@@ -45,8 +46,8 @@ export default class LayoutPricing extends React.Component {
         var dataPricing1 = [];
         var dataPricing2 = [];
         var dataPricing3 = [];
-        var dataSubGroupPricing = [];
-        var dataPricingContent = [];
+        var dataPricing4 = [];
+        
 
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
@@ -181,6 +182,18 @@ export default class LayoutPricing extends React.Component {
             currentComponent.setState({pricing_group3:dataPricing3})
         });
 
+        base('Pricing_List').select({
+            filterByFormula: `{pharse} = "Pharse4"`
+        }).firstPage(function(err, records) {
+            if (err) { console.error(err); return; }
+            records.forEach(function(record) {
+                record.fields.id = record.id;
+                dataPricing4.push(record.fields)
+            });
+            dataPricing4 = currentComponent.sortByKey(dataPricing4,"sortID");
+            currentComponent.setState({pricing_group4:dataPricing4})
+        });
+
 
         base('Pricing_Page').find('recMykkn2JNCU92aS', function(err, record) {
             if (err) { console.error(err); return; }
@@ -211,7 +224,7 @@ export default class LayoutPricing extends React.Component {
     
 
     render (){
-        const {faq_group_sub,faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6,pricing_group1,pricing_group2,pricing_group3,pricing_content,dataForm} = this.state;
+        const {faq_group_sub,faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6,pricing_group1,pricing_group2,pricing_group3,pricing_group4,pricing_content,dataForm} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -246,7 +259,7 @@ export default class LayoutPricing extends React.Component {
                                     </div>
                                 </div>
                                 
-                                <PricingSection1 pricing_group1={pricing_group1} pricing_group2={pricing_group2} pricing_group3={pricing_group3} pricing_content={pricing_content}/>
+                                <PricingSection1 pricing_group1={pricing_group1} pricing_group2={pricing_group2} pricing_group3={pricing_group3} pricing_group4={pricing_group4} pricing_content={pricing_content}/>
                                 
                                 <div className="grid">
                                     <div className="grid__item grid__item--tablet-up-two-thirds grid__item--tablet-up-offset-1">
