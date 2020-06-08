@@ -4,7 +4,7 @@ import HubspotForm from 'react-hubspot-form'
 export default class Header extends React.Component {
     componentDidMount() {
         // modal action
-        $(`.marketing-button`).click(function(){
+        $(`.marketing-button, .contact-form`).click(function(){
             console.log('btn open modal click');
             $(`body`).addClass(`js-modal-open`);
             $(`#FormModal`).addClass(`js-is-active`);
