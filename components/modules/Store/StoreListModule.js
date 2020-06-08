@@ -84,7 +84,7 @@ export default class StoreListModule extends React.Component {
                                             <div className="_1xizdrk">
                                                 <div>
                                                     <div className="_1xl0u0x" role="presentation">
-                                                        <a target="_blank" href={p.href} className="_6lth7f">
+                                                        <div className="_6lth7f">
                                                             <div className="_6i8igo">
                                                                 <div className="_e296pg">
                                                                     <div className="_hxt6u1e">
@@ -115,7 +115,7 @@ export default class StoreListModule extends React.Component {
                                                                     <li className="_g86r3e concept"><span>{p.concept}</span></li>
                                                                 </ul>
                                                             </div>
-                                                        </a>
+                                                        </div>
 
                                                         <div className="_1lso56r">
                                                             <div className="_1vl7zve8">{p.status}</div>
