@@ -69,8 +69,8 @@ export default class Header extends React.Component {
                     
                 </div>
                 
-                <a class="marketing-button-wrapper" href={dataForm.btn_href}>
-                    <button class="marketing-button js-open-signup signup-footer__button">{dataForm.btn_title}</button>
+                <a className="marketing-button-wrapper" href={dataForm.btn_href}>
+                    <button className="marketing-button js-open-signup signup-footer__button">{dataForm.btn_title}</button>
                 </a>
                 
             <style jsx>{`
