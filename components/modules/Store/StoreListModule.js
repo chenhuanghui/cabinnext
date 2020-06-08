@@ -69,6 +69,7 @@ export default class StoreListModule extends React.Component {
                                                                         </span>)
                                                                     </li>
                                                                     <li className="_g86r3e"><span>Bàn giao:</span> {p.release_date}</li>
+                                                                    <li className="_g86r3e"><span>Thời gian làm việc:</span> {p.time}</li>
                                                                     <li className="_g86r3e concept"><span>{p.concept}</span></li>
                                                                 </ul>
                                                             </div>
@@ -89,9 +90,7 @@ export default class StoreListModule extends React.Component {
                                                                 <div className="_e296pg">
                                                                     <div className="_hxt6u1e">
                                                                         <div className="_4626ulj">
-                                                                            <img className="_91slf2a" aria-hidden="true"
-                                                                                src={p.image}
-                                                                            />
+                                                                            <img className="_91slf2a" aria-hidden="true"src={p.image}/>
                                                                             <div className="_10xjrv2u"></div>
                                                                         </div>
                                                                     </div>
@@ -112,6 +111,7 @@ export default class StoreListModule extends React.Component {
                                                                         </span>)
                                                                     </li>
                                                                     <li className="_g86r3e"><span>Bàn giao:</span> {p.release_date}</li>
+                                                                    <li className="_g86r3e"><span>Thời gian làm việc:</span> {p.time}</li>
                                                                     <li className="_g86r3e concept"><span>{p.concept}</span></li>
                                                                 </ul>
                                                             </div>
