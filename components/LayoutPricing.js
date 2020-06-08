@@ -252,7 +252,7 @@ export default class LayoutPricing extends React.Component {
                             <section className="section">
                                 <div className="grid">
                                     <div className="grid__item">
-                                        <div className="section-heading">
+                                        <div className="section-heading pricing-title">
                                             <h1 className="section-heading__heading heading--1">{pricing_content.line1}</h1>
                                             <p className="section-heading__subhead heading--2">{pricing_content.line2}</p>
                                         </div>
