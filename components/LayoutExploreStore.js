@@ -3,6 +3,7 @@ import React from 'react';
 
 import Header from './Header'
 import ModalForm from './sections/Modal/FormModal';
+import ModalVideo from './sections/Modal/VideoModal';
 import StepModule from './modules/Step/StepModule';
 import StoreListModule from './modules/Store/StoreListModule';
 import SignUpFormModuleType1 from './modules/Form/SignUpFormModule_Type1';
@@ -111,6 +112,7 @@ export default class LayoutExploreStores extends React.Component {
                 </Head>
                 <div className="">
                     <ModalForm />
+                    <ModalVideo />
                     <Header />
                     <div id="PageContainer">
                         <main id="Main">

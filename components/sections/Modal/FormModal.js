@@ -7,46 +7,19 @@ export default class Header extends React.Component {
         $(`.marketing-button`).click(function(){
             console.log('btn open modal click');
             $(`body`).addClass(`js-modal-open`);
-            $(`.modal-container`).addClass(`js-is-active`);
+            $(`#FormModal`).addClass(`js-is-active`);
         })
         $(`#CloseModal`).click(function(){
             console.log('btn close modal click');
             $(`body`).removeClass(`js-modal-open`);
-            $(`.modal-container`).removeClass(`js-is-active`);
+            $(`#FormModal`).removeClass(`js-is-active`);
         })
-        // $(`#btn_create_lead`).click(function(){
-        //     // create data in Lead Table
-        //     console.log('create lead start');
-        //     base('Lead').create([
-        //     {
-        //         "fields": {
-        //             "Name":$(`#0_signup_name`).val(),
-        //             "Email":$(`#0_signup_email`).val(),
-        //             "Tel":$(`#0_signup_tel`).val(),
-        //             "Brand":$(`#0_signup_brand`).val(),
-        //             "Message":$(`#0_signup_msg`).val()
-        //         }
-        //     }
-        //     ], function(err, records) {
-        //         if (err) {
-        //             console.error(err);
-        //             return;
-        //         }
-        //         records.forEach(function (record) {
-        //             // console.log(record.getId());
-        //             $(`body`).removeClass(`js-modal-open`);
-        //             $(`.modal-container`).removeClass(`js-is-active`);
-        //             $(`.js-signup-inline.marketing-form--inline`).css(`display`,`none`);
-        //         });
-        //     });
-        //     console.log('create lead done');
-        // })
     }
     
 
     render() {
         return(
-            <div className="modal-container modal-container--lowlight signup-modal" id="ModalContainer" aria-hidden="false" tabIndex="-1">
+            <div className="modal-container modal-container--lowlight signup-modal" id="FormModal" aria-hidden="false" tabIndex="-1">
                 
                 <div className="modal__header">
                     <div className="modal__controls">
@@ -148,9 +121,7 @@ export default class Header extends React.Component {
                 
                 
             <style jsx>{`
-                // .js-is-active {overflow-y: hidden;}
-                // #0_signup_msg {height: 140px !important}
-                #ModalContainer {background-color: var(--sub-color-1);}
+                #FormModal {background-color: var(--sub-color-1);}
             `}</style>
             </div>
         )
