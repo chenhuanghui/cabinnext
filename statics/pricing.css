@@ -1029,3 +1029,17 @@
         padding-bottom:12px
     }
 }
+
+.section-heading__heading.heading--1 {font-size: 1.3rem;}
+.section-heading__subhead.heading--2 {font-size: 1rem;}
+.background-light {background-color: var(--sub-color-1)}
+
+@media screen and (min-width: 46.875em){
+    .section-heading__heading.heading--1 {font-size: 1.3rem;}
+    .section-heading__subhead.heading--2 {font-size: 1rem;}
+}
+
+@media screen and (min-width: 67.5em){
+    .section-heading__heading.heading--1 {font-size: 1.8rem !important;}
+    .section-heading__subhead.heading--2 {font-size: 1.3rem !important;}
+}
