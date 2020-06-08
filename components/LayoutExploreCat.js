@@ -1,3 +1,7 @@
+import { hotjar } from 'react-hotjar';
+import Analytics from 'analytics'
+import googleAnalytics from '@analytics/google-analytics'
+
 import Head from 'next/head'
 import React from 'react';
 
@@ -9,7 +13,16 @@ import ExploreCatSection1 from './sections/ExploreCat/Section1';
 import SignUp from './sections/Master/SignUp'
 import Footer from './Footer'
 
-export default class LayoutRunBiz extends React.Component { 
+const analytics = Analytics({
+    app: 'awesome-app',
+    plugins: [
+      googleAnalytics({
+        trackingId: 'UA-168839658-1'
+      })
+    ]
+})
+
+export default class LayoutExloreCat extends React.Component { 
     constructor(props){
         super(props);
     
@@ -22,6 +35,9 @@ export default class LayoutRunBiz extends React.Component {
       }
 
     componentDidMount () {
+        hotjar.initialize(1846240, 6);
+        analytics.page();
+        
         let currentComponent = this;
 
         var Airtable = require('airtable');

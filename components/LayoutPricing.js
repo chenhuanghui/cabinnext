@@ -1,3 +1,7 @@
+import { hotjar } from 'react-hotjar';
+import Analytics from 'analytics'
+import googleAnalytics from '@analytics/google-analytics'
+
 import Head from 'next/head'
 import React from 'react';
 
@@ -6,6 +10,15 @@ import ModalForm from './sections/Modal/FormModal';
 import PricingSection1 from './sections/Pricing/PricingSection1';
 import PricingFAQSection from './sections/Pricing/PricingFAQSection';
 import Footer from './Footer'
+
+const analytics = Analytics({
+    app: 'awesome-app',
+    plugins: [
+      googleAnalytics({
+        trackingId: 'UA-168839658-1'
+      })
+    ]
+})
 
 export default class LayoutPricing extends React.Component { 
     constructor(props){
@@ -36,6 +49,9 @@ export default class LayoutPricing extends React.Component {
         });
     }    
     componentDidMount () {
+        hotjar.initialize(1846240, 6);
+        analytics.page();
+
         let currentComponent = this;
         var dataFAQ1 = [];
         var dataFAQ2 = [];

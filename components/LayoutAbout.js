@@ -1,9 +1,22 @@
+import { hotjar } from 'react-hotjar';
+import Analytics from 'analytics'
+import googleAnalytics from '@analytics/google-analytics'
+
 import Head from 'next/head'
 import React from 'react';
 
 import Header from './Header'
 import Footer from './Footer'
 import ModalForm from './sections/Modal/FormModal';
+
+const analytics = Analytics({
+    app: 'awesome-app',
+    plugins: [
+      googleAnalytics({
+        trackingId: 'UA-168839658-1'
+      })
+    ]
+})
 
 export default class LayoutAbout extends React.Component { 
     constructor(props){
@@ -16,6 +29,9 @@ export default class LayoutAbout extends React.Component {
         }
     }
     componentDidMount () {
+        hotjar.initialize(1846240, 6);
+        analytics.page();
+
         let currentComponent = this;
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
