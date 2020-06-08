@@ -13,7 +13,7 @@ export default class Header extends React.Component {
         // modal action
         $(document).on('click', `.video-modal` , function() {
             console.log('btn open modal click 2');
-            
+
             $(`body`).addClass(`js-modal-open`);
             $(`#ModalVideo`).addClass(`js-is-active`);
         });
@@ -44,8 +44,18 @@ export default class Header extends React.Component {
                     <div className="signup-modal__content" id="ModalVideoContent">
                         <h2 className="modal__heading" id="ModalTitle">Khám phá điểm kinh doanh cùng CabinFood</h2>
                         <div className="signup-form-wrapper signup--hidden" id="video-inside">
-                            <YouTube id='oigiXW6XyCQ' />
+                            {/* <YouTube id='oigiXW6XyCQ' /> */}
                             {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/oigiXW6XyCQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+                            
+                            <div className="wistia_responsive_padding">
+                                <div className="wistia_responsive_wrapper">
+                                    <div className="wistia_embed wistia_async_flvkbseogu videoFoam=true">
+                                        <div className="wistia_swatch">
+                                            {/* <img src="https://fast.wistia.com/embed/medias/flvkbseogu/swatch" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /> */}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -58,6 +68,11 @@ export default class Header extends React.Component {
                 #ModalVideo {background-color: var(--sub-color-1);}
                 #ModalVideoContent {max-width: 100% !important;}
                 #ModalTitle {color: var(--main-color) !important;}
+                .wistia_responsive_padding {padding:56.25% 0 0 0;position:relative;}
+                .wistia_responsive_wrapper {height:100%;left:0;position:absolute;top:0;width:100%;}
+                .wistia_embed {height:100%;position:relative;width:100%}
+                .wistia_swatch {height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;}
+                .wistia_swatch img {filter:blur(5px);height:100%;object-fit:contain;width:100%;}
             `}</style>
             </div>
         )

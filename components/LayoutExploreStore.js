@@ -108,6 +108,8 @@ export default class LayoutExploreStores extends React.Component {
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" />
                     <title>CabinFood | easy to Start, Fast to grow</title>
+                    <script src="https://fast.wistia.com/embed/medias/flvkbseogu.jsonp" async></script>
+                    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
                     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>                    
                 </Head>
                 <div className="">
