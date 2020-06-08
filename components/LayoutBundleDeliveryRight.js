@@ -117,6 +117,8 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             record.fields.img = record.fields[`img`][0].url;
             currentComponent.setState({ fav: record.fields })
         });
+        
+        hotjar.initialize(1846240, 6);
     }
 
     render () {
@@ -142,7 +144,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                             a.appendChild(r);
                         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
                     </script> */}
-                    hotjar.initialize(1846240, 6);
+                    {/* hotjar.initialize(1846240, 6); */}
                 </Head>
 
                 <div className="page--home">
