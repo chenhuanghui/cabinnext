@@ -176,6 +176,7 @@ export default class LayoutAbout extends React.Component {
                         .about-hero{background-color: var(--lighter-color-1)}
                         
                         .section-heading__heading {font-weight: 800}
+                        .about-hero {padding-bottom: 0px;}
                 `}</style>
             </div>
         )
