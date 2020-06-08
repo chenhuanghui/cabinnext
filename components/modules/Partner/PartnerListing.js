@@ -95,6 +95,7 @@ export default class PartnerListing extends React.Component {
                     padding-left: 5% !important;
                     padding-right: 5% !important;
                     margin-top: 20px !important;
+                    margin-bottom: 20px !important;
                     max-width: 1600px !important;
                 }
                 ._14iivyb {
