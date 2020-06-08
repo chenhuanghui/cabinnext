@@ -8,6 +8,7 @@ import React from 'react';
 import Header from './Header'
 import Footer from './Footer'
 import ModalForm from './sections/Modal/FormModal';
+import PartnerListing from './modules/Partner/PartnerListing';
 
 const analytics = Analytics({
     app: 'awesome-app',
@@ -159,6 +160,7 @@ export default class LayoutAbout extends React.Component {
                                 </div>
                             </section>
                             
+                            <PartnerListing />
 
                             <section className="section signup-footer">
                                 <div className="grid">
@@ -177,6 +179,7 @@ export default class LayoutAbout extends React.Component {
                     </div>
                 </div>
                 <style jsx>{`
+                        .about__content {margin-top: 30px;}
                         .about__content-story .image.lazyload-image {max-width: 704px; max-height: 678px;}
                         .about__content-story .image.lazyload-image .lazyload-image__placeholder {padding-bottom: 96.3068%;}
 
