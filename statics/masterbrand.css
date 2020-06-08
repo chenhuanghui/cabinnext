@@ -5295,17 +5295,17 @@ body > .signup--hidden {
 
 /* modify color */
 :root {
-    --main-color:#004c3f;
-    --sub-color-1:#fbf7ed;
+    --main-color:#15365D;
+    --sub-color-1:#FBF0E6;
 
     --supper-light-color: #ffffff;
-    --light-color: #008060;
+    --light-color: #EE4824;
     --lighter-color: #c1f0d0;
     --lighter-color-1: #f3fcf4;
     
-    --dark-color: #002e25;
-    --dark-color-1: #212326;
-    --dark-color-2: #6b7177;
+    --dark-color: #15365D;
+    --dark-color-1: #15365D;
+    --dark-color-2: #545454;
     --dark-color-3: #42474c;
     
 }

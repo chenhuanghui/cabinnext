@@ -28,7 +28,7 @@ export default class Header extends React.Component {
             $(`#ModalVideo`).removeClass(`js-is-active`);
         });
 
-        base('Form_List').find('recUlH3EWGAdbTsPY', function(err, record) {
+        base('Form_List').find('recScfQH0nm1u6MZB', function(err, record) {
             if (err) { console.error(err); return; }
             console.log('form list explore', record);
             currentComponent.setState({ dataForm: record.fields })
@@ -69,7 +69,7 @@ export default class Header extends React.Component {
                     
                 </div>
                 
-                <a class="marketing-button-wrapper" href="/pricing">
+                <a class="marketing-button-wrapper" href={dataForm.btn_href}>
                     <button class="marketing-button js-open-signup signup-footer__button">{dataForm.btn_title}</button>
                 </a>
                 
