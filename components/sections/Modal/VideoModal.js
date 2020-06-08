@@ -1,15 +1,18 @@
 import $ from 'jquery';
-import YouTube from 'react-youtube-embed'
 
 export default class Header extends React.Component {
     constructor(props){
         super(props);
     
         this.state = {
-            youtubeID: this.props.yID
+            dataForm: []
         }
     }
     componentDidMount() {
+        let currentComponent = this;
+        var Airtable = require('airtable');
+        var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');        
+
         // modal action
         $(document).on('click', `.video-modal` , function() {
             console.log('btn open modal click 2');
@@ -24,10 +27,17 @@ export default class Header extends React.Component {
             $(`body`).removeClass(`js-modal-open`);
             $(`#ModalVideo`).removeClass(`js-is-active`);
         });
+
+        base('Form_List').find('recUlH3EWGAdbTsPY', function(err, record) {
+            if (err) { console.error(err); return; }
+            console.log('form list explore', record);
+            currentComponent.setState({ dataForm: record.fields })
+        });
     }
     
 
     render() {
+        const {dataForm} = this.state;
         return(
             <div className="modal-container modal-container--lowlight signup-modal" id="ModalVideo" aria-hidden="false" tabIndex="-1">
                 
@@ -44,8 +54,6 @@ export default class Header extends React.Component {
                     <div className="signup-modal__content" id="ModalVideoContent">
                         <h2 className="modal__heading" id="ModalTitle">Khám phá điểm kinh doanh cùng CabinFood</h2>
                         <div className="signup-form-wrapper signup--hidden" id="video-inside">
-                            {/* <YouTube id='oigiXW6XyCQ' /> */}
-                            {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/oigiXW6XyCQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
                             
                             <div className="wistia_responsive_padding">
                                 <div className="wistia_responsive_wrapper">
@@ -61,6 +69,9 @@ export default class Header extends React.Component {
                     
                 </div>
                 
+                <a class="marketing-button-wrapper" href="/pricing">
+                    <button class="marketing-button js-open-signup signup-footer__button">{dataForm.btn_title}</button>
+                </a>
                 
             <style jsx>{`
                 // .js-is-active {overflow-y: hidden;}

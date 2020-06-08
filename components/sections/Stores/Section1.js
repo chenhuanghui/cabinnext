@@ -1,4 +1,4 @@
-export default class Header extends React.Component {
+export default class StoresSection1 extends React.Component {
     constructor(props){
         super(props);
     
@@ -45,10 +45,10 @@ export default class Header extends React.Component {
                                         <input placeholder={dataForm.btn_hint} id="SignupEmail-9305" className="marketing-input-button-pair__input marketing-input marketing-input--floating" />
                                         <button className="marketing-button marketing-form__button marketing-input-button-pair__button">{dataForm.btn_title}</button>
                                     </div>
-                                    <span className="marketing-form__messages"></span>
+                                    <span className="marketing-form__messages">{dataForm.note}</span>
                                 </div>
                             </div>
-                            <p className="marketing-form__fallback-cta text-center text-minor color-gray-80 text-left">{dataForm.note}</p>
+                            {/* <p className="marketing-form__fallback-cta text-center text-minor color-gray-80 text-left">{dataForm.note}</p> */}
                         </div>
                     </div>
                 </div>
