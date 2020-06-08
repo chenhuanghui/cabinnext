@@ -875,6 +875,9 @@
     .pricing-table th p:not(.heading--4),.pricing-table tfoot p,.pricing-table .pricing-table__feature-name,.pricing-table .pricing-table__feature-value{
         font-size:0.875em
     }
+    .pricing-title {
+        padding: 0px 200px;
+    }
 }
 .pricing-table .pricing-table__feature-name{
     color:#212b35
@@ -1025,8 +1028,4 @@
         border-bottom:1px solid #dfe3e8;
         padding-bottom:12px
     }
-}
-.pricing-title {
-    padding: 0px 200px;
-
 }
