@@ -25,7 +25,6 @@ const analytics = Analytics({
       })
     ]
 })
-const { loadIntercom, initIntercomWindow } = require("intercom-next");
 
 export default class LayoutBundleDeliveryRight extends React.Component {
     constructor(props){
@@ -47,15 +46,6 @@ export default class LayoutBundleDeliveryRight extends React.Component {
     componentDidMount () {
         hotjar.initialize(1846240, 6);
         analytics.page();
-
-        loadIntercom({
-            appId: "qhnzh7qq", // default : ''
-            email: "huytran@cabinfood.vn", //default: ''
-            ssr: false, // default: false
-            initWindow: true, // default: true
-            delay: 0 // default: 0  - usefull for mobile devices to prevent blocking the main thread
-        });
-        // initIntercomWindow({ appId: "qhnzh7qq", email: "huytran@cabinfood.vn" });
 
         let currentComponent = this;
         var catList = [];
