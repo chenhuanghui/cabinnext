@@ -1,4 +1,7 @@
 import { hotjar } from 'react-hotjar';
+import Analytics from 'analytics'
+import googleAnalytics from '@analytics/google-analytics'
+
 import Head from 'next/head'
 import React from 'react';
 
@@ -13,6 +16,14 @@ import SignUp from './sections/Master/SignUp'
 import Footer from './Footer'
 import SignUpFormModuleType1 from './modules/Form/SignUpFormModule_Type1';
 
+const analytics = Analytics({
+    app: 'awesome-app',
+    plugins: [
+      googleAnalytics({
+        trackingId: 'UA-168839658-1'
+      })
+    ]
+})
 
 export default class LayoutBundleDeliveryRight extends React.Component {
     constructor(props){
@@ -32,6 +43,9 @@ export default class LayoutBundleDeliveryRight extends React.Component {
       }
 
     componentDidMount () {
+        hotjar.initialize(1846240, 6);
+        analytics.page();
+        
         let currentComponent = this;
         var catList = [];
         var Airtable = require('airtable');
@@ -117,8 +131,6 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             record.fields.img = record.fields[`img`][0].url;
             currentComponent.setState({ fav: record.fields })
         });
-        
-        hotjar.initialize(1846240, 6);
     }
 
     render () {
@@ -132,19 +144,6 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                     <link rel="shortcut icon" type="image/png" href={fav.img} />
                     <title>All-in-One Delivery Platform For F&B</title>
                     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
-                    
-                    
-                    {/* <script>
-                        (function(h,o,t,j,a,r){
-                            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                            h._hjSettings={hjid:1846240,hjsv:6};
-                            a=o.getElementsByTagName('head')[0];
-                            r=o.createElement('script');r.async=1;
-                            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                            a.appendChild(r);
-                        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-                    </script> */}
-                    {/* hotjar.initialize(1846240, 6); */}
                 </Head>
 
                 <div className="page--home">
