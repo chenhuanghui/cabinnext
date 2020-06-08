@@ -21,6 +21,7 @@
     "@zeit/next-sass": "^1.0.1",
     "airtable": "^0.8.1",
     "analytics": "^0.5.1",
+    "intercom-next": "^1.1.8",
     "jquery": "^3.5.1",
     "jsdom": "^16.2.2",
     "next": "^9.4.0",

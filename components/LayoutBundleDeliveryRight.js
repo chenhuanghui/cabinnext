@@ -2,6 +2,7 @@ import { hotjar } from 'react-hotjar';
 import Analytics from 'analytics'
 import googleAnalytics from '@analytics/google-analytics'
 
+
 import Head from 'next/head'
 import React from 'react';
 
@@ -24,6 +25,7 @@ const analytics = Analytics({
       })
     ]
 })
+const { loadIntercom, initIntercomWindow } = require("intercom-next");
 
 export default class LayoutBundleDeliveryRight extends React.Component {
     constructor(props){
@@ -45,7 +47,16 @@ export default class LayoutBundleDeliveryRight extends React.Component {
     componentDidMount () {
         hotjar.initialize(1846240, 6);
         analytics.page();
-        
+
+        loadIntercom({
+            appId: "qhnzh7qq", // default : ''
+            email: "huytran@cabinfood.vn", //default: ''
+            ssr: false, // default: false
+            initWindow: true, // default: true
+            delay: 0 // default: 0  - usefull for mobile devices to prevent blocking the main thread
+        });
+        initIntercomWindow({ appId: "qhnzh7qq", email: "huytran@cabinfood.vn" });
+
         let currentComponent = this;
         var catList = [];
         var Airtable = require('airtable');
@@ -143,7 +154,8 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     <link rel="shortcut icon" type="image/png" href={fav.img} />
                     <title>All-in-One Delivery Platform For F&B</title>
-                    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
+                    {/* <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script> */}
+                    
                 </Head>
 
                 <div className="page--home">
