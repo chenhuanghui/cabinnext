@@ -16,7 +16,7 @@ export default class LayoutExploreStoreDetail extends React.Component {
         super(props);
     
         this.state = {
-
+            fav:[]
         }
     }
     
@@ -26,13 +26,18 @@ export default class LayoutExploreStoreDetail extends React.Component {
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
 
-        
+        // get page setting
+        base('Page_Setting').find('recz4Cz8KvJJaDnW4', function(err, record) {
+            if (err) { console.error(err); return; }
+            record.fields.img = record.fields[`img`][0].url;
+            currentComponent.setState({ fav: record.fields })
+        });
         
     }
     
 
     render (){
-        const {} = this.state;
+        const {fav} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -43,7 +48,7 @@ export default class LayoutExploreStoreDetail extends React.Component {
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/pos/hardware-new-9eb568f8e32a45216c9a6f1f2f491965a1f55685fcc6589f82db25c4ede61ea5.css" />
                     
-                    <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" />
+                    <link rel="shortcut icon" type="image/png" href={fav.img} />
                     <title>CabinFood | easy to Start, Fast to grow</title>
                 </Head>
                 <div className="">

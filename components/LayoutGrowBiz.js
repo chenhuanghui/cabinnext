@@ -19,7 +19,8 @@ export default class LayoutRunBiz extends React.Component {
     
         this.state = {
             announcementData: [],
-            dataSignUp: []
+            dataSignUp: [],
+            fav:[]
         }
     }
 
@@ -40,7 +41,7 @@ export default class LayoutRunBiz extends React.Component {
     }
 
     render (){
-        const { announcementData,dataSignUp} = this.state;
+        const { fav, announcementData,dataSignUp} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -48,7 +49,7 @@ export default class LayoutRunBiz extends React.Component {
                     <meta name="author" content="CabinFood" />
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/pillar/market-a997a7f25523002398d9ecded68dfec9119b69fd1d6c6fe16da619087a28b89b.css" />
-                    <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" />
+                    <link rel="shortcut icon" type="image/png" href={fav.img} />
                     <title>CabinFood | easy to Start, Fast to grow</title>
                 </Head>
 

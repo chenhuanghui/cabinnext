@@ -25,7 +25,8 @@ export default class LayoutPricing extends React.Component {
             pricing_group4:[],
             pricing_sub_group:[],
             pricing_content:[],
-            dataForm:[]
+            dataForm:[],
+            fav:[]
         }
     }
     sortByKey(array, key) {
@@ -220,11 +221,17 @@ export default class LayoutPricing extends React.Component {
         }, function done(err) {
             if (err) { console.error(err); return; }
         });
+        // get page setting
+        base('Page_Setting').find('recz4Cz8KvJJaDnW4', function(err, record) {
+            if (err) { console.error(err); return; }
+            record.fields.img = record.fields[`img`][0].url;
+            currentComponent.setState({ fav: record.fields })
+        });
     }
     
 
     render (){
-        const {faq_group_sub,faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6,pricing_group1,pricing_group2,pricing_group3,pricing_group4,pricing_content,dataForm} = this.state;
+        const {fav, faq_group_sub,faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6,pricing_group1,pricing_group2,pricing_group3,pricing_group4,pricing_content,dataForm} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -233,7 +240,7 @@ export default class LayoutPricing extends React.Component {
                     {/* <link rel="stylesheet" media="all" href="https://cdn.shopify.com/assets2/application-27f5b60dd99d8c77a63c4444ff9042dd5a7b2225582732a1340304589ae1d1c6.css" /> */}
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     {/* <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/pricing-c63b77096eed047504d39929449c4622477172f40f4d4fa60be55c5b0ca82c56.css" /> */}
-                    <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" />
+                    <link rel="shortcut icon" type="image/png" href={fav.img} />
                     <title>CabinFood | easy to Start, Fast to grow</title>
                     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
                 </Head>

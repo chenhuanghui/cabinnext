@@ -17,7 +17,8 @@ export default class LayoutRunBiz extends React.Component {
     
         this.state = {
             announcementData: [],
-            dataSignUp: []
+            dataSignUp: [],
+            fav:[]
         }
       }
 
@@ -35,10 +36,17 @@ export default class LayoutRunBiz extends React.Component {
             if (err) { console.error(err); return; }
             currentComponent.setState({ dataSignUp: record.fields })
         });
+
+        // get page setting
+        base('Page_Setting').find('recz4Cz8KvJJaDnW4', function(err, record) {
+            if (err) { console.error(err); return; }
+            record.fields.img = record.fields[`img`][0].url;
+            currentComponent.setState({ fav: record.fields })
+        });
     }
 
     render (){
-        const { announcementData,dataSignUp} = this.state;
+        const { fav, announcementData,dataSignUp} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -46,7 +54,7 @@ export default class LayoutRunBiz extends React.Component {
                     <meta name="author" content="CabinFood" />
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/pillar/manage-b8c2c4d2d9d8924225143379d052714e26e3b313e758293cbcdb5197c24d5164.css" />
-                    <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" />
+                    <link rel="shortcut icon" type="image/png" href={fav.img} />
                     <title>CabinFood | easy to Start, Fast to grow</title>
                 </Head>
 

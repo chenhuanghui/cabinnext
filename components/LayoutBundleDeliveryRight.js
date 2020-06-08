@@ -25,7 +25,8 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             dataPillar: [],
             dataSupport: [],
             dataSignUp: [],
-            dataForm: []
+            dataForm: [],
+            fav:[]
         }
       }
 
@@ -108,20 +109,24 @@ export default class LayoutBundleDeliveryRight extends React.Component {
         }, function done(err) {
             if (err) { console.error(err); return; }
         });
+
+        // get page setting
+        base('Page_Setting').find('recz4Cz8KvJJaDnW4', function(err, record) {
+            if (err) { console.error(err); return; }
+            record.fields.img = record.fields[`img`][0].url;
+            currentComponent.setState({ fav: record.fields })
+        });
     }
 
     render () {
-        const { announcementData, dataHero, dataGreen, dataCategories, dataPillar,dataSupport, dataSignUp, dataForm} = this.state;
+        const { fav, announcementData, dataHero, dataGreen, dataCategories, dataPillar,dataSupport, dataSignUp, dataForm} = this.state;
         return (
             <div className="layout">
                 <Head>
                     <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
                     <meta name="author" content="CabinFood" />
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-                    {/* <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" /> */}
-                    <link rel="shortcut icon" type="image/png" href="../statics/fav.png" />
-                    
-
+                    <link rel="shortcut icon" type="image/png" href={fav.img} />
                     <title>All-in-One Delivery Platform For F&B</title>
                     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
                 </Head>

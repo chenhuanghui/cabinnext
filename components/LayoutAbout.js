@@ -11,7 +11,8 @@ export default class LayoutAbout extends React.Component {
     
         this.state = {
             dataPageAbout: [],
-            dataForm:[]
+            dataForm:[],
+            fav:[]
         }
     }
     componentDidMount () {
@@ -49,9 +50,16 @@ export default class LayoutAbout extends React.Component {
         }, function done(err) {
             if (err) { console.error(err); return; }
         });
+
+        // get page setting
+        base('Page_Setting').find('recz4Cz8KvJJaDnW4', function(err, record) {
+            if (err) { console.error(err); return; }
+            record.fields.img = record.fields[`img`][0].url;
+            currentComponent.setState({ fav: record.fields })
+        });
     }
     render (){
-        const {dataPageAbout, dataForm} = this.state;
+        const {fav, dataPageAbout, dataForm} = this.state;
         return (
             <div className="layout">
                 <Head>
@@ -60,7 +68,7 @@ export default class LayoutAbout extends React.Component {
                     <link rel="stylesheet" media="all" href="https://cdn.shopify.com/assets2/application-27f5b60dd99d8c77a63c4444ff9042dd5a7b2225582732a1340304589ae1d1c6.css" />
 
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-                    <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" />
+                    <link rel="shortcut icon" type="image/png" href={fav.img} />
                     <title>CabinFood | easy to Start, Fast to grow</title>
                     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
                 </Head>

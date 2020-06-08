@@ -21,7 +21,8 @@ export default class LayoutExploreStores extends React.Component {
         this.state = {
             dataHCMStore:[],
             dataHNStore:[],
-            dataExploreStoreList:[]
+            dataExploreStoreList:[],
+            fav:[]
         }
     }
     
@@ -97,17 +98,24 @@ export default class LayoutExploreStores extends React.Component {
             if (err) { console.error(err); return; }
         });
         
+        // get page setting
+        base('Page_Setting').find('recz4Cz8KvJJaDnW4', function(err, record) {
+            if (err) { console.error(err); return; }
+            record.fields.img = record.fields[`img`][0].url;
+            currentComponent.setState({ fav: record.fields })
+        });
     }
     render (){
-        const {dataHNStore, dataHCMStore,dataExploreStoreList,dataStepID} = this.state;
+        const {fav, dataHNStore, dataHCMStore,dataExploreStoreList,dataStepID} = this.state;
         return (
             <div className="layout">
                 <Head>
                     <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
                     <meta name="author" content="CabinFood" />
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-                    <link rel="shortcut icon" type="image/png" href="https://cdn.shopify.com/shopify-marketing_assets/static/shopify-favicon.png" />
+                    <link rel="shortcut icon" type="image/png" href={fav.img} />
                     <title>CabinFood | easy to Start, Fast to grow</title>
+
                     <script src="https://fast.wistia.com/embed/medias/flvkbseogu.jsonp" async></script>
                     <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
                     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>                    
