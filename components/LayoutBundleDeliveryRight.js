@@ -55,7 +55,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
             initWindow: true, // default: true
             delay: 0 // default: 0  - usefull for mobile devices to prevent blocking the main thread
         });
-        initIntercomWindow({ appId: "qhnzh7qq", email: "huytran@cabinfood.vn" });
+        // initIntercomWindow({ appId: "qhnzh7qq", email: "huytran@cabinfood.vn" });
 
         let currentComponent = this;
         var catList = [];
@@ -154,7 +154,7 @@ export default class LayoutBundleDeliveryRight extends React.Component {
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     <link rel="shortcut icon" type="image/png" href={fav.img} />
                     <title>All-in-One Delivery Platform For F&B</title>
-                    {/* <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script> */}
+                    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
                     
                 </Head>
 
