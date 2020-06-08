@@ -317,8 +317,8 @@ export default class LayoutPricing extends React.Component {
                     </div>
                 </div>
             <style jsx>{`
-                .section-heading__heading.heading--1 {font-size: 2rem !important;}
-                .section-heading__subhead.heading--2 {font-size: 1.5rem !important;}
+                .section-heading__heading.heading--1 {font-size: 1.8rem !important;}
+                .section-heading__subhead.heading--2 {font-size: 1.3rem !important;}
                 .background-light {background-color: var(--sub-color-1)}
             `}</style>
             </div>
