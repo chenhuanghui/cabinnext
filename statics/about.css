@@ -399,4 +399,29 @@
         font-size:1.5em
     }
 }
+
+/*customize css  */
+@media screen and (min-width: 67.5em){
+    .next-steps__sign-up-heading{
+        font-size:1.5em 
+    }
+}
+
  
+.about__content {margin-top: 30px;}
+.about__content-story .image.lazyload-image {max-width: 704px; max-height: 678px;}
+.about__content-story .image.lazyload-image .lazyload-image__placeholder {padding-bottom: 96.3068%;}
+
+.about-video .image.lazyload-image {max-width: 604px !important; max-height: 507px !important; }
+.about-video .image.lazyload-image .lazyload-image__placeholder {padding-bottom: 83.9404%}
+
+.image.lazyload-image.about-hero__image-spill{max-width: 837px; max-height: 564px;}
+.image.lazyload-image.about-hero__image-spill .lazyload-image__placeholder {padding-bottom: 67.3835%}
+
+.our-story {order: 2;padding-right: 10%;}
+.our-story .section-heading__subhead, .about__content-people .section-heading__subhead {font-size: 1em;}
+.about-hero .section-heading__subhead {font-size: 1.25em;}
+.about-hero{background-color: var(--lighter-color-1)}
+
+.section-heading__heading {font-weight: 800}
+.about-hero {padding-bottom: 0px;}

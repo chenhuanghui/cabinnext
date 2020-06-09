@@ -196,6 +196,22 @@ export default class LayoutAbout extends React.Component {
                         
                         .section-heading__heading {font-weight: 800}
                         .about-hero {padding-bottom: 0px;}
+
+                        .next-steps__sign-up-heading{
+                            font-size:1em;
+                            font-weight:800;
+                            line-height:1.5
+                        }
+                        @media screen and (min-width: 46.875em){
+                            .next-steps__sign-up-heading{
+                                font-size:1.5em
+                            }
+                        }
+                        @media screen and (min-width: 67.5em){
+                            .next-steps__sign-up-heading{
+                                font-size:1.5em 
+                            }
+                        }
                 `}</style>
             </div>
         )
