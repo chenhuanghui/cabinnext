@@ -40,10 +40,10 @@ export default class ExploreCatSection1 extends React.Component {
     render (){
         const {dataExploreCatPage,dataCategoriesList } = this.state;
         return (
-            <section className="section">
+            <section className="section cat-list">
                 <div className="gird">
                     <div className="grid__item grid__item--desktop-up-10 grid__item--wide-up-8 grid__item--desktop-up-align-center">
-                        <section className="section section--tight section--padding-bottom-only">
+                        <section className="section--padding-bottom-only">
                             <div className="section-heading">
                                 <h1 className="section-heading__kicker heading--5">{dataExploreCatPage.line1}</h1>
                                 <h2 className="section-heading__heading heading--1">{dataExploreCatPage.line2}</h2>
@@ -55,10 +55,10 @@ export default class ExploreCatSection1 extends React.Component {
 
                 <div className="grid">
                     <div className="grid__item">
-                        <section className="section section--tight">
+                        <section>
                             <div className="example-merchants">
                                 {dataCategoriesList.map((p) => (
-                                    <div className="block example-merchant__block">
+                                    <div className=" example-merchant__block">
                                         <span className="image block__image">
                                             <img src={p.image} />
                                         </span>
@@ -70,11 +70,22 @@ export default class ExploreCatSection1 extends React.Component {
                     </div>
                 </div>
                 <style global jsx>{`
-
+                        .section {
+                            padding-left: 5%;
+                            padding-right: 5%;
+                        }
+                        .cat-list {
+                            padding-bottom: 0;
+                        }
+                        .cat-list .grid {
+                            padding: 0;
+                        }
                         .image.lazyload-image.block__image{max-width: 267px; max-height: 472px;}
-                        .example-merchant__block {padding-bottom:50px;}
+                        .example-merchant__block {
+                            margin-top: 40px;
+                        }
                         .heading--1 {
-                            font-size: 3em !important;
+                            // font-size: 3em !important;
                             margin-bottom: 0.25em !important;
                             font-weight:800 !important;
                         }

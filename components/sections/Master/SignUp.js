@@ -48,7 +48,22 @@ export default class SignUp extends React.Component {
                     </div>
                 </div>
                 <style jsx>{`
-                    .footer__signup {margin-top: 50px; padding: 0px 30px;}
+                    .footer__signup {
+                        margin-top: 50px;
+                    }
+                    @media screen and (min-width: 46.875em){
+                        .footer__signup {
+                            margin-top: 50px;
+                            padding: 0px 30px;
+                        }
+                    }
+                    
+                    @media screen and (min-width: 67.5em){
+                        .footer__signup {
+                            margin-top: 50px;
+                            padding: 0px 30px;
+                        }
+                    }
                     #SignupFooter-input {width: 65%}
                     #SignupFooter-btn {width: 35%}
                 `}</style>
