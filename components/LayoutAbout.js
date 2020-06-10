@@ -86,7 +86,7 @@ export default class LayoutAbout extends React.Component {
 
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     <link rel="shortcut icon" type="image/png" href={fav.img} />
-                    <title>CabinFood | easy to Start, Fast to grow</title>
+                    <title>CabinFood | About Us</title>
                     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
                 </Head>
                 <div className="page--home-about">

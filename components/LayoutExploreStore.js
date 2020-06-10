@@ -129,7 +129,7 @@ export default class LayoutExploreStores extends React.Component {
                     <meta name="author" content="CabinFood" />
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     <link rel="shortcut icon" type="image/png" href={fav.img} />
-                    <title>CabinFood | easy to Start, Fast to grow</title>
+                    <title>CabinFood | Explore Stores List</title>
 
                     <script src="https://fast.wistia.com/embed/medias/flvkbseogu.jsonp" async></script>
                     <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>

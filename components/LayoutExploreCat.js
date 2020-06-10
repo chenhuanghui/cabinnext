@@ -86,7 +86,7 @@ export default class LayoutExloreCat extends React.Component {
                     <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/growth-tools-assets/application-6824356ab535369c3bb0f143c850e0c4f0a2fd2965bc8fb394e30dd30e68fc64.css" />
                     <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/growth-tools-assets/manifests/home-176a7e18773be648f168fbc8962e09f7aa05100009c48e4fb4fbcab7d8669d0c.css" />
                     <link rel="shortcut icon" type="image/png" href={fav.img} />
-                    <title>CabinFood | easy to Start, Fast to grow</title>
+                    <title>CabinFood | Explore Categories</title>
                     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
                 </Head>
 

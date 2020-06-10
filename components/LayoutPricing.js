@@ -257,7 +257,7 @@ export default class LayoutPricing extends React.Component {
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     {/* <link rel="stylesheet" media="screen" href="https://cdn.shopify.com/assets2/manifests/pricing-c63b77096eed047504d39929449c4622477172f40f4d4fa60be55c5b0ca82c56.css" /> */}
                     <link rel="shortcut icon" type="image/png" href={fav.img} />
-                    <title>CabinFood | easy to Start, Fast to grow</title>
+                    <title>CabinFood | Explore Pricing Concept</title>
                     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
                 </Head>
                 <div className="">
