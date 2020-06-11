@@ -28,9 +28,9 @@ const BackgroundGreen = props => (
                                                                                         <img src={p.image} />
                                                                                 </span>
                                                                         </span>
-                                                                        <a className="example-merchant__link" data-event-page="homepage" data-event-category="link" data-event-action="click-link-examples-category" data-event-label="food-and-drink-templates" href="/examples?category=food-and-drink-templates">
+                                                                        <div className="example-merchant__link">
                                                                                 <p className="block__content example-merchant__vertical heading--5">{p.name}</p>
-                                                                        </a>
+                                                                        </div>
                                                                 </div>            
                                                         </div>
                                                 ))}

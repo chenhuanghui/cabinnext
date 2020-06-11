@@ -245,7 +245,6 @@ export default class LayoutPricing extends React.Component {
         });
     }
     
-
     render (){
         const {fav, faq_group_sub,faq_group1,faq_group2,faq_group3,faq_group4,faq_group5,faq_group6,pricing_group1,pricing_group2,pricing_group3,pricing_group4,pricing_content,dataForm} = this.state;
         return (
