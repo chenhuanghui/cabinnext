@@ -10,7 +10,7 @@ import ModalForm from './sections/Modal/FormModal';
 import PricingSection1 from './sections/Pricing/PricingSection1';
 import PricingFAQSection from './sections/Pricing/PricingFAQSection';
 
-import FormSignUp from './modules/Form/SignUpFormModule_Type1';
+import FormSignUpType2 from './modules/Form/SignUpFormModule_Type2';
 
 import Footer from './Footer'
 
@@ -218,7 +218,6 @@ export default class LayoutPricing extends React.Component {
         base('Pricing_Page').find('recMykkn2JNCU92aS', function(err, record) {
             if (err) { console.error(err); return; }
             console.log('pricing', record);
-            console.log('pricing form id', record.fields.form[0]);
             currentComponent.setState({pricing_content:record.fields})
         });
        
@@ -310,7 +309,7 @@ export default class LayoutPricing extends React.Component {
                             
 
                             <section className="section footer-signup background-light">
-                                <div className="grid">
+                                {/* <div className="grid">
                                     <div className="grid__item grid__item--desktop-up-half">
                                         <div className="section-heading gutter-bottom--reset text-center--tablet-down">
                                             <h2 className="section-heading__heading heading--2">{dataForm.hero_message}</h2>
@@ -327,9 +326,9 @@ export default class LayoutPricing extends React.Component {
                                                 <span className="marketing-form__messages">{dataForm.note}</span>
                                             </div>
                                         </div>
-                                        {/* <p className="marketing-form__fallback-cta text-center">{dataForm.note}</p> */}
                                     </div>
-                                </div>
+                                </div> */}
+                                <FormSignUpType2 formID={pricing_content.form_footer}/>
                             </section>
                             {/* <FormSignUp formID={pricing_content.form} /> */}
                             
