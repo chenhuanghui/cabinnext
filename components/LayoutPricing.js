@@ -309,7 +309,7 @@ export default class LayoutPricing extends React.Component {
                             
 
                             <section className="section footer-signup background-light">
-                                {/* <div className="grid">
+                                <div className="grid">
                                     <div className="grid__item grid__item--desktop-up-half">
                                         <div className="section-heading gutter-bottom--reset text-center--tablet-down">
                                             <h2 className="section-heading__heading heading--2">{dataForm.hero_message}</h2>
@@ -327,8 +327,8 @@ export default class LayoutPricing extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-                                </div> */}
-                                <FormSignUpType2 formID={pricing_content.form_footer}/>
+                                </div>
+                                {/* <FormSignUpType2 formID={pricing_content.form_footer}/> */}
                             </section>
                             {/* <FormSignUp formID={pricing_content.form} /> */}
                             
