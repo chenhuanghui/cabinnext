@@ -9,6 +9,9 @@ import Header from './Header'
 import ModalForm from './sections/Modal/FormModal';
 import PricingSection1 from './sections/Pricing/PricingSection1';
 import PricingFAQSection from './sections/Pricing/PricingFAQSection';
+
+import FormSignUp from './modules/Form/SignUpFormModule_Type1';
+
 import Footer from './Footer'
 
 const analytics = Analytics({
@@ -215,6 +218,7 @@ export default class LayoutPricing extends React.Component {
         base('Pricing_Page').find('recMykkn2JNCU92aS', function(err, record) {
             if (err) { console.error(err); return; }
             console.log('pricing', record);
+            console.log('pricing form id', record.fields.form[0]);
             currentComponent.setState({pricing_content:record.fields})
         });
        
@@ -327,6 +331,9 @@ export default class LayoutPricing extends React.Component {
                                     </div>
                                 </div>
                             </section>
+                            {/* <FormSignUp formID={pricing_content.form} /> */}
+                            
+                            
                         </main>
                         <Footer />
                     </div>

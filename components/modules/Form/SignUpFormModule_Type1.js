@@ -6,17 +6,35 @@ export default class SignUpFormModule extends React.Component {
             dataForm: []
         }
     }
+    
     componentDidMount() {
-        let currentComponent = this;
-        var Airtable = require('airtable');
         
-        var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
-        console.log('formid=',this.props.formID);
-        base('Form_List').find(this.props.formID, function(err, record) {
-            if (err) { console.error(err); return; }
-            console.log('dataForm2', record.fields)
-            currentComponent.setState({ dataForm: record.fields })
-        });
+        
+        // console.log('formid=',this.props.formID);
+        // base('Form_List').find(this.props.formID, function(err, record) {
+        //     if (err) { console.error(err); return; }
+        //     console.log('dataForm2', record.fields)
+        //     currentComponent.setState({ dataForm: record.fields })
+        // });
+    }
+    
+    componentDidUpdate(prevProps) {
+
+        if (this.props.formID !== prevProps.formID) {
+            console.log('form update');
+            
+            let currentComponent = this;
+            var Airtable = require('airtable');
+            var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appZ1bpUbqpieMgfe');
+            
+            console.log('formid=',this.props.formID);
+            base('Form_List').find(this.props.formID, function(err, record) {
+                if (err) { console.error(err); return; }
+                console.log('dataForm2', record.fields)
+                currentComponent.setState({ dataForm: record.fields })
+            });
+        }
+        
     }
 
     render() {
