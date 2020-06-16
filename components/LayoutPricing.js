@@ -10,7 +10,7 @@ import ModalForm from './sections/Modal/FormModal';
 import PricingSection1 from './sections/Pricing/PricingSection1';
 import PricingFAQSection from './sections/Pricing/PricingFAQSection';
 
-import FormSignUpType2 from './modules/Form/SignUpFormModule_Type2';
+// import FormSignUpType2 from './modules/Form/SignUpFormModule_Type2';
 
 import Footer from './Footer'
 
