@@ -1,4 +1,4 @@
-import LayoutPricing from '../components/LayoutPricing'
+import LayoutPricing from '../layouts/LayoutPricing'
 
 const Pricing = props => (
     <LayoutPricing />

@@ -1,7 +1,7 @@
-import LayoutAbout from '../components/LayoutAbout'
+import LayoutAbout from '../layouts/LayoutAbout'
 
-const About = props => (
+const Index = props => (
     <LayoutAbout />
 );
   
-export default About;
+export default Index;

@@ -1,7 +1,7 @@
-import LayoutExploreCat from '../components/LayoutExploreCat'
+import LayoutCatExplore from '../layouts/LayoutCatExplore'
 
-const ExploreCat = props => (
-    <LayoutExploreCat />
+const CatExplore = props => (
+    <LayoutCatExplore />
 );
   
-export default ExploreCat;
+export default CatExplore;
