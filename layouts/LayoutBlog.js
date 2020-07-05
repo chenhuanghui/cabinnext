@@ -28,7 +28,14 @@ export default class LayoutBlog extends React.Component {
             data:[],
             blogs:[]
         }
-      }
+    }
+    
+    async getStaticProps(context) {
+        return {
+          props: {
+          }, // will be passed to the page component as props
+        }
+    }
 
     componentDidMount () {
         analytics.page();
@@ -48,12 +55,14 @@ export default class LayoutBlog extends React.Component {
         }, function done(err) {
             if (err) { console.error(err); return; }
         });
-
-        fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cabinfood').then(response => response.json())
+        
+        // TUMBLR: api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI
+        fetch('https://api.tumblr.com/v2/blog/cabinfood/posts?api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI').then(response => response.json())
         .then(data => {
-            data ? currentComponent.setState({blogs:data}) : {}
+            console.log('data blog', data);
+            data ? currentComponent.setState({blogs:data.response.posts}) : {}
         }).catch((error) => {
-            reject(error);
+            // reject(error);
         });
     }
 
@@ -92,15 +101,15 @@ export default class LayoutBlog extends React.Component {
                                     <div className="_kbiv5c">
                                         <div className="_19iz9mwo">
                                             {
-                                                blogs && blogs.items && blogs.items.map((blog) => (
-                                                    <a className="_1xizdrk" key={blog.title} href={blog.guid} target="_blank" rel="noopener noreferrer">
+                                                blogs && blogs.map((blog) => (
+                                                    <a className="_1xizdrk" key={blog.id} href={blog.short_url} target="_blank" rel="noopener noreferrer">
                                                         <div className="_1xl0u0x" role="presentation">
                                                             <div className="_6lth7f">
                                                                 <div className="_6i8igo">
                                                                     <div className="_e296pg">
                                                                         <div className="_hxt6u1e">
                                                                             <div className="_4626ulj">
-                                                                                <img className="_91slf2a" aria-hidden="true"src={ blog.thumbnail}/>
+                                                                                <img className="_91slf2a" aria-hidden="true"src={ blog.photos[0].alt_sizes[2].url}/>
                                                                             </div>
                                                                             
                                                                         </div>
@@ -108,10 +117,10 @@ export default class LayoutBlog extends React.Component {
                                                                 </div>
                                                                 <p className="pubDate">
                                                                     <span className="media-date mr-3"><i className="far fa-clock"></i> {
-                                                                        blog.pubDate.split(' ')[0]
+                                                                        blog.date.split(' ')[0]
                                                                     }</span>
                                                                 </p>    
-                                                                <p className="_1ycij1l">{blog.title}</p>
+                                                                <p className="_1ycij1l">{blog.summary.split('_')[0]}</p>
                                                             </div>
                                                         </div>
                                                     </a>
