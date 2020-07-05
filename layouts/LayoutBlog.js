@@ -59,7 +59,7 @@ export default class LayoutBlog extends React.Component {
         // TUMBLR: api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI
         fetch('https://api.tumblr.com/v2/blog/cabinfood/posts?api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI').then(response => response.json())
         .then(data => {
-            // console.log('data blog', data);
+            console.log('data blog', data);
             data ? currentComponent.setState({blogs:data.response.posts}) : {}
         }).catch((error) => {
             // reject(error);
