@@ -165,7 +165,7 @@ export default class LayoutBlog extends React.Component {
                                                 </h3>
                                                 <div className='accordion-content'>
                                                     {blogs && blogs.posts && blogs.posts.map((post) => (
-                                                        <Link href="/blogs/[slug]" as={`blogs/${post.id_string}`}>
+                                                        <Link href="/blogs/[slug]" as={`blogs/${post.id_string}`} key={post.id}>
                                                             <a><h4 className="link__title">{post.summary.split('_')[0]}</h4></a>
                                                         </Link>
                                                     ))}

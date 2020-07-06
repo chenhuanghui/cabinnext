@@ -6,6 +6,9 @@ import Nav from '../components/nav/nav'
 import Footer from '../components/footer/footer'
 import FormStyle2 from '../components/forms/form_style2';
 import Link from 'next/link'
+import Analytics from 'analytics'
+import googleAnalytics from '@analytics/google-analytics'
+
 
 export default function BlogDetail () {
     const router = useRouter();
@@ -13,9 +16,18 @@ export default function BlogDetail () {
     const [related, setRelated] = useState();
     const [slug, setSlug] = useState(null);
     const [data, setData] = useState(null);
-
+    const analytics = Analytics({
+        app: 'awesome-app',
+        plugins: [
+          googleAnalytics({
+            trackingId: 'UA-168839658-1'
+          })
+        ]
+    })
+    
     console.log('slug--- :',router.query.slug)
     useEffect(() => {
+        analytics.page();
         console.log('effect called');
         
         // load page data
@@ -76,7 +88,11 @@ export default function BlogDetail () {
                 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                 <link rel="shortcut icon" type="image/png" href='/assets/images/fav.png' />
                 
-                <title>Nền Tảng Delivery Chuyên Nghiệp Cho Kinh Doanh Món Ăn Thức Uống - Chia Sẻ Kiến Thức</title>    
+                {
+                    content && content.summary ? content.summary.split('_')[0] : ''
+                    ? <title>{`CabinFood Blog - ${content.summary.split('_')[0]}`}</title>
+                    : <title>CabinFood Blog</title>    
+                }
                 
                 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
             </Head>
