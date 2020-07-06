@@ -5,6 +5,7 @@ import Announcement from '../components/annoucement/an_style1'
 
 import Back2Top from '../components/back2top/back2top'
 import Footer from '../components/footer/footer'
+import FormStyle2 from '../components/forms/form_style2';
 
 import fetch from 'node-fetch'
 
@@ -172,8 +173,9 @@ export default class LayoutBlog extends React.Component {
                                     </div>
                                 </div>
                             </section>
-
-                            <Back2Top />
+                            <section className="section footer-signup background-light">
+                                <FormStyle2 form_id={data.form_id} />
+                            </section>                  
                         </main>    
                         <Footer />
                     </div>
