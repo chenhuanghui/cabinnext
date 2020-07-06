@@ -182,7 +182,7 @@ export default function BlogDetail () {
                                                 {
                                                     related
                                                     ? related.map((post) => (
-                                                        <Link href="/blogs/[slug]" as={`blogs/${post.id_string}`}>
+                                                        <Link href="/blogs/[slug]" as={`blogs/${post.id_string}`} key={post.id}>
                                                             <a><h4 className="link__title">{post.summary.split('_')[0]}</h4></a>
                                                         </Link>
                                                     ))
