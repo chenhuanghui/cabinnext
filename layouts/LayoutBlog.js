@@ -10,6 +10,7 @@ import fetch from 'node-fetch'
 
 import Analytics from 'analytics'
 import googleAnalytics from '@analytics/google-analytics'
+import Link from 'next/link'
 
 const analytics = Analytics({
     app: 'awesome-app',
@@ -60,7 +61,7 @@ export default class LayoutBlog extends React.Component {
         fetch('https://api.tumblr.com/v2/blog/cabinfood/posts?api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI').then(response => response.json())
         .then(data => {
             console.log('data blog', data);
-            data ? currentComponent.setState({blogs:data.response.posts}) : {}
+            data ? currentComponent.setState({blogs:data.response}) : {}
         }).catch((error) => {
             // reject(error);
         });
@@ -68,6 +69,7 @@ export default class LayoutBlog extends React.Component {
 
     render () {
         const {blogs, data} = this.state;
+        const pids = ['id1', 'id2', 'id3']
         return (
             <div className="layout">
                 <Head>
@@ -87,52 +89,88 @@ export default class LayoutBlog extends React.Component {
                     <Nav />
                     <div id="PageContainer">
                         <main id="Main blogs-page">
+                            <section className="section background-lowlight color-white section--tight blog__home-header blog__header--blog">
+                                <div className="grid">
+                                    <div className="grid__item grid__item--tablet-up-two-thirds">
+                                        <div className="section-heading section-heading--lowlight section-heading--tablet-up-align-left gutter-bottom">
+                                            <h1 className="section-heading__heading heading--jumbo">Starting up starts here</h1>
+                                            <p className="section-heading__subhead heading--3 blog__subhead--blog" tag="p">We’re here to help. Get free education, tips, and inspiration to help you start and grow a successful business.</p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </section>
 
-                        <section className="section background-lowlight color-white section--tight blog__header blog__header--blog">
-                        <div className="grid">
-                            <div className="grid__item">
-                            <div className="section-heading section-heading--lowlight section-heading--tablet-up-align-left gutter-bottom--reset">
-                                <p className="section-heading__heading heading--1">{data.title}</p>
-                        </div></div></div></section>
+                            <section className='section section--tight'>
+                                <div className='grid'>
+                                    <div className='grid__item grid__item--desktop-up-two-thirds'>
+                                        <div className='grid grid--equal-height'>
+                                        {
+                                            blogs && blogs.posts && blogs.posts.map((post) => (
+                                                <article className="grid__item grid__item--tablet-up-half article--index" key={post.id}>
+                                                    <Link href='blogs/[slug]' as={`blogs/${post.id_string}`} >
+                                                        <a className="article--index__image">
+                                                            <span className="image lazyload-image">
+                                                                <span className="lazyload-image__placeholder">
+                                                                    <img data-sizes="100vw" src={ post.photos[0].alt_sizes[2].url} alt="" className=" lazyloaded"/>
+                                                                </span>
+                                                            </span>
+                                                        </a>
+                                                    </Link>
+                                                    <h2 className="article--index__title heading--4">
+                                                        <Link href='blogs/[slug]' as={`blogs/${post.id_string}`} key={post.id}>
+                                                            <a>{post.summary.split('_')[0]}</a>
+                                                        </Link>
+                                                    </h2>
 
-                            <div className="_1sx1020z">
-                                <div className="_aov0j6">
-                                    {/* blogs listing */}
-                                    <div className="_kbiv5c">
-                                        <div className="_19iz9mwo">
-                                            {
-                                                blogs && blogs.map((blog) => (
-                                                    <a className="_1xizdrk" key={blog.id} href={blog.short_url} target="_blank" rel="noopener noreferrer">
-                                                        <div className="_1xl0u0x" role="presentation">
-                                                            <div className="_6lth7f">
-                                                                <div className="_6i8igo">
-                                                                    <div className="_e296pg">
-                                                                        <div className="_hxt6u1e">
-                                                                            <div className="_4626ulj">
-                                                                                <img className="_91slf2a" aria-hidden="true"src={ blog.photos[0].alt_sizes[2].url}/>
-                                                                            </div>
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <p className="pubDate">
-                                                                    <span className="media-date mr-3"><i className="far fa-clock"></i> {
-                                                                        blog.date.split(' ')[0]
-                                                                    }</span>
-                                                                </p>    
-                                                                <p className="_1ycij1l">{blog.summary.split('_')[0]}</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    
-                                                ))
-                                            }
-                                           
+                                                    <ul className="article__meta">
+                                                        <li>by <a rel="nofollow" href="/blog/search?link_search=true&amp;q=Shuang+Esther+Shan">{blogs.blog.name}</a></li>
+                                                        <li><time itemprop="datePublished" datetime="2020-06-30T03:30:00Z">{post.date.split(' ')[0]}</time></li>
+                                                    </ul>
+                                                </article>
+                                            ))
+                                        }   
+                                            
+                                            
                                         </div>
                                     </div>
-                                    {/* #end blogs listing */}
+                                    <div className='grid__item grid__item--desktop-up-third blog__sidebar'>
+                                        <div className="display--desktop">
+                                            <div className="search-form" action="/blog/search">
+                                                <label className="marketing-input-wrapper">
+                                                    <span className="marketing-label marketing-label--hidden visuallyhidden">Search articles</span>
+                                                    <input className="marketing-input search-form__input" id="SidebarSearch" placeholder="Search articles" type="search" name="q"/>
+                                                    <span className="marketing-form__messages"></span>
+                                                </label>
+                                                <button type="submit" className="search-form__submit">
+                                                    <span className="visuallyhidden">Search</span>
+                                                </button>
+                                            </div>
+                                            <div className="sidebar-banner gutter-bottom">
+                                                <div id="div-gpt-ad-1" data-dfp="" data-dfp-category="main" data-dfp-path="blog_rightsidebar_330_400">
+                                                    <div id="google_ads_iframe_/242772937/main/blog_rightsidebar_330_400_0__container__">
+                                                        <img src='../assets/images/blog-img1.jpeg' atl=''/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <nav className='SidebarAccordion'>
+                                            <div className='preview-links accordion-item--mobile'>
+                                                <h3 className="heading--5 accordion-link" tabindex="0" aria-expanded="false" aria-controls="Accordion27">
+                                                    {/* <svg className="icon icon--fill-primary icon--size-tiny" aria-hidden="true" focusable="false"> <use xlink:href="#spot-boost"></use> </svg> */}
+                                                    Popular
+                                                </h3>
+                                                <div className='accordion-content'>
+                                                    <Link href="/blog/trending-products">
+                                                        <a><h4 className="link__title">Top Trending Product to Sell in 2020 (Updated Annually)</h4></a>
+                                                    </Link>
+                                                    
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
                                 </div>
-                            </div> 
+                            </section>
 
                             <Back2Top />
                         </main>    
@@ -155,7 +193,17 @@ export default class LayoutBlog extends React.Component {
                     .pubDate {
                         margin: 0px 0px;
                     }
-                    
+                    article .lazyload-image {
+                        max-width: 444px; max-height: 188px;
+                    }
+                    .lazyload-image__placeholder{
+                        padding-bottom: 42.3423%
+                    }
+                    @media screen and (min-width: 67.5em) {
+                        .blog__sidebar {
+                            padding-left: 60px !important;
+                        }
+                    }
                 `}</style>
             </div>
         )
