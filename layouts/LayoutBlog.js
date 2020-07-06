@@ -66,6 +66,7 @@ export default class LayoutBlog extends React.Component {
             data ? currentComponent.setState({blogs:data.response}) : {}
         }).catch((error) => {
             // reject(error);
+            console.log(error);
         });
     }
 
@@ -114,7 +115,7 @@ export default class LayoutBlog extends React.Component {
                                                         <a className="article--index__image">
                                                             <span className="image lazyload-image">
                                                                 <span className="lazyload-image__placeholder">
-                                                                    <img data-sizes="100vw" src={ post.photos[0].alt_sizes[2].url} alt="" className=" lazyloaded"/>
+                                                                    <img data-sizes="100vw" src={ post && post.photos ? post.photos[0].alt_sizes[2].url : ''} alt="" className=" lazyloaded"/>
                                                                 </span>
                                                             </span>
                                                         </a>
@@ -149,7 +150,7 @@ export default class LayoutBlog extends React.Component {
                                                 </button>
                                             </div>
                                             <div className="sidebar-banner gutter-bottom">
-                                                <div id="div-gpt-ad-1" data-dfp="" data-dfp-category="main" data-dfp-path="blog_rightsidebar_330_400">
+                                                <div id="div-gpt-ad-1">
                                                     <div id="google_ads_iframe_/242772937/main/blog_rightsidebar_330_400_0__container__">
                                                         <img src={data && data.sidebar_image ? data.sidebar_image[0].url : ''} atl=''/>
                                                     </div>
@@ -163,10 +164,11 @@ export default class LayoutBlog extends React.Component {
                                                     Mới nhất
                                                 </h3>
                                                 <div className='accordion-content'>
-                                                    <Link href="/blog/trending-products">
-                                                        <a><h4 className="link__title">Top Trending Product to Sell in 2020 (Updated Annually)</h4></a>
-                                                    </Link>
-                                                    
+                                                    {blogs && blogs.posts && blogs.posts.map((post) => (
+                                                        <Link href="/blogs/[slug]" as={`blogs/${post.id_string}`}>
+                                                            <a><h4 className="link__title">{post.summary.split('_')[0]}</h4></a>
+                                                        </Link>
+                                                    ))}
                                                 </div>
                                             </div>
                                         </nav>

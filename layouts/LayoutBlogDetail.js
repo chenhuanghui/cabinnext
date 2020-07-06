@@ -9,57 +9,63 @@ import Link from 'next/link'
 
 export default function BlogDetail () {
     const router = useRouter();
-    const [content, setContent] = useState([]);
-    const [related, setRelated] = useState([]);
-    const [slug, setSlug] = useState(router.query.slug);
-    const [data, setData] = useState([]);
+    const [content, setContent] = useState();
+    const [related, setRelated] = useState();
+    const [slug, setSlug] = useState(null);
+    const [data, setData] = useState(null);
 
-    
-
-    console.log('slug:',router.query.slug)
+    console.log('slug--- :',router.query.slug)
     useEffect(() => {
+        console.log('effect called');
+        
         // load page data
-        var Airtable = require('airtable');
-        var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');
-        base('Page_Blog_Detail').find('rec9y71ihInHmnQOZ', function(err, record) {
-            if (err) { console.error(err); return; }
-            setData(record.fields)
-            console.log('page blog detail data:',data);
-        });
-
-
+        if(data === null) {
+            var Airtable = require('airtable');
+            var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');
+            base('Page_Blog_Detail').find('rec9y71ihInHmnQOZ', function(err, record) {
+                if (err) { console.error(err); return; }
+                setData(record.fields)
+                console.log('page blog detail data:',data);
+            });
+            
+        }
+        
         //set slug
         setSlug(router.query.slug);
-        console.log('use effect call, slug:', slug);
+        console.log('set slug:', slug);
+    
 
-        var relatedTemp = []
         // if slug updated call api get all posts from tumblr
-        fetch('https://api.tumblr.com/v2/blog/cabinfood/posts?api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI')
-        .then(response => response.json())
-        .then(data => {
-            console.log('data blog', data)
-            // find post have id == slug
-            
-            for (var i=0; i < data.response.total_posts; i++) {
-                console.log('check data', data.response.posts[0].id_string);
-                console.log('check slug', slug);
-                if(data.response.posts[i].id_string === slug ) {
-                    // set post content
-                    setContent(data.response.posts[i]);
-                    console.log('set content');
-                    console.log('content find out:', content);
-                    // return;
-                } else {
-                    relatedTemp.push(data.response.posts[i]);
-                    console.log('add related');
+        if(slug!== null) {
+            var relatedTemp = [];
+            fetch('https://api.tumblr.com/v2/blog/cabinfood/posts?api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI')
+            .then(response => response.json())
+            .then(data => {
+                console.log('data blog', data)
+                // find post have id == slug
+
+                // set posts data
+                for (var i=0; i < data.response.total_posts; i++) {
+                    console.log('check slug', slug);
+                    if(data.response.posts[i].id_string === slug ) {
+                        // set post content
+                        setContent(data.response.posts[i]);
+                        console.log('set content');
+                        console.log('content find out:', content);
+                        // return;
+                    } else {
+                        relatedTemp.push(data.response.posts[i]);
+                        console.log('add related');
+                    }
                 }
-            }
-            // set Related data
-            setRelated(relatedTemp);
-            console.log('related:', related);
-        })
-    },[])
-    console.log('current content', content);
+                // set Related data
+                setRelated(relatedTemp);
+                console.log('related:', related);
+            })    
+        }
+        
+
+    },[data, slug])
     
     return (
         
@@ -77,13 +83,14 @@ export default function BlogDetail () {
 
             <div className="page--home">
                 <Nav/>
+                
                 <div id="PageContainer">
                     <main id="Main blogs-page-detail">
                         <section className="section background-lowlight color-white section--tight blog__header blog__header--blog">
                             <div className="grid">
                                 <div className="grid__item">
                                     <div className="section-heading section-heading--lowlight section-heading--tablet-up-align-left gutter-bottom--reset">
-                                        <p className="section-heading__heading heading--1">{data.headline}</p>
+                                        <p className="section-heading__heading heading--1">{ data ? data.headline : ''}</p>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +123,7 @@ export default function BlogDetail () {
                                         <div className='grid grid--vertically-centered'>
                                             <div className='grid__item grid__item--tablet-up-two-thirds'>
                                                 <ul className="article__meta">
-                                                    <li>by <a rel="nofollow" href="#">{'author name here'}</a></li>
+                                                    <li>by <a rel="nofollow" href="#">{content ? content.blog_name : ''}</a></li>
                                                     <li><time itemProp="datePublished" dateTime="2020-06-30T03:30:00Z">{content && content.date ? content.date.split(' ')[0] : ''}</time></li>
                                                 </ul>
                                             </div>
@@ -156,9 +163,16 @@ export default function BlogDetail () {
                                                 Mới nhất
                                             </h3>
                                             <div className='accordion-content'>
-                                                <Link href="/blog/trending-products">
-                                                    <a><h4 className="link__title">Top Trending Product to Sell in 2020 (Updated Annually)</h4></a>
-                                                </Link>
+                                                {
+                                                    related
+                                                    ? related.map((post) => (
+                                                        <Link href="/blogs/[slug]" as={`blogs/${post.id_string}`}>
+                                                            <a><h4 className="link__title">{post.summary.split('_')[0]}</h4></a>
+                                                        </Link>
+                                                    ))
+                                                    : ''
+                                                }
+                                                
                                                 
                                             </div>
                                         </div>
@@ -168,7 +182,7 @@ export default function BlogDetail () {
                         </section>
                     </main>    
                     <section className="section footer-signup background-light">
-                        <FormStyle2 form_id={data.form_id} />
+                        <FormStyle2 form_id={data ? data.form_id : ''} />
                     </section>                  
                     <Footer />
                 </div>
