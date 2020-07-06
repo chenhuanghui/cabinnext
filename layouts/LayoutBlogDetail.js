@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react';
 import Nav from '../components/nav/nav'
 import Footer from '../components/footer/footer'
+import FormStyle2 from '../components/forms/form_style2';
 import Link from 'next/link'
 
 export default function BlogDetail () {
@@ -11,10 +12,21 @@ export default function BlogDetail () {
     const [content, setContent] = useState([]);
     const [related, setRelated] = useState([]);
     const [slug, setSlug] = useState(router.query.slug);
+    const [data, setData] = useState([]);
 
     
+
     console.log('slug:',router.query.slug)
     useEffect(() => {
+        // load page data
+        var Airtable = require('airtable');
+        var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');
+        base('Page_Blog_Detail').find('rec9y71ihInHmnQOZ', function(err, record) {
+            if (err) { console.error(err); return; }
+            setData(record.fields)
+            console.log('page blog detail data:',data);
+        });
+
 
         //set slug
         setSlug(router.query.slug);
@@ -71,7 +83,7 @@ export default function BlogDetail () {
                             <div className="grid">
                                 <div className="grid__item">
                                     <div className="section-heading section-heading--lowlight section-heading--tablet-up-align-left gutter-bottom--reset">
-                                        <p className="section-heading__heading heading--1">CabinFood Blog</p>
+                                        <p className="section-heading__heading heading--1">{data.headline}</p>
                                     </div>
                                 </div>
                             </div>
@@ -80,6 +92,25 @@ export default function BlogDetail () {
                         <section className='section section--tight'>
                             <div className='grid'>
                                 <article className='grid__item grid__item--desktop-up-two-thirds'>
+                                    <nav aria-label="breadcrumbs" className="breadcrumbs">
+                                        <ol>
+                                            <li className="breadcrumbs__item txt--minor">
+                                                <Link href='/'><a className="breadcrumbs__link body-link" ><span>Trang chủ</span></a></Link>
+                                                <div className="breadcrumbs__separator" aria-hidden="true">
+                                                    <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3"><path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4"></path></svg>
+                                                </div>
+                                            </li>
+                                            <li className="breadcrumbs__item txt--minor">
+                                                <Link href='/blogs'><a className="breadcrumbs__link body-link" ><span>CabinFood Blog</span></a></Link>
+                                                <div className="breadcrumbs__separator" aria-hidden="true">
+                                                    <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="-242.1 245.6 6.6 10.3"><path d="M-235.6 250.7l-5.1 5.2-1.4-1.4 3.7-3.8-3.7-3.7 1.4-1.4"></path></svg>
+                                                </div>
+                                            </li>
+                                            <li className="breadcrumbs__item txt--minor">
+                                                <span>{ content && content.summary ? content.summary.split('_')[0] : ''}</span>
+                                            </li>
+                                        </ol>
+                                    </nav>
                                     <header className='article__header'>
                                         <h1 className='article__title'>{ content && content.summary ? content.summary.split('_')[0] : ''}</h1>
                                         <div className='grid grid--vertically-centered'>
@@ -113,7 +144,7 @@ export default function BlogDetail () {
                                         <div className="sidebar-banner gutter-bottom">
                                             <div id="div-gpt-ad-1" data-dfp="" data-dfp-category="main" data-dfp-path="blog_rightsidebar_330_400">
                                                 <div id="google_ads_iframe_/242772937/main/blog_rightsidebar_330_400_0__container__">
-                                                    {/* <img src={data && data.sidebar_image ? data.sidebar_image[0].url : ''} atl=''/> */}
+                                                    <img src={data && data.sidebar_image ? data.sidebar_image[0].url : ''} atl=''/>
                                                 </div>
                                             </div>
                                         </div>
@@ -136,10 +167,48 @@ export default function BlogDetail () {
                             </div>
                         </section>
                     </main>    
+                    <section className="section footer-signup background-light">
+                        <FormStyle2 form_id={data.form_id} />
+                    </section>                  
                     <Footer />
                 </div>
             </div>
-            
+            <style jsx>{`
+                .blog__header--blog {
+                    background-size: cover;
+                    background-image: url(${data && data.cover_image ? data.cover_image[0].url : ''});
+                }
+                .breadcrumbs {
+                    border-bottom: 1px solid #dfe3e8;
+                    margin-bottom: 0.9375em;
+                }
+                .breadcrumbs__item {
+                    display: inline-block;
+                    margin-left: 0 !important;
+                    font-size: 1.1em !important;
+                }
+                .breadcrumbs__link {
+                    color: inherit;
+                }
+                .body-link {
+                    color: var(--dar-color-2) !important;
+                    text-decoration: underline;
+                    -webkit-text-decoration-line: underline;
+                    text-decoration-line: underline;
+                    -webkit-text-decoration-style: solid;
+                    text-decoration-style: solid;
+                    -webkit-text-decoration-color: currentColor;
+                    text-decoration-color: currentColor;
+                    -webkit-text-decoration-skip: ink;
+                    text-decoration-skip-ink: auto;
+                }
+                .breadcrumbs__separator {
+                    display: inline-block;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    vertical-align: middle;
+                }
+            `}</style>
         </div>
     )
     
