@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react';
 import Nav from '../components/nav/nav'
 import Footer from '../components/footer/footer'
+import Link from 'next/link'
 
 export default function BlogDetail () {
     const router = useRouter();
@@ -76,17 +77,62 @@ export default function BlogDetail () {
                             </div>
                         </section>
 
-                        <section className='class="section section--tight"'>
+                        <section className='section section--tight'>
                             <div className='grid'>
                                 <article className='grid__item grid__item--desktop-up-two-thirds'>
                                     <header className='article__header'>
                                         <h1 className='article__title'>{ content && content.summary ? content.summary.split('_')[0] : ''}</h1>
+                                        <div className='grid grid--vertically-centered'>
+                                            <div className='grid__item grid__item--tablet-up-two-thirds'>
+                                                <ul className="article__meta">
+                                                    <li>by <a rel="nofollow" href="#">{'author name here'}</a></li>
+                                                    <li><time itemProp="datePublished" dateTime="2020-06-30T03:30:00Z">{content && content.date ? content.date.split(' ')[0] : ''}</time></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
                                     </header>
                                     <figure className='article__image--featured'>
                                         <img src={content && content.photos ? content.photos[0].original_size.url : ''}/>
                                     </figure>
                                     <div className='article__content long-form-content' dangerouslySetInnerHTML={{__html: content && content.caption ? content.caption.split('_')[1] : ''}} />
                                 </article>
+                                        
+                                <div className='grid__item grid__item--desktop-up-third blog__sidebar'>
+                                    <div className="display--desktop">
+                                        <div className="search-form" action="/blog/search">
+                                            <label className="marketing-input-wrapper">
+                                                <span className="marketing-label marketing-label--hidden visuallyhidden">Search articles</span>
+                                                <input className="marketing-input search-form__input" id="SidebarSearch" placeholder="Search articles" type="search" name="q"/>
+                                                <span className="marketing-form__messages"></span>
+                                            </label>
+                                            <button type="submit" className="search-form__submit">
+                                                <span className="visuallyhidden">Search</span>
+                                            </button>
+                                        </div>
+                                        <div className="sidebar-banner gutter-bottom">
+                                            <div id="div-gpt-ad-1" data-dfp="" data-dfp-category="main" data-dfp-path="blog_rightsidebar_330_400">
+                                                <div id="google_ads_iframe_/242772937/main/blog_rightsidebar_330_400_0__container__">
+                                                    {/* <img src={data && data.sidebar_image ? data.sidebar_image[0].url : ''} atl=''/> */}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <nav className='SidebarAccordion'>
+                                        <div className='preview-links accordion-item--mobile'>
+                                            <h3 className="heading--5 accordion-link" tabIndex="0" aria-expanded="false" aria-controls="Accordion27">
+                                                {/* <svg className="icon icon--fill-primary icon--size-tiny" aria-hidden="true" focusable="false"> <use xlink:href="#spot-boost"></use> </svg> */}
+                                                Popular
+                                            </h3>
+                                            <div className='accordion-content'>
+                                                <Link href="/blog/trending-products">
+                                                    <a><h4 className="link__title">Top Trending Product to Sell in 2020 (Updated Annually)</h4></a>
+                                                </Link>
+                                                
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
                             </div>
                         </section>
                     </main>    
