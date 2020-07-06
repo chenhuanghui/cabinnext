@@ -333,6 +333,12 @@ ol li {
 .marketing-label--hidden {
     display: inline;
 }
+
+.search-form {
+    position: relative;
+    margin-bottom: 30px;
+}
+
 .search-form__input {
     /* font-family: ShopifySans, Helvetica, Arial, Lucida Grande, sans-serif; */
     height: 38px;
@@ -340,6 +346,17 @@ ol li {
     border-radius: 19px;
     padding: 0 16px 0 40px;
 }
+.search-form__submit {
+    position: absolute;
+    top: 11px;
+    left: 16px;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2016%2016%22%3E%3Cstyle%20type=%22text/css%22%3Ecircle,%20ellipse,%20line,%20path,%20polygon,%20polyline,%20rect,%20text%20%7B%20fill:%20rgb(92,%20106,%20196)%20!important;%20%7D%3C/style%3E%3Cpath%20d=%22M15.552%2013.62L11.27%209.333c.585-.936.925-2.046.925-3.23C12.195%202.73%209.465%200%206.098%200%202.73%200%200%202.732%200%206.103c0%203.37%202.73%206.1%206.098%206.1%201.19%200%202.304-.343%203.244-.935l4.28%204.283c.295.3.68.45%201.063.45h.005c.333%200%20.674-.12.93-.373.258-.26.38-.6.38-.94%200-.382-.154-.768-.448-1.063zM9.498%206.102c-.003%201.874-1.526%203.4-3.4%203.402C4.224%209.5%202.7%207.976%202.698%206.102c.003-1.875%201.526-3.4%203.4-3.404%201.874.003%203.397%201.528%203.4%203.403z%22/%3E%3C/svg%3E');
+}
+
+
 .marketing-form__messages {
     font-size: 0.8125em;
     font-weight: 500;
@@ -355,6 +372,19 @@ ol li {
     font-size: 1em;
     color: var(--dark-color-1);
 }
+
+.icon--size-tiny {
+    height: 16px;
+    width: 16px;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+.icon--fill-primary {
+    fill: var(--light-color);
+}
+
+
 
 /* annoucement */
 .covid-19-announcement-banner .body-link {

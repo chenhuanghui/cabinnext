@@ -133,12 +133,12 @@ export default function BlogDetail () {
                                     <div className="display--desktop">
                                         <div className="search-form" action="/blog/search">
                                             <label className="marketing-input-wrapper">
-                                                <span className="marketing-label marketing-label--hidden visuallyhidden">Search articles</span>
-                                                <input className="marketing-input search-form__input" id="SidebarSearch" placeholder="Search articles" type="search" name="q"/>
+                                                <span className="marketing-label marketing-label--hidden visuallyhidden">Tìm kiếm bài viết</span>
+                                                <input className="marketing-input search-form__input" id="SidebarSearch" placeholder="Tìm kiếm bài viết" type="search" name="q"/>
                                                 <span className="marketing-form__messages"></span>
                                             </label>
                                             <button type="submit" className="search-form__submit">
-                                                <span className="visuallyhidden">Search</span>
+                                                <span className="visuallyhidden">Tìm kiếm</span>
                                             </button>
                                         </div>
                                         <div className="sidebar-banner gutter-bottom">
@@ -150,10 +150,10 @@ export default function BlogDetail () {
                                         </div>
                                     </div>
                                     <nav className='SidebarAccordion'>
-                                        <div className='preview-links accordion-item--mobile'>
+                                        <div className='preview-links'>
                                             <h3 className="heading--5 accordion-link" tabIndex="0" aria-expanded="false" aria-controls="Accordion27">
-                                                {/* <svg className="icon icon--fill-primary icon--size-tiny" aria-hidden="true" focusable="false"> <use xlink:href="#spot-boost"></use> </svg> */}
-                                                Popular
+                                                <svg className="icon icon--fill-primary icon--size-tiny" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45"><path d="M31 18h-3.59L26 41.59A1.5 1.5 0 0 1 24.5 43h-.09A1.5 1.5 0 0 1 23 41.41l1.5-25A1.5 1.5 0 0 1 26 15h3l-7.56-9.68L14 15h3a1.5 1.5 0 0 1 1.5 1.41l1.5 25a1.5 1.5 0 1 1-3 .18L15.59 18H12a2 2 0 0 1-1.64-3.15L19.44 3a2.48 2.48 0 0 1 2-1 2.51 2.51 0 0 1 2 1l9.15 11.74a2 2 0 0 1 .18 2.13A2 2 0 0 1 31 18zm2.72 5A1.5 1.5 0 0 0 32 24.24l-3 17A1.5 1.5 0 0 0 30.24 43h.26a1.5 1.5 0 0 0 1.5-1.24l3-17A1.5 1.5 0 0 0 33.76 23zM12 29.25a1.5 1.5 0 1 0-3 .49l2 12A1.5 1.5 0 0 0 12.5 43h.25A1.5 1.5 0 0 0 14 41.25z"></path></svg>
+                                                Mới nhất
                                             </h3>
                                             <div className='accordion-content'>
                                                 <Link href="/blog/trending-products">
@@ -208,6 +208,24 @@ export default function BlogDetail () {
                     padding-right: 15px;
                     vertical-align: middle;
                 }
+
+                @media screen and (min-width: 67.5em) {
+                    .blog__sidebar {
+                        padding-left: 60px !important;
+                    }
+                }
+                .SidebarAccordion {
+                    border-top: 1px solid #dfe3e8;
+                    margin-top: 1.5em;
+                    padding-top: 1.5em;
+                }
+
+                @media screen and (min-width: 67.5em) {
+                    border-top: none !important;
+                    margin-top: none !important;
+                    padding-top: none !important;
+                }
+
             `}</style>
         </div>
     )
