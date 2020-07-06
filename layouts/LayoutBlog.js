@@ -47,6 +47,7 @@ export default class LayoutBlog extends React.Component {
         
         base('Page_Blog').find('recNyrnDsMGv4ZfEQ', function(err, record) {
             if (err) { console.error(err); return; }
+            console.log('page data:', record.fields);
             currentComponent.setState({data:record.fields})
         });
 
@@ -93,8 +94,8 @@ export default class LayoutBlog extends React.Component {
                                 <div className="grid">
                                     <div className="grid__item grid__item--tablet-up-two-thirds">
                                         <div className="section-heading section-heading--lowlight section-heading--tablet-up-align-left gutter-bottom">
-                                            <h1 className="section-heading__heading heading--jumbo">Starting up starts here</h1>
-                                            <p className="section-heading__subhead heading--3 blog__subhead--blog" tag="p">We’re here to help. Get free education, tips, and inspiration to help you start and grow a successful business.</p>
+                                            <h1 className="section-heading__heading heading--jumbo">{data.headline}</h1>
+                                            <p className="section-heading__subhead heading--3 blog__subhead--blog" tag="p">{data.desc}</p>
                                         </div>
                                         
                                     </div>
@@ -125,7 +126,7 @@ export default class LayoutBlog extends React.Component {
 
                                                     <ul className="article__meta">
                                                         <li>by <a rel="nofollow" href="/blog/search?link_search=true&amp;q=Shuang+Esther+Shan">{blogs.blog.name}</a></li>
-                                                        <li><time itemprop="datePublished" datetime="2020-06-30T03:30:00Z">{post.date.split(' ')[0]}</time></li>
+                                                        <li><time itemProp="datePublished" dateTime="2020-06-30T03:30:00Z">{post.date.split(' ')[0]}</time></li>
                                                     </ul>
                                                 </article>
                                             ))
@@ -149,14 +150,14 @@ export default class LayoutBlog extends React.Component {
                                             <div className="sidebar-banner gutter-bottom">
                                                 <div id="div-gpt-ad-1" data-dfp="" data-dfp-category="main" data-dfp-path="blog_rightsidebar_330_400">
                                                     <div id="google_ads_iframe_/242772937/main/blog_rightsidebar_330_400_0__container__">
-                                                        <img src='../assets/images/blog-img1.jpeg' atl=''/>
+                                                        <img src={data && data.sidebar_image ? data.sidebar_image[0].url : ''} atl=''/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <nav className='SidebarAccordion'>
                                             <div className='preview-links accordion-item--mobile'>
-                                                <h3 className="heading--5 accordion-link" tabindex="0" aria-expanded="false" aria-controls="Accordion27">
+                                                <h3 className="heading--5 accordion-link" tabIndex="0" aria-expanded="false" aria-controls="Accordion27">
                                                     {/* <svg className="icon icon--fill-primary icon--size-tiny" aria-hidden="true" focusable="false"> <use xlink:href="#spot-boost"></use> </svg> */}
                                                     Popular
                                                 </h3>
@@ -178,20 +179,9 @@ export default class LayoutBlog extends React.Component {
                     </div>
                 </div>
                 <style jsx>{`
-                    ._19iz9mwo {
-                        // display: grid !important;
-                        // flex-wrap: wrap !important;
-                        // margin-bottom: -16px !important;
-                        // margin-left: -8px !important;
-                        // margin-right: -8px !important;
-                        // margin-top: -8px !important;
-                        // grid-template-columns: repeat(auto-fill, minmax(258px, 1fr)) !important;
-                    }
-                    ._hxt6u1e { 
-                        padding-top: 133.333%;
-                    }
-                    .pubDate {
-                        margin: 0px 0px;
+                    .blog__header--blog {
+                        background-size: cover;
+                        background-image: url(${data && data.cover_image ? data.cover_image[0].url : ''});
                     }
                     article .lazyload-image {
                         max-width: 444px; max-height: 188px;
