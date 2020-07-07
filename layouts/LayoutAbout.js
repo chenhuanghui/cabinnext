@@ -31,10 +31,14 @@ export default class LayoutAbout extends React.Component {
         // analytics.page();
         const Analytics = require('analytics-node');
         const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');        
-        client.track({
-            event: 'page load',
+        client.page({
             userId: 'anonymous',
-            title: 'about page'
+            category: 'Brand Information /',
+            name: 'About Page',
+            properties: {
+              url: '/about',
+              title: 'CabinFood - About Page'
+            }
         });
 
         let currentComponent = this;

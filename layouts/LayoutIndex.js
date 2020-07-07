@@ -35,10 +35,14 @@ export default class LayoutIndex extends React.Component {
         // analytics.page();
         const Analytics = require('analytics-node');
         const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        client.track({
-            event: 'page load',
+        client.page({
             userId: 'anonymous',
-            title: 'home page'
+            category: 'Brand Information /',
+            name: 'Home Page',
+            properties: {
+              url: '/',
+              title: 'CabinFood - Home Page'
+            }
         });
         
         let currentComponent = this;

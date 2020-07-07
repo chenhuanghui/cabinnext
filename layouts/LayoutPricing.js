@@ -33,10 +33,14 @@ export default class LayoutPricing extends React.Component {
         // segment tracking data
         const Analytics = require('analytics-node');
         const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        client.track({
-            event: 'page load',
+        client.page({
             userId: 'anonymous',
-            title: 'Pricing Page'
+            category: 'Brand Information /',
+            name: 'Pricing Page',
+            properties: {
+              url: 'www.cabinfood.vn/pricing',
+              title: 'CabinFood - Pricing'
+            }
         });
 
         let currentComponent = this;

@@ -33,10 +33,14 @@ export default class LayoutCatExplore extends React.Component {
         // segment tracking data
         const Analytics = require('analytics-node');
         const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        client.track({
-            event: 'page load',
+        client.page({
             userId: 'anonymous',
-            title: 'Categories Explore Page'
+            category: 'Brand Information /',
+            name: 'Categories Page',
+            properties: {
+              url: 'www.cabinfood.vn/categories',
+              title: 'CabinFood - Explore Categories'
+            }
         });
         
         let currentComponent = this;

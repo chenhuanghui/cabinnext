@@ -32,10 +32,14 @@ export default function BlogDetail () {
         // segment tracking data
         const Analytics = require('analytics-node');
         const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        client.track({
-            event: 'page load',
+        client.page({
             userId: 'anonymous',
-            title: 'Blog Detail Page'
+            category: 'Knowledge Information /',
+            name: 'About Page',
+            properties: {
+              url: 'www.cabinfood.vn/blogs/' + router.query.slug,
+              title: 'CabinFood - Blog Detail' + router.query.slug
+            }
         });
         
         // load page data

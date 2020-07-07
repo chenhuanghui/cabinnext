@@ -43,10 +43,14 @@ export default class LayoutBlog extends React.Component {
         // segment tracking data
         const Analytics = require('analytics-node');
         const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        client.track({
-            event: 'page load',
+        client.page({
             userId: 'anonymous',
-            title: 'Blog Page'
+            category: 'Knowledge / ',
+            name: 'Blogs Page',
+            properties: {
+              url: '/blogs',
+              title: 'CabinFood - Blogs Page'
+            }
         });
 
         let currentComponent = this;
