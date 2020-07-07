@@ -9,8 +9,6 @@ import Link from 'next/link'
 // import Analytics from 'analytics'
 // import googleAnalytics from '@analytics/google-analytics'
 
-const Analytics = require('analytics-node');
-const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
 
 export default function BlogDetail () {
     const router = useRouter();
@@ -30,12 +28,16 @@ export default function BlogDetail () {
     
     useEffect(() => {
         // analytics.page();
-        client.track('Page Load', {
-            title: 'Blogs Page Detail',
-            subtitle: blog_name
+        
+        // segment tracking data
+        const Analytics = require('analytics-node');
+        const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+        client.track({
+            event: 'page load',
+            userId: 'anonymous',
+            title: 'Blog Detail Page'
         });
-
-        console.log('effect called');
+        
         // load page data
         if(data === null) {
             var Airtable = require('airtable');
@@ -63,9 +65,9 @@ export default function BlogDetail () {
                 if(data.response.posts[i].id_string === router.query.slug ) {
                     // set post content
                     setContent(data.response.posts[i]);
+                    // return;
                 } else {
                     relatedTemp.push(data.response.posts[i]);
-                    console.log('add related');
                 }
             }
             // set Related data

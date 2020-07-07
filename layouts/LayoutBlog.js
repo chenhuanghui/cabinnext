@@ -20,8 +20,6 @@ import Link from 'next/link'
 //       })
 //     ]
 // })
-const Analytics = require('analytics-node');
-const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
 
 export default class LayoutBlog extends React.Component {
     constructor(props){
@@ -42,10 +40,15 @@ export default class LayoutBlog extends React.Component {
 
     componentDidMount () {
         // analytics.page();
-        client.track('Page Load', {
-            title: 'Blogs Page'
+        // segment tracking data
+        const Analytics = require('analytics-node');
+        const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+        client.track({
+            event: 'page load',
+            userId: 'anonymous',
+            title: 'Blog Page'
         });
-        
+
         let currentComponent = this;
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');

@@ -9,7 +9,6 @@ import ModalForm from '../components/modals/modal_Form';
 
 // import Analytics from 'analytics'
 // import googleAnalytics from '@analytics/google-analytics'
-
 // const analytics = Analytics({
 //     app: 'awesome-app',
 //     plugins: [
@@ -18,9 +17,6 @@ import ModalForm from '../components/modals/modal_Form';
 //       })
 //     ]
 // })
-
-const Analytics = require('analytics-node');
-const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
 
 export default class LayoutAbout extends React.Component {
     constructor(props){
@@ -33,11 +29,14 @@ export default class LayoutAbout extends React.Component {
 
     componentDidMount () {
         // analytics.page();
-
-        client.track('Page Load', {
-            title: 'About Page'
+        const Analytics = require('analytics-node');
+        const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');        
+        client.track({
+            event: 'page load',
+            userId: 'anonymous',
+            title: 'about page'
         });
-        
+
         let currentComponent = this;
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');

@@ -10,6 +10,7 @@ import ModalVideo from '../components/modals/modal_Video';
 
 // import Analytics from 'analytics'
 // import googleAnalytics from '@analytics/google-analytics'
+
 // const analytics = Analytics({
 //     app: 'awesome-app',
 //     plugins: [
@@ -18,8 +19,7 @@ import ModalVideo from '../components/modals/modal_Video';
 //       })
 //     ]
 // })
-const Analytics = require('analytics-node');
-const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+
 export default class LayoutIndex extends React.Component {
     constructor(props){
         super(props);
@@ -31,10 +31,16 @@ export default class LayoutIndex extends React.Component {
 
     componentDidMount () {
         // analytics.page();
-        client.track('Page Load', {
-            title: 'Stations Explore',
-        });
         
+        // segment tracking data
+        const Analytics = require('analytics-node');
+        const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+        client.track({
+            event: 'page load',
+            userId: 'anonymous',
+            title: 'Explore Stations Page'
+        });
+
         let currentComponent = this;
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');

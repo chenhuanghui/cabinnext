@@ -22,9 +22,6 @@ import ModalForm from '../components/modals/modal_Form';
 //     ]
 // })
 
-const Analytics = require('analytics-node');
-const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-
 export default class LayoutIndex extends React.Component {
     constructor(props){
         super(props);
@@ -36,9 +33,12 @@ export default class LayoutIndex extends React.Component {
 
     componentDidMount () {
         // analytics.page();
-        
-        client.track('Page Load', {
-            title: 'Home Page'
+        const Analytics = require('analytics-node');
+        const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+        client.track({
+            event: 'page load',
+            userId: 'anonymous',
+            title: 'home page'
         });
         
         let currentComponent = this;

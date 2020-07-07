@@ -18,8 +18,6 @@ import ModalForm from '../components/modals/modal_Form';
 //     ]
 // })
 
-const Analytics = require('analytics-node');
-const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
 export default class LayoutCatExplore extends React.Component {
     constructor(props){
         super(props);
@@ -31,10 +29,15 @@ export default class LayoutCatExplore extends React.Component {
 
     componentDidMount () {
         // analytics.page();
-        client.track('Page Load', {
-            title: 'Categories Explore',
+        
+        // segment tracking data
+        const Analytics = require('analytics-node');
+        const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+        client.track({
+            event: 'page load',
+            userId: 'anonymous',
+            title: 'Categories Explore Page'
         });
-
         
         let currentComponent = this;
         var Airtable = require('airtable');
