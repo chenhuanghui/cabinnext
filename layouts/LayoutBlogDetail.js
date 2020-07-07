@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import fetch from 'node-fetch'
 import { useRouter } from 'next/router'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Nav from '../components/nav/nav'
 import Footer from '../components/footer/footer'
 import FormStyle2 from '../components/forms/form_style2';
@@ -16,6 +16,7 @@ export default function BlogDetail () {
     const [related, setRelated] = useState();
     const [slug, setSlug] = useState(null);
     const [data, setData] = useState(null);
+    const [isFetching, setFetching] = useState(false);
     const analytics = Analytics({
         app: 'awesome-app',
         plugins: [
@@ -24,8 +25,10 @@ export default function BlogDetail () {
           })
         ]
     })
+
+    console.log('param slug query--- :',router.query.slug)
+    const prevSlugRef = useRef();
     
-    console.log('slug--- :',router.query.slug)
     useEffect(() => {
         analytics.page();
         console.log('effect called');
@@ -39,46 +42,46 @@ export default function BlogDetail () {
                 setData(record.fields)
                 console.log('page blog detail data:',data);
             });
-            
         }
         
         //set slug
         setSlug(router.query.slug);
-        console.log('set slug:', slug);
+        if (slug === router.query.slug) loadDataTumblr();
+
+    },[slug])
     
+    const loadDataTumblr = () =>{
+        console.log('load data tumblr. start..');
+        console.log('check slug', slug);
+        console.log('check router param', router.query.slug);
 
-        // if slug updated call api get all posts from tumblr
-        if(slug!== null) {
-            var relatedTemp = [];
-            fetch('https://api.tumblr.com/v2/blog/cabinfood/posts?api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI')
-            .then(response => response.json())
-            .then(data => {
-                console.log('data blog', data)
-                // find post have id == slug
-
-                // set posts data
-                for (var i=0; i < data.response.total_posts; i++) {
-                    console.log('check slug', slug);
-                    if(data.response.posts[i].id_string === slug ) {
-                        // set post content
-                        setContent(data.response.posts[i]);
-                        console.log('set content');
-                        console.log('content find out:', content);
-                        // return;
-                    } else {
-                        relatedTemp.push(data.response.posts[i]);
-                        console.log('add related');
-                    }
+        var relatedTemp = [];
+        fetch('https://api.tumblr.com/v2/blog/cabinfood/posts?api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI')
+        .then(response => response.json())
+        .then(data => {
+            console.log('data blog', data)
+            // find post have id == slug
+            console.log('router query param:', router.query.slug);
+            // set posts data
+            for (var i=0; i < data.response.total_posts; i++) {
+                if(data.response.posts[i].id_string === router.query.slug ) {
+                    // set post content
+                    setContent(data.response.posts[i]);
+                    console.log('set content');
+                    console.log('content find out:', content);
+                    // return;
+                } else {
+                    relatedTemp.push(data.response.posts[i]);
+                    console.log('add related');
                 }
-                // set Related data
-                setRelated(relatedTemp);
-                console.log('related:', related);
-            })    
-        }
-        
+            }
+            // set Related data
+            setRelated(relatedTemp);
+            console.log('related:', related);
+        })
+        console.log('load data tumblr. done...');
+    }
 
-    },[data, slug])
-    
     return (
         
         <div className="layout">
@@ -89,8 +92,8 @@ export default function BlogDetail () {
                 <link rel="shortcut icon" type="image/png" href='/assets/images/fav.png' />
                 
                 {
-                    content && content.summary
-                    ? <title>{`CabinFood Blog - ${content.summary.split('_')[0]}`}</title>
+                    slug
+                    ? <title>{`CabinFood Blog - ${slug}`}</title>
                     : <title>CabinFood Blog</title>    
                 }
                 
@@ -183,19 +186,20 @@ export default function BlogDetail () {
                                                     related
                                                     ? related.map((post) => (
                                                         <Link href="/blogs/[slug]" as={`/blogs/${post.id_string}`} key={post.id}>
-                                                            <a><h4 className="link__title">{post.summary.split('_')[0]}</h4></a>
+                                                            <a onClick={() => setSlug(post.id_string)}>
+                                                                <h4 className="link__title"  >{post.summary.split('_')[0]}</h4>
+                                                            </a>
                                                         </Link>
                                                     ))
                                                     : ''
                                                 }
-                                                
-                                                
                                             </div>
                                         </div>
                                     </nav>
                                 </div>
                             </div>
                         </section>
+
                     </main>    
                     <section className="section footer-signup background-light">
                         <FormStyle2 form_id={data ? data.form_id : ''} />
