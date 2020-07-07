@@ -89,7 +89,7 @@ export default function BlogDetail () {
                 <link rel="shortcut icon" type="image/png" href='/assets/images/fav.png' />
                 
                 {
-                    content && content.summary ? content.summary.split('_')[0] : ''
+                    content && content.summary
                     ? <title>{`CabinFood Blog - ${content.summary.split('_')[0]}`}</title>
                     : <title>CabinFood Blog</title>    
                 }
