@@ -7,18 +7,19 @@ import Footer from '../components/footer/footer'
 import FormStyle2 from '../components/forms/form_style2';
 import ModalForm from '../components/modals/modal_Form'
 
-import Analytics from 'analytics'
-import googleAnalytics from '@analytics/google-analytics'
+// import Analytics from 'analytics'
+// import googleAnalytics from '@analytics/google-analytics'
 
-const analytics = Analytics({
-    app: 'awesome-app',
-    plugins: [
-      googleAnalytics({
-        trackingId: 'UA-168839658-1'
-      })
-    ]
-})
-
+// const analytics = Analytics({
+//     app: 'awesome-app',
+//     plugins: [
+//       googleAnalytics({
+//         trackingId: 'UA-168839658-1'
+//       })
+//     ]
+// })
+const Analytics = require('analytics-node');
+const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
 export default class LayoutPricing extends React.Component {
     constructor(props){
         super(props);
@@ -29,7 +30,10 @@ export default class LayoutPricing extends React.Component {
       }
 
     componentDidMount () {
-        analytics.page();
+        // analytics.page();
+        client.track('Page Load', {
+            title: 'Pricing Page',
+        });
         
         let currentComponent = this;
         var Airtable = require('airtable');

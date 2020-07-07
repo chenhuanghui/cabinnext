@@ -37,9 +37,8 @@ export default class LayoutIndex extends React.Component {
     componentDidMount () {
         // analytics.page();
         
-        client.track({
-            event: 'page load',
-            userId: 'anonymous'
+        client.track('Page Load', {
+            title: 'Home Page'
         });
         
         let currentComponent = this;

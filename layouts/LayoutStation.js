@@ -8,18 +8,18 @@ import Footer from '../components/footer/footer'
 import ModalForm from '../components/modals/modal_Form';
 import ModalVideo from '../components/modals/modal_Video';
 
-import Analytics from 'analytics'
-import googleAnalytics from '@analytics/google-analytics'
-
-const analytics = Analytics({
-    app: 'awesome-app',
-    plugins: [
-      googleAnalytics({
-        trackingId: 'UA-168839658-1'
-      })
-    ]
-})
-
+// import Analytics from 'analytics'
+// import googleAnalytics from '@analytics/google-analytics'
+// const analytics = Analytics({
+//     app: 'awesome-app',
+//     plugins: [
+//       googleAnalytics({
+//         trackingId: 'UA-168839658-1'
+//       })
+//     ]
+// })
+const Analytics = require('analytics-node');
+const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
 export default class LayoutIndex extends React.Component {
     constructor(props){
         super(props);
@@ -30,7 +30,10 @@ export default class LayoutIndex extends React.Component {
       }
 
     componentDidMount () {
-        analytics.page();
+        // analytics.page();
+        client.track('Page Load', {
+            title: 'Stations Explore',
+        });
         
         let currentComponent = this;
         var Airtable = require('airtable');

@@ -6,9 +6,11 @@ import Nav from '../components/nav/nav'
 import Footer from '../components/footer/footer'
 import FormStyle2 from '../components/forms/form_style2';
 import Link from 'next/link'
-import Analytics from 'analytics'
-import googleAnalytics from '@analytics/google-analytics'
+// import Analytics from 'analytics'
+// import googleAnalytics from '@analytics/google-analytics'
 
+const Analytics = require('analytics-node');
+const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
 
 export default function BlogDetail () {
     const router = useRouter();
@@ -17,22 +19,23 @@ export default function BlogDetail () {
     const [slug, setSlug] = useState(null);
     const [data, setData] = useState(null);
     const [isFetching, setFetching] = useState(false);
-    const analytics = Analytics({
-        app: 'awesome-app',
-        plugins: [
-          googleAnalytics({
-            trackingId: 'UA-168839658-1'
-          })
-        ]
-    })
-
-    console.log('param slug query--- :',router.query.slug)
-    const prevSlugRef = useRef();
+    // const analytics = Analytics({
+    //     app: 'awesome-app',
+    //     plugins: [
+    //       googleAnalytics({
+    //         trackingId: 'UA-168839658-1'
+    //       })
+    //     ]
+    // })
     
     useEffect(() => {
-        analytics.page();
+        // analytics.page();
+        client.track('Page Load', {
+            title: 'Blogs Page Detail',
+            subtitle: blog_name
+        });
+
         console.log('effect called');
-        
         // load page data
         if(data === null) {
             var Airtable = require('airtable');
@@ -40,7 +43,6 @@ export default function BlogDetail () {
             base('Page_Blog_Detail').find('rec9y71ihInHmnQOZ', function(err, record) {
                 if (err) { console.error(err); return; }
                 setData(record.fields)
-                console.log('page blog detail data:',data);
             });
         }
         
@@ -51,25 +53,16 @@ export default function BlogDetail () {
     },[slug])
     
     const loadDataTumblr = () =>{
-        console.log('load data tumblr. start..');
-        console.log('check slug', slug);
-        console.log('check router param', router.query.slug);
-
         var relatedTemp = [];
         fetch('https://api.tumblr.com/v2/blog/cabinfood/posts?api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI')
         .then(response => response.json())
         .then(data => {
-            console.log('data blog', data)
             // find post have id == slug
-            console.log('router query param:', router.query.slug);
             // set posts data
             for (var i=0; i < data.response.total_posts; i++) {
                 if(data.response.posts[i].id_string === router.query.slug ) {
                     // set post content
                     setContent(data.response.posts[i]);
-                    console.log('set content');
-                    console.log('content find out:', content);
-                    // return;
                 } else {
                     relatedTemp.push(data.response.posts[i]);
                     console.log('add related');
@@ -77,9 +70,7 @@ export default function BlogDetail () {
             }
             // set Related data
             setRelated(relatedTemp);
-            console.log('related:', related);
         })
-        console.log('load data tumblr. done...');
     }
 
     return (

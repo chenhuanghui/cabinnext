@@ -7,17 +7,20 @@ import GridItemType1 from '../components/grid/grid_item_type1'
 import SectionType5 from '../components/sections/section_type_5';
 import ModalForm from '../components/modals/modal_Form';
 
-import Analytics from 'analytics'
-import googleAnalytics from '@analytics/google-analytics'
+// import Analytics from 'analytics'
+// import googleAnalytics from '@analytics/google-analytics'
 
-const analytics = Analytics({
-    app: 'awesome-app',
-    plugins: [
-      googleAnalytics({
-        trackingId: 'UA-168839658-1'
-      })
-    ]
-})
+// const analytics = Analytics({
+//     app: 'awesome-app',
+//     plugins: [
+//       googleAnalytics({
+//         trackingId: 'UA-168839658-1'
+//       })
+//     ]
+// })
+
+const Analytics = require('analytics-node');
+const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
 
 export default class LayoutAbout extends React.Component {
     constructor(props){
@@ -29,7 +32,11 @@ export default class LayoutAbout extends React.Component {
       }
 
     componentDidMount () {
-        analytics.page();
+        // analytics.page();
+
+        client.track('Page Load', {
+            title: 'About Page'
+        });
         
         let currentComponent = this;
         var Airtable = require('airtable');
