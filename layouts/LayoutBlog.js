@@ -127,7 +127,7 @@ export default class LayoutBlog extends React.Component {
                                                     </h2>
 
                                                     <ul className="article__meta">
-                                                        <li>by <a rel="nofollow" href="/blog/search?link_search=true&amp;q=Shuang+Esther+Shan">{blogs.blog.name}</a></li>
+                                                        <li>by <a rel="nofollow" href={blogs ? blogs.blog.url : ''}>{blogs ? blogs.blog.name : ''}</a></li>
                                                         <li><time itemProp="datePublished" dateTime="2020-06-30T03:30:00Z">{post.date.split(' ')[0]}</time></li>
                                                     </ul>
                                                 </article>

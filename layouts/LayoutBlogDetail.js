@@ -142,7 +142,8 @@ export default function BlogDetail () {
                                         <div className='grid grid--vertically-centered'>
                                             <div className='grid__item grid__item--tablet-up-two-thirds'>
                                                 <ul className="article__meta">
-                                                    <li>by <a rel="nofollow" href="#">{content ? content.blog_name : ''}</a></li>
+                                                    
+                                                    <li>by <a rel="nofollow" href={content ? content.blog.url : ''}>{content ? content.blog_name : ''}</a></li>
                                                     <li><time itemProp="datePublished" dateTime="2020-06-30T03:30:00Z">{content && content.date ? content.date.split(' ')[0] : ''}</time></li>
                                                 </ul>
                                             </div>
