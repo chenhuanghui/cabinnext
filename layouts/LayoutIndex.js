@@ -1,5 +1,4 @@
-import Analytics from 'analytics'
-import googleAnalytics from '@analytics/google-analytics'
+
 
 import Head from 'next/head'
 import React from 'react';
@@ -12,14 +11,19 @@ import ImageText from '../components/text_image/image_text';
 import TextImage from '../components/text_image/text_image';
 import ModalForm from '../components/modals/modal_Form';
 
-const analytics = Analytics({
-    app: 'awesome-app',
-    plugins: [
-      googleAnalytics({
-        trackingId: 'UA-168839658-1'
-      })
-    ]
-})
+// import Analytics from 'analytics'
+// import googleAnalytics from '@analytics/google-analytics'
+// const analytics = Analytics({
+//     app: 'awesome-app',
+//     plugins: [
+//       googleAnalytics({
+//         trackingId: 'UA-168839658-1'
+//       })
+//     ]
+// })
+
+const Analytics = require('analytics-node');
+const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
 
 export default class LayoutIndex extends React.Component {
     constructor(props){
@@ -31,7 +35,12 @@ export default class LayoutIndex extends React.Component {
       }
 
     componentDidMount () {
-        analytics.page();
+        // analytics.page();
+        
+        client.track({
+            event: 'page load',
+            userId: 'anonymous'
+        });
         
         let currentComponent = this;
         var Airtable = require('airtable');

@@ -23,6 +23,7 @@
     "@analytics/google-analytics": "^0.4.0",
     "airtable": "^0.8.1",
     "analytics": "^0.5.1",
+    "analytics-node": "^3.4.0-beta.2",
     "jquery": "^3.5.1",
     "markdown-it": "^11.0.0",
     "next": "^9.4.4",
