@@ -38,7 +38,7 @@ export default class LayoutPricing extends React.Component {
             category: 'Brand Information /',
             name: 'Pricing Page',
             properties: {
-              url: 'www.cabinfood.vn/pricing',
+              url: '/pricing',
               title: 'CabinFood - Pricing'
             }
         });

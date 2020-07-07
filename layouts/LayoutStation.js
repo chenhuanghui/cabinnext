@@ -40,7 +40,7 @@ export default class LayoutIndex extends React.Component {
             category: 'Brand Information /',
             name: 'Stations Page',
             properties: {
-              url: 'www.cabinfood.vn/stations',
+              url: '/stations',
               title: 'CabinFood - Explore Stations'
             }
         });

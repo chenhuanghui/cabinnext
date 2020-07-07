@@ -35,9 +35,9 @@ export default function BlogDetail () {
         client.page({
             userId: 'anonymous',
             category: 'Knowledge Information /',
-            name: 'About Page',
+            name: 'Blogs Detail Page',
             properties: {
-              url: 'www.cabinfood.vn/blogs/' + router.query.slug,
+              url: '/blogs/' + router.query.slug,
               title: 'CabinFood - Blog Detail' + router.query.slug
             }
         });

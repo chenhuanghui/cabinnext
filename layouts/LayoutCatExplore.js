@@ -38,7 +38,7 @@ export default class LayoutCatExplore extends React.Component {
             category: 'Brand Information /',
             name: 'Categories Page',
             properties: {
-              url: 'www.cabinfood.vn/categories',
+              url: '/categories',
               title: 'CabinFood - Explore Categories'
             }
         });
