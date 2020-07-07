@@ -44,7 +44,7 @@ export default class LayoutBlog extends React.Component {
         const Analytics = require('analytics-node');
         const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
         client.page({
-            userId: 'anonymous',
+            userId: document.cookie,
             category: 'Knowledge / ',
             name: 'Blogs Page',
             properties: {

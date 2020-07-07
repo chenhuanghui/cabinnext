@@ -33,7 +33,7 @@ export default function BlogDetail () {
         const Analytics = require('analytics-node');
         const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
         client.page({
-            userId: 'anonymous',
+            userId: document.cookie,
             category: 'Knowledge Information /',
             name: 'Blogs Detail Page',
             properties: {
