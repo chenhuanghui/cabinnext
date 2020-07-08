@@ -74,7 +74,6 @@ export default class LayoutCatExplore extends React.Component {
                         ? <title>{data.name}</title>
                         : <title>Nền Tảng Delivery Chuyên Nghiệp Cho Kinh Doanh Món Ăn Thức Uống - Khám Phá Danh Mục FnB</title>    
                     }
-                    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
                 </Head>
 
                 <div className="page--cat-explore">

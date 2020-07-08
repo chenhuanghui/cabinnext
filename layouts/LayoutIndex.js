@@ -78,7 +78,6 @@ export default class LayoutIndex extends React.Component {
                         ? <title>{data.name}</title>
                         : <title>Nền Tảng Delivery Chuyên Nghiệp Cho Kinh Doanh Món Ăn Thức Uống - Trang Chủ</title>    
                     }
-                    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
                 </Head>
 
                 <div className="page--home">
