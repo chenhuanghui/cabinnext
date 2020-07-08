@@ -6,6 +6,7 @@ import Nav from '../components/nav/nav'
 import Footer from '../components/footer/footer'
 import FormStyle2 from '../components/forms/form_style2';
 import Link from 'next/link'
+import ModalForm from '../components/modals/modal_Form';
 // import Analytics from 'analytics'
 // import googleAnalytics from '@analytics/google-analytics'
 
@@ -98,6 +99,7 @@ export default function BlogDetail () {
             </Head>
 
             <div className="page--home">
+                <ModalForm />
                 <Nav/>
                 
                 <div id="PageContainer">

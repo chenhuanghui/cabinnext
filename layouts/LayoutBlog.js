@@ -9,6 +9,7 @@ import FormStyle2 from '../components/forms/form_style2';
 
 import fetch from 'node-fetch'
 import Link from 'next/link'
+import ModalForm from '../components/modals/modal_Form';
 
 // import Analytics from 'analytics'
 // import googleAnalytics from '@analytics/google-analytics'
@@ -100,6 +101,7 @@ export default class LayoutBlog extends React.Component {
                 </Head>
 
                 <div className="page--home">
+                    <ModalForm />
                     <Nav />
                     <div id="PageContainer">
                         <main id="Main blogs-page">
