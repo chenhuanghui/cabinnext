@@ -133,6 +133,9 @@ export default class LayoutBlog extends React.Component {
                                                             </span>
                                                         </a>
                                                     </Link>
+                                                    <ul className="article__meta article__meta--primary">
+                                                        <li><a href="#">{post && post.tags ? post.tags[0]:''}</a></li>
+                                                    </ul>
                                                     <h2 className="article--index__title heading--4">
                                                         <Link href='blogs/[slug]' as={`blogs/${post.id_string}`} key={post.id}>
                                                             <a>{post.summary.split('_')[0]}</a>
@@ -145,9 +148,7 @@ export default class LayoutBlog extends React.Component {
                                                     </ul>
                                                 </article>
                                             ))
-                                        }   
-                                            
-                                            
+                                        }                                               
                                         </div>
                                     </div>
                                     <div className='grid__item grid__item--desktop-up-third blog__sidebar'>

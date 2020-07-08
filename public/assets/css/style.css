@@ -289,14 +289,39 @@ ol li {
         margin-bottom: 3.75em;
     }
 }
+.article--index__image {
+    display: block;
+    margin-bottom: 0.9375em;
+    position: relative;
+    overflow: hidden;
+}
+
 .article--index {
     margin-bottom: 10px;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
 }
-
+.article__meta--primary {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* font-family: ShopifySans, Helvetica, Arial, sans-serif; */
+    font-weight: 700;
+    font-size: 1em;
+    margin-bottom: 0 !important;
+    line-height: 1.5;
+}
+.article__meta>li {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+}
+.article__meta li a{
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--light-color) !important;
+}
 .article--index__title {
-    margin-top: 0.6666666667em;
+    /* margin-top: 0.6666666667em; */
     margin-bottom: 0;
 }
 .article--index__title a {
