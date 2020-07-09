@@ -81,13 +81,10 @@ export default function BlogDetail () {
         setSlug(router.query.slug);        
         if (slug === router.query.slug) {
             getPostDetail(slug);
-            // getPostsByCollection('4IDATh5KwOhVgBjMLW19XE');
             getAllPosts();
         }
         
     },[slug])
-    
-    
     
 
     return (
