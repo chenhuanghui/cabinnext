@@ -9,7 +9,7 @@ import Link from 'next/link'
 import ModalForm from '../components/modals/modal_Form';
 
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import { post } from 'jquery';
+
 // import Analytics from 'analytics'
 // import googleAnalytics from '@analytics/google-analytics'
 
