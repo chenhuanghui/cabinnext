@@ -31,7 +31,6 @@ export default class LayoutBlog extends React.Component {
     
         this.state = {
             data:[],
-            blogs:[],
             posts:[]
         }
     }
@@ -68,7 +67,6 @@ export default class LayoutBlog extends React.Component {
         
         base('Page_Blog').find('recNyrnDsMGv4ZfEQ', function(err, record) {
             if (err) { console.error(err); return; }
-            console.log('page data:', record.fields);
             currentComponent.setState({data:record.fields})
         });
 
@@ -82,7 +80,7 @@ export default class LayoutBlog extends React.Component {
     }
 
     render () {
-        const {blogs, data,posts} = this.state;
+        const {data,posts} = this.state;
         console.log('posts state:',posts);
         return (
             <div className="layout">
