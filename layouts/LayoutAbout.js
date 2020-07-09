@@ -30,8 +30,8 @@ export default class LayoutAbout extends React.Component {
     componentDidMount () {
         // analytics.page();
         const Analytics = require('analytics-node');
-        const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');        
-        client.page({
+        const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');        
+        analytics.page({
             userId: document.cookie,
             category: 'Brand Information /',
             name: 'About Page',

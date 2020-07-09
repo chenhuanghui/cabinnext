@@ -34,8 +34,8 @@ export default class LayoutIndex extends React.Component {
         
         // segment tracking data
         const Analytics = require('analytics-node');
-        const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        client.page({
+        const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+        analytics.page({
             userId: document.cookie,
             category: 'Brand Information /',
             name: 'Stations Page',
