@@ -180,7 +180,7 @@ export default class LayoutBlog extends React.Component {
                                                 <div className='accordion-content'>
                                                     { posts.length > 0 && posts.map((post) => (
                                                         <Link href="/blogs/[slug]" as={`blogs/${post.sys.id}`} key={post.sys.id}>
-                                                            <a><h4 className="link__title">{post.fields.title}</h4></a>
+                                                            <a><h4 className="link__title">{post.fields.title}</h4></a>   
                                                         </Link>
                                                     ))}
                                                 </div>
