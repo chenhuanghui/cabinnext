@@ -73,7 +73,7 @@ export default class LayoutIndex extends React.Component {
                     <meta name="author" content="CabinFood" />
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                     <link rel="shortcut icon" type="image/png" href='/assets/images/fav.png' />
-                    <script src='../assets/js/intercom.js'></script>
+                    
                     {
                         data.name
                         ? <title>{data.name}</title>
