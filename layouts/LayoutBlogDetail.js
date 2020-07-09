@@ -7,33 +7,55 @@ import Footer from '../components/footer/footer'
 import FormStyle2 from '../components/forms/form_style2';
 import Link from 'next/link'
 import ModalForm from '../components/modals/modal_Form';
+
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { post } from 'jquery';
 // import Analytics from 'analytics'
 // import googleAnalytics from '@analytics/google-analytics'
 
+const client = require('contentful').createClient({
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
+})
 
 export default function BlogDetail () {
     const router = useRouter();
-    const [content, setContent] = useState();
-    const [related, setRelated] = useState();
+    const [content, setContent] = useState([]);
+    const [postRelated, setPostRelated] = useState([]);
     const [slug, setSlug] = useState(null);
     const [data, setData] = useState(null);
-    const [isFetching, setFetching] = useState(false);
-    // const analytics = Analytics({
-    //     app: 'awesome-app',
-    //     plugins: [
-    //       googleAnalytics({
-    //         trackingId: 'UA-168839658-1'
-    //       })
-    //     ]
-    // })
     
+    async function fetchEntries(query) {
+        const entries = await client.getEntries(query)
+        if (entries.items) {
+            console.log('entries:',entries.items);
+            return entries.items
+        }
+        console.log(`Error getting Entries for ${contentType.name}.`)
+    }
+
+    // contentful fetching data
+    async function getPostDetail(post_id) {
+        const allPosts = await fetchEntries({
+            content_type: 'post',
+            'sys.id': post_id
+        })  // query post by id (sys.id)
+        setContent([...allPosts])
+    }
+
+    async function getAllPosts() {
+        const allPosts = await fetchEntries({
+            content_type: 'post',
+            // 'fields.collection.sys.id': collection_id
+        })  // query all collections
+        setPostRelated([...allPosts])
+    }
+
     useEffect(() => {
-        // analytics.page();
-        
-        // segment tracking data
+        // segment tracking data start
         const Analytics = require('analytics-node');
-        const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        client.page({
+        const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+        analytics.page({
             userId: document.cookie,
             category: 'Knowledge Information /',
             name: 'Blogs Detail Page',
@@ -42,8 +64,9 @@ export default function BlogDetail () {
               title: 'CabinFood - Blog Detail' + router.query.slug
             }
         });
-        
-        // load page data
+        // segment tracking data end.
+
+        // load page data start
         if(data === null) {
             var Airtable = require('airtable');
             var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');
@@ -52,33 +75,20 @@ export default function BlogDetail () {
                 setData(record.fields)
             });
         }
-        
-        //set slug
-        setSlug(router.query.slug);
-        if (slug === router.query.slug) loadDataTumblr();
+        // load page data end
 
+        //set slug
+        setSlug(router.query.slug);        
+        if (slug === router.query.slug) {
+            getPostDetail(slug);
+            // getPostsByCollection('4IDATh5KwOhVgBjMLW19XE');
+            getAllPosts();
+        }
+        
     },[slug])
     
-    const loadDataTumblr = () =>{
-        var relatedTemp = [];
-        fetch('https://api.tumblr.com/v2/blog/cabinfood/posts?api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI')
-        .then(response => response.json())
-        .then(data => {
-            // find post have id == slug
-            // set posts data
-            for (var i=0; i < data.response.total_posts; i++) {
-                if(data.response.posts[i].id_string === router.query.slug ) {
-                    // set post content
-                    setContent(data.response.posts[i]);
-                    // return;
-                } else {
-                    relatedTemp.push(data.response.posts[i]);
-                }
-            }
-            // set Related data
-            setRelated(relatedTemp);
-        })
-    }
+    
+    
 
     return (
         
@@ -88,7 +98,6 @@ export default function BlogDetail () {
                 <meta name="author" content="CabinFood" />
                 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
                 <link rel="shortcut icon" type="image/png" href='/assets/images/fav.png' />
-                
                 {
                     slug
                     ? <title>{`CabinFood Blog - ${slug}`}</title>
@@ -130,27 +139,27 @@ export default function BlogDetail () {
                                                 </div>
                                             </li>
                                             <li className="breadcrumbs__item txt--minor">
-                                                <span>{ content && content.summary ? content.summary.split('_')[0] : ''}</span>
+                                                <span>{ content && content[0] ? content[0].fields.title : ''}</span>
                                             </li>
                                         </ol>
                                     </nav>
                                     <header className='article__header'>
-                                        <h1 className='article__title'>{ content && content.summary ? content.summary.split('_')[0] : ''}</h1>
+                                        <h1 className='article__title'>{ content && content[0] ? content[0].fields.title : ''}</h1>
                                         <div className='grid grid--vertically-centered'>
                                             <div className='grid__item grid__item--tablet-up-two-thirds'>
                                                 <ul className="article__meta">
                                                     
-                                                    <li>by <a rel="nofollow" href={content ? content.blog.url : ''}>{content ? content.blog_name : ''}</a></li>
-                                                    <li><time itemProp="datePublished" dateTime="2020-06-30T03:30:00Z">{content && content.date ? content.date.split(' ')[0] : ''}</time></li>
+                                                    <li>by <a rel="nofollow" href={'#'}>{'cabinfood'}</a></li>
+                                                    <li><time itemProp="datePublished" dateTime="2020-06-30T03:30:00Z">{content && content[0] ? content[0].fields.date.split('T')[0] :''}</time></li>
                                                 </ul>
                                             </div>
                                         </div>
                                         
                                     </header>
                                     <figure className='article__image--featured'>
-                                        <img src={content && content.photos ? content.photos[0].original_size.url : ''}/>
+                                        <img src={content && content[0] ? content[0].fields.cover.fields.file.url : ''}/>
                                     </figure>
-                                    <div className='article__content long-form-content' dangerouslySetInnerHTML={{__html: content && content.caption ? content.caption.split('_')[1] : ''}} />
+                                    <div className='article__content long-form-content' dangerouslySetInnerHTML={{__html: content && content[0] ? documentToHtmlString(content[0].fields.content) : ''}} />
                                 </article>
                                         
                                 <div className='grid__item grid__item--desktop-up-third blog__sidebar'>
@@ -181,11 +190,11 @@ export default function BlogDetail () {
                                             </h3>
                                             <div className='accordion-content'>
                                                 {
-                                                    related
-                                                    ? related.map((post) => (
-                                                        <Link href="/blogs/[slug]" as={`/blogs/${post.id_string}`} key={post.id}>
-                                                            <a onClick={() => setSlug(post.id_string)}>
-                                                                <h4 className="link__title"  >{post.summary.split('_')[0]}</h4>
+                                                    postRelated.length > 0
+                                                    ? postRelated.map((p) => (
+                                                        <Link href="/blogs/[slug]" as={`/blogs/${p.sys.id}`} key={p.sys.id}>
+                                                            <a onClick={() => setSlug(p.sys.id)}>
+                                                                <h4 className="link__title"  >{p.fields.title}</h4>
                                                             </a>
                                                         </Link>
                                                     ))
@@ -263,3 +272,24 @@ export default function BlogDetail () {
     )
     
 }
+
+// const loadDataTumblr = () =>{
+//     var relatedTemp = [];
+//     fetch('https://api.tumblr.com/v2/blog/cabinfood/posts?api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI')
+//     .then(response => response.json())
+//     .then(data => {
+//         // find post have id == slug
+//         // set posts data
+//         for (var i=0; i < data.response.total_posts; i++) {
+//             if(data.response.posts[i].id_string === router.query.slug ) {
+//                 // set post content
+//                 setContent(data.response.posts[i]);
+//                 // return;
+//             } else {
+//                 relatedTemp.push(data.response.posts[i]);
+//             }
+//         }
+//         // set Related data
+//         setRelated(relatedTemp);
+//     })
+// }

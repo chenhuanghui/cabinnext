@@ -21,9 +21,11 @@
   "homepage": "https://github.com/chenhuanghui/cabinfood-ver1.0#readme",
   "dependencies": {
     "@analytics/google-analytics": "^0.4.0",
+    "@contentful/rich-text-html-renderer": "^14.1.1",
     "airtable": "^0.8.1",
     "analytics": "^0.5.1",
     "analytics-node": "^3.4.0-beta.2",
+    "contentful": "^7.14.5",
     "jquery": "^3.5.1",
     "markdown-it": "^11.0.0",
     "next": "^9.4.4",

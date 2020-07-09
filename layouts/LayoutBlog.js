@@ -11,16 +11,19 @@ import fetch from 'node-fetch'
 import Link from 'next/link'
 import ModalForm from '../components/modals/modal_Form';
 
-// import Analytics from 'analytics'
-// import googleAnalytics from '@analytics/google-analytics'
-// const analytics = Analytics({
-//     app: 'awesome-app',
-//     plugins: [
-//       googleAnalytics({
-//         trackingId: 'UA-168839658-1'
-//       })
-//     ]
-// })
+const client = require('contentful').createClient({
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
+})
+
+async function fetchEntries(query) {
+    const entries = await client.getEntries(query)
+    if (entries.items) {
+        console.log('entries:',entries.items);
+        return entries.items
+    }
+    console.log(`Error getting Entries for ${contentType.name}.`)
+}
 
 export default class LayoutBlog extends React.Component {
     constructor(props){
@@ -28,23 +31,18 @@ export default class LayoutBlog extends React.Component {
     
         this.state = {
             data:[],
-            blogs:[]
-        }
-    }
-    
-    async getStaticProps(context) {
-        return {
-          props: {
-          }, // will be passed to the page component as props
+            blogs:[],
+            posts:[]
         }
     }
 
     componentDidMount () {
-        // analytics.page();
-        // segment tracking data
+        let currentComponent = this;
+
+        // segment tracking data start
         const Analytics = require('analytics-node');
-        const client = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        client.page({
+        const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+        analytics.page({
             userId: document.cookie,
             category: 'Knowledge / ',
             name: 'Blogs Page',
@@ -53,8 +51,18 @@ export default class LayoutBlog extends React.Component {
               title: 'CabinFood - Blogs Page'
             }
         });
+        // segment tracking data end.
+        
 
-        let currentComponent = this;
+        // contentful fetching data start
+        async function getPosts() {
+            const allPosts = await fetchEntries({content_type: 'post'})  // query posts only
+            currentComponent.setState({posts:[...allPosts]})
+        }
+        getPosts()
+        // contentful fetching data end
+
+        // get page data from airtable start
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');
         
@@ -70,21 +78,12 @@ export default class LayoutBlog extends React.Component {
         }, function done(err) {
             if (err) { console.error(err); return; }
         });
-        
-        // TUMBLR: api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI
-        fetch('https://api.tumblr.com/v2/blog/cabinfood/posts?api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI').then(response => response.json())
-        .then(data => {
-            console.log('data blog', data);
-            data ? currentComponent.setState({blogs:data.response}) : {}
-        }).catch((error) => {
-            // reject(error);
-            console.log(error);
-        });
+        // get page data from airtable start
     }
 
     render () {
-        const {blogs, data} = this.state;
-        const pids = ['id1', 'id2', 'id3']
+        const {blogs, data,posts} = this.state;
+        console.log('posts state:',posts);
         return (
             <div className="layout">
                 <Head>
@@ -121,35 +120,37 @@ export default class LayoutBlog extends React.Component {
                                     <div className='grid__item grid__item--desktop-up-two-thirds'>
                                         <div className='grid grid--equal-height'>
                                         {
-                                            blogs && blogs.posts && blogs.posts.map((post) => (
-                                                <article className="grid__item grid__item--tablet-up-half article--index" key={post.id}>
-                                                    <Link href='blogs/[slug]' as={`blogs/${post.id_string}`} >
+                                            // render data from contentful
+                                            posts.length > 0 && posts.map((post) => (
+                                                <article className="grid__item grid__item--tablet-up-half article--index" key={post.sys.id}>
+                                                    <Link href='blogs/[slug]' as={`blogs/${post.sys.id}`} >
                                                         <a className="article--index__image">
                                                             <span className="image lazyload-image">
                                                                 <span className="lazyload-image__placeholder">
-                                                                    <img data-sizes="100vw" src={ post && post.photos ? post.photos[0].alt_sizes[2].url : ''} alt="" className=" lazyloaded"/>
+                                                                    <img className="lazyloaded" src={ post && post.fields.cover ? post.fields.cover.fields.file.url : ''} alt={''} />
                                                                 </span>
                                                             </span>
                                                         </a>
                                                     </Link>
                                                     <ul className="article__meta article__meta--primary">
-                                                        <li><a href="#">{post && post.tags ? post.tags[0]:''}</a></li>
+                                                        <li><a href="#">{post && post.fields.collection ? post.fields.collection.fields.name :''}</a></li>
                                                     </ul>
                                                     <h2 className="article--index__title heading--4">
-                                                        <Link href='blogs/[slug]' as={`blogs/${post.id_string}`} key={post.id}>
-                                                            <a>{post.summary.split('_')[0]}</a>
+                                                        <Link href='blogs/[slug]' as={`blogs/${post.sys.id}`}>
+                                                            <a>{post.fields.title}</a>
                                                         </Link>
                                                     </h2>
 
                                                     <ul className="article__meta">
-                                                        <li>by <a rel="nofollow" href={blogs ? blogs.blog.url : ''}>{blogs ? blogs.blog.name : ''}</a></li>
-                                                        <li><time itemProp="datePublished" dateTime="2020-06-30T03:30:00Z">{post.date.split(' ')[0]}</time></li>
+                                                        <li>by <a rel="nofollow" href="#">cabinfood</a></li>
+                                                        <li><time itemProp="datePublished" dateTime="2020-06-30T03:30:00Z">{post.fields.date.split('T')[0]}</time></li>
                                                     </ul>
                                                 </article>
                                             ))
-                                        }                                               
+                                        }
                                         </div>
                                     </div>
+
                                     <div className='grid__item grid__item--desktop-up-third blog__sidebar'>
                                         <div className="display--desktop">
                                             <div className="search-form" action="/blog/search">
@@ -177,9 +178,9 @@ export default class LayoutBlog extends React.Component {
                                                     Tổng hợp
                                                 </h3>
                                                 <div className='accordion-content'>
-                                                    {blogs && blogs.posts && blogs.posts.map((post) => (
-                                                        <Link href="/blogs/[slug]" as={`blogs/${post.id_string}`} key={post.id}>
-                                                            <a><h4 className="link__title">{post.summary.split('_')[0]}</h4></a>
+                                                    { posts.length > 0 && posts.map((post) => (
+                                                        <Link href="/blogs/[slug]" as={`blogs/${post.sys.id}`} key={post.sys.id}>
+                                                            <a><h4 className="link__title">{post.fields.title}</h4></a>
                                                         </Link>
                                                     ))}
                                                 </div>
@@ -227,3 +228,13 @@ export default class LayoutBlog extends React.Component {
         )
     }
 }
+
+// TUMBLR: api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI
+// fetch('https://api.tumblr.com/v2/blog/cabinfood/posts?api_key=z48gdFrjZK0huw6zLv76lJ9zxKMobRHaKhdhnbwjIsvsrVuKEI').then(response => response.json())
+// .then(data => {
+//     console.log('data blog', data);
+//     data ? currentComponent.setState({blogs:data.response}) : {}
+// }).catch((error) => {
+//     // reject(error);
+//     console.log(error);
+// });
