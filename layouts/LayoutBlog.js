@@ -19,7 +19,7 @@ const client = require('contentful').createClient({
 async function fetchEntries(query) {
     const entries = await client.getEntries(query)
     if (entries.items) {
-        console.log('entries:',entries.items);
+        // console.log('entries:',entries.items);
         return entries.items
     }
     console.log(`Error getting Entries for ${contentType.name}.`)
