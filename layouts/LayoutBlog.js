@@ -81,7 +81,6 @@ export default class LayoutBlog extends React.Component {
 
     render () {
         const {data,posts} = this.state;
-        console.log('posts state:',posts);
         return (
             <div className="layout">
                 <Head>
