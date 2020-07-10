@@ -30,7 +30,6 @@ export default class ModalVideo extends React.Component {
 
         base('Form_List').find('recScfQH0nm1u6MZB', function(err, record) {
             if (err) { console.error(err); return; }
-            console.log('form list explore', record);
             currentComponent.setState({ dataForm: record.fields })
         });
     }

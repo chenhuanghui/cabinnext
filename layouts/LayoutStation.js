@@ -8,18 +8,6 @@ import Footer from '../components/footer/footer'
 import ModalForm from '../components/modals/modal_Form';
 import ModalVideo from '../components/modals/modal_Video';
 
-// import Analytics from 'analytics'
-// import googleAnalytics from '@analytics/google-analytics'
-
-// const analytics = Analytics({
-//     app: 'awesome-app',
-//     plugins: [
-//       googleAnalytics({
-//         trackingId: 'UA-168839658-1'
-//       })
-//     ]
-// })
-
 export default class LayoutIndex extends React.Component {
     constructor(props){
         super(props);
@@ -30,7 +18,6 @@ export default class LayoutIndex extends React.Component {
       }
 
     componentDidMount () {
-        // analytics.page();
         
         // segment tracking data
         const Analytics = require('analytics-node');
