@@ -7,18 +7,6 @@ import Footer from '../components/footer/footer'
 import FormStyle2 from '../components/forms/form_style2';
 import ModalForm from '../components/modals/modal_Form'
 
-// import Analytics from 'analytics'
-// import googleAnalytics from '@analytics/google-analytics'
-
-// const analytics = Analytics({
-//     app: 'awesome-app',
-//     plugins: [
-//       googleAnalytics({
-//         trackingId: 'UA-168839658-1'
-//       })
-//     ]
-// })
-
 export default class LayoutPricing extends React.Component {
     constructor(props){
         super(props);
@@ -29,7 +17,6 @@ export default class LayoutPricing extends React.Component {
       }
 
     componentDidMount () {
-        // analytics.page();
         // segment tracking data
         const Analytics = require('analytics-node');
         const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
@@ -49,7 +36,6 @@ export default class LayoutPricing extends React.Component {
 
         base('Page_Pricing').find('recFfTx17NH6A6dhw', function(err, record) {
             if (err) { console.error(err); return; }
-            console.log('pricing', record.fields);
             currentComponent.setState({data:record.fields});
         });
 
@@ -64,7 +50,6 @@ export default class LayoutPricing extends React.Component {
     convertMdtoHtml(mdString) {
         var md = require('markdown-it')();
         var result = md.render(mdString);
-        console.log('markdown: ',result);
         return result;
     }
 
