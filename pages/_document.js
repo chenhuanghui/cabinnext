@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -9,11 +9,13 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <script src="/static/intercom.js" />
+        </Head>
         <body>
           <Main />
           <NextScript />
-          <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
+          {/* <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script> */}
         </body>
       </Html>
     )
