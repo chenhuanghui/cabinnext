@@ -11,7 +11,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <script src="/static/intercom.js" />
-          <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
+          {/* <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script> */}
         </Head>
         <body>
           <Main />
