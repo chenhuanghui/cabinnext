@@ -3,24 +3,13 @@
 import Head from 'next/head'
 import React from 'react';
 import Nav from '../components/nav/nav'
-import SectionSignUp from '../components/sections/section_type_5'
+
 import Back2Top from '../components/back2top/back2top'
 import Footer from '../components/footer/footer'
 import Link from 'next/link';
 import ImageText from '../components/text_image/image_text';
 import TextImage from '../components/text_image/text_image';
 import ModalForm from '../components/modals/modal_Form';
-
-// import Analytics from 'analytics'
-// import googleAnalytics from '@analytics/google-analytics'
-// const analytics = Analytics({
-//     app: 'awesome-app',
-//     plugins: [
-//       googleAnalytics({
-//         trackingId: 'UA-168839658-1'
-//       })
-//     ]
-// })
 
 export default class LayoutIndex extends React.Component {
     constructor(props){
@@ -32,10 +21,11 @@ export default class LayoutIndex extends React.Component {
       }
 
     componentDidMount () {
-        // analytics.page();
+        let currentComponent = this;
+
+        // init segment tracking
         const Analytics = require('analytics-node');
         const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        
         analytics.page({
             userId: document && document.cookie ? document.cookie : 'anonymous',
             category: 'Brand Information /',
@@ -46,7 +36,8 @@ export default class LayoutIndex extends React.Component {
             }
         });
         
-        let currentComponent = this;
+
+        // init airtable and query page data
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');
 
@@ -69,11 +60,6 @@ export default class LayoutIndex extends React.Component {
         return (
             <div className="layout">
                 <Head>
-                    <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
-                    <meta name="author" content="CabinFood" />
-                    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-                    <link rel="shortcut icon" type="image/png" href='/assets/images/fav.png' />
-                    
                     {
                         data.name
                         ? <title>{data.name}</title>
@@ -252,7 +238,24 @@ export default class LayoutIndex extends React.Component {
                                 </div>
                                 
                             </section>
-                            <SectionSignUp section_id={data.section5} />
+                            
+                            <section className="section signup-footer js-waypoint-track">
+                                <div className="grid">
+                                    <div className="grid__item">
+                                        <div className="section-heading signup-footer__heading gutter-bottom--reset">
+                                            <h2 className="section-heading__heading heading--2">{data.sec5_name}</h2>
+                                            <p className="section-heading__subhead heading--3 heading--4">{data.sec5_desc}</p>
+                                            <div className="grid__item grid__item--mobile-up-align-center">
+                                                <div className="text-center gutter-bottom--mobile">
+                                                    <div className="marketing-button-wrapper">
+                                                        <button className="marketing-button js-open-signup">{data.sec5_btn_title}</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
 
                             <Back2Top />
                         </main>    

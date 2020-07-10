@@ -31,7 +31,6 @@ export default class ModalForm extends React.Component {
                 </div>
                 <div className="modal" role="dialog" tabIndex="-1" aria-labelledby="ModalTitle" aria-modal="true">
                     <div className="signup-modal__content">
-                        {/* <h2 className="modal__heading" id="ModalTitle">Start your free 14-day trial of CabinFood</h2> */}
                         <div className="signup-form-wrapper signup--hidden ">
                             <HubspotForm
                                 portalId='7453021'
@@ -40,7 +39,6 @@ export default class ModalForm extends React.Component {
                                 onReady={(form) => console.log('Form ready!')}
                                 loading={<div>Loading...</div>}
                             />
-                            
                         </div>
                     </div>
                 </div>    

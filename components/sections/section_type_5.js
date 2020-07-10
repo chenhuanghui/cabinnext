@@ -38,10 +38,6 @@ export default class SectionType5 extends React.Component {
                         <div className="section-heading signup-footer__heading gutter-bottom--reset">
                             <h2 className="section-heading__heading heading--2">{data.name}</h2>
                             <p className="section-heading__subhead heading--3 heading--4">{data.desc}</p>
-                            
-                            {/* <div className="footer__signup">
-                                <FormStyle form_id = {data.form} />
-                            </div> */}
                             <div className="grid__item grid__item--mobile-up-align-center">
                                 <div className="text-center gutter-bottom--mobile">
                                     <div className="marketing-button-wrapper">
