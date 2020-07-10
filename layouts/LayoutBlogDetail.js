@@ -56,7 +56,7 @@ export default function BlogDetail () {
         const Analytics = require('analytics-node');
         const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
         analytics.page({
-            userId: document.cookie,
+            userId: document && document.cookie ? document.cookie : 'anonymous',
             category: 'Knowledge Information /',
             name: 'Blogs Detail Page',
             properties: {
