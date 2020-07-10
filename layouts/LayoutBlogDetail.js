@@ -206,7 +206,18 @@ export default function BlogDetail () {
 
                     </main>    
                     <section className="section footer-signup background-light">
-                        <FormStyle2 form_id={data ? data.form_id : ''} />
+                        {
+                            data
+                            ? 
+                                <FormStyle2 
+                                    message = {data.form_message}
+                                    input_hint = {data.form_input_hint}
+                                    btn_title = {data.form_btn_title}
+                                    note = {data.form_note}
+                                />
+                            :   ''
+                        }
+                        
                     </section>                  
                     <Footer />
                 </div>

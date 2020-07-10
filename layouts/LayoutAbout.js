@@ -7,17 +7,6 @@ import GridItemType1 from '../components/grid/grid_item_type1'
 import SectionType5 from '../components/sections/section_type_5';
 import ModalForm from '../components/modals/modal_Form';
 
-// import Analytics from 'analytics'
-// import googleAnalytics from '@analytics/google-analytics'
-// const analytics = Analytics({
-//     app: 'awesome-app',
-//     plugins: [
-//       googleAnalytics({
-//         trackingId: 'UA-168839658-1'
-//       })
-//     ]
-// })
-
 export default class LayoutAbout extends React.Component {
     constructor(props){
         super(props);
@@ -28,7 +17,9 @@ export default class LayoutAbout extends React.Component {
       }
 
     componentDidMount () {
-        // analytics.page();
+        let currentComponent = this;
+
+        // init segment tracking page
         const Analytics = require('analytics-node');
         const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');        
         analytics.page({
@@ -41,12 +32,13 @@ export default class LayoutAbout extends React.Component {
             }
         });
 
-        let currentComponent = this;
+        // init airatble load page data
         var Airtable = require('airtable');
         var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');
 
         base('Page_About').find('reckYfVLNpKuyDVD0', function(err, record) {
             if (err) { console.error(err); return; }
+            console.log('page data:', record.fields);
             currentComponent.setState({data:record.fields})
         });
         
@@ -63,10 +55,6 @@ export default class LayoutAbout extends React.Component {
         return (
             <div className="layout">
                 <Head>
-                    <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
-                    <meta name="author" content="CabinFood" />
-                    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-                    <link rel="shortcut icon" type="image/png" href='/assets/images/fav.png' />
                     {
                         data.name
                         ? <title>{data.name}</title>
@@ -130,25 +118,6 @@ export default class LayoutAbout extends React.Component {
                                 </div>
                             </section>
 
-                            {/* <section className="section">
-                                <div className="grid grid--vertically-centered about__content-block-container about__content-story">
-                                    <ImageText 
-                                        className={'about'}
-                                        name={data.sec2_name} 
-                                        desc={data.sec2_desc} 
-                                        image={data && data.sec2_image ? data.sec2_image[0].url : ''} />
-                                </div>
-                            </section> */}
-
-                            {/* <section className="section section--tight">
-                                <div className="grid grid--vertically-centered">
-                                    <CenterText 
-                                        name={data.sec3_name} 
-                                        desc={data.sec3_desc} 
-                                        sub={data.sec3_sub}/>
-                                </div>
-                            </section> */}
-
                             <section className="section section--padding-bottom-only about-mission">
                                 <div className="grid grid--vertically-centered">
                                     <div className="grid__item grid__item--tablet-up-two-thirds grid__item--tablet-up-push-1">
@@ -184,25 +153,6 @@ export default class LayoutAbout extends React.Component {
                                 </div>
                             </section>
 
-                            {/* <section className="section about-online-store">
-                                <div className="grid grid--vertically-centered about-online-store_wrapper">
-
-                                    <div className="grid__item grid__item--tablet-up-half about-online-store__content">
-                                        <div className="section-heading about-online-store__content gutter-bottom--reset">
-                                            <p className="section-heading__kicker heading--5 color-green-80 text-left--tablet-up text-center--mobile gutter-bottom--half">{data.sec4_sub} </p>
-                                            <h2 className="section-heading__heading text-left--tablet-up text-center--mobile gutter-bottom--half about-heading">{data.sec4_name}</h2>
-                                            <p className="section-heading__subhead text-major text-left--tablet-up text-center--mobile color-ink-light gutter-bottom--reset">{data.sec4_desc} </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="grid__item grid__item--tablet-up-half about-online-store__image-container">
-                                        <picture className="picture about-online-store__image">
-                                            <img className=" lazyloaded" src={data && data.sec4_image ? data.sec4_image[0].url : ''}/>
-                                        </picture>
-                                    </div>
-                                </div>
-                            </section>
-                             */}
                             <div className="_1sx1020z grid">
                                 <div className="grid__item grid__item--mobile-up-half grid__item--tablet-up-full grid__item--mobile-up-align-center our-partner">
                                     <div className="section-heading">
@@ -212,15 +162,25 @@ export default class LayoutAbout extends React.Component {
                                 <div>
                                     <div className="_14iivyb">
                                         {/* block item */}
-                                        {data.partner && data.partner.map((p) => (
-                                            <GridItemType1 mId = {p} key={p.toString()}/>
+                                        {data.partner && data.partner.map((p,index) => (
+                                            <GridItemType1 
+                                                key={p.toString()}
+                                                name = {data.partner_name[index]}
+                                                logo = {data.partner_logo[index].url}
+                                                desc = {data.partner_desc[index]}
+                                                type = {data.partner_type[index]}
+                                            />
                                         ))}
                                         
                                     </div>
                                 </div>
                             </div>
-                            
-                            <SectionType5 section_id = {data.section5}/>
+
+                            <SectionType5
+                                name={data.sec5_name}
+                                desc={data.sec5_desc}
+                                btn_title={data.sec5_btn_title}
+                            />
 
                             <Back2Top />
                         </main>    

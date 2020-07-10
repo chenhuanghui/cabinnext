@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React from 'react';
 import Nav from '../components/nav/nav'
 import Announcement from '../components/annoucement/an_style1'
-import SectionSignUp from '../components/sections/section_type_5'
+import SectionType5 from '../components/sections/section_type_5'
 import Back2Top from '../components/back2top/back2top'
 import Footer from '../components/footer/footer'
 import ModalForm from '../components/modals/modal_Form';
@@ -278,7 +278,12 @@ export default class LayoutIndex extends React.Component {
                                 </div>
                             </div> {/* #end station listing section */}
 
-                            <SectionSignUp section_id={data.section_sign_up} />
+                            {/* <SectionSignUp section_id={data.section_sign_up} /> */}
+                            <SectionType5
+                                name={data.signup_name}
+                                desc={data.signup_desc}
+                                btn_title={data.signup_btn_title}
+                            />
 
                             <Back2Top />
                         </main>    

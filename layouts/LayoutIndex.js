@@ -10,6 +10,7 @@ import Link from 'next/link';
 import ImageText from '../components/text_image/image_text';
 import TextImage from '../components/text_image/text_image';
 import ModalForm from '../components/modals/modal_Form';
+import SectionType5 from '../components/sections/section_type_5';
 
 export default class LayoutIndex extends React.Component {
     constructor(props){
@@ -239,23 +240,11 @@ export default class LayoutIndex extends React.Component {
                                 
                             </section>
                             
-                            <section className="section signup-footer js-waypoint-track">
-                                <div className="grid">
-                                    <div className="grid__item">
-                                        <div className="section-heading signup-footer__heading gutter-bottom--reset">
-                                            <h2 className="section-heading__heading heading--2">{data.sec5_name}</h2>
-                                            <p className="section-heading__subhead heading--3 heading--4">{data.sec5_desc}</p>
-                                            <div className="grid__item grid__item--mobile-up-align-center">
-                                                <div className="text-center gutter-bottom--mobile">
-                                                    <div className="marketing-button-wrapper">
-                                                        <button className="marketing-button js-open-signup">{data.sec5_btn_title}</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                            <SectionType5
+                                name={data.sec5_name}
+                                desc={data.sec5_desc}
+                                btn_title={data.sec5_btn_title}
+                            />
 
                             <Back2Top />
                         </main>    

@@ -401,7 +401,12 @@ export default class LayoutPricing extends React.Component {
                                 </div>
                             </section>          
                             <section className="section footer-signup background-light">
-                                <FormStyle2 form_id={data.form_id} />
+                                <FormStyle2 
+                                    message = {data.form_message}
+                                    input_hint = {data.form_input_hint}
+                                    btn_title = {data.form_btn_title}
+                                    note = {data.form_note}
+                                />
                             </section>                  
                             {/* <Back2Top /> */}
                         </main>    

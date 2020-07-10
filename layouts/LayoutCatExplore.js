@@ -122,7 +122,11 @@ export default class LayoutCatExplore extends React.Component {
                                 
                             </section>
 
-                            <SectionSignUp section_id={data.section_sign_up} />
+                            <SectionSignUp 
+                                name={data.signup_name}
+                                desc={data.signup_desc}
+                                btn_title={data.signup_btn_title}
+                            />
 
 
                             <Back2Top />
