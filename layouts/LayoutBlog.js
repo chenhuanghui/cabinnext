@@ -83,10 +83,6 @@ export default class LayoutBlog extends React.Component {
         return (
             <div className="layout">
                 <Head>
-                    <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
-                    <meta name="author" content="CabinFood" />
-                    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-                    <link rel="shortcut icon" type="image/png" href='/assets/images/fav.png' />
                     {
                         data.name
                         ? <title>{data.name}</title>
