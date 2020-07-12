@@ -28,7 +28,6 @@ async function fetchEntries(query) {
 export default class LayoutBlog extends React.Component {
     constructor(props){
         super(props);
-    
         this.state = {
             data:[],
             posts:[]
