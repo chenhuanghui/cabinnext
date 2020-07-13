@@ -83,11 +83,9 @@ export default class LayoutBlog extends React.Component {
         return (
             <div className="layout">
                 <Head>
-                    {
-                        data.name
-                        ? <title>{data.name}</title>
-                        : <title>Nền Tảng Delivery Chuyên Nghiệp Cho Kinh Doanh Món Ăn Thức Uống - Chia Sẻ Kiến Thức</title>    
-                    }
+                    <meta  property="og:title" content="CabinFood Blogs" />
+                    <meta  property="og:image" content={data && data.cover_image ? data.cover_image[0].url : ''} />
+                    <title>{ data && data.name ? data.name : 'CabinFood Blogs'}</title>
                 </Head>
 
                 <div className="page--home">

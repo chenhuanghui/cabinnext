@@ -92,8 +92,7 @@ export default function BlogDetail () {
             getAllPosts();
         }
         
-    },[slug])
-    
+    },[slug])    
 
     return (
         
@@ -101,11 +100,7 @@ export default function BlogDetail () {
             <Head>
                 <meta  property="og:title" content={ content && content[0] ? content[0].fields.title : ''} />
                 <meta  property="og:image" content={content && content[0] ? content[0].fields.cover.fields.file.url : ''} />
-                {    
-                    slug
-                    ? <title>{`CabinFood Blog - ${slug}`}</title>
-                    : <title>CabinFood Blog</title>    
-                }
+                <title>{ slug ? `CabinFood Blog - ${slug}` : 'CabinFood Blog'}</title>
             </Head>
 
             <div className="page--home">

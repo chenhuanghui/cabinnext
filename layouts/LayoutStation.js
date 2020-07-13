@@ -54,13 +54,11 @@ export default class LayoutIndex extends React.Component {
         return (
             <div className="layout">
                 <Head>
+                    <meta  property="og:title" content="CabinFood Explore Station" />
+                    <meta  property="og:image" content={data && data.sec1_image ? data.sec1_image[0].url : ""} />
+                    <title>{ data && data.name ? data.name : 'CabinFood Explore Station '}</title>
                     <script src="https://fast.wistia.com/embed/medias/flvkbseogu.jsonp" async></script>
                     <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-                    {
-                        data.name
-                        ? <title>{data.name}</title>
-                        : <title>Nền Tảng Delivery Chuyên Nghiệp Cho Kinh Doanh Món Ăn Thức Uống - Khám Phá Trạm Kinh Doanh</title>    
-                    }
                 </Head>
 
                 <div className="page--home">
@@ -102,11 +100,7 @@ export default class LayoutIndex extends React.Component {
                                     </div>
                                 </div>
                                 <div className="picture--cover section--help__picture">
-                                    {
-                                        data && data.sec1_image
-                                        ? <img className="image" src={data.sec1_image[0].url} />
-                                        : ''
-                                    }
+                                    <img className="image" src={data && data.sec1_image ? data.sec1_image[0].url : ""} />
                                 </div>
                             </section>  
                             
