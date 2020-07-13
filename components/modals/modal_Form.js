@@ -3,6 +3,7 @@ import HubspotForm from 'react-hubspot-form'
 
 export default class ModalForm extends React.Component {
     componentDidMount() {
+        console.log('loadmodal');
         // modal action
         $(`.marketing-button, .contact-form`).click(function(){
             console.log('btn open modal click');

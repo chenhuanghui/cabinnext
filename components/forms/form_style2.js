@@ -1,14 +1,13 @@
 import React from 'react';
+import ModalForm from '../modals/modal_Form';
 
 export default class FormStyle2 extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            data: []
         }
     }
     componentDidMount () {
-        
     }
 
     componentDidUpdate(prevProps) {

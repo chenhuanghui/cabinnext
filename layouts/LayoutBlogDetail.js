@@ -210,18 +210,12 @@ export default function BlogDetail () {
 
                     </main>    
                     <section className="section footer-signup background-light">
-                        {
-                            data
-                            ? 
-                                <FormStyle2 
-                                    message = {data.form_message}
-                                    input_hint = {data.form_input_hint}
-                                    btn_title = {data.form_btn_title}
-                                    note = {data.form_note}
-                                />
-                            :   ''
-                        }
-                        
+                        <FormStyle2 
+                            message = {data ? data.form_message :''}
+                            input_hint = {data ? data.form_input_hint :''}
+                            btn_title = {data ? data.form_btn_title :''}
+                            note = {data ? data.form_note : ''}
+                        />
                     </section>                  
                     <Footer />
                 </div>
