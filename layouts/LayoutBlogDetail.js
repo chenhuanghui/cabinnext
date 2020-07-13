@@ -10,7 +10,7 @@ import ModalForm from '../components/modals/modal_Form';
 
 import { BLOCKS } from '@contentful/rich-text-types';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-
+import {Helmet} from "react-helmet";
 // import Analytics from 'analytics'
 // import googleAnalytics from '@analytics/google-analytics'
 
@@ -98,9 +98,11 @@ export default function BlogDetail () {
         
         <div className="layout">
             <Head>
-                <meta  property="og:title" content={ content && content[0] ? content[0].fields.title : ''} />
-                <meta  property="og:image" content={`http:${content && content[0] ? content[0].fields.cover.fields.file.url : ''}`} />
-                <title>{ slug ? `CabinFood Blog - ${slug}` : 'CabinFood Blog'}</title>
+                <Helmet>
+                    <meta  property="og:title" content={ content && content[0] ? content[0].fields.title : ''} />
+                    <meta  property="og:image" content={`http:${content && content[0] ? content[0].fields.cover.fields.file.url : ''}`} />
+                    <title>{ slug ? `CabinFood Blog - ${slug}` : 'CabinFood Blog'}</title>
+                </Helmet>
             </Head>
 
             <div className="page--home">
