@@ -99,7 +99,9 @@ export default function BlogDetail () {
         
         <div className="layout">
             <Head>
-                {
+                <meta  property="og:title" content={ content && content[0] ? content[0].fields.title : ''} />
+                <meta  property="og:image" content={content && content[0] ? content[0].fields.cover.fields.file.url : ''} />
+                {    
                     slug
                     ? <title>{`CabinFood Blog - ${slug}`}</title>
                     : <title>CabinFood Blog</title>    
