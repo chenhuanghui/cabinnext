@@ -201,11 +201,11 @@ export default function BlogDetail () {
                                 ))
                                 :''
                             }
-                            <div className="color-white"> 
+                            {/* <div className="color-white"> 
                                 <a data-ga-event="pos-overview" data-ga-action="checkout-features" data-ga-label="features" className="styled-link styled-link--skin-inherit" href="/pos/features">View all Shopify POS features
                                     <svg className="icon styled-link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.707 9.293l-5-5c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414L14.586 9H3c-.553 0-1 .448-1 1s.447 1 1 1h11.586l-3.293 3.293c-.39.39-.39 1.023 0 1.414.195.195.45.293.707.293s.512-.098.707-.293l5-5c.39-.39.39-1.023 0-1.414z"></path></svg>
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </section>
@@ -220,9 +220,9 @@ export default function BlogDetail () {
                                 <h2 className="section-heading__heading heading--2 pos-section-heading">{data ? data.pricing_tag : ''}</h2>
                                 <p className="section-heading__subhead heading--3 text-major">{data ? data.pricing_message : ''}</p>
                             </div> 
-                            <a data-ga-event="pos-overview" data-ga-action="customize" data-ga-label="app-store" className="styled-link" href="https://apps.shopify.com/collections/shopify-pos-apps">Explore the Shopify App Store
+                            {/* <a data-ga-event="pos-overview" data-ga-action="customize" data-ga-label="app-store" className="styled-link" href="https://apps.shopify.com/collections/shopify-pos-apps">Explore the Shopify App Store
                                 <svg className="icon styled-link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.707 9.293l-5-5c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414L14.586 9H3c-.553 0-1 .448-1 1s.447 1 1 1h11.586l-3.293 3.293c-.39.39-.39 1.023 0 1.414.195.195.45.293.707.293s.512-.098.707-.293l5-5c.39-.39.39-1.023 0-1.414z"></path></svg>
-                            </a>
+                            </a> */}
                         </div>
                         <div className="grid__item pos-next-customize__image display--mobile">
                             <img className="lazyload" data-srcset="https://cdn.shopify.com/shopifycloud/brochure/assets/pos/index-new/ui-illustrations-promotions@mobile-1f84f1b7734e4dd78618dcf0d12e7500ad73127450a68b8ab127707a7c948f8f.png 1x, https://cdn.shopify.com/shopifycloud/brochure/assets/pos/index-new/ui-illustrations-promotions@mobile-2x-6a3a25a7998b62002ab0f324fca2ba430ed5d81293698eb0a0cd67021ebe2565.png 2x" alt="A representation of apps that integrate loyalty programs into Shopify POS."/>
