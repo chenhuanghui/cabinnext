@@ -1,4 +1,4 @@
-import LayoutStation from '../layouts/LayoutStation'
+import LayoutStation from '../../layouts/LayoutStation'
 
 const Station = props => (
     <LayoutStation />
