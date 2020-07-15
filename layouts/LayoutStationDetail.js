@@ -18,33 +18,35 @@ export default function StationDetail () {
     
 
     useEffect(() => {
-        // segment tracking data start
-        const Analytics = require('analytics-node');
-        const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        analytics.page({
-            userId: document && document.cookie ? document.cookie : 'anonymous',
-            category: 'Station Information /',
-            name: 'Station' + router.query.stationID,
-            properties: {
-              url: '/stations/' + router.query.stationID,
-              title: 'CabinFood - Station Detail' + router.query.stationID
-            }
-        });
+        if (router.query.stationID !== stationID) {
+            //set slug
+            setStationID(router.query.stationID);        
+            console.log('log', router.query.stationID);
 
-        if(!data) {
-            var Airtable = require('airtable');
-            var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');
-            base('Page_Station_Detail').find('rec6D04I0m1SO99Ut', function(err, record) {
-                if (err) { console.error(err); return; }
-                console.log('page data:', record.fields);
-                setData(record.fields)
+            // segment tracking data start
+            const Analytics = require('analytics-node');
+            const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+            analytics.page({
+                userId: document && document.cookie ? document.cookie : 'anonymous',
+                category: 'Station Information /',
+                name: 'Station' + router.query.stationID,
+                properties: {
+                    url: '/stations/' + router.query.stationID,
+                    title: 'CabinFood - Station Detail' + router.query.stationID
+                }
             });
-        }
 
-        //set slug
-        setStationID(router.query.stationID);        
-        console.log('log', router.query.stationID);
-    },[])
+            if(!data) {
+                var Airtable = require('airtable');
+                var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');
+                base('Page_Station_Detail').find('rec6D04I0m1SO99Ut', function(err, record) {
+                    if (err) { console.error(err); return; }
+                    console.log('page data:', record.fields);
+                    setData(record.fields)
+                });
+            }
+        }
+    },[stationID])
     
 
     return (
@@ -213,7 +215,7 @@ export default function StationDetail () {
                                 data && data.pricing_item_list
                                 ? data.pricing_item_list.map((block,index) => (
                                     <div className="grid__item grid__item--desktop-up-half" key={block.toString()}>
-                                        <div className="block">
+                                        <div className="block gutter-bottom">
                                             <h3 className="block__heading heading--4">{data.pricing_item_list_name[index]}</h3>
                                             <p className="block__content">{data.pricing_item_list_desc[index]}</p>
                                         </div>
@@ -444,9 +446,26 @@ export default function StationDetail () {
             
             }
         }
-        .pos-next-streamline__image-wrapper {padding: 0 !important}
+        // .pos-next-streamline__image-wrapper {
+        //     padding-left: 5% !important;
+        //     padding-right: 5% !important;
+        // }
+        
+        @media only screen 
+        and (min-device-width : 375px) 
+        and (max-device-width : 812px) 
+        and (-webkit-device-pixel-ratio : 3)
+        and (orientation : portrait) { 
+            .pos-next-streamline__image-wrapper {
+                padding-left: 0% !important;
+                padding-right: 0% !important;
+            }
+        }
+
         @media screen and (min-width: 67.5em) {
-            .pos-next-streamline__image-wrapper {padding: 0 5% 6em !important}
+            .pos-next-streamline__image-wrapper {
+                padding: 0 5% 6em !important
+            }
         }
 
         .pos-next-brand-loyalty__content {padding-bottom: 64px;}
