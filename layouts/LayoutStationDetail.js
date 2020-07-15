@@ -40,7 +40,7 @@ export default function StationDetail () {
             if(!data) {
                 var Airtable = require('airtable');
                 var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');
-                base('Page_Station_Detail').find('rec6D04I0m1SO99Ut', function(err, record) {
+                base('Page_Station_Detail').find(stationID, function(err, record) {
                     if (err) { console.error(err); return; }
                     console.log('page data:', record.fields);
                     setData(record.fields)
@@ -460,6 +460,19 @@ export default function StationDetail () {
             .pos-next-streamline__image-wrapper {
                 padding-left: 0% !important;
                 padding-right: 0% !important;
+            }
+            .pos-next-brand-loyalty__content {
+                padding-top: 0 !important;
+            }
+        }
+
+        @media only screen 
+        and (min-device-width : 375px) 
+        and (max-device-width : 812px) 
+        and (-webkit-device-pixel-ratio : 3)
+        and (orientation : landscape) {
+            .pos-next-brand-loyalty__content {
+                padding-top: 0 !important;
             }
         }
 
