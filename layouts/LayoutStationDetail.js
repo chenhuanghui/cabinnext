@@ -77,15 +77,12 @@ export default function BlogDetail () {
 
                 {/* Còn bị lỗi CSS trên ipad và iphone xoay ngang */}
                 <section className="section section--padding-top-only background-cyan-80 pos-next-brand-loyalty">
-                    <div className="grid pos-next-brand-loyalty__grid">
-                        <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-half pos-next-brand-loyalty__image padding-left-only hide--mobile"> 
-                            <span className="image lazyload-image">
-                                <span className="lazyload-image__placeholder">
-                                    <img src="https://cdn.shopify.com/shopifycloud/brochure/assets/merchants/universal-standard/pos-next-index-brand-loyalty-large-d338b0ed8f9f1ded522192505cd571efd8a97a55bed7d85b72fbd0fc1e66d6df.jpg?quality=50" className=" lazyloaded" />
-                                </span>
-                            </span>
-                        </div>
-                        <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-5 grid__item--desktop-up-offset-1 pos-next-brand-loyalty__content">
+                    <div className="picture--cover section--help__picture section--help__picture_left hide--mobile">
+                        <img className="image" src={data && data.loc_cover ? data.loc_cover[0].thumbnails.large.url :''} />
+                    </div>
+                    <div className=" grid grid--equal-height grid--vertically-centered">
+                        <div className="grid__item grid__item--tablet-up-third grid__item--desktop-up-half"></div>
+                        <div className=" grid__item grid__item--tablet-up-two-thirds grid__item--desktop-up-half pos-next-brand-loyalty__content">
                             <div className="section-heading text-left gutter-bottom">
                                 <p className="section-heading__kicker heading--5 color-yellow-30">{data ? data.loc_tag :''}</p>
                                 <h2 className="section-heading__heading heading--2 pos-section-heading color-white">{data ? data.loc_message : ''}</h2>
@@ -105,9 +102,8 @@ export default function BlogDetail () {
                                 }
                             </div>
                         </div>
-                        
                     </div>
-                    <div className="picture--cover section--help__picture display--mobile">
+                    <div className="picture--cover section--help__picture section--help__picture_left display--mobile">
                         <img className="image" src={data && data.loc_cover ? data.loc_cover[0].thumbnails.large.url :''} />
                     </div>
                 </section>
@@ -177,17 +173,13 @@ export default function BlogDetail () {
                     </div>
                 </section>
 
-                <section className="section colored-section pos-next-checkout-features">
-                    <div className="grid grid--vertically-centered">
-                        <div className="grid__item grid__item--tablet-up-half pos-next-checkout-features__video">
-                            <div className="demo-video js-pos-demo__video js-demo-video--active" aria-label="Demo video player">
-                                <div className="demo-video__video-container">
-                                    <img src="https://cdn.shopify.com/shopifycloud/brochure/assets/merchants/universal-standard/pos-next-index-brand-loyalty-large-d338b0ed8f9f1ded522192505cd571efd8a97a55bed7d85b72fbd0fc1e66d6df.jpg?quality=50" className=" lazyloaded" />            
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className="grid__item grid__item--tablet-up-half pos-next-checkout-features__content">
+                <section className="section section--padding-top-only colored-section pos-next-checkout-features">
+                    <div className="picture--cover section--help__picture section--help__picture_left hide--mobile">
+                        <img src="https://cdn.shopify.com/shopifycloud/brochure/assets/merchants/universal-standard/pos-next-index-brand-loyalty-large-d338b0ed8f9f1ded522192505cd571efd8a97a55bed7d85b72fbd0fc1e66d6df.jpg?quality=50" className=" lazyloaded" />            
+                    </div>
+                    <div className=" grid grid--equal-height grid--vertically-centered">
+                        <div className="grid__item grid__item--tablet-up-third grid__item--desktop-up-half"></div>
+                        <div className=" grid__item grid__item--tablet-up-two-thirds grid__item--desktop-up-half pos-next-checkout-features__content">
                             <div className="section-heading text-left gutter-bottom">
                                 <h2 className="section-heading__heading heading--2 color-white">{data ? data.tech_tag : ''}</h2>
                             </div>
@@ -201,12 +193,10 @@ export default function BlogDetail () {
                                 ))
                                 :''
                             }
-                            {/* <div className="color-white"> 
-                                <a data-ga-event="pos-overview" data-ga-action="checkout-features" data-ga-label="features" className="styled-link styled-link--skin-inherit" href="/pos/features">View all Shopify POS features
-                                    <svg className="icon styled-link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.707 9.293l-5-5c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414L14.586 9H3c-.553 0-1 .448-1 1s.447 1 1 1h11.586l-3.293 3.293c-.39.39-.39 1.023 0 1.414.195.195.45.293.707.293s.512-.098.707-.293l5-5c.39-.39.39-1.023 0-1.414z"></path></svg>
-                                </a>
-                            </div> */}
                         </div>
+                    </div>
+                    <div className="picture--cover section--help__picture section--help__picture_left display--mobile">
+                        <img src="https://cdn.shopify.com/shopifycloud/brochure/assets/merchants/universal-standard/pos-next-index-brand-loyalty-large-d338b0ed8f9f1ded522192505cd571efd8a97a55bed7d85b72fbd0fc1e66d6df.jpg?quality=50" className=" lazyloaded" />            
                     </div>
                 </section>
 
@@ -244,6 +234,7 @@ export default function BlogDetail () {
                                 <h2 className="section-heading__heading heading--2 color-white">{data ? data.support_message :''}</h2>
                             </div>
                         </div>
+                        
                         <div className="grid__item">
                             <div className="grid">
                                 {
@@ -264,8 +255,18 @@ export default function BlogDetail () {
                     </div>
                 </section>
                 
-                <section>
-                    <div className="grid grid--equal-height grid--vertically-centered">
+                <section className="section section--padding-top-only pos-next-remind">
+                    <div className=" grid grid--equal-height grid--vertically-centered">
+                        <div className=" grid__item grid__item--tablet-up-two-thirds grid__item--desktop-up-half pos-next__footer-content">
+                            <div className="section-heading text-left gutter-bottom">
+                                <h2 className="section-heading__heading heading--2" dangerouslySetInnerHTML={{__html:data ? data.remind_tag : ''}}/ >
+                                <p className="section-heading__subhead heading--3 text-major">{data ? data.remind_message :''}</p>
+                            </div> 
+                            <a className="marketing-button gutter-bottom" href="#">{data ? data.remind_form_btn_title :''}</a>
+                            <p className='note'>{data ? data.remind_form_note :''}</p>
+                        </div>
+                    </div>
+                    {/* <div className="grid grid--equal-height grid--vertically-centered">
                         <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-5 pos-next__footer-content">
                             <div className="section-heading text-left gutter-bottom">
                                 <h2 className="section-heading__heading heading--2" dangerouslySetInnerHTML={{__html:data ? data.remind_tag : ''}}/ >
@@ -282,6 +283,9 @@ export default function BlogDetail () {
                                 </span>
                             </span>
                         </div>
+                    </div> */}
+                    <div className="picture--cover section--help__picture">
+                        <img className="image" src={data && data.remind_cover ? data.remind_cover[0].thumbnails.large.url :''} />
                     </div>
                 </section>
 
@@ -311,8 +315,9 @@ export default function BlogDetail () {
         }
         @media screen and (min-width: 67.5em){
             .pos-next-hero__heading-container {
-                padding-right: calc(5% + 18px) !important;
-                // padding-left: calc(5% + 18px);
+                // padding-left: calc(5%) !important;
+                // padding-right: 0 !important;
+                
             }
         }
         @media screen and (min-width: 46.875em) {
@@ -401,6 +406,16 @@ export default function BlogDetail () {
         
         .pos-next-brand-loyalty {
             // padding: 0 !important
+            position: relative;
+        }
+        .section--help__picture_left {
+            left: 0            
+        }
+
+        .pos-next-brand-loyalty__content {
+            padding-left: 0 !important;
+            padding-top: 6em !important;
+            padding-bottom: 0 !important;
         }
 
         @media screen and (min-width: 67.5em) {
@@ -413,28 +428,29 @@ export default function BlogDetail () {
             .pos-next-brand-loyalty__image {
                 padding: 0 !important;
             }
-            .pos-next-brand-loyalty__content {
-                padding-left: 0 !important;
-                padding-top: 6em !important;
-                padding-bottom: 0 !important;
+            .pos-next-brand-loyalty__content, .pos-next-checkout-features__content {
+                // padding-top: 0em !important;
+                padding-left: calc(5% + 9px) !important;
             }
+            
+            
         }
 
         @media screen and (min-width: 46.875em) {
             .pos-next-brand-loyalty {
-                padding: 0 !important;
+                // padding: 0 !important;
             }
             .pos-next-brand-loyalty__grid {
                 padding: 0 !important;
             }
             .pos-next-brand-loyalty__image {
-                padding: 0 !important;
+                padding: 6em 0px 0px 0px !important;
             }
-            .pos-next-brand-loyalty__content {
-                padding-left: 0 !important;
-                padding-top: 6em !important;
-                padding-bottom: 0 !important;
+            .pos-next-brand-loyalty__content, .pos-next-checkout-features__content {
+                // padding-top: 0em !important;
+                padding-left: calc(5% + 9px) !important;
             }
+            
         }
             
         .pos-next-brand-loyalty__image .lazyload-image{max-width: 800px; max-height: 800px;}
@@ -443,11 +459,16 @@ export default function BlogDetail () {
         .color-white {color: white !important}
         
         @media screen and (min-width: 67.5em) {
-            .pos-next-brand-loyalty__content {
-                // padding-right: calc(5% + 18px) !important;
-                // padding-left: calc(5% + 18px) !important;
+            .pos-next-brand-loyalty {
+                // padding-left: calc(5% + 9px) !important;
+            }
+            
             }
         }
+        @media screen and (max-width: 67.4375em) and (min-width: 46.875em) and (orientation : landscape)  {
+            
+        }
+
         .pos-next-brand-loyalty__content {
             padding-bottom: 64px;
         }
@@ -507,14 +528,14 @@ export default function BlogDetail () {
 
         @media screen and (min-width: 46.875em) {
             .pos-next__footer-content {
-                // padding-right: calc(5% + 9px) !important;
+                padding-right: calc(5% + 9px) !important
                 // padding-left: calc(5% + 9px) !important;
             }
         }
         @media screen and (min-width: 67.5em) {
             .pos-next__footer-content {
-                // padding-right: calc(5% + 18px) !important;
                 // padding-left: calc(5% + 18px) !important;
+                padding-right: calc(5% + 9px) !important
             }
         }
         .pos-next__footer-content {
@@ -530,6 +551,7 @@ export default function BlogDetail () {
         
         .pos-next-checkout-features {
             // padding-top: 2em !important;
+            position: relative;
         }
 
         .pos-next-checkout-features__video {
@@ -551,7 +573,9 @@ export default function BlogDetail () {
                 font-size: 4.375em;
             }
         }
-
+        .pos-next-remind {
+            position: relative;            
+        }
 
 
     `}</style>
