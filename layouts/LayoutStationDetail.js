@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Nav from '../components/nav/nav';
 import Footer from '../components/footer/footer'
 
-export default function BlogDetail () {
+export default function StationDetail () {
     const router = useRouter();
     const [stationID, setStationID] = useState(null);
     const [data, setData] = useState(null);
@@ -108,7 +108,7 @@ export default function BlogDetail () {
                     </div>
                 </section>
 
-                <section className="section pos-next-streamline background-yellow-0">
+                <section className="section section--padding-top-only pos-next-streamline background-yellow-0">
                     <div className="grid gutter-bottom">
                         <div className="grid__item grid__item--desktop-up-two-thirds">
                             <div className="section-heading pos-next-streamline__heading-wrapper text-left gutter-bottom">
@@ -175,7 +175,7 @@ export default function BlogDetail () {
 
                 <section className="section section--padding-top-only colored-section pos-next-checkout-features">
                     <div className="picture--cover section--help__picture section--help__picture_left hide--mobile">
-                        <img src="https://cdn.shopify.com/shopifycloud/brochure/assets/merchants/universal-standard/pos-next-index-brand-loyalty-large-d338b0ed8f9f1ded522192505cd571efd8a97a55bed7d85b72fbd0fc1e66d6df.jpg?quality=50" className=" lazyloaded" />            
+                        <img className="image" src={data && data.tech_cover ? data.tech_cover[0].thumbnails.large.url :''} />
                     </div>
                     <div className=" grid grid--equal-height grid--vertically-centered">
                         <div className="grid__item grid__item--tablet-up-third grid__item--desktop-up-half"></div>
@@ -196,7 +196,7 @@ export default function BlogDetail () {
                         </div>
                     </div>
                     <div className="picture--cover section--help__picture section--help__picture_left display--mobile">
-                        <img src="https://cdn.shopify.com/shopifycloud/brochure/assets/merchants/universal-standard/pos-next-index-brand-loyalty-large-d338b0ed8f9f1ded522192505cd571efd8a97a55bed7d85b72fbd0fc1e66d6df.jpg?quality=50" className=" lazyloaded" />            
+                        <img className="image" src={data && data.tech_cover ? data.tech_cover[0].thumbnails.large.url :''} />
                     </div>
                 </section>
 
@@ -209,7 +209,6 @@ export default function BlogDetail () {
                             </div> 
                         </div>
                         <div className="grid__item grid__item--tablet-up-half pos-next-customize__content-detail">
-                            {/* <img srcset="https://cdn.shopify.com/shopifycloud/brochure/assets/pos/index-new/ui-illustrations-promotions@mobile-1f84f1b7734e4dd78618dcf0d12e7500ad73127450a68b8ab127707a7c948f8f.png 1x, https://cdn.shopify.com/shopifycloud/brochure/assets/pos/index-new/ui-illustrations-promotions@mobile-2x-6a3a25a7998b62002ab0f324fca2ba430ed5d81293698eb0a0cd67021ebe2565.png 2x" alt="A representation of apps that integrate loyalty programs into Shopify POS." /> */}
                             {
                                 data && data.pricing_item_list
                                 ? data.pricing_item_list.map((block,index) => (
@@ -240,7 +239,7 @@ export default function BlogDetail () {
                                 {
                                     data && data.support_feature_list
                                     ? data.support_feature_list.map((block,index) => (
-                                        <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-third">
+                                        <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-third" key={block.toString()}>
                                             <div className="block pos-answers__feature-block">
                                                 <svg className="icon icon--size-small icon--fill-white pos-answers__feature-block-icon block__icon" dangerouslySetInnerHTML={{__html:data.support_feature_list_icon_svg_text[index]}} />
                                                 <h3 className="block__heading heading--4 color-white">{data.support_feature_list_name[index]}</h3>
@@ -414,8 +413,6 @@ export default function BlogDetail () {
                 // padding-top: 0em !important;
                 padding-left: calc(5% + 9px) !important;
             }
-            
-            
         }
 
         @media screen and (min-width: 46.875em) {
@@ -447,13 +444,12 @@ export default function BlogDetail () {
             
             }
         }
-        @media screen and (max-width: 67.4375em) and (min-width: 46.875em) and (orientation : landscape)  {
-            
+        .pos-next-streamline__image-wrapper {padding: 0 !important}
+        @media screen and (min-width: 67.5em) {
+            .pos-next-streamline__image-wrapper {padding: 0 5% 6em !important}
         }
 
-        .pos-next-brand-loyalty__content {
-            padding-bottom: 64px;
-        }
+        .pos-next-brand-loyalty__content {padding-bottom: 64px;}
 
         .pos-next-customize__image .lazyload-image {max-width: 800px; max-height: 800px;}
         .pos-next-customize__image .lazyload-image .lazyload-image__placeholder {padding-bottom: 100.0%}
