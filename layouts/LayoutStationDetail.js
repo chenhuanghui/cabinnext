@@ -266,24 +266,7 @@ export default function BlogDetail () {
                             <p className='note'>{data ? data.remind_form_note :''}</p>
                         </div>
                     </div>
-                    {/* <div className="grid grid--equal-height grid--vertically-centered">
-                        <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-5 pos-next__footer-content">
-                            <div className="section-heading text-left gutter-bottom">
-                                <h2 className="section-heading__heading heading--2" dangerouslySetInnerHTML={{__html:data ? data.remind_tag : ''}}/ >
-                                <p className="section-heading__subhead heading--3 text-major">{data ? data.remind_message :''}</p>
-                            </div> 
-                            <a className="marketing-button gutter-bottom" href="#">{data ? data.remind_form_btn_title :''}</a>
-                            <p className='note'>{data ? data.remind_form_note :''}</p>
-                            
-                        </div>
-                        <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-half grid__item--desktop-up-offset-1 pos-next__footer-image padding-left-only"> 
-                            <span className="image lazyload-image">
-                                <span className="lazyload-image__placeholder">
-                                    <img className="image" src={data && data.remind_cover ? data.remind_cover[0].thumbnails.large.url :''} />
-                                </span>
-                            </span>
-                        </div>
-                    </div> */}
+                    
                     <div className="picture--cover section--help__picture">
                         <img className="image" src={data && data.remind_cover ? data.remind_cover[0].thumbnails.large.url :''} />
                     </div>
@@ -355,7 +338,6 @@ export default function BlogDetail () {
         
         .note {
             font-size: 0.86em;
-            line-height: inherit;
         }
 
         .pos-next-hero__image-container {
@@ -526,26 +508,24 @@ export default function BlogDetail () {
         .pos-next__footer-image .lazyload-image{max-width: 813px; max-height: 624px;}
         .pos-next__footer-image .lazyload-image .lazyload-image__placeholder{padding-bottom: 76.7528%}
 
-        @media screen and (min-width: 46.875em) {
-            .pos-next__footer-content {
-                padding-right: calc(5% + 9px) !important
-                // padding-left: calc(5% + 9px) !important;
-            }
-        }
-        @media screen and (min-width: 67.5em) {
-            .pos-next__footer-content {
-                // padding-left: calc(5% + 18px) !important;
-                padding-right: calc(5% + 9px) !important
-            }
-        }
         .pos-next__footer-content {
             padding-top: 3.125em;
             padding-bottom: 3.125em;
         }
 
+        @media screen and (min-width: 46.875em) {
+            .pos-next__footer-content {
+                padding-right: calc(5% + 9px) !important
+            }
+        }
         @media screen and (min-width: 67.5em) {
-            .padding-left-only {padding-right:0 !important;}
-            .padding-right-only {padding-left:0 !important;}
+            .pos-next__footer-content {
+                padding-right: calc(5% + 9px) !important
+            }
+        }
+        
+        .pos-next-customize__content-container .section-heading__subhead, .pos-next__footer-content .section-heading__subhead {
+            line-height: 1.6;
         }
 
         
