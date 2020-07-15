@@ -153,7 +153,7 @@ export default function BlogDetail () {
                 
                 <section className="section">
                     <div className="grid gutter-bottom">
-                        <div className="grid__item grid__item--desktop-up-two-thirds">
+                        <div className="grid__item grid__item--desktop-up-two-thirds grid__item--tablet-up-two-thirds">
                             <div className="section-heading text-left gutter-bottom">
                                 <p className="section-heading__kicker heading--5 color-green-80">{data ? data.operate_tag : ''}</p>
                                 <h2 className="section-heading__heading heading--2 pos-section-heading">{data ? data.operate_message : ''}</h2>
@@ -212,19 +212,27 @@ export default function BlogDetail () {
 
                 <section className="section section--padding-bottom-only background-yellow-0">
                     <div className="grid grid--vertically-centered pos-next-customize__grid">
-                        <div className="grid__item grid__item--tablet-up-half pos-next-customize__image hide--mobile padding-right-only">
-                            <img srcset="https://cdn.shopify.com/shopifycloud/brochure/assets/pos/index-new/ui-illustrations-promotions@mobile-1f84f1b7734e4dd78618dcf0d12e7500ad73127450a68b8ab127707a7c948f8f.png 1x, https://cdn.shopify.com/shopifycloud/brochure/assets/pos/index-new/ui-illustrations-promotions@mobile-2x-6a3a25a7998b62002ab0f324fca2ba430ed5d81293698eb0a0cd67021ebe2565.png 2x" alt="A representation of apps that integrate loyalty programs into Shopify POS." />
-                        </div>
-
                         <div className="grid__item grid__item--tablet-up-half pos-next-customize__content-container">
                             <div className="section-heading text-left gutter-bottom">
                                 <h2 className="section-heading__heading heading--2 pos-section-heading">{data ? data.pricing_tag : ''}</h2>
                                 <p className="section-heading__subhead heading--3 text-major">{data ? data.pricing_message : ''}</p>
                             </div> 
                         </div>
-                        
-                        <div className="grid__item pos-next-customize__image display--mobile">
-                        <img srcset="https://cdn.shopify.com/shopifycloud/brochure/assets/pos/index-new/ui-illustrations-promotions@mobile-1f84f1b7734e4dd78618dcf0d12e7500ad73127450a68b8ab127707a7c948f8f.png 1x, https://cdn.shopify.com/shopifycloud/brochure/assets/pos/index-new/ui-illustrations-promotions@mobile-2x-6a3a25a7998b62002ab0f324fca2ba430ed5d81293698eb0a0cd67021ebe2565.png 2x" alt="A representation of apps that integrate loyalty programs into Shopify POS." />
+                        <div className="grid__item grid__item--tablet-up-half pos-next-customize__content-detail">
+                            {/* <img srcset="https://cdn.shopify.com/shopifycloud/brochure/assets/pos/index-new/ui-illustrations-promotions@mobile-1f84f1b7734e4dd78618dcf0d12e7500ad73127450a68b8ab127707a7c948f8f.png 1x, https://cdn.shopify.com/shopifycloud/brochure/assets/pos/index-new/ui-illustrations-promotions@mobile-2x-6a3a25a7998b62002ab0f324fca2ba430ed5d81293698eb0a0cd67021ebe2565.png 2x" alt="A representation of apps that integrate loyalty programs into Shopify POS." /> */}
+                            {
+                                data && data.pricing_item_list
+                                ? data.pricing_item_list.map((block,index) => (
+                                    <div className="grid__item grid__item--desktop-up-half" key={block.toString()}>
+                                        <div className="block">
+                                            <h3 className="block__heading heading--4">{data.pricing_item_list_name[index]}</h3>
+                                            <p className="block__content">{data.pricing_item_list_desc[index]}</p>
+                                        </div>
+                                    </div>        
+                                ))
+                                :''
+                            }
+                              
                         </div>
                     </div>
                 </section>
@@ -257,7 +265,7 @@ export default function BlogDetail () {
                 </section>
                 
                 <section>
-                    <div className="grid   grid--equal-height grid--vertically-centered">
+                    <div className="grid grid--equal-height grid--vertically-centered">
                         <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-5 pos-next__footer-content">
                             <div className="section-heading text-left gutter-bottom">
                                 <h2 className="section-heading__heading heading--2" dangerouslySetInnerHTML={{__html:data ? data.remind_tag : ''}}/ >
@@ -276,6 +284,9 @@ export default function BlogDetail () {
                         </div>
                     </div>
                 </section>
+
+                
+
                 <Footer />
             </main>
         </div>
@@ -457,23 +468,40 @@ export default function BlogDetail () {
 
         .pos-next-customize__content-container {
             margin-top: 64px;
-            margin-bottom: 64px;
+            margin-bottom: 20px;
         }
 
         @media screen and (min-width: 46.875em) {
             .pos-next-customize__content-container {
-                // padding-right: calc(5% + 9px) !important;
+                padding-right: calc(5% + 9px) !important;
                 // padding-left: calc(5% + 9px) !important;
             }            
+            .pos-next-customize__content-detail {
+                margin-top: 64px !important;
+                margin-bottom: 64px !important;
+            }
         }
 
         @media screen and (min-width: 67.5em) {
             .pos-next-customize__content-container {
-                // padding-right: calc(5% + 18px) !important;
+                padding-right: calc(5% + 18px) !important;
                 // padding-left: calc(5% + 18px) !important;
+                margin-bottom: 64px !important;
+            }
+            .pos-next-customize__content-detail {
+                margin-top: 64px;
+                margin-bottom: 64px;
             }
         }
 
+        .pos-next-customize__content-detail {
+            margin-top: 0px;
+        }
+        @media screen and (max-width: 67.4375em) and (min-width: 46.875em) {
+            .pos-next-customize__content-detail {
+                margin-top: 64px;
+            }
+        }
         .pos-next__footer-image .lazyload-image{max-width: 813px; max-height: 624px;}
         .pos-next__footer-image .lazyload-image .lazyload-image__placeholder{padding-bottom: 76.7528%}
 
@@ -523,6 +551,7 @@ export default function BlogDetail () {
                 font-size: 4.375em;
             }
         }
+
 
 
     `}</style>
