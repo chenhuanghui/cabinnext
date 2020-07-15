@@ -18,10 +18,11 @@ export default function StationDetail () {
     
 
     useEffect(() => {
-        if (router.query.stationID !== stationID) {
-            //set slug
-            setStationID(router.query.stationID);        
-            console.log('log', router.query.stationID);
+        //set slug
+        setStationID(router.query.stationID);        
+        console.log('log', router.query.stationID);
+
+        if (router.query.stationID === stationID) {
 
             // segment tracking data start
             const Analytics = require('analytics-node');
