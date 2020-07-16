@@ -2619,7 +2619,8 @@ img[data-srcset].lazyloaded {
 }
 .js-modal-open #Announcements,
 .js-modal-open #SiteNavContainer,
-.js-modal-open #PageContainer {
+.js-modal-open #PageContainer,
+.js-modal-open #Main {
     display: none;
 }
 .modal-container {

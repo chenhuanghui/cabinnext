@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import React, { useState, useEffect, useRef } from 'react';
 import Nav from '../components/nav/nav';
 import Footer from '../components/footer/footer'
+import ModalForm from '../components/modals/modal_Form';
 
 export default function StationDetail () {
     const router = useRouter();
@@ -59,6 +60,7 @@ export default function StationDetail () {
             </Head>
 
             <div className="page--home">
+            <ModalForm />
             <Nav />
             <main id="Main">
                 <section className="section section--padding-top-only homepage-hero colored-section" id="Hero">
@@ -141,8 +143,7 @@ export default function StationDetail () {
                             <div className="wistia_responsive_padding">
                                 <div className="wistia_responsive_wrapper">
                                     <div className="wistia_embed wistia_async_flvkbseogu videoFoam=true">
-                                        <div className="wistia_swatch">
-                                        </div>
+                                        <div className="wistia_swatch"></div>
                                     </div>
                                 </div>
                             </div>
