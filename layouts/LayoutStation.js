@@ -258,9 +258,11 @@ export default class LayoutIndex extends React.Component {
                                     </div>
                                     <div className="_kbiv5c">
                                         <div className="_19iz9mwo">
-                                            { data && data.station2_data && data.station2_data.map((p, index) => (
-                                                <div className="_1xizdrk video-modal" key = {p.toString()}>
-                                                    <div>
+                                        { data && data.station2_data && data.station2_data.map((p, index) => {
+                                            return data.station2_data_is_available[index] === true
+                                            ?
+                                                <Link href='/stations/[stationID]' as={`/stations/${data.station2_data_stationID[index]}`} key = {p.toString()}>
+                                                    <div className="_1xizdrk">
                                                         <div className="_1xl0u0x" role="presentation">
                                                             <div className="_6lth7f">
                                                                 <div className="_6i8igo">
@@ -299,9 +301,54 @@ export default class LayoutIndex extends React.Component {
                                                                 <div className="_1vl7zve8 ready_for_sale">{data.station2_data_status[index]}</div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>                                                    
-                                            ))}
+                                                    </div>                      
+                                                </Link>         
+                                            :   
+                                                <Link href='/stations/#' key = {p.toString()}>
+                                                    <div className="_1xizdrk">
+                                                        <div className="_1xl0u0x" role="presentation">
+                                                            <div className="_6lth7f">
+                                                                <div className="_6i8igo">
+                                                                    <div className="_e296pg">
+                                                                        <div className="_hxt6u1e station_image">
+                                                                            <div className="_4626ulj">
+                                                                                {
+                                                                                    data.station2_data_image
+                                                                                    ? <img className="_91slf2a" aria-hidden="true"src={ data.station2_data_image[index].url}/>
+                                                                                    : ''
+                                                                                }
+                                                                                
+                                                                                <div className="_10xjrv2u"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="_1ycij1l">{ data.station2_data_name[index]}</div>
+                                                                <div className="_1qusvl7">{ data.station2_data_addr[index]}</div>
+                                                                <div className="_8fcvqx">
+                                                                    <ul className="_11hau3k">
+                                                                        <li className="_g86r3e"><span>Tình trạng:</span> { data.station2_data_status[index]}</li>
+                                                                        <li className="_g86r3e"><span>Loại cabin:</span> { data.station2_data_type[index]} 
+                                                                            (<span className="_1cfjn4v">
+                                                                                <svg className="star-icon" viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false"><path d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"></path></svg>
+                                                                            </span>)
+                                                                        </li>
+                                                                        <li className="_g86r3e"><span>Bàn giao:</span> { data.station2_data_release_date[index]}</li>
+                                                                        <li className="_g86r3e"><span>Thời gian làm việc:</span> { data.station2_data_time[index]}</li>
+                                                                        <li className="_g86r3e concept"><span>{ data.station2_data_concept[index]}</span></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                
+                                                            <div className="_1lso56r">
+                                                                <div className="_1vl7zve8 ready_for_sale">{data.station2_data_status[index]}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>                      
+                                                </Link>                                   
+                                            
+                                                            
+                                        })}
                                         </div>
                                     </div>
                                 </div>
