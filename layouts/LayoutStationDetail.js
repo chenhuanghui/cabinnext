@@ -56,7 +56,9 @@ export default function StationDetail () {
             <Head>
                 <title>31 Phan Ngữ | CabinFood - Khám phá trạm kinh doanh</title>
                 <meta property="og:title" content="31 Phan Ngữ | CabinFood - Khám phá trạm kinh doanh" />
-                <meta property="og:image" content="https://dl.airtable.com/.attachments/ff338bbe15397f252a938210084c95a3/6a4fd2a8/videocapture_20200706-093409.jpg" />
+                <meta property="og:image" content="https://dl.airtable.com/.attachmentThumbnails/4ba492d01deb045c76aabd7d9257a2bb/8f0268e3" />
+                <meta property="og:image:width" content="910"></meta>
+                <meta property="og:image:height" content="512"></meta>
                 <script src="https://fast.wistia.com/embed/medias/flvkbseogu.jsonp" async></script>
                 <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
             </Head>
