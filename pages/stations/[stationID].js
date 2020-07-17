@@ -1,6 +1,8 @@
 import LayoutStationDetail from "../../layouts/LayoutStationDetail"
-const StationDetail = props => (
-    <LayoutStationDetail />
+
+const StationDetail = () => (
+    <LayoutStationDetail/>
 );
-      
+
+
 export default StationDetail;
