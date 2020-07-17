@@ -65,7 +65,7 @@ export default function StationDetail () {
             <ModalForm />
             <Nav />
             <main id="Main">
-                <section className="section section--padding-top-only homepage-hero colored-section" id="Hero">
+                <section className="section section--padding-top-only homepage-hero homepage-station-hero colored-section" id="Hero">
                     <div className="grid grid--equal-height grid--vertically-centered">
                         <div className="grid__item grid__item--tablet-up-two-thirds grid__item--desktop-up-half pos-next-hero__heading-container">
                             <div className="section-heading text-left gutter-bottom">
