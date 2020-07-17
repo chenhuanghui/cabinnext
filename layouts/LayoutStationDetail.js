@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Nav from '../components/nav/nav';
 import Footer from '../components/footer/footer'
 import ModalForm from '../components/modals/modal_Form';
-import { NextSeo } from 'next-seo';
+
 
 export default function StationDetail () {
     const router = useRouter();
@@ -55,17 +55,6 @@ export default function StationDetail () {
     return (
         <div className="layout">
             <Head>
-
-                <NextSeo
-                    openGraph={{
-                        type: 'website',
-                        url: process.browser ? window.location.href :'',
-                        title: 'Khám phá trạm kinh doanh',
-                        description: 'Có ngay điểm kinh doanh món ăn thức uống theo mô hình delivery hiện đại ngay trong 24h, tối thiểu hóa mọi rủi ro đầu tư, tối đa hóa hiệu quả kinh doanh.',
-                        images: [
-                        ],
-                    }}
-                />
                 <script src="https://fast.wistia.com/embed/medias/flvkbseogu.jsonp" async></script>
                 <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
             </Head>
