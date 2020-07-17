@@ -28,7 +28,7 @@ export default class Footer extends React.Component {
                                 <a href="/about">Về Cabin Food</a>
                                 <a href="/stations">Điểm kinh doanh</a>
                                 <a href="/categories">Món ăn thức uống phù hợp</a>
-                                <a href="/pricing">Bảng giá</a>
+                                {/* <a href="/pricing">Bảng giá</a> */}
 
                             </nav>
                         </div>
