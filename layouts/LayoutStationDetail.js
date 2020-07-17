@@ -6,7 +6,6 @@ import Nav from '../components/nav/nav';
 import Footer from '../components/footer/footer'
 import ModalForm from '../components/modals/modal_Form';
 
-
 export default function StationDetail () {
     const router = useRouter();
     const [stationID, setStationID] = useState(null);
@@ -55,6 +54,9 @@ export default function StationDetail () {
     return (
         <div className="layout">
             <Head>
+                <title>31 Phan Ngữ | CabinFood - Khám phá trạm kinh doanh</title>
+                <meta property="og:title" content="31 Phan Ngữ | CabinFood - Khám phá trạm kinh doanh" />
+                <meta property="og:image" content="https://dl.airtable.com/.attachments/ff338bbe15397f252a938210084c95a3/6a4fd2a8/videocapture_20200706-093409.jpg" />
                 <script src="https://fast.wistia.com/embed/medias/flvkbseogu.jsonp" async></script>
                 <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
             </Head>
