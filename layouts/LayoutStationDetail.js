@@ -57,6 +57,7 @@ export default function StationDetail () {
                 <title>31 Phan Ngữ | CabinFood - Khám phá trạm kinh doanh</title>
                 <meta property="og:title" content="31 Phan Ngữ | CabinFood - Khám phá trạm kinh doanh" />
                 <meta property="og:description" content="Kinh doanh delivery món ăn thức uống tại Quận 1, nhận cabin kinh doanh ngay! Ưu đãi hỗ trợ phục hồi sau tác động Covid-19 lên đến 15.000.000 đồng." />
+                <meta property="og:url" content="https://cabinfood.vn/stations/rec6D04I0m1SO99Ut" />
                 <meta property="og:image" content="https://dl.airtable.com/.attachmentThumbnails/4ba492d01deb045c76aabd7d9257a2bb/8f0268e3" />
                 <meta property="og:image:width" content="910"></meta>
                 <meta property="og:image:height" content="512"></meta>
