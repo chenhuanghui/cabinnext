@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Nav from '../components/nav/nav';
 import Footer from '../components/footer/footer'
 import ModalForm from '../components/modals/modal_Form';
+import { NextSeo } from 'next-seo';
 
 export default function StationDetail () {
     const router = useRouter();
@@ -16,7 +17,6 @@ export default function StationDetail () {
         var result = md.render(mdString);
         return result;
     }
-    
 
     useEffect(() => {
         //set slug
@@ -24,6 +24,7 @@ export default function StationDetail () {
         console.log('log', router.query.stationID);
 
         if (router.query.stationID === stationID) {
+            console.log('matched finish')
 
             // segment tracking data start
             const Analytics = require('analytics-node');
@@ -54,7 +55,17 @@ export default function StationDetail () {
     return (
         <div className="layout">
             <Head>
-                <title>CabinFood Station Detail</title>    
+
+                <NextSeo
+                    openGraph={{
+                        type: 'website',
+                        url: process.browser ? window.location.href :'',
+                        title: 'Khám phá trạm kinh doanh',
+                        description: 'Có ngay điểm kinh doanh món ăn thức uống theo mô hình delivery hiện đại ngay trong 24h, tối thiểu hóa mọi rủi ro đầu tư, tối đa hóa hiệu quả kinh doanh.',
+                        images: [
+                        ],
+                    }}
+                />
                 <script src="https://fast.wistia.com/embed/medias/flvkbseogu.jsonp" async></script>
                 <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
             </Head>
@@ -80,7 +91,6 @@ export default function StationDetail () {
                     </div>
                 </section>  
 
-                {/* Còn bị lỗi CSS trên ipad và iphone xoay ngang */}
                 <section className="section section--padding-top-only background-cyan-80 pos-next-brand-loyalty">
                     <div className="picture--cover section--help__picture section--help__picture_left hide--mobile">
                         <img className="image" src={data && data.loc_cover ? data.loc_cover[0].thumbnails.large.url :''} />
@@ -128,7 +138,7 @@ export default function StationDetail () {
                                             <div className="grid__item grid__item--tablet-up-half" key ={block.toString()}>
                                                 <div className="block gutter-bottom">
                                                     <h3 className="block__heading heading--4">{data.ready4sale_feature_list_name[index]}</h3>
-                                                    <p className="block__content">{data.ready4sale_feature_list_desc[index]}</p>
+                                                    <p className="block__content" dangerouslySetInnerHTML={{__html:convertMdtoHtml(data.ready4sale_feature_list_desc[index])}}/>
                                                 </div>
                                             </div>    
                                         ))
@@ -164,9 +174,9 @@ export default function StationDetail () {
                                     ?
                                         data.operate_feature_list.map((block, index) => (
                                             <div className="grid__item grid__item--desktop-up-third" key={block.toString()}>
-                                                <div className="block">
+                                                <div className="block gutter-bottom">
                                                     <h3 className="block__heading heading--4">{data.operate_feature_list_name[index]}</h3>
-                                                    <p className="block__content">{data.operate_feature_list_desc[index]}</p>
+                                                    <p className="block__content" dangerouslySetInnerHTML={{__html:convertMdtoHtml(data.operate_feature_list_desc[index])}}/>
                                                 </div>
                                             </div>
                                         ))
@@ -185,14 +195,14 @@ export default function StationDetail () {
                         <div className="grid__item grid__item--tablet-up-third grid__item--desktop-up-half"></div>
                         <div className=" grid__item grid__item--tablet-up-two-thirds grid__item--desktop-up-half pos-next-checkout-features__content">
                             <div className="section-heading text-left gutter-bottom">
-                                <h2 className="section-heading__heading heading--2 color-white">{data ? data.tech_tag : ''}</h2>
+                                <h2 className="section-heading__heading heading--2 color-white pos-section-heading">{data ? data.tech_tag : ''}</h2>
                             </div>
                             {
                                 data && data.tech_feature_list
                                 ? data.tech_feature_list.map((block,index) => (
-                                    <div className="block block--lowlight" key={block.toString()}>
+                                    <div className="block block--lowlight gutter-bottom" key={block.toString()}>
                                         <h3 className="block__heading heading--4">{data.tech_feature_list_name[index]}</h3>
-                                        <p className="block__content">{data.tech_feature_list_desc[index]}</p>
+                                        <p className="block__content" dangerouslySetInnerHTML={{__html:convertMdtoHtml(data.tech_feature_list_desc[index])}}/>
                                     </div>        
                                 ))
                                 :''
@@ -219,7 +229,7 @@ export default function StationDetail () {
                                     <div className="grid__item grid__item--desktop-up-half" key={block.toString()}>
                                         <div className="block gutter-bottom">
                                             <h3 className="block__heading heading--4">{data.pricing_item_list_name[index]}</h3>
-                                            <p className="block__content">{data.pricing_item_list_desc[index]}</p>
+                                            <p className="block__content" dangerouslySetInnerHTML={{__html:convertMdtoHtml(data.pricing_item_list_desc[index])}}/>
                                         </div>
                                     </div>        
                                 ))
@@ -234,7 +244,7 @@ export default function StationDetail () {
                     <div className="grid gutter-bottom">
                         <div className="grid__item grid__item--desktop-up-5">
                             <div className="section-heading text-left gutter-bottom">
-                                <h2 className="section-heading__heading heading--2 color-white">{data ? data.support_message :''}</h2>
+                                <h2 className="section-heading__heading heading--2 color-white pos-section-heading">{data ? data.support_message :''}</h2>
                             </div>
                         </div>
                         
@@ -262,7 +272,7 @@ export default function StationDetail () {
                     <div className=" grid grid--equal-height grid--vertically-centered">
                         <div className=" grid__item grid__item--tablet-up-two-thirds grid__item--desktop-up-half pos-next__footer-content">
                             <div className="section-heading text-left gutter-bottom">
-                                <h2 className="section-heading__heading heading--2" dangerouslySetInnerHTML={{__html:data ? data.remind_tag : ''}}/ >
+                                <h2 className="section-heading__heading heading--2 pos-section-heading" dangerouslySetInnerHTML={{__html:data ? data.remind_tag : ''}}/ >
                                 <p className="section-heading__subhead heading--3 text-major">{data ? data.remind_message :''}</p>
                             </div> 
                             <a className="marketing-button gutter-bottom" href="#">{data ? data.remind_form_btn_title :''}</a>
@@ -275,318 +285,11 @@ export default function StationDetail () {
                     </div>
                 </section>
 
-                
-
                 <Footer />
             </main>
         </div>
         
     <style jsx>{`
-
-        
-        .colored-section {
-            background: var(--main-color);
-        }
-        .homepage-hero {
-            padding: 0 !important;
-            // min-height: 650px;
-        }
-        .pos-next-hero {
-            display: flex;
-            align-items: flex-end;
-        }
-        .pos-next-hero__heading-container {
-            margin-top: 100px;
-            margin-bottom: 50px;
-        }
-        @media screen and (min-width: 67.5em){
-            .pos-next-hero__heading-container {
-                // padding-left: calc(5%) !important;
-                // padding-right: 0 !important;
-                
-            }
-        }
-        @media screen and (min-width: 46.875em) {
-            .pos-next-hero__heading-container {
-                padding-right: calc(5% + 9px) !important;
-                // padding-left: calc(5% + 9px);
-            }
-        }
-        .gutter-bottom {
-            margin-bottom: 32px !important;
-        }
-        .marketing-button {
-            display: inline-block;
-            padding: 1.0625em 1.875em;
-            border-radius: 4px;
-            font-weight: 700;
-            line-height: 1.133;
-            -webkit-font-smoothing: antialiased;
-            transition: 150ms ease;
-            text-align: center;
-            -webkit-user-select: none;
-            user-select: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            cursor: pointer;
-            box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-            background-color: var(--light-color);
-            color: #ffffff;
-            border-width: 0;
-            border-style: solid;
-            border-color: transparent;
-            margin-bottom: 20px !important;
-        }
-        
-        .note {
-            font-size: 0.86em;
-        }
-
-        .pos-next-hero__image-container {
-            position: relative;
-        }
-        .pos-next-streamline__image-container {
-            position: relative;
-        }
-    
-        .image.lazyload-image{max-width: 818px; max-height: 716px;}
-        .lazyload-image__placeholder {padding-bottom: 87.5306%}
-
-        .pos-next-streamline__app-screen{max-width: 565px; max-height: 449px;}
-        .pos-next-streamline__app-screen .lazyload-image__placeholder{padding-bottom: 79.469%}
-        .pos-next-streamline__app-screen {
-            position: absolute;
-            width: 250px;
-            right: 0;
-            top: 50%;
-            margin-top: -100px;
-        }
-        
-        @media screen and (min-width: 67.5em){
-            .pos-next-streamline__app-screen {
-                width: 450px;
-                right: -200px;
-                top: 50%;
-                margin-top: -200px;
-            }
-        }
-
-        @media screen and (min-width: 67.5em) {
-            .pos-section-heading {
-                font-size: 3.75em;
-            }
-        }
-        .pos-section-heading {
-            font-size: 2.5em !important;
-            color: #212326;
-        }
-        
-        h2 {
-            display: block;
-            font-size: 2.5em;
-            line-height: 1.2;
-            font-weight: 400;
-        }
-        
-        .pos-next-brand-loyalty {
-            // padding: 0 !important
-            position: relative;
-        }
-        .section--help__picture_left {
-            left: 0            
-        }
-
-        .pos-next-brand-loyalty__content {
-            padding-left: 0 !important;
-            padding-top: 6em !important;
-            padding-bottom: 0 !important;
-        }
-
-        @media screen and (min-width: 67.5em) {
-            .pos-next-brand-loyalty {
-                padding: 0 !important;
-            }
-            .pos-next-brand-loyalty__grid {
-                padding: 0 !important;
-            }
-            .pos-next-brand-loyalty__image {
-                padding: 0 !important;
-            }
-            .pos-next-brand-loyalty__content, .pos-next-checkout-features__content {
-                // padding-top: 0em !important;
-                padding-left: calc(5% + 9px) !important;
-            }
-        }
-
-        @media screen and (min-width: 46.875em) {
-            .pos-next-brand-loyalty {
-                // padding: 0 !important;
-            }
-            .pos-next-brand-loyalty__grid {
-                padding: 0 !important;
-            }
-            .pos-next-brand-loyalty__image {
-                padding: 6em 0px 0px 0px !important;
-            }
-            .pos-next-brand-loyalty__content, .pos-next-checkout-features__content {
-                // padding-top: 0em !important;
-                padding-left: calc(5% + 9px) !important;
-            }
-            
-        }
-            
-        .pos-next-brand-loyalty__image .lazyload-image{max-width: 800px; max-height: 800px;}
-        .pos-next-brand-loyalty__image .lazyload-image__placeholder {padding-bottom: 100.0%}
-
-        .color-white {color: white !important}
-        
-        @media screen and (min-width: 67.5em) {
-            .pos-next-brand-loyalty {
-                // padding-left: calc(5% + 9px) !important;
-            }
-            
-            }
-        }
-        // .pos-next-streamline__image-wrapper {
-        //     padding-left: 5% !important;
-        //     padding-right: 5% !important;
-        // }
-        
-        @media only screen 
-        and (min-device-width : 375px) 
-        and (max-device-width : 812px) 
-        and (-webkit-device-pixel-ratio : 3)
-        and (orientation : portrait) { 
-            .pos-next-streamline__image-wrapper {
-                padding-left: 0% !important;
-                padding-right: 0% !important;
-            }
-            .pos-next-brand-loyalty__content {
-                padding-top: 0 !important;
-            }
-        }
-
-        @media only screen 
-        and (min-device-width : 375px) 
-        and (max-device-width : 812px) 
-        and (-webkit-device-pixel-ratio : 3)
-        and (orientation : landscape) {
-            .pos-next-brand-loyalty__content {
-                padding-top: 0 !important;
-            }
-        }
-
-        @media screen and (min-width: 67.5em) {
-            .pos-next-streamline__image-wrapper {
-                padding: 0 5% 6em !important
-            }
-        }
-
-        .pos-next-brand-loyalty__content {padding-bottom: 64px;}
-
-        .pos-next-customize__image .lazyload-image {max-width: 800px; max-height: 800px;}
-        .pos-next-customize__image .lazyload-image .lazyload-image__placeholder {padding-bottom: 100.0%}
-
-        @media screen and (min-width: 67.5em) {
-            .pos-next-customize__image-illustration {
-                bottom: -30px;
-                right: -30px;
-            }
-        }
-        .pos-next-customize__image-illustration {
-            position: absolute;
-            z-index: 10;
-        }
-
-        .pos-next-customize__content-container {
-            margin-top: 64px;
-            margin-bottom: 20px;
-        }
-
-        @media screen and (min-width: 46.875em) {
-            .pos-next-customize__content-container {
-                padding-right: calc(5% + 9px) !important;
-                // padding-left: calc(5% + 9px) !important;
-            }            
-            .pos-next-customize__content-detail {
-                margin-top: 64px !important;
-                margin-bottom: 64px !important;
-            }
-        }
-
-        @media screen and (min-width: 67.5em) {
-            .pos-next-customize__content-container {
-                padding-right: calc(5% + 18px) !important;
-                // padding-left: calc(5% + 18px) !important;
-                margin-bottom: 64px !important;
-            }
-            .pos-next-customize__content-detail {
-                margin-top: 64px;
-                margin-bottom: 64px;
-            }
-        }
-
-        .pos-next-customize__content-detail {
-            margin-top: 0px;
-        }
-        @media screen and (max-width: 67.4375em) and (min-width: 46.875em) {
-            .pos-next-customize__content-detail {
-                margin-top: 64px;
-            }
-        }
-        .pos-next__footer-image .lazyload-image{max-width: 813px; max-height: 624px;}
-        .pos-next__footer-image .lazyload-image .lazyload-image__placeholder{padding-bottom: 76.7528%}
-
-        .pos-next__footer-content {
-            padding-top: 3.125em;
-            padding-bottom: 3.125em;
-        }
-
-        @media screen and (min-width: 46.875em) {
-            .pos-next__footer-content {
-                padding-right: calc(5% + 9px) !important
-            }
-        }
-        @media screen and (min-width: 67.5em) {
-            .pos-next__footer-content {
-                padding-right: calc(5% + 9px) !important
-            }
-        }
-        
-        .pos-next-customize__content-container .section-heading__subhead, .pos-next__footer-content .section-heading__subhead {
-            line-height: 1.6;
-        }
-
-        
-        .pos-next-checkout-features {
-            // padding-top: 2em !important;
-            position: relative;
-        }
-
-        .pos-next-checkout-features__video {
-            margin-bottom: 3em;
-        }
-
-        .pos-next-checkout-features__content .block {
-            margin-bottom: 20px !important;
-            line-height: 30px;
-        }
-
-        .pos-next-hero__heading {
-            font-weight: 500;
-            font-size: 2.5em;
-        }
-
-        @media screen and (min-width: 67.5em) {
-            .pos-next-hero__heading {
-                font-size: 4.375em;
-            }
-        }
-        .pos-next-remind {
-            position: relative;            
-        }
-
 
     `}</style>
         </div>
