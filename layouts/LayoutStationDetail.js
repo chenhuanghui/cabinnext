@@ -62,6 +62,7 @@ export default function StationDetail () {
                 <meta property="og:image" content="https://dl.airtable.com/.attachmentThumbnails/4ba492d01deb045c76aabd7d9257a2bb/8f0268e3" />
                 <meta property="og:image:width" content="910"/>
                 <meta property="og:image:height" content="512"/>
+                <meta property="fb:app_id" content="765509297592229" />
                 <script src="https://fast.wistia.com/embed/medias/flvkbseogu.jsonp" async></script>
                 <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
             </Head>
