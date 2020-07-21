@@ -38,17 +38,17 @@ export default class LayoutBlog extends React.Component {
         let currentComponent = this;
 
         // segment tracking data start
-        const Analytics = require('analytics-node');
-        const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        analytics.page({
-            userId: document && document.cookie ? document.cookie : 'anonymous',
-            category: 'Knowledge / ',
-            name: 'Blogs Page',
-            properties: {
-              url: '/blogs',
-              title: 'CabinFood - Blogs Page'
-            }
-        });
+        // const Analytics = require('analytics-node');
+        // const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+        // analytics.page({
+        //     userId: document && document.cookie ? document.cookie : 'anonymous',
+        //     category: 'Knowledge / ',
+        //     name: 'Blogs Page',
+        //     properties: {
+        //       url: '/blogs',
+        //       title: 'CabinFood - Blogs Page'
+        //     }
+        // });
         // segment tracking data end.
         
 

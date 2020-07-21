@@ -25,17 +25,17 @@ export default class LayoutIndex extends React.Component {
         let currentComponent = this;
 
         // init segment tracking
-        const Analytics = require('analytics-node');
-        const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        analytics.page({
-            userId: document && document.cookie ? document.cookie : 'anonymous',
-            category: 'Brand Information /',
-            name: 'Home Page',
-            properties: {
-              url: '/',
-              title: 'CabinFood - Home Page'
-            }
-        });
+        // const Analytics = require('analytics-node');
+        // const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+        // analytics.page({
+        //     userId: document && document.cookie ? document.cookie : 'anonymous',
+        //     category: 'Brand Information /',
+        //     name: 'Home Page',
+        //     properties: {
+        //       url: '/',
+        //       title: 'CabinFood - Home Page'
+        //     }
+        // });
         
 
         // init airtable and query page data

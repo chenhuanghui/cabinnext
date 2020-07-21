@@ -58,17 +58,17 @@ export default function BlogDetail () {
 
     useEffect(() => {
         // segment tracking data start
-        const Analytics = require('analytics-node');
-        const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        analytics.page({
-            userId: document && document.cookie ? document.cookie : 'anonymous',
-            category: 'Knowledge Information /',
-            name: 'Blogs Detail Page',
-            properties: {
-              url: '/blogs/' + router.query.slug,
-              title: 'CabinFood - Blog Detail' + router.query.slug
-            }
-        });
+        // const Analytics = require('analytics-node');
+        // const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+        // analytics.page({
+        //     userId: document && document.cookie ? document.cookie : 'anonymous',
+        //     category: 'Knowledge Information /',
+        //     name: 'Blogs Detail Page',
+        //     properties: {
+        //       url: '/blogs/' + router.query.slug,
+        //       title: 'CabinFood - Blog Detail' + router.query.slug
+        //     }
+        // });
         // segment tracking data end.
 
         // load page data start

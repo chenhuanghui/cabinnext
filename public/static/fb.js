@@ -40,7 +40,7 @@
 //   app_id: 'nucsdvyk'
 // });
 
-// fb setup
+// fb app setup
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '765509297592229',
@@ -53,6 +53,7 @@ window.fbAsyncInit = function() {
     
 };
 
+// facebook pixel
 (function(d, s, id){
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
@@ -71,3 +72,10 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '638676226745406');
 fbq('track', 'PageView');
+
+
+// google analytics
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-168839658-1');

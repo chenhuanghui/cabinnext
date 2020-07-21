@@ -15,6 +15,7 @@ class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
           <link rel="shortcut icon" type="image/png" href='/assets/images/fav.png' />
           <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168839658-1"></script>
           
           {/* intercom script */}
           <script src="/static/fb.js" />

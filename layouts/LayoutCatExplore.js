@@ -31,17 +31,17 @@ export default class LayoutCatExplore extends React.Component {
         // analytics.page();
         
         // segment tracking data
-        const Analytics = require('analytics-node');
-        const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
-        analytics.page({
-            userId: document && document.cookie ? document.cookie : 'anonymous',
-            category: 'Brand Information /',
-            name: 'Categories Page',
-            properties: {
-              url: '/categories',
-              title: 'CabinFood - Explore Categories'
-            }
-        });
+        // const Analytics = require('analytics-node');
+        // const analytics = new Analytics('DBYMGHOI7C9Iu04GC3VuhbnycYZPaRyC');
+        // analytics.page({
+        //     userId: document && document.cookie ? document.cookie : 'anonymous',
+        //     category: 'Brand Information /',
+        //     name: 'Categories Page',
+        //     properties: {
+        //       url: '/categories',
+        //       title: 'CabinFood - Explore Categories'
+        //     }
+        // });
         
         let currentComponent = this;
         var Airtable = require('airtable');
