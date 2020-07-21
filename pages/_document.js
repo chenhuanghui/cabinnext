@@ -17,7 +17,7 @@ class MyDocument extends Document {
           <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7453021.js"></script>
           
           {/* intercom script */}
-          {/* <script src="/static/intercom.js" /> */}
+          <script src="/static/fb.js" />
           
         </Head>
         <body>
