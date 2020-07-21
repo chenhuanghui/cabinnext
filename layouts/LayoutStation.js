@@ -57,7 +57,8 @@ export default class LayoutIndex extends React.Component {
             <div className="layout">
                 <Head>
                     <meta  property="og:title" content="CabinFood Explore Station" />
-                    <meta  property="og:image" content={data && data.sec1_image ? data.sec1_image[0].url : ""} />
+                    {data && data.sec1_image ? <meta  property="og:image" content={data && data.sec1_image ? data.sec1_image[0].url : ""} /> : ''}
+                    {/* <meta  property="og:image" content={data && data.sec1_image ? data.sec1_image[0].url : ""} /> */}
                     <title>{ data && data.name ? data.name : 'CabinFood Explore Station '}</title>
                     <script src="https://fast.wistia.com/embed/medias/flvkbseogu.jsonp" async></script>
                     <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
