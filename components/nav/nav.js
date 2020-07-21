@@ -70,7 +70,7 @@ export default class Nav extends React.Component {
                         </ul>
                             
                         <ul className="marketing-nav__items marketing-nav__user display--expanded-nav">
-                            <li><Link href='/stations'><a className="marketing-nav__item marketing-nav__item--user"> Điểm kinh doanh </a></Link></li>    
+                            <li><Link href='/stations'><a className="marketing-nav__item marketing-nav__item--user"> Trạm kinh doanh </a></Link></li>    
                             {/* <li><Link href='/pricing'><a className="marketing-nav__item marketing-nav__item--user"> Bảng giá </a></Link></li>                                     */}
                             <li><Link href='/blogs'><a className="marketing-nav__item marketing-nav__item--user"> Kiến thức </a></Link></li>    
                             <li><Link href='/about'><a className="marketing-nav__item marketing-nav__item--user"> Về CabinFood </a></Link></li>                                
@@ -120,7 +120,7 @@ export default class Nav extends React.Component {
 
                         <nav aria-label="Main Navigation">
                             <ul className="drawer__items drawer__items--user" id="DrawerNavSecondaryAccordion">
-                                <li><Link href='/stations'><a className="drawer__item">Điểm kinh doanh</a></Link></li>
+                                <li><Link href='/stations'><a className="drawer__item">Trạm kinh doanh</a></Link></li>
                                 {/* <li><Link href='/pricing'><a className="drawer__item">Bảng giá</a></Link></li> */}
                                 <li><Link href='/about'><a className="drawer__item">Về CabinFood</a></Link></li>
                             </ul>
