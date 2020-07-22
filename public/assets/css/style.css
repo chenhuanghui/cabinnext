@@ -636,8 +636,8 @@ ol li {
     position: relative;
 }
 
-.image.lazyload-image{max-width: 818px; max-height: 716px;}
-.lazyload-image__placeholder {padding-bottom: 87.5306%}
+/* .image.lazyload-image{max-width: 818px; max-height: 716px;} */
+/* .lazyload-image__placeholder {padding-bottom: 87.5306%} */
 
 .pos-next-streamline__app-screen{max-width: 565px; max-height: 449px;}
 .pos-next-streamline__app-screen .lazyload-image__placeholder{padding-bottom: 79.469%}
