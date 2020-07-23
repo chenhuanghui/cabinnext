@@ -346,11 +346,11 @@ ol li {
 /************************/
 /* blog right side      */
 /************************/
-.marketing-input-wrapper {
+/* .marketing-input-wrapper {
     position: relative;
     display: block;
     margin-bottom: 15px;
-}
+} */
 
 .marketing-label {
     display: block;
