@@ -131,7 +131,7 @@ export default class LayoutBlog extends React.Component {
                                     </div>
                                     <div className="grid__item grid__item--tablet-up-half">
                                         <div className="hero__inner">
-                                            <img className="image hero__image" sizes="100vw" srcset="https://cdn.shopify.com/shopifycloud/growth_tools/assets/home/tools-hero-small-a6423211f306f8389d78b31067a486321acab30ecc6ccb4e149daa574f956cd6.jpg 1x, https://cdn.shopify.com/shopifycloud/growth_tools/assets/home/tools-hero-large-13a7b5f09c46ab97c0dddd7ac6a9e26d116d1fe1773614bee3749e575b7a42a4.jpg 2x" alt=""/>
+                                            <img className="image hero__image" sizes="100vw" srcSet="https://cdn.shopify.com/shopifycloud/growth_tools/assets/home/tools-hero-small-a6423211f306f8389d78b31067a486321acab30ecc6ccb4e149daa574f956cd6.jpg 1x, https://cdn.shopify.com/shopifycloud/growth_tools/assets/home/tools-hero-large-13a7b5f09c46ab97c0dddd7ac6a9e26d116d1fe1773614bee3749e575b7a42a4.jpg 2x" alt=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -141,7 +141,7 @@ export default class LayoutBlog extends React.Component {
                                 <div className="grid">
                                     <div className="grid grid--equal-height">
                                         <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-third">
-                                            <form id="BusinessLoanCalculatorForm" action="/tools/business-loan-calculator/store" accept-charset="UTF-8" method="post" novalidate="" __bizdiag="2000182305" __biza="WJ__">
+                                            <div id="BusinessLoanCalculatorForm">
                                                 <input name="utf8" type="hidden" value="✓"/>
                                                 <input type="hidden" name="authenticity_token" value="V8qfsZtvVXewrOwmdyc89WDCAzCkJZaQTaV5qTXXNncBE/CcB92ESjUMf1em4rIo/jZ3goH6KLDc3fDsUGq7tw=="/>
                                                 <div className="form-section">
@@ -150,52 +150,52 @@ export default class LayoutBlog extends React.Component {
                                                     </div>
                                                     <label className="marketing-input-wrapper">
                                                         <span className="marketing-label marketing-label--in-field marketing-label--floating">Tổng giá trị đầu tư (đ) (*)</span>
-                                                        <input type="text" id="invest" data="" placeholder="Tổng giá trị đầu tư (đ)" required="true" className="marketing-input marketing-input--floating input-format-number"/>
+                                                        <input type="text" id="invest" data="" placeholder="Tổng giá trị đầu tư (đ)"   className="marketing-input marketing-input--floating input-format-number"/>
                                                         <ul className="marketing-form__messages validate_message" id="m_invest"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Thời gian khấu hao toàn phần (tháng) (*)</span>
-                                                        <input type="text" id="depreciation" data="" placeholder="Thời gian khấu hao toàn phần (tháng)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <input type="text" id="depreciation" data="" placeholder="Thời gian khấu hao toàn phần (tháng)"     className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages validate_message" id="m_depreciation"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Mặt bằng/tháng (đ) (*)</span>
-                                                        <input type="text" id="rent" data="" placeholder="Mặt bằng (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <input type="text" id="rent" data="" placeholder="Mặt bằng (đ)"     className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages validate_message" id="m_rent"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Nhân sự/tháng (đ) (*)</span>
-                                                        <input type="text" id="human" data="" placeholder="Nhân sự (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <input type="text" id="human" data="" placeholder="Nhân sự (đ)"     className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages validate_message" id="m_human"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Điện, nước/tháng (đ) (*)</span>
-                                                        <input type="text" id="engergy" data="" placeholder="Điện, nước (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <input type="text" id="engergy" data="" placeholder="Điện, nước (đ)"     className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages validate_message" id="m_engergy"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Số ngày làm việc/tháng (ngày) (*)</span>
-                                                        <input type="text" id="days_of_work" data="" placeholder="Số ngày làm việc/tháng (ngày)" required="true"   className="marketing-input marketing-input--floating input-format-number"/>
+                                                        <input type="text" id="days_of_work" data="" placeholder="Số ngày làm việc/tháng (ngày)"     className="marketing-input marketing-input--floating input-format-number"/>
                                                         <ul className="marketing-form__messages validate_message" id="m_days_of_work"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Marketing/sản phẩm (%) (*)</span>
-                                                        <input type="text" id="marketing" data="" placeholder="Marketing/sản phẩm (%)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <input type="text" id="marketing" data="" placeholder="Marketing/sản phẩm (%)"       className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages validate_message" id="m_marketing"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Tên sản phẩm (*)</span>
-                                                        <input type="text" id="product_name" data="" placeholder="Tên sản phẩm/món"   required="true"   className="marketing-input marketing-input--floating" />
+                                                        <input type="text" id="product_name" data="" placeholder="Tên sản phẩm/món"       className="marketing-input marketing-input--floating" />
                                                         <ul className="marketing-form__messages validate_message" id="m_product_name"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Nguyên vật liệu/sản phẩm (đ) (*)</span>
-                                                        <input type="text" id="cogs" data="" placeholder="Nguyên vật liệu/sản phẩm (đ)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <input type="text" id="cogs" data="" placeholder="Nguyên vật liệu/sản phẩm (đ)"       className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages validate_message" id="m_cogs"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Bao bì, đóng gói (đ) (*)</span>
-                                                        <input type="text" id="package_fee" data="" placeholder="Bao bì, đóng gói (đ)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <input type="text" id="package_fee" data="" placeholder="Bao bì, đóng gói (đ)"       className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages validate_message" id="m_package_fee"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Lợi nhuận/sản phẩm bán ra (đ) (*)</span>
-                                                        <input type="text" id="profit_per_product" data="" placeholder="Lợi nhuận/sản phẩm bán ra (đ)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <input type="text" id="profit_per_product" data="" placeholder="Lợi nhuận/sản phẩm bán ra (đ)"       className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages validate_message" id="m_profit_per_product"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                 </div>
                                                 <div className="calculate_btn form-section-submit" id="calculate_action">Tính toán</div>
-                                            </form>
+                                            </div>
                                         </div>
                                         <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-third">
                                             <div className="form-section" id="value_calculated">
@@ -241,7 +241,7 @@ export default class LayoutBlog extends React.Component {
                                         <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-third grid__item--mobile-up-align-center">
                                             <div className="get-funding-card">
                                                 <div className="get-funding-card__image-wrapper">
-                                                    <img className="image get-funding-card__image" sizes="100vw" srcset="https://cdn.shopify.com/shopifycloud/growth_tools/assets/capital/loan-decorator-370c15c36085f6a7c389e033132e870190670aa0cee12288126f65e50e0ed08f.svg" alt=""/>
+                                                    <img className="image get-funding-card__image" sizes="100vw" srcSet="https://cdn.shopify.com/shopifycloud/growth_tools/assets/capital/loan-decorator-370c15c36085f6a7c389e033132e870190670aa0cee12288126f65e50e0ed08f.svg" alt=""/>
                                                 </div>
                                                 <div className="get-funding-card__content">
                                                     <h2 className="heading--2">Quỹ đầu tư CabinFood</h2>
