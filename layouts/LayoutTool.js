@@ -10,7 +10,8 @@ export default class LayoutBlog extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            data:[]
+            data:[],
+            product_name:''
         }
     }
 
@@ -56,28 +57,34 @@ export default class LayoutBlog extends React.Component {
             var cogs = parseInt($('#cogs').attr('data'),10)
             var package_fee = parseInt($('#package_fee').attr('data'),10)
             var profit_per_product = parseInt($('#profit_per_product').attr('data'),10)
-            console.log('invest:',invest, 'depreciation:',depreciation, 'rent:', rent,'human:', human, 'energy: ', engergy);
+            console.log('invest:',invest, 'depreciation:',depreciation, 'rent:', rent,'human:', human, 'energy: ', engergy, 'profit:',profit_per_product);
             
             var state_fee = rent + human + engergy;
-            $('#StateFee').html( state_fee);
+            $('#StateFee').html( state_fee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
             var spot_balancing_month = Math.floor((rent + human + engergy)/profit_per_product)
-            $('#SpotBalancingMonth').html(spot_balancing_month);
+            $('#SpotBalancingMonth').html(spot_balancing_month.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
             
             var spot_balancing_date =  Math.floor(spot_balancing_month/days_of_work);
-            $('#SpotBalancingDate').html(spot_balancing_date);
+            $('#SpotBalancingDate').html(spot_balancing_date.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
             
             var depreciation_month = Math.floor(invest/depreciation);
-            $('#DepreciationMonth').html(depreciation_month );
+            $('#DepreciationMonth').html(depreciation_month.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") );
 
             var depreciation_product = Math.floor(depreciation_month/spot_balancing_month);
-            $('#DepreciationProduct').html(depreciation_product);
+            $('#DepreciationProduct').html(depreciation_product.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
             var price_estimate = Math.floor((cogs + package_fee + profit_per_product)/(1-marketing/100))
-            $('#PriceEstimate').html(price_estimate)
+            $('#PriceEstimate').html(price_estimate.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
             
-            var price_procedue = cogs + package_fee + profit_per_product + price_estimate*marketing/100
-            $('#PriceProcedue').html(price_procedue)
+            var price_procedue = cogs + package_fee + price_estimate*marketing/100;
+            $('#PriceProcedue').html(price_procedue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+
+            $('#invest_ammount').html(invest.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+            $('#depriciation_time').html(depreciation.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+            $('#profit_estimate').html(profit_per_product.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+            $('#productName').html(product_name.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+
         })
         
     }
@@ -182,35 +189,36 @@ export default class LayoutBlog extends React.Component {
                                                     <h2 className="heading--3">Tìm ra những con số ý nghĩa</h2>
                                                 </div>
                                                 <div className="marketing-markdown">
-                                                    <p>Taking out a small business loan can help kick start or grow your business, but it is important to know what you're getting into before you borrow money.</p>
-                                                    <p>Our small business loan calculator will give you an idea of how much it will cost to take out a loan. Adjust the term and add extra monthly payments to see how much of an impact you can have on repayment.</p>
+                                                    <p>Trong ngành kinh doanh món ăn thức uống, việc lập ra một cấu trúc giá (pricing structure) chính xác rất quan trọng để xác định được giá bán hợp lý từ đó sẽ có những thay đổi phù hợp nhất trong các giai đoạn phát triển.</p>
+                                                    <p>Thông thường các doanh nghiệp rất hay quên đặt [chi phí truyền thông] và [khấu hao đầu tư] vào cấu trúc giá, từ đó sẽ làm cho doanh nghiệp không định hình được chính xác điểm hòa vốn chính xác, thời gian khấu hao đầu tư, cũng như sẽ không thể nào tính toán được hiệu quả của các chương trình truyền thông, và sẽ gián tiếp gây ra hậu quả là "CÀNG BÁN CÀNG LỖ" nhưng lại không biết ngay lúc đó.</p>
+                                                    <p>Hãy điều chỉnh thông tin về Nguyên vật liệu, bao bì, lợi nhuận của các sản phẩm theo kế hoạch của bạn để tìm thấy giá bán phù hợp nhất. </p>
                                                 </div>
                                             </div>
                                             <div className="summary-grid">
                                                 <div className="summary-grid__items summary-grid__items--divider">
-                                                    <p id="SummaryHeading" className="summary-grid__heading">To borrow <span id="SummaryAmount"></span> over a <span id="SummaryYears"></span> year term your monthly payment will be <span id="SummaryMonthlyPayment"></span> at an interest rate of <span id="SummaryInterestRate"></span>.</p>
+                                                    <p id="SummaryHeading" className="summary-grid__heading">Để lấy lại được khoản đầu tư <span id="invest_ammount"></span> đồng, trong khoảng thời gian <span id="depriciation_time"></span> tháng, và vận hành ổn định đạt lợi nhuận <span id="profit_estimate"></span>đ trên mỗi sản phẩm bán ra, bạn cần phải chú ý các thông số quan trọng dưới đây.</p>
                                                 </div>
                                                 <div className="grid-container grid-container--halves summary-grid__items summary-grid__items--light">
                                                     <h5 className="summary-grid__label grid-item grid--mobile">Chi phí cố định /tháng</h5>
                                                     <span id="StateFee" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
                                                     
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Điểm hòa vốn/ngày</h5>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Điểm hòa vốn/ngày (sp)</h5>
                                                     <span id="SpotBalancingDate" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Điểm hòa vốn/tháng</h5>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Điểm hòa vốn/tháng (sp)</h5>
                                                     <span id="SpotBalancingMonth" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Khấu hao đầu tư/sản phẩm bán ra</h5>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Khấu hao đầu tư/sản phẩm bán ra (đ/sp)</h5>
                                                     <span id="DepreciationProduct" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Khấu hao đầu tư/tháng</h5>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Khấu hao đầu tư/tháng (đ/tháng)</h5>
                                                     <span id="DepreciationMonth" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Giá thành sản phẩm</h5>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Giá thành sản phẩm (đ)</h5>
                                                     <span id="PriceProcedue" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
                                                 </div>
                                                 <div className="grid-container grid-container--halves summary-grid__total">
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Giá bán sản phẩm tham khảo</h5>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Giá bán <span id="productName"></span> tham khảo</h5>
                                                     <span id="PriceEstimate" className="heading--2 summary-grid__value grid-item grid--mobile">--</span>
                                                 </div>
                                             </div>
@@ -222,7 +230,7 @@ export default class LayoutBlog extends React.Component {
                                                 </div>
                                                 <div className="get-funding-card__content">
                                                     <h2 className="heading--2">Quỹ đầu tư CabinFood</h2>
-                                                    <p className="gutter-bottom">Nhận tài trợ trong quá trình phát triển doanh nghiệp từ các gói hỗ trợ linh hoạt từ Quỹ đầu tư của CabinFood.</p>
+                                                    <p className="gutter-bottom">Chúng tôi sẵn sàng cung cấp các khoản đầu tư đặc biệt và các gói hỗ trợ linh hoạt dành riêng cho các startups hay các doanh nghiệp Việt Nam đang kinh doanh về món ăn, thức uống.</p>
                                                     <p> <a className="body-link" href="/stations">Khám phá các Trạm kinh doanh</a></p>
                                                     <p className="text-minor gutter-bottom"> Nhận ngay 15.000.000đ từ gói ưu đãi giảm tác động từ COVID-19, giúp giảm áp lực chi phí và tham gia sử dụng nền tảng Delivery chuyên nghiệp từ CabinFood.</p>
                                                     <div className="marketing-button-wrapper" >
@@ -262,7 +270,12 @@ export default class LayoutBlog extends React.Component {
                             margin-bottom: 0.8333333333em;
                         }
                     }  
-
+                    .summary-grid__heading:not(.js-is-active)>span {
+                        display: inline-block;
+                        border-bottom: 1px solid #58b44b;
+                        min-width: 2.8125em;
+                        opacity: 0.5;
+                    }
                     .marketing-label--in-field {
                         position: absolute;
                         left: 1rem;
