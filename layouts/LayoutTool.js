@@ -221,13 +221,13 @@ export default class LayoutBlog extends React.Component {
                                                     <img className="image get-funding-card__image" sizes="100vw" srcset="https://cdn.shopify.com/shopifycloud/growth_tools/assets/capital/loan-decorator-370c15c36085f6a7c389e033132e870190670aa0cee12288126f65e50e0ed08f.svg" alt=""/>
                                                 </div>
                                                 <div className="get-funding-card__content">
-                                                    <h2 className="heading--2">Quỹ đầu tư của CabinFood</h2>
+                                                    <h2 className="heading--2">Quỹ đầu tư CabinFood</h2>
                                                     <p className="gutter-bottom">Nhận tài trợ trong quá trình phát triển doanh nghiệp từ các gói hỗ trợ linh hoạt từ Quỹ đầu tư của CabinFood.</p>
                                                     <p> <a className="body-link" href="/stations">Khám phá các Trạm kinh doanh</a></p>
                                                     <p className="text-minor gutter-bottom"> Nhận ngay 15.000.000đ từ gói ưu đãi giảm tác động từ COVID-19, giúp giảm áp lực chi phí và tham gia sử dụng nền tảng Delivery chuyên nghiệp từ CabinFood.</p>
                                                     <div className="marketing-button-wrapper" >
                                                         <input name="utf8" type="hidden" value="✓"/>
-                                                        <button className="marketing-button js-open-signup">Nhận ưu dãi ngay</button>
+                                                        <button className="marketing-button js-open-signup">Nhận ưu đãi ngay</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -510,6 +510,8 @@ export default class LayoutBlog extends React.Component {
                         border-color: transparent;
                         margin-bottom: 20px !important;
                     }
+
+                    .get-funding-card__content h2 {font-size: 2em !important;}
                         
                 `}</style>
             </div>
