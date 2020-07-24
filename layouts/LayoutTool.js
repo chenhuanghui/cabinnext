@@ -74,10 +74,10 @@ export default class LayoutBlog extends React.Component {
             var depreciation_product = Math.floor(depreciation_month/spot_balancing_month);
             $('#DepreciationProduct').html(depreciation_product.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
-            var price_estimate = Math.floor((cogs + package_fee + profit_per_product + depreciation_product)/(1-marketing/100))
+            var price_estimate = Math.floor((cogs + package_fee + depreciation_product + profit_per_product)/(1-marketing/100))
             $('#PriceEstimate').html(price_estimate.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
             
-            var price_procedue = cogs + package_fee + Math.floor(state_fee/depreciation_month)
+            var price_procedue = cogs + package_fee + depreciation_product
             $('#PriceProcedue').html(price_procedue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
 
             $('#invest_ammount').html(invest.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
