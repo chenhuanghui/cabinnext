@@ -1,50 +1,85 @@
 import Head from 'next/head'
 import React from 'react';
 import Nav from '../components/nav/nav'
-import Announcement from '../components/annoucement/an_style1'
-
-import Back2Top from '../components/back2top/back2top'
 import Footer from '../components/footer/footer'
-import FormStyle2 from '../components/forms/form_style2';
-
-import fetch from 'node-fetch'
-import Link from 'next/link'
 import ModalForm from '../components/modals/modal_Form';
-
-const client = require('contentful').createClient({
-    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
-    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
-})
-
-async function fetchEntries(query) {
-    const entries = await client.getEntries(query)
-    if (entries.items) {
-        // console.log('entries:',entries.items);
-        return entries.items
-    }
-    console.log(`Error getting Entries for ${contentType.name}.`)
-}
+import Announcement from '../components/annoucement/an_style1'
+import $ from 'jquery';
 
 export default class LayoutBlog extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            data:[],
-            posts:[]
+            data:[]
         }
     }
 
+    
+
     componentDidMount () {
         let currentComponent = this;
-        var Airtable = require('airtable');
-        var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');
-
-        base('Color').select({ view: "Grid view"}).eachPage(function page(records, fetchNextPage) {
-            records.forEach(function(record) {$(`body`).css(record.get('name'),record.get('value'));});
-            fetchNextPage();
-        }, function done(err) {
-            if (err) { console.error(err); return; }
+        
+        $('.input-format-number').keyup(function(event) {
+            // skip for arrow keys
+            if(event.which >= 37 && event.which <= 40) return;
+          
+            // format number
+            $(this).val(function(index, value) {
+              return value
+              .replace(/\D/g, "")
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+              ;
+            });
+            
+            $(this).attr('data',$(this).val().replace(/,/g,''));
         });
+
+        $('.marketing-input').keyup(function(event) {
+            if($(this).val()) {
+                $(this).parent().find('.marketing-label--in-field').css("opacity",1);
+            } else {
+                $(this).parent().find('.marketing-label--in-field').css("opacity",0);
+            }
+        })
+
+        $(`#calculate_action`).click(function(){
+            console.log('calculating')            
+            
+            var invest = parseInt($('#invest').attr('data'),10)
+            var depreciation = parseInt($('#depreciation').attr('data'),10)
+            var rent = parseInt($('#rent').attr('data'),10)
+            var human = parseInt($('#human').attr('data'),10)
+            var engergy = parseInt($('#engergy').attr('data'),10)
+            var days_of_work = parseInt($('#days_of_work').attr('data'),10)
+            var marketing = parseInt($('#marketing').attr('data'),10)
+            var product_name = $('#product_name').val()
+            var cogs = parseInt($('#cogs').attr('data'),10)
+            var package_fee = parseInt($('#package_fee').attr('data'),10)
+            var profit_per_product = parseInt($('#profit_per_product').attr('data'),10)
+            console.log('invest:',invest, 'depreciation:',depreciation, 'rent:', rent,'human:', human, 'energy: ', engergy);
+            
+            var state_fee = rent + human + engergy;
+            $('#StateFee').html( state_fee);
+
+            var spot_balancing_month = Math.floor((rent + human + engergy)/profit_per_product)
+            $('#SpotBalancingMonth').html(spot_balancing_month);
+            
+            var spot_balancing_date =  Math.floor(spot_balancing_month/days_of_work);
+            $('#SpotBalancingDate').html(spot_balancing_date);
+            
+            var depreciation_month = Math.floor(invest/depreciation);
+            $('#DepreciationMonth').html(depreciation_month );
+
+            var depreciation_product = Math.floor(depreciation_month/spot_balancing_month);
+            $('#DepreciationProduct').html(depreciation_product);
+
+            var price_estimate = Math.floor((cogs + package_fee + profit_per_product)/(1-marketing/100))
+            $('#PriceEstimate').html(price_estimate)
+            
+            var price_procedue = cogs + package_fee + profit_per_product + price_estimate*marketing/100
+            $('#PriceProcedue').html(price_procedue)
+        })
+        
     }
 
     render () {
@@ -67,9 +102,9 @@ export default class LayoutBlog extends React.Component {
                                     <div className="grid__item grid__item--tablet-up-half">
                                         <div className="hero__inner">
                                             <div className="section-heading section-heading--left section-heading--tight">
-                                                <p className="section-heading__kicker heading--5">Free tools</p>
-                                                <h1 className="section-heading__heading heading--jumbo">Business Loan Calculator</h1>
-                                                <p className="section-heading__subhead heading--2">Easily calculate fixed-rate loans for your business</p>
+                                                <p className="section-heading__kicker heading--5">Công cụ miễn phí</p>
+                                                <h1 className="section-heading__heading heading--jumbo">Tính giá bán sản phẩm</h1>
+                                                <p className="section-heading__subhead heading--2">Dễ dàng tính toán ra được giá bán phù hợp các cho các sản phẩm</p>
                                             </div>
                                         </div>
                                     </div>
@@ -90,32 +125,61 @@ export default class LayoutBlog extends React.Component {
                                                 <input type="hidden" name="authenticity_token" value="V8qfsZtvVXewrOwmdyc89WDCAzCkJZaQTaV5qTXXNncBE/CcB92ESjUMf1em4rIo/jZ3goH6KLDc3fDsUGq7tw=="/>
                                                 <div className="form-section">
                                                     <div className="form-header">
-                                                        <h2 className="form-header__heading heading--3">Enter your loan information</h2>
+                                                        <h2 className="form-header__heading heading--3">Nhập các thông tin chi phí</h2>
                                                     </div>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Loan amount ($)</span>
-                                                        <input type="text" name="amount" id="amount" placeholder="Loan amount ($)" required="required" min="0" data-parsley-type="number" className="marketing-input marketing-input--floating" data-parsley-id="2417"/>
-                                                        <ul className="marketing-form__messages" id="parsley-id-2417"></ul><span className="marketing-form__messages"></span>
+                                                    <label className="marketing-input-wrapper">
+                                                        <span className="marketing-label marketing-label--in-field marketing-label--floating">Tổng giá trị đầu tư (đ)</span>
+                                                        <input type="text" id="invest" data="" placeholder="Tổng giá trị đầu tư (đ)" required="true" className="marketing-input marketing-input--floating input-format-number"/>
+                                                        <ul className="marketing-form__messages" id="m_invest"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Annual interest rate (%)</span>
-                                                        <input type="text" name="interest_rate" id="interest_rate" placeholder="Annual interest rate (%)" required="required" min="0" data-parsley-type="number" className="marketing-input marketing-input--floating" data-parsley-id="5773"/>
-                                                        <ul className="marketing-form__messages" id="parsley-id-5773"></ul><span className="marketing-form__messages"></span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Thời gian khấu hao toàn phần (tháng)</span>
+                                                        <input type="text" id="depreciation" data="" placeholder="Thời gian khấu hao toàn phần (tháng)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <ul className="marketing-form__messages" id="m_depreciation"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Length of Term (years)</span>
-                                                        <input type="text" name="term" id="term" placeholder="Length of Term (years)" required="required" min="0" data-parsley-type="number" className="marketing-input marketing-input--floating" data-parsley-id="2227"/>
-                                                        <ul className="marketing-form__messages" id="parsley-id-2227"></ul><span className="marketing-form__messages"></span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Mặt bằng (đ)</span>
+                                                        <input type="text" id="rent" data="" placeholder="Mặt bằng (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <ul className="marketing-form__messages" id="m_rent"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Extra monthly payment ($)</span>
-                                                        <input type="text" name="extra_payment" id="extra_payment" placeholder="Extra monthly payment ($)" min="0" data-parsley-type="number" className="marketing-input marketing-input--floating" data-parsley-id="4223"/>
-                                                        <ul className="marketing-form__messages" id="parsley-id-4223"></ul><span className="marketing-form__messages"></span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Nhân sự (đ)</span>
+                                                        <input type="text" id="human" data="" placeholder="Nhân sự (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <ul className="marketing-form__messages" id="m_human"></ul><span className="marketing-form__messages"></span>
+                                                    </label>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Điện, nước (đ)</span>
+                                                        <input type="text" id="engergy" data="" placeholder="Điện, nước (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <ul className="marketing-form__messages" id="m_engergy"></ul><span className="marketing-form__messages"></span>
+                                                    </label>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Số ngày làm việc/tháng (ngày)</span>
+                                                        <input type="text" id="days_of_work" data="" placeholder="Số ngày làm việc/tháng (ngày)" required="true"   className="marketing-input marketing-input--floating input-format-number"/>
+                                                        <ul className="marketing-form__messages" id="m_days_of_work"></ul><span className="marketing-form__messages"></span>
+                                                    </label>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Marketing/sản phẩm (%)</span>
+                                                        <input type="text" id="marketing" data="" placeholder="Marketing/sản phẩm (%)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <ul className="marketing-form__messages" id="m_marketing"></ul><span className="marketing-form__messages"></span>
+                                                    </label>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Tên sản phẩm/món</span>
+                                                        <input type="text" id="product_name" data="" placeholder="Tên sản phẩm/món"   required="true"   className="marketing-input marketing-input--floating" />
+                                                        <ul className="marketing-form__messages" id="m_product_name"></ul><span className="marketing-form__messages"></span>
+                                                    </label>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Nguyên vật liệu/sản phẩm (đ)</span>
+                                                        <input type="text" id="cogs" data="" placeholder="Nguyên vật liệu/sản phẩm (đ)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <ul className="marketing-form__messages" id="m_cogs"></ul><span className="marketing-form__messages"></span>
+                                                    </label>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Bao bì, đóng gói (đ)</span>
+                                                        <input type="text" id="package_fee" data="" placeholder="Bao bì, đóng gói (đ)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <ul className="marketing-form__messages" id="m_package_fee"></ul><span className="marketing-form__messages"></span>
+                                                    </label>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Lợi nhuận/sản phẩm bán ra (đ)</span>
+                                                        <input type="text" id="profit_per_product" data="" placeholder="Lợi nhuận/sản phẩm bán ra (đ)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
+                                                        <ul className="marketing-form__messages" id="m_profit_per_product"></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                 </div>
-                                                <input type="submit" name="commit" value="Calculate" className="marketing-button form-section-submit" data-ga-event="business loan generator" data-ga-action="form" data-ga-label="submit" data-disable-with="Calculate"/>
+                                                <div className="calculate_btn form-section-submit" id="calculate_action">Tính toán</div>
                                             </form>
                                         </div>
                                         <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-third">
                                             <div className="form-section">
                                                 <div className="form-header">
-                                                    <h2 className="heading--3">Find out how much your loan will cost</h2>
+                                                    <h2 className="heading--3">Tìm ra những con số ý nghĩa</h2>
                                                 </div>
                                                 <div className="marketing-markdown">
                                                     <p>Taking out a small business loan can help kick start or grow your business, but it is important to know what you're getting into before you borrow money.</p>
@@ -127,18 +191,27 @@ export default class LayoutBlog extends React.Component {
                                                     <p id="SummaryHeading" className="summary-grid__heading">To borrow <span id="SummaryAmount"></span> over a <span id="SummaryYears"></span> year term your monthly payment will be <span id="SummaryMonthlyPayment"></span> at an interest rate of <span id="SummaryInterestRate"></span>.</p>
                                                 </div>
                                                 <div className="grid-container grid-container--halves summary-grid__items summary-grid__items--light">
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Monthly payment</h5>
-                                                    <span id="MonthlyPayment" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Average monthly interest</h5>
-                                                    <span id="MonthlyInterest" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Total interest</h5>
-                                                    <span id="TotalInterest" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Number of years</h5>
-                                                    <span id="NumOfYears" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Chi phí cố định /tháng</h5>
+                                                    <span id="StateFee" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
+                                                    
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Điểm hòa vốn/ngày</h5>
+                                                    <span id="SpotBalancingDate" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
+
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Điểm hòa vốn/tháng</h5>
+                                                    <span id="SpotBalancingMonth" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
+
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Khấu hao đầu tư/sản phẩm bán ra</h5>
+                                                    <span id="DepreciationProduct" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
+
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Khấu hao đầu tư/tháng</h5>
+                                                    <span id="DepreciationMonth" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
+
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Giá thành sản phẩm</h5>
+                                                    <span id="PriceProcedue" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
                                                 </div>
                                                 <div className="grid-container grid-container--halves summary-grid__total">
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Total borrowing cost</h5>
-                                                    <span id="Total" className="heading--2 summary-grid__value grid-item grid--mobile">--</span>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Giá bán sản phẩm tham khảo</h5>
+                                                    <span id="PriceEstimate" className="heading--2 summary-grid__value grid-item grid--mobile">--</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -148,15 +221,14 @@ export default class LayoutBlog extends React.Component {
                                                     <img className="image get-funding-card__image" sizes="100vw" srcset="https://cdn.shopify.com/shopifycloud/growth_tools/assets/capital/loan-decorator-370c15c36085f6a7c389e033132e870190670aa0cee12288126f65e50e0ed08f.svg" alt=""/>
                                                 </div>
                                                 <div className="get-funding-card__content">
-                                                    <h2 className="heading--2">Shopify Capital</h2>
-                                                    <p className="gutter-bottom">Get funding without lengthy application processes, with payments that flex to fit your business.</p>
-                                                    <p> <a className="body-link" href="/admin/capital/offers?utm_content=us&amp;utm_medium=business_loan_calculator&amp;utm_source=capital">Log in to check eligibility</a>
-                                                    </p>
-                                                    <p className="text-minor gutter-bottom">Don’t have a Shopify store? Get started with a 14-day free trial.</p>
-                                                    <form className="marketing-button-wrapper" action="https://accounts.shopify.com/store-signup/setup" accept-charset="UTF-8" method="post" __bizdiag="3600241" __biza="WJ__">
+                                                    <h2 className="heading--2">Quỹ đầu tư của CabinFood</h2>
+                                                    <p className="gutter-bottom">Nhận tài trợ trong quá trình phát triển doanh nghiệp từ các gói hỗ trợ linh hoạt từ Quỹ đầu tư của CabinFood.</p>
+                                                    <p> <a className="body-link" href="/stations">Khám phá các Trạm kinh doanh</a></p>
+                                                    <p className="text-minor gutter-bottom"> Nhận ngay 15.000.000đ từ gói ưu đãi giảm tác động từ COVID-19, giúp giảm áp lực chi phí và tham gia sử dụng nền tảng Delivery chuyên nghiệp từ CabinFood.</p>
+                                                    <div className="marketing-button-wrapper" >
                                                         <input name="utf8" type="hidden" value="✓"/>
-                                                        <button className="marketing-button js-open-signup">Start free trial</button>
-                                                    </form>
+                                                        <button className="marketing-button js-open-signup">Nhận ưu dãi ngay</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -194,7 +266,7 @@ export default class LayoutBlog extends React.Component {
                     .marketing-label--in-field {
                         position: absolute;
                         left: 1rem;
-                        top: 0.5rem;
+                        top: 0.3rem;
                         font-size: 0.6875em;
                         font-weight: 400;
                         pointer-events: none;
@@ -220,7 +292,6 @@ export default class LayoutBlog extends React.Component {
                     .marketing-label, .line-item__checkbox .marketing-checkbox-label {
                         display: block;
                         margin-bottom: 0.6153846154em;
-                        font-family: ShopifySans, Helvetica, Arial, sans-serif;
                         font-weight: 700;
                         font-size: 0.8125em;
                         color: #454f5b;
@@ -233,10 +304,10 @@ export default class LayoutBlog extends React.Component {
 
                     .marketing-input, .marketing-textarea, .marketing-select-wrapper>select {
                         display: inline-block;
-                        height: 3.2em;
+                        height: 4em;
                         width: 100%;
                         // margin: 0 0 15px;
-                        // padding: 1em 1em;
+                        padding: 1.5em 1em 0.5em 1em;
                         color: #212b35;
                         font-size: 1em;
                         box-shadow: 0 0 0 1px #c4cdd5;
@@ -413,7 +484,32 @@ export default class LayoutBlog extends React.Component {
                         color: #637381;
                         font-weight: 400;
                     }
-
+                    
+                    .calculate_btn {
+                        display: inline-block;
+                        padding: 1.0625em 1.875em;
+                        border-radius: 4px;
+                        font-weight: 700 !important;
+                        line-height: 1.133;
+                        -webkit-font-smoothing: antialiased;
+                        transition: 150ms ease;
+                        text-align: center;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                        cursor: pointer;
+                        box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+                        background-color: var(--light-color);
+                        color: #ffffff;
+                        border-width: 0;
+                        border-style: solid;
+                        border-color: transparent;
+                        margin-bottom: 20px !important;
+                    }
                         
                 `}</style>
             </div>
