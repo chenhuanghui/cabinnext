@@ -38,6 +38,7 @@ export default class LayoutBlog extends React.Component {
         $('.marketing-input').keyup(function(event) {
             if($(this).val()) {
                 $(this).parent().find('.marketing-label--in-field').css("opacity",1);
+                $(this).parent().find('.error').html('');
             } else {
                 $(this).parent().find('.marketing-label--in-field').css("opacity",0);
             }
