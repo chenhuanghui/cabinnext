@@ -96,7 +96,7 @@ export default class LayoutBlog extends React.Component {
                 <Head>
                     <meta  property="og:title" content="CabinFood Blogs" />
                     <meta  property="og:image" content={data && data.cover_image ? data.cover_image[0].url : ''} />
-                    <title>{ data && data.name ? data.name : 'CabinFood Blogs'}</title>
+                    <title>{ data && data.name ? data.name : 'CabinFood Free Tools'}</title>
                 </Head>
 
                 <div className="page--home">
