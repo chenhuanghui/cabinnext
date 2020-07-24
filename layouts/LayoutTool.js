@@ -44,7 +44,7 @@ export default class LayoutBlog extends React.Component {
         })
 
         $(`#calculate_action`).click(function(){
-            console.log('calculating')            
+            console.log('calculating');
             
             var invest = parseInt($('#invest').attr('data'),10)
             var depreciation = parseInt($('#depreciation').attr('data'),10)
@@ -84,7 +84,6 @@ export default class LayoutBlog extends React.Component {
             $('#depriciation_time').html(depreciation.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
             $('#profit_estimate').html(profit_per_product.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
             $('#productName').html(product_name.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-
         })
         
     }
@@ -135,47 +134,47 @@ export default class LayoutBlog extends React.Component {
                                                         <h2 className="form-header__heading heading--3">Nhập các chi phí</h2>
                                                     </div>
                                                     <label className="marketing-input-wrapper">
-                                                        <span className="marketing-label marketing-label--in-field marketing-label--floating">Tổng giá trị đầu tư (đ)</span>
+                                                        <span className="marketing-label marketing-label--in-field marketing-label--floating">Tổng giá trị đầu tư (đ) (*)</span>
                                                         <input type="text" id="invest" data="" placeholder="Tổng giá trị đầu tư (đ)" required="true" className="marketing-input marketing-input--floating input-format-number"/>
                                                         <ul className="marketing-form__messages" id="m_invest"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Thời gian khấu hao toàn phần (tháng)</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Thời gian khấu hao toàn phần (tháng) (*)</span>
                                                         <input type="text" id="depreciation" data="" placeholder="Thời gian khấu hao toàn phần (tháng)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages" id="m_depreciation"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Mặt bằng/tháng (đ)</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Mặt bằng/tháng (đ) (*)</span>
                                                         <input type="text" id="rent" data="" placeholder="Mặt bằng (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages" id="m_rent"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Nhân sự/tháng (đ)</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Nhân sự/tháng (đ) (*)</span>
                                                         <input type="text" id="human" data="" placeholder="Nhân sự (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages" id="m_human"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Điện, nước/tháng (đ)</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Điện, nước/tháng (đ) (*)</span>
                                                         <input type="text" id="engergy" data="" placeholder="Điện, nước (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages" id="m_engergy"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Số ngày làm việc/tháng (ngày)</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Số ngày làm việc/tháng (ngày) (*)</span>
                                                         <input type="text" id="days_of_work" data="" placeholder="Số ngày làm việc/tháng (ngày)" required="true"   className="marketing-input marketing-input--floating input-format-number"/>
                                                         <ul className="marketing-form__messages" id="m_days_of_work"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Marketing/sản phẩm (%)</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Marketing/sản phẩm (%) (*)</span>
                                                         <input type="text" id="marketing" data="" placeholder="Marketing/sản phẩm (%)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages" id="m_marketing"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Tên sản phẩm</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Tên sản phẩm (*)</span>
                                                         <input type="text" id="product_name" data="" placeholder="Tên sản phẩm/món"   required="true"   className="marketing-input marketing-input--floating" />
                                                         <ul className="marketing-form__messages" id="m_product_name"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Nguyên vật liệu/sản phẩm (đ)</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Nguyên vật liệu/sản phẩm (đ) (*)</span>
                                                         <input type="text" id="cogs" data="" placeholder="Nguyên vật liệu/sản phẩm (đ)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages" id="m_cogs"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Bao bì, đóng gói (đ)</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Bao bì, đóng gói (đ) (*)</span>
                                                         <input type="text" id="package_fee" data="" placeholder="Bao bì, đóng gói (đ)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages" id="m_package_fee"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Lợi nhuận/sản phẩm bán ra (đ)</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Lợi nhuận/sản phẩm bán ra (đ) (*)</span>
                                                         <input type="text" id="profit_per_product" data="" placeholder="Lợi nhuận/sản phẩm bán ra (đ)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages" id="m_profit_per_product"></ul><span className="marketing-form__messages"></span>
                                                     </label>
