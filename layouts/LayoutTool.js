@@ -132,7 +132,7 @@ export default class LayoutBlog extends React.Component {
                                                 <input type="hidden" name="authenticity_token" value="V8qfsZtvVXewrOwmdyc89WDCAzCkJZaQTaV5qTXXNncBE/CcB92ESjUMf1em4rIo/jZ3goH6KLDc3fDsUGq7tw=="/>
                                                 <div className="form-section">
                                                     <div className="form-header">
-                                                        <h2 className="form-header__heading heading--3">Nhập các thông tin chi phí</h2>
+                                                        <h2 className="form-header__heading heading--3">Nhập các chi phí</h2>
                                                     </div>
                                                     <label className="marketing-input-wrapper">
                                                         <span className="marketing-label marketing-label--in-field marketing-label--floating">Tổng giá trị đầu tư (đ)</span>
