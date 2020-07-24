@@ -77,7 +77,7 @@ export default class LayoutBlog extends React.Component {
             var price_estimate = Math.floor((cogs + package_fee + profit_per_product + depreciation_product)/(1-marketing/100))
             $('#PriceEstimate').html(price_estimate.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
             
-            var price_procedue = cogs + package_fee  + price_estimate*marketing/100;
+            var price_procedue = cogs + package_fee + Math.floor(state_fee/depreciation_month)
             $('#PriceProcedue').html(price_procedue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
 
             $('#invest_ammount').html(invest.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
@@ -143,15 +143,15 @@ export default class LayoutBlog extends React.Component {
                                                         <input type="text" id="depreciation" data="" placeholder="Thời gian khấu hao toàn phần (tháng)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages" id="m_depreciation"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Mặt bằng (đ)</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Mặt bằng/tháng (đ)</span>
                                                         <input type="text" id="rent" data="" placeholder="Mặt bằng (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages" id="m_rent"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Nhân sự (đ)</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Nhân sự/tháng (đ)</span>
                                                         <input type="text" id="human" data="" placeholder="Nhân sự (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages" id="m_human"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Điện, nước (đ)</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Điện, nước/tháng (đ)</span>
                                                         <input type="text" id="engergy" data="" placeholder="Điện, nước (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages" id="m_engergy"></ul><span className="marketing-form__messages"></span>
                                                     </label>
@@ -163,7 +163,7 @@ export default class LayoutBlog extends React.Component {
                                                         <input type="text" id="marketing" data="" placeholder="Marketing/sản phẩm (%)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
                                                         <ul className="marketing-form__messages" id="m_marketing"></ul><span className="marketing-form__messages"></span>
                                                     </label>
-                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Tên sản phẩm/món</span>
+                                                    <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Tên sản phẩm</span>
                                                         <input type="text" id="product_name" data="" placeholder="Tên sản phẩm/món"   required="true"   className="marketing-input marketing-input--floating" />
                                                         <ul className="marketing-form__messages" id="m_product_name"></ul><span className="marketing-form__messages"></span>
                                                     </label>
