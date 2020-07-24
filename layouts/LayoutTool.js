@@ -192,6 +192,7 @@ export default class LayoutBlog extends React.Component {
                                                     <p>Trong ngành kinh doanh món ăn thức uống, việc lập ra một cấu trúc giá (pricing structure) chính xác rất quan trọng để xác định được giá bán hợp lý từ đó sẽ có những thay đổi phù hợp nhất trong các giai đoạn phát triển.</p>
                                                     <p>Thông thường các doanh nghiệp rất hay quên đặt [chi phí truyền thông] và [khấu hao đầu tư] vào cấu trúc giá, từ đó sẽ làm cho doanh nghiệp không định hình được chính xác điểm hòa vốn chính xác, thời gian khấu hao đầu tư, cũng như sẽ không thể nào tính toán được hiệu quả của các chương trình truyền thông, và sẽ gián tiếp gây ra hậu quả là "CÀNG BÁN CÀNG LỖ" nhưng lại không biết ngay lúc đó.</p>
                                                     <p>Hãy điều chỉnh thông tin về Nguyên vật liệu, bao bì, lợi nhuận của các sản phẩm theo kế hoạch của bạn để tìm thấy giá bán phù hợp nhất. </p>
+                                                    <p>Hãy dịch chuyển toàn bộ ĐỊNH PHÍ về BIẾN PHÍ để có bức tranh tài chính rõ ràng nhất, và chủ động trước mọi tình huống. Nếu bạn gặp vấn đề hoặc cần tư vấn hãy liên hệ với chúng tôi. </p>
                                                 </div>
                                             </div>
                                             <div className="summary-grid">
@@ -202,16 +203,16 @@ export default class LayoutBlog extends React.Component {
                                                     <h5 className="summary-grid__label grid-item grid--mobile">Chi phí cố định /tháng</h5>
                                                     <span id="StateFee" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
                                                     
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Điểm hòa vốn/ngày (sp)</h5>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Số sản phẩm tối thiểu phải bán mỗi ngày để không lỗ(sp)</h5>
                                                     <span id="SpotBalancingDate" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Điểm hòa vốn/tháng (sp)</h5>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Số sản phẩm tối thiểu phải bán mỗi tháng để không lỗ(sp)</h5>
                                                     <span id="SpotBalancingMonth" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Khấu hao đầu tư/sản phẩm bán ra (đ/sp)</h5>
-                                                    <span id="DepreciationProduct" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
+                                                    {/* <h5 className="summary-grid__label grid-item grid--mobile">Khấu hao đầu tư/sản phẩm bán ra (đ/sp)</h5>
+                                                    <span id="DepreciationProduct" className="heading--4 summary-grid__value grid-item grid--mobile">--</span> */}
 
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Khấu hao đầu tư/tháng (đ/tháng)</h5>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Khấu hao đầu tư từng tháng (đ/tháng)</h5>
                                                     <span id="DepreciationMonth" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
                                                     <h5 className="summary-grid__label grid-item grid--mobile">Giá thành sản phẩm (đ)</h5>
