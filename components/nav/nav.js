@@ -121,7 +121,7 @@ export default class Nav extends React.Component {
                         <nav aria-label="Main Navigation">
                             <ul className="drawer__items drawer__items--user" id="DrawerNavSecondaryAccordion">
                                 <li><Link href='/stations'><a className="drawer__item">Trạm kinh doanh</a></Link></li>
-                                <li><Link href='/tools/baseprice'><a className="marketing-nav__item marketing-nav__item--user"> Công cụ miễn phí </a></Link></li>                                    
+                                <li><Link href='/tools/baseprice'><a className="drawer__item">Công cụ miễn phí</a></Link></li>
                                 <li><Link href='/about'><a className="drawer__item">Về CabinFood</a></Link></li>
                             </ul>
 
