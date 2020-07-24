@@ -19,7 +19,7 @@ export default class LayoutBlog extends React.Component {
 
     componentDidMount () {
         let currentComponent = this;
-        
+
         $('.input-format-number').keyup(function(event) {
             // skip for arrow keys
             if(event.which >= 37 && event.which <= 40) return;
@@ -45,6 +45,18 @@ export default class LayoutBlog extends React.Component {
 
         $(`#calculate_action`).click(function(){
             console.log('calculating');
+            
+            var isValid = true;
+            var inputs = $('.marketing-input')
+            for (var i=0; i<inputs.length; i++ ) {
+                if (!$(inputs[i]).val()) {
+                    $(inputs[i]).parent().find('.error').html('Đây là thông tin bắt buộc');
+                    isValid = false;
+                    console.log('hhhh');
+                }
+            }
+
+            if (!isValid) return;
             
             var invest = parseInt($('#invest').attr('data'),10)
             var depreciation = parseInt($('#depreciation').attr('data'),10)
@@ -84,6 +96,8 @@ export default class LayoutBlog extends React.Component {
             $('#depriciation_time').html(depreciation.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
             $('#profit_estimate').html(profit_per_product.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
             $('#productName').html(product_name.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+
+            $(window).scrollTop($('#value_calculated').offset().top);
         })
         
     }
@@ -136,54 +150,54 @@ export default class LayoutBlog extends React.Component {
                                                     <label className="marketing-input-wrapper">
                                                         <span className="marketing-label marketing-label--in-field marketing-label--floating">Tổng giá trị đầu tư (đ) (*)</span>
                                                         <input type="text" id="invest" data="" placeholder="Tổng giá trị đầu tư (đ)" required="true" className="marketing-input marketing-input--floating input-format-number"/>
-                                                        <ul className="marketing-form__messages" id="m_invest"></ul><span className="marketing-form__messages"></span>
+                                                        <ul className="marketing-form__messages validate_message" id="m_invest"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Thời gian khấu hao toàn phần (tháng) (*)</span>
                                                         <input type="text" id="depreciation" data="" placeholder="Thời gian khấu hao toàn phần (tháng)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
-                                                        <ul className="marketing-form__messages" id="m_depreciation"></ul><span className="marketing-form__messages"></span>
+                                                        <ul className="marketing-form__messages validate_message" id="m_depreciation"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Mặt bằng/tháng (đ) (*)</span>
                                                         <input type="text" id="rent" data="" placeholder="Mặt bằng (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
-                                                        <ul className="marketing-form__messages" id="m_rent"></ul><span className="marketing-form__messages"></span>
+                                                        <ul className="marketing-form__messages validate_message" id="m_rent"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Nhân sự/tháng (đ) (*)</span>
                                                         <input type="text" id="human" data="" placeholder="Nhân sự (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
-                                                        <ul className="marketing-form__messages" id="m_human"></ul><span className="marketing-form__messages"></span>
+                                                        <ul className="marketing-form__messages validate_message" id="m_human"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Điện, nước/tháng (đ) (*)</span>
                                                         <input type="text" id="engergy" data="" placeholder="Điện, nước (đ)" required="true"   className="marketing-input marketing-input--floating input-format-number" />
-                                                        <ul className="marketing-form__messages" id="m_engergy"></ul><span className="marketing-form__messages"></span>
+                                                        <ul className="marketing-form__messages validate_message" id="m_engergy"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Số ngày làm việc/tháng (ngày) (*)</span>
                                                         <input type="text" id="days_of_work" data="" placeholder="Số ngày làm việc/tháng (ngày)" required="true"   className="marketing-input marketing-input--floating input-format-number"/>
-                                                        <ul className="marketing-form__messages" id="m_days_of_work"></ul><span className="marketing-form__messages"></span>
+                                                        <ul className="marketing-form__messages validate_message" id="m_days_of_work"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Marketing/sản phẩm (%) (*)</span>
                                                         <input type="text" id="marketing" data="" placeholder="Marketing/sản phẩm (%)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
-                                                        <ul className="marketing-form__messages" id="m_marketing"></ul><span className="marketing-form__messages"></span>
+                                                        <ul className="marketing-form__messages validate_message" id="m_marketing"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Tên sản phẩm (*)</span>
                                                         <input type="text" id="product_name" data="" placeholder="Tên sản phẩm/món"   required="true"   className="marketing-input marketing-input--floating" />
-                                                        <ul className="marketing-form__messages" id="m_product_name"></ul><span className="marketing-form__messages"></span>
+                                                        <ul className="marketing-form__messages validate_message" id="m_product_name"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Nguyên vật liệu/sản phẩm (đ) (*)</span>
                                                         <input type="text" id="cogs" data="" placeholder="Nguyên vật liệu/sản phẩm (đ)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
-                                                        <ul className="marketing-form__messages" id="m_cogs"></ul><span className="marketing-form__messages"></span>
+                                                        <ul className="marketing-form__messages validate_message" id="m_cogs"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Bao bì, đóng gói (đ) (*)</span>
                                                         <input type="text" id="package_fee" data="" placeholder="Bao bì, đóng gói (đ)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
-                                                        <ul className="marketing-form__messages" id="m_package_fee"></ul><span className="marketing-form__messages"></span>
+                                                        <ul className="marketing-form__messages validate_message" id="m_package_fee"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                     <label className="marketing-input-wrapper"><span className="marketing-label marketing-label--in-field marketing-label--floating">Lợi nhuận/sản phẩm bán ra (đ) (*)</span>
                                                         <input type="text" id="profit_per_product" data="" placeholder="Lợi nhuận/sản phẩm bán ra (đ)"   required="true"   className="marketing-input marketing-input--floating input-format-number" />
-                                                        <ul className="marketing-form__messages" id="m_profit_per_product"></ul><span className="marketing-form__messages"></span>
+                                                        <ul className="marketing-form__messages validate_message" id="m_profit_per_product"><li className="error parsley-required"></li></ul><span className="marketing-form__messages"></span>
                                                     </label>
                                                 </div>
                                                 <div className="calculate_btn form-section-submit" id="calculate_action">Tính toán</div>
                                             </form>
                                         </div>
                                         <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-third">
-                                            <div className="form-section">
+                                            <div className="form-section" id="value_calculated">
                                                 <div className="form-header">
                                                     <h2 className="heading--3">Tìm ra những con số ý nghĩa</h2>
                                                 </div>
@@ -252,6 +266,11 @@ export default class LayoutBlog extends React.Component {
                     .background-light {
                         background-color: #f4f6f8;
                     }
+                    .marketing-form__messages .error {
+                        margin-left: 0% !important;
+                        padding: 0 !important;
+                    }
+                    
                     .form-section {
                         margin-bottom: 1.875em;
                     }
