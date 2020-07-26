@@ -112,6 +112,9 @@ export default class LayoutBlog extends React.Component {
             var price_procedue = cogs + package_fee + depreciation_product
             $('#PriceProcedue').html(price_procedue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
 
+            var min_price_to_sell = price_procedue + profit_per_product
+            $('#MinPrice2Sell').html(min_price_to_sell.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+            
             $('#invest_ammount').html(invest.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
             $('#depriciation_time').html(depreciation.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
             $('#profit_estimate').html(profit_per_product.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
@@ -247,6 +250,9 @@ export default class LayoutBlog extends React.Component {
 
                                                     <h5 className="summary-grid__label grid-item grid--mobile">Giá thành sản phẩm (đ)</h5>
                                                     <span id="PriceProcedue" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
+
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Giá bán tối thiểu /sản phẩm (đ)</h5>
+                                                    <span id="MinPrice2Sell" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
                                                 </div>
                                                 <div className="grid-container grid-container--halves summary-grid__total">
                                                     <h5 className="summary-grid__label grid-item grid--mobile">Giá bán <span id="productName"></span> tham khảo</h5>
