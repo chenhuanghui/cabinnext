@@ -1,7 +1,7 @@
-import LayoutTool from '../../layouts/LayoutTool'
+import LayoutToolBasePrice from '../../layouts/LayoutToolBasePrice'
 
-const Tools = props => (
-    <LayoutTool />
+const BasePriceTools = props => (
+    <LayoutToolBasePrice />
 );
   
-export default Tools;
+export default BasePriceTools;
