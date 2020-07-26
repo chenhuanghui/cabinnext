@@ -11,8 +11,7 @@ export default class LayoutBlog extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            data:[],
-            product_name:''
+            data:[]
         }
     }
 
@@ -151,7 +150,7 @@ export default class LayoutBlog extends React.Component {
                                     </div>
                                     <div className="grid__item grid__item--tablet-up-half">
                                         <div className="hero__inner">
-                                            <img className="image hero__image" sizes="100vw" srcSet="https://cdn.shopify.com/shopifycloud/growth_tools/assets/home/tools-hero-small-a6423211f306f8389d78b31067a486321acab30ecc6ccb4e149daa574f956cd6.jpg 1x, https://cdn.shopify.com/shopifycloud/growth_tools/assets/home/tools-hero-large-13a7b5f09c46ab97c0dddd7ac6a9e26d116d1fe1773614bee3749e575b7a42a4.jpg 2x" alt=""/>
+                                            <img className="image hero__image" sizes="100vw" src={data && data.cover && data.cover[0] ? data.cover[0].url : ''}/>
                                         </div>
                                     </div>
                                 </div>
@@ -258,7 +257,7 @@ export default class LayoutBlog extends React.Component {
                                         <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-third grid__item--mobile-up-align-center">
                                             <div className="get-funding-card">
                                                 <div className="get-funding-card__image-wrapper">
-                                                    <img className="image get-funding-card__image" sizes="100vw" srcSet="https://cdn.shopify.com/shopifycloud/growth_tools/assets/capital/loan-decorator-370c15c36085f6a7c389e033132e870190670aa0cee12288126f65e50e0ed08f.svg" alt=""/>
+                                                    <svg className="image get-funding-card__image" sizes="100vw" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 443 245"><path fill="#008060" d="M190.812 243.96H85.232A2.242 2.242 0 0 1 83 241.712V64c0-1.24 1-2.248 2.232-2.248h105.58A2.242 2.242 0 0 1 193.044 64v177.634c0 1.241-1.001 2.326-2.232 2.326z"/><path fill="#002E25" d="M150.864 190.605H125.18c-13.15 0-23.839-10.689-23.839-23.839v-25.684c0-13.15 10.689-23.839 23.839-23.839h25.684c13.15 0 23.839 10.689 23.839 23.839v25.684c0 13.227-10.689 23.839-23.839 23.839z"/><path fill="#fff" d="M138.022 173.932c-1.893 0-3.335-1.283-3.335-2.793V136.71c0-1.586 1.532-2.794 3.335-2.794 1.802 0 3.335 1.284 3.335 2.794v34.429c0 1.51-1.442 2.793-3.335 2.793z"/><path fill="#fff" d="M156.787 157.259h-35.863c-1.651 0-2.91-1.532-2.91-3.335 0-1.892 1.337-3.334 2.91-3.334h35.863c1.652 0 2.91 1.532 2.91 3.334 0 1.803-1.337 3.335-2.91 3.335z"/><path fill="#69CF9C" d="M331.7 95.568H141.322c-1.842 0-3.3-1.468-3.3-3.323V6.015c0-3.012 2.456-5.485 5.449-5.485H331.7c1.842 0 3.3 1.468 3.3 3.322v88.47c0 1.778-1.458 3.246-3.3 3.246z"/><path fill="#008060" d="M161.365 63.889h-15.006v31.679h15.006v-31.68zM184.707 45.548h-15.006v50.02h15.006v-50.02z"/><path fill="#fff" d="M208.05 78.894h-15.006v16.674h15.006V78.894z"/><path fill="#002E25" d="M233.059 48.883h-15.006v46.685h15.006V48.883zM256 31h-15v65h15V31zM281 43h-15v53h15V43zM306 12h-15v84h15V12z"/><path fill="#004C3F" d="M226.687 209.328h-67.003v34.774h67.003v-34.774z"/><path fill="#fff" d="M193.083 237.113c5.799 0 10.5-4.701 10.5-10.5s-4.701-10.5-10.5-10.5-10.5 4.701-10.5 10.5 4.701 10.5 10.5 10.5z"/><path fill="#008060" d="M295.386 209.328h-66.155v34.774h66.155v-34.774z"/><path fill="#004C3F" d="M261.783 237.113c5.799 0 10.5-4.701 10.5-10.5s-4.701-10.5-10.5-10.5-10.5 4.701-10.5 10.5 4.701 10.5 10.5 10.5zM359 210.096h-60.129v33.514H359v-33.514z"/><path fill="#008060" d="M264.005 172.01h-67.003v34.774h67.003V172.01zM329.774 237.113c5.799 0 10.5-4.701 10.5-10.5s-4.701-10.5-10.5-10.5-10.5 4.701-10.5 10.5 4.701 10.5 10.5 10.5z"/><path fill="#69CF9C" d="M230.504 199.999c5.855 0 10.602-4.937 10.602-11.026 0-6.089-4.747-11.026-10.602-11.026s-10.602 4.937-10.602 11.026c0 6.089 4.747 11.026 10.602 11.026z"/><path fill="#002E25" d="M331.35 171.734h-64.955v34.797h64.955v-34.797z"/><path fill="#008060" d="M299.949 198.947c5.799 0 10.5-4.701 10.5-10.5s-4.701-10.5-10.5-10.5-10.5 4.701-10.5 10.5 4.701 10.5 10.5 10.5z"/><path fill="#004C3F" d="M297.93 133.844h-66.155v34.774h66.155v-34.774z"/><path fill="#fff" d="M264.327 161.629c5.799 0 10.5-4.701 10.5-10.5s-4.701-10.5-10.5-10.5-10.5 4.701-10.5 10.5 4.701 10.5 10.5 10.5z"/></svg>
                                                 </div>
                                                 <div className="get-funding-card__content">
                                                     <h2 className="heading--2">{data.block3_headline}</h2>
