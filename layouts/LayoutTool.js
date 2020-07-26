@@ -5,6 +5,7 @@ import Footer from '../components/footer/footer'
 import ModalForm from '../components/modals/modal_Form';
 import Announcement from '../components/annoucement/an_style1'
 import $ from 'jquery';
+import Link from 'next/link';
 
 export default class LayoutBlog extends React.Component {
     constructor(props){
@@ -15,10 +16,29 @@ export default class LayoutBlog extends React.Component {
         }
     }
 
-    
+    convertMdtoHtml(mdString) {
+        var md = require('markdown-it')();
+        var result = md.render(mdString);
+        return result;
+    }
 
     componentDidMount () {
         let currentComponent = this;
+        var Airtable = require('airtable');
+        var base = new Airtable({apiKey: 'keyLNupG6zOmmokND'}).base('appPlNerLpniDebcQ');
+        
+        base('Page_Tools_BasePrice').find('recaaYjfeS0fnuKPh', function(err, record) {
+            if (err) { console.error(err); return; }
+            currentComponent.setState({data:record.fields})
+            console.log('data:', record.fields)
+        });
+
+        base('Color').select({ view: "Grid view"}).eachPage(function page(records, fetchNextPage) {
+            records.forEach(function(record) {$(`body`).css(record.get('name'),record.get('value'));});
+            fetchNextPage();
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        });
 
         $('.input-format-number').keyup(function(event) {
             // skip for arrow keys
@@ -104,12 +124,12 @@ export default class LayoutBlog extends React.Component {
     }
 
     render () {
-        const {data,posts} = this.state;
+        const {data} = this.state;
         return (
             <div className="layout">
                 <Head>
                     <meta  property="og:title" content="CabinFood Blogs" />
-                    <meta  property="og:image" content={data && data.cover_image ? data.cover_image[0].url : ''} />
+                    <meta  property="og:image" content={data && data.cover ? data.cover[0].url : ''} />
                     <title>{ data && data.name ? data.name : 'CabinFood Free Tools'}</title>
                 </Head>
 
@@ -123,9 +143,9 @@ export default class LayoutBlog extends React.Component {
                                     <div className="grid__item grid__item--tablet-up-half">
                                         <div className="hero__inner">
                                             <div className="section-heading section-heading--left section-heading--tight">
-                                                <p className="section-heading__kicker heading--5">Công cụ miễn phí</p>
-                                                <h1 className="section-heading__heading heading--jumbo">Tính giá bán sản phẩm</h1>
-                                                <p className="section-heading__subhead heading--2">Dễ dàng tính toán ra được giá bán phù hợp các cho các sản phẩm</p>
+                                                <p className="section-heading__kicker heading--5">{data.headline}</p>
+                                                <h1 className="section-heading__heading heading--jumbo">{data.message}</h1>
+                                                <p className="section-heading__subhead heading--2">{data.desc}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -146,7 +166,7 @@ export default class LayoutBlog extends React.Component {
                                                 <input type="hidden" name="authenticity_token" value="V8qfsZtvVXewrOwmdyc89WDCAzCkJZaQTaV5qTXXNncBE/CcB92ESjUMf1em4rIo/jZ3goH6KLDc3fDsUGq7tw=="/>
                                                 <div className="form-section">
                                                     <div className="form-header">
-                                                        <h2 className="form-header__heading heading--3">Nhập các chi phí</h2>
+                                                        <h2 className="form-header__heading heading--3">{data.block1_headline}</h2>
                                                     </div>
                                                     <label className="marketing-input-wrapper">
                                                         <span className="marketing-label marketing-label--in-field marketing-label--floating">Tổng giá trị đầu tư (đ) (*)</span>
@@ -200,13 +220,10 @@ export default class LayoutBlog extends React.Component {
                                         <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-third">
                                             <div className="form-section" id="value_calculated">
                                                 <div className="form-header">
-                                                    <h2 className="heading--3">Tìm ra những con số ý nghĩa</h2>
+                                                    <h2 className="heading--3">{data.block2_headline}</h2>
                                                 </div>
                                                 <div className="marketing-markdown">
-                                                    <p>Trong ngành kinh doanh món ăn thức uống, việc lập ra một cấu trúc giá (pricing structure) chính xác rất quan trọng để xác định được giá bán hợp lý từ đó sẽ có những thay đổi phù hợp nhất trong các giai đoạn phát triển.</p>
-                                                    <p>Thông thường các doanh nghiệp rất hay quên đặt [chi phí truyền thông] và [khấu hao đầu tư] vào cấu trúc giá, từ đó sẽ làm cho doanh nghiệp không định hình được chính xác điểm hòa vốn chính xác, thời gian khấu hao đầu tư, cũng như sẽ không thể nào tính toán được hiệu quả của các chương trình truyền thông, và sẽ gián tiếp gây ra hậu quả là "CÀNG BÁN CÀNG LỖ" nhưng lại không biết ngay lúc đó.</p>
-                                                    <p>Hãy điều chỉnh thông tin về Nguyên vật liệu, bao bì, lợi nhuận của các sản phẩm theo kế hoạch của bạn để tìm thấy giá bán phù hợp nhất. </p>
-                                                    <p>Hãy dịch chuyển toàn bộ ĐỊNH PHÍ về BIẾN PHÍ để có bức tranh tài chính rõ ràng nhất, và chủ động trước mọi tình huống. Nếu bạn gặp vấn đề hoặc cần tư vấn hãy liên hệ với chúng tôi. </p>
+                                                    <div dangerouslySetInnerHTML={{__html: data && data.block2_desc ? this.convertMdtoHtml(data.block2_desc): ''}}/>
                                                 </div>
                                             </div>
                                             <div className="summary-grid">
@@ -244,9 +261,14 @@ export default class LayoutBlog extends React.Component {
                                                     <img className="image get-funding-card__image" sizes="100vw" srcSet="https://cdn.shopify.com/shopifycloud/growth_tools/assets/capital/loan-decorator-370c15c36085f6a7c389e033132e870190670aa0cee12288126f65e50e0ed08f.svg" alt=""/>
                                                 </div>
                                                 <div className="get-funding-card__content">
-                                                    <h2 className="heading--2">Quỹ đầu tư CabinFood</h2>
-                                                    <p className="gutter-bottom">Chúng tôi sẵn sàng cung cấp các khoản đầu tư đặc biệt và các gói hỗ trợ linh hoạt dành riêng cho các startups hay các doanh nghiệp Việt Nam đang kinh doanh về món ăn, thức uống.</p>
-                                                    <p> <a className="body-link" href="/stations">Khám phá các Trạm kinh doanh</a></p>
+                                                    <h2 className="heading--2">{data.block3_headline}</h2>
+                                                    <p className="gutter-bottom">{data.block3_desc}</p>
+                                                    <p>
+                                                        <Link href="/stations" as={data.call2action_href} >
+                                                            <a className="body-link">{data.call2action}</a>
+                                                        </Link>
+                                                    </p>
+                                                         
                                                     <p className="text-minor gutter-bottom"> Nhận ngay 15.000.000đ từ gói ưu đãi giảm tác động từ COVID-19, giúp giảm áp lực chi phí và tham gia sử dụng nền tảng Delivery chuyên nghiệp từ CabinFood.</p>
                                                     <div className="marketing-button-wrapper" >
                                                         <input name="utf8" type="hidden" value="✓"/>
