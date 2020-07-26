@@ -7,7 +7,7 @@ import Announcement from '../components/annoucement/an_style1'
 import $ from 'jquery';
 import Link from 'next/link';
 
-export default class LayoutBlog extends React.Component {
+export default class LayoutToolBasePrice extends React.Component {
     constructor(props){
         super(props);
         this.state = {
