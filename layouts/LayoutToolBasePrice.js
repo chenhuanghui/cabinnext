@@ -114,7 +114,10 @@ export default class LayoutBlog extends React.Component {
 
             var min_price_to_sell = price_procedue + profit_per_product
             $('#MinPrice2Sell').html(min_price_to_sell.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-            
+
+            var gross_margin = (profit_per_product/price_procedue).toFixed(2)*100
+            $('#GrossMargin').html(gross_margin.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+
             $('#invest_ammount').html(invest.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
             $('#depriciation_time').html(depreciation.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
             $('#profit_estimate').html(profit_per_product.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
@@ -242,14 +245,14 @@ export default class LayoutBlog extends React.Component {
                                                     <h5 className="summary-grid__label grid-item grid--mobile">Số sản phẩm tối thiểu phải bán mỗi tháng để không lỗ(sp)</h5>
                                                     <span id="SpotBalancingMonth" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
-                                                    {/* <h5 className="summary-grid__label grid-item grid--mobile">Khấu hao đầu tư/sản phẩm bán ra (đ/sp)</h5>
-                                                    <span id="DepreciationProduct" className="heading--4 summary-grid__value grid-item grid--mobile">--</span> */}
-
                                                     <h5 className="summary-grid__label grid-item grid--mobile">Khấu hao đầu tư từng tháng (đ/tháng)</h5>
                                                     <span id="DepreciationMonth" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
                                                     <h5 className="summary-grid__label grid-item grid--mobile">Giá thành sản phẩm (đ)</h5>
                                                     <span id="PriceProcedue" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
+
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Tỷ suất lợi nhuận gộp - GrossMargin (%)</h5>
+                                                    <span id="GrossMargin" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
                                                     <h5 className="summary-grid__label grid-item grid--mobile">Giá bán tối thiểu /sản phẩm (đ)</h5>
                                                     <span id="MinPrice2Sell" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
@@ -286,6 +289,13 @@ export default class LayoutBlog extends React.Component {
                                 </div>
                             </section>
                             
+                            <section className="section section--border">
+                                <div className="page-width">
+                                    <h2 className="text-center gutter-bottom sec_content">
+                                        {data.sec3_content}
+                                    </h2>
+                                </div>
+                            </section>
                         </main>    
                         <Footer />
                     </div>
@@ -298,7 +308,9 @@ export default class LayoutBlog extends React.Component {
                         margin-left: 0% !important;
                         padding: 0 !important;
                     }
-                    
+                    .sec_content {
+                        font-size: 2.25em !important;
+                    }
                     .form-section {
                         margin-bottom: 1.875em;
                     }
