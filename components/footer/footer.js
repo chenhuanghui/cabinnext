@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 
 export default class Footer extends React.Component {
     constructor(props){
@@ -25,11 +26,18 @@ export default class Footer extends React.Component {
                     <div className="grid">
                         <div className="grid__item">
                             <nav className="footer-nav">
-                                <a href="/about">Về Cabin Food</a>
-                                <a href="/stations">Điểm kinh doanh</a>
-                                <a href="/categories">Món ăn thức uống phù hợp</a>
-                                {/* <a href="/pricing">Bảng giá</a> */}
-
+                                <Link href='/about'> 
+                                    <a>Về Cabin Food</a>
+                                </Link>
+                                <Link href='/stations'>
+                                    <a>Trạm kinh doanh</a>
+                                </Link>
+                                <Link href='/categories'>
+                                    <a>Món ăn thức uống phù hợp</a>
+                                </Link>
+                                <Link href='/tools'>
+                                    <a>Công cụ miễn phí</a>
+                                </Link>
                             </nav>
                         </div>
                     </div>
