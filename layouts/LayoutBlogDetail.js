@@ -96,7 +96,7 @@ export default function BlogDetail () {
         <div className="layout">
             <Head>
                 <meta  property="og:title" content={ content && content[0] ? content[0].fields.title : ''} />
-                <meta  property="og:image" content={`http:${content && content[0] ? content[0].fields.cover.fields.file.url : ''}`} />
+                <meta  property="og:image" content={`http:${content && content[0] && content[0].fields.cover ? content[0].fields.cover.fields.file.url : ''}`} />
                 <title>{ slug ? `CabinFood Blog - ${slug}` : 'CabinFood Blog'}</title>
             </Head>
 
@@ -145,14 +145,14 @@ export default function BlogDetail () {
                                                 <ul className="article__meta">
                                                     <li><a href="#">{content && content[0] ? content[0].fields.collection.fields.name :''} </a> </li>
                                                     <li>by <a rel="nofollow" href={'#'}>{'cabinfood'}</a> </li>
-                                                    <li><time itemProp="datePublished" dateTime="2020-06-30T03:30:00Z">{content && content[0] ? content[0].fields.date.split('T')[0] :''}</time></li>
+                                                    <li><time itemProp="datePublished" dateTime="2020-06-30T03:30:00Z">{content && content[0] && content[0].fields.date ? content[0].fields.date.split('T')[0] :''}</time></li>
                                                 </ul>
                                             </div>
                                         </div>
                                         
                                     </header>
                                     <figure className='article__image--featured'>
-                                        <img src={content && content[0] ? content[0].fields.cover.fields.file.url : ''}/>
+                                        <img src={content && content[0] && content[0].fields.cover ? content[0].fields.cover.fields.file.url : ''}/>
                                     </figure>
                                     <div className='article__content long-form-content' dangerouslySetInnerHTML={{__html: content && content[0] ? documentToHtmlString(content[0].fields.content,contentfulOptions) : ''}} />
                                 </article>
