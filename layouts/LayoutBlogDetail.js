@@ -266,6 +266,9 @@ export default function BlogDetail () {
                     margin-top: none !important;
                     padding-top: none !important;
                 }
+                figure img {
+                    width: 100%
+                }
 
             `}</style>
         </div>
