@@ -41,7 +41,6 @@ export default class Footer extends React.Component {
                         </div>
                     </div>
                 </div>
-
                 
                 <div className="footer-bottom">
                     <div className="grid">

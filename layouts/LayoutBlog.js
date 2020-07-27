@@ -19,7 +19,7 @@ const client = require('contentful').createClient({
 async function fetchEntries(query) {
     const entries = await client.getEntries(query)
     if (entries.items) {
-        // console.log('entries:',entries.items);
+        console.log('entries:',entries.items);
         return entries.items
     }
     console.log(`Error getting Entries for ${contentType.name}.`)
@@ -133,7 +133,7 @@ export default class LayoutBlog extends React.Component {
 
                                                     <ul className="article__meta">
                                                         <li>by <a rel="nofollow" href="#">cabinfood</a></li>
-                                                        <li><time itemProp="datePublished" dateTime="2020-06-30T03:30:00Z">{post.fields.date.split('T')[0]}</time></li>
+                                                        <li><time itemProp="datePublished" dateTime="2020-06-30T03:30:00Z">{post.fields.date ? post.fields.date.split('T')[0] : ''}</time></li>
                                                     </ul>
                                                 </article>
                                             ))
