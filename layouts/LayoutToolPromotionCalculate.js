@@ -39,6 +39,18 @@ export default class LayoutToolBasePrice extends React.Component {
             if (err) { console.error(err); return; }
         });
 
+        base('Promotion').select({ view: "Grid view"}).eachPage(function page(records, fetchNextPage) {
+            var str_promo = ''
+            for (var i=0; i<records.length; i++) {
+                str_promo += records[i].fields.code + ', '
+            }
+            console.log('str_: ', str_promo)
+            $(`#code_list`).html(str_promo)
+            
+        }, function done(err) {
+            if (err) { console.error(err); return; }
+        });
+
         $('.input-format-number').keyup(function(event) {
             // skip for arrow keys
             if(event.which >= 37 && event.which <= 40) return;
@@ -86,7 +98,7 @@ export default class LayoutToolBasePrice extends React.Component {
                     alert('MÃ ƯU ĐÃI KHÔNG TỒN TẠI')
                     return
                 }
-                
+
                 console.log('code:', records[0].fields)
                 var res = records[0].fields
                 console.log ('res: ', res.code)
@@ -181,6 +193,7 @@ export default class LayoutToolBasePrice extends React.Component {
                                                     <label className="marketing-input-wrapper">
                                                         <span className="marketing-label marketing-label--in-field marketing-label--floating">Mã ưu đãi (*)</span>
                                                         <input type="text" id="promote_code_input" data="" placeholder="Mã ưu đãi"   className="marketing-input"/>
+                                                        <small className="input_hint_msg">các mã ưu đãi hiện có: <span id="code_list">freeship, food25, food50</span></small>
                                                         <ul className="marketing-form__messages validate_message" id="m_invest">
                                                             <li className="error parsley-required"></li>
                                                         </ul>
@@ -190,6 +203,7 @@ export default class LayoutToolBasePrice extends React.Component {
                                                     <label className="marketing-input-wrapper">
                                                         <span className="marketing-label marketing-label--in-field marketing-label--floating">Giá trị hóa đơn chưa giảm (*)</span>
                                                         <input type="text" id="bill_value_input" data="" placeholder="Giá trị hóa đơn chưa giảm"   className="marketing-input input-format-number"/>
+                                                        <small className="input_hint_msg">không bao gồm phí ship</small>
                                                         <ul className="marketing-form__messages validate_message" id="m_invest">
                                                             <li className="error parsley-required"></li>
                                                         </ul>
@@ -197,8 +211,9 @@ export default class LayoutToolBasePrice extends React.Component {
                                                     </label>
 
                                                     <label className="marketing-input-wrapper">
-                                                        <span className="marketing-label marketing-label--in-field marketing-label--floating">Số lượng hóa đơn (*)</span>
-                                                        <input type="text" id="no_bills" data="" placeholder="Số lượng hóa đơn"   className="marketing-input input-format-number"/>
+                                                        <span className="marketing-label marketing-label--in-field marketing-label--floating">Số lượng hóa đơn dự kiến bán (*)</span>
+                                                        <input type="text" id="no_bills" data="" placeholder="Số lượng hóa đơn dự kiến bán"   className="marketing-input input-format-number"/>
+                                                        <small className="input_hint_msg">số này sẽ giúp tính được Doanh thu và Ngân sách ưu đãi</small>
                                                         <ul className="marketing-form__messages validate_message" id="m_invest">
                                                             <li className="error parsley-required"></li>
                                                         </ul>
@@ -208,9 +223,11 @@ export default class LayoutToolBasePrice extends React.Component {
                                                     <label className="marketing-input-wrapper">
                                                         <span className="marketing-label marketing-label--in-field marketing-label--floating">Hoa hồng bán hàng của kênh (%)</span>
                                                         <input type="text" id="channel_commision" data="" placeholder="Hoa hồng bán hàng của kênh (%)"   className="marketing-input input-format-number"/>
+                                                        <small className="input_hint_msg">là mức chiết khấu hiện tại Brand Mex chi trả cho app Food delivery </small>
                                                         <ul className="marketing-form__messages validate_message" id="m_invest">
                                                             <li className="error parsley-required"></li>
                                                         </ul>
+                                                        
                                                         <span className="marketing-form__messages"></span>
                                                     </label>
                                                     
@@ -298,7 +315,7 @@ export default class LayoutToolBasePrice extends React.Component {
                             <section className="section section--border">
                                 <div className="page-width">
                                     <h2 className="text-center gutter-bottom sec_content">
-                                        {data.sec3_content}
+                                        Kinh doanh với phương thức DELIVERY đòi hỏi bạn phải hiểu rõ và thông thạo các kênh bán hàng DELIVERY để đạt được hiệu quả kinh doanh cao nhất.
                                     </h2>
                                 </div>
                             </section>
@@ -590,6 +607,12 @@ export default class LayoutToolBasePrice extends React.Component {
                     }
 
                     .get-funding-card__content h2 {font-size: 2em !important;}
+                    .input_hint_msg {
+                        line-height: 1.5 !important;
+                        color: #637381;
+                        font-weight: 400;
+                        margin-left: 10px;
+                    }
                         
                 `}</style>
             </div>
