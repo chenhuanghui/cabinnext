@@ -93,7 +93,15 @@ export default class LayoutToolBasePrice extends React.Component {
                 console.log ('res: ', res.code)
 
                 var code = res.code
+                var value_required = res.total_bill_required
                 var billValued = parseInt($(`#bill_value_input`).attr(`data`))
+                if (billValued < value_required ) {
+                    alert(`Chỉ áp dụng cho hóa đơn từ ${value_required.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} đ`)
+                    return;
+                }
+
+
+                
                 var noBills = parseInt($(`#no_bills`).attr(`data`))
                 var total_revenue = billValued * noBills
                 var total_discount = res.max_discount * noBills
