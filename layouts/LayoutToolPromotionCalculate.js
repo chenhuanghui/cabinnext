@@ -169,7 +169,7 @@ export default class LayoutToolBasePrice extends React.Component {
                                             <div id="BusinessLoanCalculatorForm">
                                                 <div className="form-section">
                                                     <div className="form-header">
-                                                        <h2 className="form-header__heading heading--3">Nhập thông tin chương trình</h2>
+                                                        <h2 className="form-header__heading heading--3">Nhập thông tin</h2>
                                                     </div>
                                                     <label className="marketing-input-wrapper">
                                                         <span className="marketing-label marketing-label--in-field marketing-label--floating">Mã ưu đãi (*)</span>
@@ -214,7 +214,7 @@ export default class LayoutToolBasePrice extends React.Component {
                                         <div className="grid__item grid__item--tablet-up-half grid__item--desktop-up-third">
                                             <div className="form-section" id="value_calculated">
                                                 <div className="form-header">
-                                                    <h2 className="heading--3">{data.block2_headline}</h2>
+                                                    <h2 className="heading--3">Tìm ra những con số ý nghĩa</h2>
                                                 </div>
                                                 <div className="marketing-markdown">
                                                     {/* <div dangerouslySetInnerHTML={{__html: data && data.block2_desc ? this.convertMdtoHtml(data.block2_desc): ''}}/> */}
