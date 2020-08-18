@@ -87,7 +87,6 @@ export default class LayoutToolBasePrice extends React.Component {
                     return
                 }
                 
-                currentComponent.setState({data: records[0].fields})
                 console.log('code:', records[0].fields)
                 var res = records[0].fields
                 console.log ('res: ', res.code)
@@ -110,6 +109,14 @@ export default class LayoutToolBasePrice extends React.Component {
                 var channel_com = parseInt($(`#channel_commision`).attr(`data`)) / 100
 
                 var return_from_channel = total_revenue - (channel_com*total_revenue) - brand_discount
+
+                $(`#promotion_code`).html(code)
+                $(`#sell-partner`).html(res.sell_channel)
+                $(`#max-discount`).html(res.max_discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+                $(`#value-required`).html(res.total_bill_required.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+                $(`#sell-channel`).html(res.sell_channel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+                $(`#channel-rate`).html(res.channel_rate.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+                $(`#brand-rate`).html(res.brand_rate.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
 
                 $(`#SpotPromoCode`).html(code)
                 $(`#SpotBillValued`).html(billValued.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
@@ -223,11 +230,11 @@ export default class LayoutToolBasePrice extends React.Component {
                                             <div className="summary-grid">
                                                 <div className="summary-grid__items summary-grid__items--divider">
                                                     <p id="SummaryHeading" className="summary-grid__heading">
-                                                        Chương trình giảm giá theo mã <span id="promotion_code">{data.code}</span>,
-                                                        được tổ chức bởi <span id="sell-partner">{data.sell_channel}</span>, 
-                                                        sẽ giảm tối đa <span id="max-discount">{data.max_discount && data.max_discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} đ</span>,  
-                                                        được áp dụng cho hóa đơn từ <span id="value-required">{data.total_bill_required && data.total_bill_required.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} đ</span>. 
-                                                        Trong đó, <span>{data.sell_channel}</span> tài trợ <span>{data.channel_rate} %</span> trên phần giảm giá, nhãn hàng tài trợ <span>{data.brand_rate} %</span> trên phần giảm giá
+                                                        Chương trình giảm giá theo mã <span id="promotion_code"></span>,
+                                                        được tổ chức bởi <span id="sell-partner"></span>, 
+                                                        sẽ giảm tối đa <span id="max-discount"></span>  đ,  
+                                                        được áp dụng cho hóa đơn từ <span id="value-required"> </span>đ. 
+                                                        Trong đó, <span id="sell-channel"></span> tài trợ <span id="channel-rate"> </span> % trên phần giảm giá, nhãn hàng tài trợ <span id="brand-rate"></span> % trên phần giảm giá
                                                     </p>
                                                 </div>
                                                 <div className="grid-container grid-container--halves summary-grid__items summary-grid__items--light">
