@@ -140,9 +140,9 @@ export default class LayoutToolBasePrice extends React.Component {
                                     <div className="grid__item grid__item--tablet-up-half">
                                         <div className="hero__inner">
                                             <div className="section-heading section-heading--left section-heading--tight">
-                                                <p className="section-heading__kicker heading--5">{data.headline}</p>
-                                                <h1 className="section-heading__heading heading--jumbo">{data.message}</h1>
-                                                <p className="section-heading__subhead heading--2">{data.desc}</p>
+                                                <p className="section-heading__kicker heading--5">Công cụ miễn phí</p>
+                                                <h1 className="section-heading__heading heading--jumbo">Hiểu rõ về mã ưu đãi</h1>
+                                                <p className="section-heading__subhead heading--2">Nắm bắt thông số chính xác của các chương trình ưu đãi</p>
                                             </div>
                                         </div>
                                     </div>
