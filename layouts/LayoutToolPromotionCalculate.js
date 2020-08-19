@@ -118,7 +118,7 @@ export default class LayoutToolBasePrice extends React.Component {
                 var brand_discount = total_discount * res.brand_rate / 100
                 var channel_com = parseInt($(`#channel_commision`).attr(`data`)) / 100
 
-                var return_from_channel = total_revenue - (channel_com*total_revenue) - brand_discount
+                var return_from_channel = total_revenue - (channel_com*(total_revenue-total_discount)) - brand_discount
 
                 $(`#promotion_code`).html(code)
                 $(`.sell-partner`).html(res.sell_channel)
