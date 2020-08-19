@@ -123,10 +123,10 @@ export default class LayoutToolBasePrice extends React.Component {
                 var return_from_channel = total_revenue - (channel_com*total_revenue) - brand_discount
 
                 $(`#promotion_code`).html(code)
-                $(`#sell-partner`).html(res.sell_channel)
+                $(`.sell-partner`).html(res.sell_channel)
                 $(`#max-discount`).html(res.max_discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
                 $(`#value-required`).html(res.total_bill_required.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-                $(`#sell-channel`).html(res.sell_channel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+                $(`#sell-channel`).html(res.sell_channel)
                 $(`#channel-rate`).html(res.channel_rate.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
                 $(`#brand-rate`).html(res.brand_rate.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
 
@@ -248,10 +248,11 @@ export default class LayoutToolBasePrice extends React.Component {
                                                 <div className="summary-grid__items summary-grid__items--divider">
                                                     <p id="SummaryHeading" className="summary-grid__heading">
                                                         Chương trình giảm giá theo mã <span id="promotion_code"></span>,
-                                                        được tổ chức bởi <span id="sell-partner"></span>, 
+                                                        được tổ chức bởi <span className="sell-partner"></span>, 
                                                         sẽ giảm tối đa <span id="max-discount"></span>  đ,  
-                                                        được áp dụng cho hóa đơn từ <span id="value-required"> </span>đ. 
-                                                        Trong đó, <span id="sell-channel"></span> tài trợ <span id="channel-rate"> </span> % trên phần giảm giá, nhãn hàng tài trợ <span id="brand-rate"></span> % trên phần giảm giá
+                                                        áp dụng cho hóa đơn từ <span id="value-required"> </span>đ. 
+                                                        Trong đó, <span className="sell-partner"></span> tài trợ <span id="channel-rate"> </span> % trên phần giảm giá, 
+                                                        nhãn hàng tài trợ <span id="brand-rate"></span> % trên phần giảm giá
                                                     </p>
                                                 </div>
                                                 <div className="grid-container grid-container--halves summary-grid__items summary-grid__items--light">
@@ -270,18 +271,18 @@ export default class LayoutToolBasePrice extends React.Component {
                                                     <h5 className="summary-grid__label grid-item grid--mobile">Giảm giá cho khách</h5>
                                                     <span id="SpotDiscount" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Trong đó, Grab tài trợ</h5>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Trong đó, <span className='sell-partner'></span> tài trợ</h5>
                                                     <span id="SpotGrab" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
                                                     <h5 className="summary-grid__label grid-item grid--mobile">Trong đó, nhãn hàng tài trợ</h5>
                                                     <span id="SpotBrand" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Tiền hoa hồng của {data.sell_channel}</h5>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Tiền hoa hồng của <span className='sell-partner'></span></h5>
                                                     <span id="SpotCommisionTotal" className="heading--4 summary-grid__value grid-item grid--mobile">--</span>
 
                                                 </div>
                                                 <div className="grid-container grid-container--halves summary-grid__total">
-                                                    <h5 className="summary-grid__label grid-item grid--mobile">Số tiền nhãn hàng thu từ {data.sell_channel}</h5>
+                                                    <h5 className="summary-grid__label grid-item grid--mobile">Số tiền nhãn hàng thu từ <span className='sell-partner'></span></h5>
                                                     <span id="ReturnFromChannel" className="heading--2 summary-grid__value grid-item grid--mobile">--</span>
                                                 </div>
                                             </div>
