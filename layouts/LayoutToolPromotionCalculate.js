@@ -110,8 +110,6 @@ export default class LayoutToolBasePrice extends React.Component {
                     alert(`Chỉ áp dụng cho hóa đơn từ ${value_required.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} đ`)
                     return;
                 }
-
-
                 
                 var noBills = parseInt($(`#no_bills`).attr(`data`))
                 var total_revenue = billValued * noBills
@@ -137,7 +135,7 @@ export default class LayoutToolBasePrice extends React.Component {
                 $(`#SpotDiscount`).html(total_discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
                 $(`#SpotGrab`).html(channel_discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
                 $(`#SpotBrand`).html(brand_discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-                $(`#SpotCommisionTotal`).html((channel_com*total_revenue).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+                $(`#SpotCommisionTotal`).html((channel_com*(total_revenue-total_discount)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
                 $(`#ReturnFromChannel`).html(return_from_channel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
             }, function done(error) {
                 if (err) { console.error(err); return; }
