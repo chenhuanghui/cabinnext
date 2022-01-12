@@ -27,7 +27,7 @@
     "analytics-node": "^3.4.0-beta.2",
     "contentful": "^7.14.5",
     "jquery": "^3.5.1",
-    "markdown-it": "^11.0.0",
+    "markdown-it": "^12.3.2",
     "next": "^9.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
